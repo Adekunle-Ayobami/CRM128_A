@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income Page</title>
+    <link rel="stylesheet" href="css/income.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <!-- <button class="toggle-button" id="sidebar-toggle">
+          <i class="fa-solid fa-bars bar"></i>
+        </button> -->
+
+        <a href="client-management-dash.html">
+          <div class="crm128-wrapper">
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
+          </div>
+        </a>
+        <div class="search-parent">
+          <div>
+            <i class="fa-solid fa-magnifying-glass fa-lg icon"></i
+            ><input
+              class="input-field"
+              type="text"
+              name="search"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+        <div class="bell">
+          <img class="vector-icon" alt="" src="./public/Vector3.svg" /><sup
+            ><b class="b">2</b></sup
+          >
+        </div>
+        <div class="ellipse-group">
+          <div class="jg">JG</div>
+          <div class="josiah-gana-parent">
+            <div class="josiah-gana">Josiah Gana</div>
+            <div class="admin">Admin</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="menu">
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/dashboard.svg" />
+          <div class="side-bar"><a href="/~g12dev/CRM128_A/">Overview</a></div>
+        </div>
+        <div class="client-data" id="hr-toggle">
+          <img class="more-icon" alt="" src="./public/clients.svg" />
+          <div class="side-bar">
+            <a href="/~g12dev/CRM128_A/clientm/">Clients</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <a href="add-new-clients.html"><li>Client Data</li></a>
+            <a href="client-lead-dashboard.html"><li>Leads</li></a>
+            <li>Analytics</li>
+          </ul>
+        </div>
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/appointment1.svg" />
+          <div class="side-bar">
+            <a href="/~g12dev/CRM128_A/adm/">Appointment</a>
+          </div>
+        </div>
+        <div class="drop-hr" id="hr-toggle3">
+          <img class="more-icon" alt="" src="./public/human-resources.svg" />
+          <div class="side-bar">
+            <a href="/~g12dev/CRM128_A/hrm/">Human Resource</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon3"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items3">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <a href="#"
+              ><li style="text-overflow: ellipsis">Employee Overview</li></a
+            >
+            <a href="atlantic-hall-school-page.html"
+              ><li>Employee Management</li></a
+            >
+            <a href="#"><li>Leave Management</li></a>
+            <a href="#"><li>Attendance</li></a>
+            <a href="#"><li>Recruitment</li></a>
+            <a href="#"><li>Payroll</li></a>
+            <a href="#"><li>Staff Performance</li></a>
+            <a href="#"><li>Awards and Incentives</li></a>
+            <a href="#"><li>Onboarding</li></a>
+            <a href="#"><li>Training</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle1">
+          <img class="more-icon" alt="" src="./public/projects-icon.svg" />
+          <div class="side-bar">
+            <a href="/~g12dev/CRM128_A/projectm/">Project Management</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon1"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items1">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <a href="#"
+              ><li style="text-overflow: ellipsis">
+                Emzor Pham Industries Ltd.
+              </li></a
+            >
+            <a href="atlantic-hall-school-page.html"
+              ><li>Atlantic Hall School</li></a
+            >
+            <a href="#"><li>Apple</li></a>
+            <a href="#"><li>McDonald's</li></a>
+            <a href="#"><li>+ New Project</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle2">
+          <img class="more-icon" alt="" src="./public/inventory-icon.svg" />
+          <div class="side-bar">
+            <a href="/~g12dev/CRM128_A/inventorym/">Inventory</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon2"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items2">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <a href="new-stock-page.html"><li>New Stock</li></a>
+            <a href="stock-list-inventory.html"><li>Stock List</li></a>
+            <a href="reorder-list-page.html"><li>Reorder List</li></a>
+            <a href="return-items-page.html"><li>Return Item</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr client-bar" id="hr-toggle4">
+          <img class="more-icon" alt="" src="./public/accounting.svg" />
+          <div class="side-bar">
+            <a href="/~g12dev/CRM128_A/acm/">Accounting</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            id="hr-chevron-icon4"
+            src="./public/chevron-uop.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items4">
+            <a href="income.html"><li class="selected">Income</li></a>
+            <a href="expense.html"><li>Expenses</li></a>
+            <!-- <a href="#"><li>Analytics</li></a> -->
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle5">
+          <img class="more-icon" alt="" src="./public/settings.svg" />
+          <div class="side-bar">
+            <a href="/~g12dev/CRM128_A/adminm/">Admin</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            id="hr-chevron-icon5"
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items5">
+            <a href="#"><li>General</li></a>
+            <a href="#"><li>Members</li></a>
+          </ul>
+        </div>
+        <div class="logout">
+          <img class="more-icon" alt="" src="./public/logout.svg" />
+          <div class="side-bar"></div>
+          Logout
+        </div>
+      </div>
+      <!-- Inner Page -->
+      <div class="frame-group">
+        <div style="display: flex">
+          <div style="margin-right: 10px">Accounting</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">Income</div>
+        </div>
+        <div class="button-group">
+          <button class="bt2" id="overlayBtn">Add Income</button>
+        </div>
+      </div>
+      <div class="back-group">
+        <div class="back" onclick="history.back()">
+          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
+          <div class="search">Back</div>
+        </div>
+        <div class="input-group">
+          <div class="input-container">
+            <i class="fas fa-search"></i>
+            <input
+              class="input-field1"
+              type="text"
+              name="search"
+              placeholder="Filter"
+            />
+          </div>
+          <select class="select" name="">
+            <option value="">Daily</option>
+            <option value="">Weekly</option>
+            <option value="" selected>Monthly</option>
+            <option value="">Yealy</option>
+          </select>
+          <select class="select1" name="">
+            <option value="">January</option>
+            <option value="">February</option>
+            <option value="">March</option>
+            <option value="">April</option>
+            <option value="">May</option>
+            <option value="">June</option>
+            <option value="">July</option>
+            <option value="">August</option>
+            <option value="">September</option>
+            <option value="">October</option>
+            <option value="">November</option>
+            <option value="">December</option>
+          </select>
+          <select class="select2" name="">
+            <option value="">Category</option>
+            <option value="">Admin</option>
+            <option value="">User</option>
+          </select>
+          <div class="sort">
+            <img style="width: 15px" src="public/sort_minor.png" alt="" /><span
+              style="margin-bottom: 7px"
+              >Sort</span
+            >
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="table-head">
+        <span>Total Income : N1,000,000.00</span>
+      </div>
+      <table class="table">
+        <tr>
+          <th>Date</th>
+          <th>Source</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Options</th>
+        </tr>
+        <tr>
+          <td>01/02/2023</td>
+          <td>Client 1</td>
+          <td>Contract won</td>
+          <td>Direct discussion with a Client</td>
+          <td>N200,000.00</td>
+          <td>
+            <img
+              id="overlayBtn3"
+              src="public/edit.svg"
+              alt=""
+              style="margin-right: 10px; cursor: pointer"
+            />
+            <img src="public/Delete.svg" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>01/02/2023</td>
+          <td>Client 2</td>
+          <td>Contract won</td>
+          <td>Direct discussion with a Client</td>
+          <td>N200,000.00</td>
+          <td>
+            <img
+              id="overlayBtn4"
+              src="public/edit.svg"
+              alt=""
+              style="margin-right: 10px; cursor: pointer"
+            />
+            <img src="public/Delete.svg" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>01/02/2023</td>
+          <td>Client 3</td>
+          <td>Contract won</td>
+          <td>Direct discussion with a Client</td>
+          <td>N200,000.00</td>
+          <td>
+            <img
+              id="overlayBtn5"
+              src="public/edit.svg"
+              alt=""
+              style="margin-right: 10px; cursor: pointer"
+            />
+            <img src="public/Delete.svg" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>01/02/2023</td>
+          <td>Client 4</td>
+          <td>Contract won</td>
+          <td>Direct discussion with a Client</td>
+          <td>N200,000.00</td>
+          <td>
+            <img
+              id="overlayBtn6"
+              src="public/edit.svg"
+              alt=""
+              style="margin-right: 10px; cursor: pointer"
+            />
+            <img src="public/Delete.svg" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>01/02/2023</td>
+          <td>Client 5</td>
+          <td>Contract won</td>
+          <td>Direct discussion with a Client</td>
+          <td>N200,000.00</td>
+          <td>
+            <img
+              id="overlayBtn7"
+              src="public/edit.svg"
+              alt=""
+              style="margin-right: 10px; cursor: pointer"
+            />
+            <img src="public/Delete.svg" alt="" />
+          </td>
+        </tr>
+      </table>
+      <div class="pagination">
+        <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
+
+        <div class="page-active">
+          <div class="page-active1">
+            <b class="num">1</b>
+          </div>
+        </div>
+        <div class="page-disabled">
+          <div class="page-default1">
+            <b class="num">2</b>
+          </div>
+        </div>
+        <div class="page-disabled">
+          <div class="page-default1">
+            <b class="num">...</b>
+          </div>
+        </div>
+        <div class="page-disabled">
+          <div class="page-default1">
+            <b class="num">9</b>
+          </div>
+        </div>
+        <div class="page-disabled">
+          <div class="page-default1">
+            <b class="num">10</b>
+          </div>
+        </div>
+        <img class="page-master" alt="" src="./public/page--master.svg" />
+      </div>
+
+      <!-- Overlay Pages -->
+      <div class="add-lead" id="overlay" style="display: none">
+        <div class="lead">
+          <div style="width: 100%; font-weight: 600">Add New Income</div>
+          <img src="public/close.svg" id="closeBtn" alt="" />
+        </div>
+        <div class="form form1">
+          <span style="margin-bottom: 5px">Date</span>
+          <input type="date" placeholder="DD-MM-YY" />
+        </div>
+        <div class="form form1">
+          <span style="margin-bottom: 5px">Source</span>
+          <input type="text" placeholder="Source" />
+        </div>
+        <div class="form2 form1">
+          <div>
+            <span>Category</span> <br />
+            <div class="input-container" style="margin-top: 5px">
+              <select name="">
+                <option value="">Direct Sales</option>
+                <option value="">Referral</option>
+                <option value="">Operating Income</option>
+                <option value="">Exceptional Income</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <span>Amount</span> <br />
+            <div class="input-container" style="margin-top: 5px">
+              <select name="">
+                <option value="">Option 1</option>
+                <option value="">Option 1</option>
+                <option value="">Option 1</option>
+                <option value="">Option 1</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-text">
+          <span>Description</span>
+          <textarea
+            style="margin-top: 5px"
+            name=""
+            id=""
+            cols="10"
+            rows="5"
+            placeholder="Enter Description"
+          ></textarea>
+        </div>
+        <div>
+          <a href="client-company-list.html"
+            ><button class="bigbutton">Save</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="copyright-2023-crm128-parent">
+        <div class="copyright-2023-crm128-container">
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
+        </div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+      </div>
+    </footer>
+
+    <!-- Overlay Pages3 -->
+    <div class="add-lead2" id="overlay3">
+      <div class="lead2">
+        <div style="width: 100%; font-weight: 600; font-size: 20px">
+          INCOME DETAILS
+        </div>
+        <img
+          style="cursor: pointer"
+          src="public/close.svg"
+          id="closeBtn3"
+          alt=""
+        />
+      </div>
+      <hr style="width: 92%" />
+      <div class="form form1">
+        <span style="margin-bottom: 5px">Date</span>
+        <input type="date" placeholder="DD-MM-YY" />
+      </div>
+      <div class="form form1">
+        <span style="margin-bottom: 5px">Paid To</span>
+        <input type="text" placeholder="Source" />
+      </div>
+      <div class="form2 form1">
+        <div>
+          <span>Category</span> <br />
+          <div class="input-container" style="margin-top: 5px">
+            <select name="">
+              <option value="">Direct Sales</option>
+              <option value="">Referral</option>
+              <option value="">Operating Income</option>
+              <option value="">Exceptional Income</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <span>Amount</span> <br />
+          <div class="input-container" style="margin-top: 5px">
+            <select name="">
+              <option value="">Option 1</option>
+              <option value="">Option 1</option>
+              <option value="">Option 1</option>
+              <option value="">Option 1</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-text">
+        <span>Description</span>
+        <textarea
+          style="margin-top: 5px"
+          name=""
+          id=""
+          cols="10"
+          rows="5"
+          placeholder="Enter Description"
+        ></textarea>
+      </div>
+      <div>
+        <a href="client-company-list.html"
+          ><button class="bigbutton">UPDATE</button></a
+        >
+      </div>
+    </div>
+
+    <script>
+      const hrToggle = document.getElementById("hr-toggle");
+      const hrItems = document.getElementById("hr-items");
+      const hrChevronIcon = document.getElementById("hr-chevron-icon");
+
+      hrItems.classList.add("hidden");
+      hrToggle.addEventListener("click", function () {
+        hrItems.classList.toggle("hidden");
+        hrChevronIcon.classList.toggle("rotate");
+      });
+
+      const hrToggle1 = document.getElementById("hr-toggle1");
+      const hrItems1 = document.getElementById("hr-items1");
+      const hrChevronIcon1 = document.getElementById("hr-chevron-icon1");
+
+      hrItems1.classList.add("hidden");
+      hrToggle1.addEventListener("click", function () {
+        hrItems1.classList.toggle("hidden");
+        hrChevronIcon1.classList.toggle("rotate");
+      });
+
+      const hrToggle2 = document.getElementById("hr-toggle2");
+      const hrItems2 = document.getElementById("hr-items2");
+      const hrChevronIcon2 = document.getElementById("hr-chevron-icon2");
+
+      hrItems2.classList.add("hidden");
+      hrToggle2.addEventListener("click", function () {
+        hrItems2.classList.toggle("hidden");
+        hrChevronIcon2.classList.toggle("rotate");
+      });
+
+      const hrToggle3 = document.getElementById("hr-toggle3");
+      const hrItems3 = document.getElementById("hr-items3");
+      const hrChevronIcon3 = document.getElementById("hr-chevron-icon3");
+
+      hrItems3.classList.add("hidden");
+      hrToggle3.addEventListener("click", function () {
+        hrItems3.classList.toggle("hidden");
+        hrChevronIcon3.classList.toggle("rotate");
+      });
+
+      const hrToggle4 = document.getElementById("hr-toggle4");
+      const hrItems4 = document.getElementById("hr-items4");
+      const hrChevronIcon4 = document.getElementById("hr-chevron-icon4");
+
+      // hrItems4.classList.add("hidden");
+      hrToggle4.addEventListener("click", function () {
+        hrItems4.classList.toggle("hidden");
+        hrChevronIcon4.classList.toggle("rotate");
+      });
+
+      const hrToggle5 = document.getElementById("hr-toggle5");
+      const hrItems5 = document.getElementById("hr-items5");
+      const hrChevronIcon5 = document.getElementById("hr-chevron-icon5");
+
+      hrItems5.classList.add("hidden");
+      hrToggle5.addEventListener("click", function () {
+        hrItems5.classList.toggle("hidden");
+        hrChevronIcon5.classList.toggle("rotate");
+      });
+
+      // Overlay Page
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+        });
+      // Overlay Page3
+      document
+        .getElementById("overlayBtn3")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn3")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "none";
+        });
+
+      // Overlay Page4
+      document
+        .getElementById("overlayBtn4")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn3")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "none";
+        });
+
+      // Overlay Page5
+      document
+        .getElementById("overlayBtn5")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn3")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "none";
+        });
+
+      // Overlay Page6
+      document
+        .getElementById("overlayBtn6")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn3")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "none";
+        });
+
+      // Overlay Page7
+      document
+        .getElementById("overlayBtn7")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn3")
+        .addEventListener("click", function () {
+          document.getElementById("overlay3").style.display = "none";
+        });
+
+      // Function to toggle the menu-active class
+      function toggleMenu() {
+        var menu = document.querySelector(".menu");
+        menu.classList.toggle("menu-active");
+      }
+
+      // Add an event listener for button click
+      var sidebarToggle = document.getElementById("sidebar-toggle");
+      sidebarToggle.addEventListener("click", function () {
+        toggleMenu();
+      });
+    </script>
+  </body>
+</html>

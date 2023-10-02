@@ -1,0 +1,314 @@
+.add-company-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #7ac769;
+  width: 650px;
+  height: 100px;
+}
+.add-new-company {
+  position: relative;
+  line-height: 120%;
+  font-weight: 600;
+}
+.close-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.add-new-company-parent {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  width: 615px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+.enter-title {
+  position: relative;
+  line-height: 120%;
+  display: inline-block;
+  width: 504px;
+  flex-shrink: 0;
+}
+.enter-title-wrapper {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  border: 1px solid #0047b3;
+  box-sizing: border-box;
+  width: 571px;
+  display: flex;
+  flex-direction: row;
+  padding: 15px 17px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.text-field-inner {
+  position: relative;
+  width: 569px;
+  height: 53px;
+  color: #7a8699;
+}
+.text-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 9px;
+}
+.group-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  border: 1px solid #003e9c;
+  box-sizing: border-box;
+  width: 569px;
+  height: 58px;
+}
+.enter-company-type {
+  position: absolute;
+  top: 17px;
+  left: 15px;
+  line-height: 120%;
+  display: inline-block;
+  width: 178px;
+}
+.rectangle-parent {
+  position: relative;
+  width: 569px;
+  height: 58px;
+}
+.website {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 120%;
+  font-weight: 600;
+}
+.group-item {
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  border: 1px solid #003e9c;
+  box-sizing: border-box;
+}
+.frame-icon,
+.group-item,
+.rectangle-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.frame-icon {
+  height: 41.38%;
+  width: 8.79%;
+  top: 29.31%;
+  right: 88.28%;
+  bottom: 29.31%;
+  left: 2.93%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.group-parent {
+  position: absolute;
+  height: 64.44%;
+  width: 100%;
+  top: 35.56%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.component-24 {
+  position: relative;
+  width: 273px;
+  height: 90px;
+}
+.component-23-child {
+  position: absolute;
+  height: 64.44%;
+  width: 100%;
+  top: 35.56%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.component-24-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+}
+.phone-number {
+  position: relative;
+  line-height: 120%;
+  font-weight: 600;
+  z-index: 0;
+}
+.dropdown-child {
+  position: absolute;
+  height: 103.7%;
+  width: 100.73%;
+  top: -1.85%;
+  right: -0.36%;
+  bottom: -1.85%;
+  left: -0.36%;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  border: 1px solid #0047b3;
+  box-sizing: border-box;
+}
+.dropdown {
+  position: relative;
+  width: 274px;
+  height: 54px;
+  z-index: 1;
+}
+.call-icon {
+  position: absolute;
+  margin: 0 !important;
+  top: 47px;
+  left: 9px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.phone-number-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  gap: 9px;
+}
+.call-icon1 {
+  position: absolute;
+  margin: 0 !important;
+  top: 47px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.frame-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.group-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  border: 1px solid #0047b3;
+  box-sizing: border-box;
+  width: 572px;
+  height: 126px;
+}
+.enter-description {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  line-height: 120%;
+}
+.rectangle-group {
+  position: relative;
+  width: 572px;
+  height: 126px;
+}
+.extra-info-to {
+  position: absolute;
+  top: 1px;
+  left: 24px;
+  line-height: 112.5%;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.rectangle-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #d9d9d9;
+  width: 16px;
+  height: 16px;
+}
+.extra-info-to-guide-the-user-parent {
+  position: relative;
+  width: 192px;
+  height: 16px;
+  display: none;
+  font-size: 13px;
+  color: #000;
+}
+.text-field-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.big-button,
+.frame-parent {
+  display: flex;
+  align-items: center;
+}
+.big-button {
+  border-radius: 8px;
+  background-color: #7ac769;
+  width: 300px;
+  height: 60px;
+  flex-direction: row;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+}
+.frame-parent {
+  position: absolute;
+  top: 129px;
+  left: 41px;
+  height: 1000px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 139px;
+  font-size: 19px;
+  font-family: Archivo;
+}
+.add-company {
+  position: relative;
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 1117px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 28px;
+  color: #091e42;
+  font-family: "Clash Grotesk";
+}

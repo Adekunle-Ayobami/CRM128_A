@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <button class="toggle-button" id="sidebar-toggle">
+          <i class="fa-solid fa-bars bar"></i>
+        </button>
+
+        <div class="crm128-wrapper">
+          <span style="color: #003e9c">CRM</span
+          ><span style="color: #57bc4a">128</span>
+        </div>
+
+        <div class="search-parent">
+          <div>
+            <i class="fa-solid fa-magnifying-glass fa-lg icon"></i
+            ><input
+              class="input-field"
+              type="text"
+              name="search"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+        <div class="bell">
+          <img class="vector-icon" alt="" src="./public/Vector3.svg" /><sup
+            ><b class="b">2</b></sup
+          >
+        </div>
+        <div class="ellipse-group">
+          <div class="jg">JG</div>
+          <div class="josiah-gana-parent">
+            <div class="josiah-gana">Josiah Gana</div>
+            <div class="admin">Admin</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="menu">
+        <a href="../Overview&Login/index.html">
+          <div class="side-tab client-bar">
+            <img class="more-icon" alt="" src="./public/dashboard.svg" />
+            <div class="side-bar">Overview</div>
+          </div>
+        </a>
+        <div class="client-data" id="hr-toggle">
+          <img class="more-icon" alt="" src="./public/clients.svg" />
+          <div class="side-bar">
+            <a href="../clientm/index.html">Clients</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <a href="../clientm/add-new-clients.html"><li>Client Data</li></a>
+            <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
+            <li>Analytics</li>
+          </ul>
+        </div>
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/appointment1.svg" />
+          <div class="side-bar">
+            <a href="../adm/index.html">Appointment</a>
+          </div>
+        </div>
+        <div class="drop-hr" id="hr-toggle3">
+          <img class="more-icon" alt="" src="./public/human-resources.svg" />
+          <div class="side-bar">
+            <a href="../hrm/index.html">Human Resource</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon3"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items3">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <!--<a href="/~g12dev/CRM128_A/hrm/dashboard.html"-->
+            <!--  ><li style="text-overflow: ellipsis">Employee Overview</li></a-->
+            <a href="../hrm/dashboard.html"><li>Employee Management</li></a>
+            <a href="../hrm/leaveDashboard.html"><li>Leave Management</li></a>
+            <a href="../hrm/UserAttenDashboard.html"><li>Attendance</li></a>
+            <a href="../hrm/jobPosting.html"><li>Recruitment</li></a>
+            <a href="../hrm/payrolAllowance.html"><li>Payroll</li></a>
+            <a href="../hrm/staffPerfomance.html"><li>Staff Performance</li></a>
+            <a href="../hrm/awardPageDashboard.html"
+              ><li>Awards and Incentives</li></a
+            >
+            <a href="../hrm/onboardingDash.html"><li>Onboarding</li></a>
+            <a href="../hrm/trainingDash.html"><li>Training</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle1">
+          <img class="more-icon" alt="" src="./public/projects-icon.svg" />
+          <div class="side-bar">
+            <a href="../projectm/index.html">Project</a> Management
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon1"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items1">
+            <a href="#"
+              ><li style="text-overflow: ellipsis">
+                Emzor Pham Industries Ltd.
+              </li></a
+            >
+            <a href="../projectm/atlantic-hall-school-page.html"
+              ><li>Atlantic Hall School</li></a
+            >
+            <a href="#"><li>Apple</li></a>
+            <a href="#"><li>McDonald's</li></a>
+            <a href="#"><li>+ New Project</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle2">
+          <img class="more-icon" alt="" src="./public/inventory-icon.svg" />
+          <div class="side-bar">
+            <a href="../inventorym/index.html">Inventory</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon2"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items2">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <a href="../inventorym/new-stock-page.html"><li>New Stock</li></a>
+            <a href="../inventorym/stock-list-inventory.html"
+              ><li>Stock List</li></a
+            >
+            <a href="../inventorym/reorder-list-page.html"
+              ><li>Reorder List</li></a
+            >
+            <a href="../inventorym/return-items-page.html"
+              ><li>Return Item</li></a
+            >
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle4">
+          <img class="more-icon" alt="" src="./public/accounting.svg" />
+          <div class="side-bar">
+            <a href="../acm/index.html">Accounting</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            id="hr-chevron-icon4"
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items4">
+            <a href="../acm/income.html"><li>Income</li></a>
+            <a href="../acm/expense.html"><li>Expenses</li></a>
+            <a href="#"><li>Analytics</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle5">
+          <img class="more-icon" alt="" src="./public/settings.svg" />
+          <div class="side-bar">
+            <a href="../adminm/index.html">Admin</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            id="hr-chevron-icon5"
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items5">
+            <a href="../adminm/index.html"><li>General</li></a>
+            <a href="../adminm/admin-current-user.html"><li>Members</li></a>
+          </ul>
+        </div>
+        <div class="logout">
+          <img class="more-icon" alt="" src="./public/logout.svg" />
+          <div class="side-bar"></div>
+          Logout
+        </div>
+      </div>
+      <!-- First Box -->
+      <div class="box1">
+        <div class="inner-box">
+          <span style="margin-left: -45px; font-weight: 600"
+            >Client Management</span
+          >
+          <div class="dy">
+            <span style="margin-right: 25px; border-bottom: 3px solid blue"
+              >Today</span
+            >
+            <span style="margin-right: 25px">This Week</span>
+            <span style="margin-right: 25px">This Month</span>
+            <span>This Year</span>
+          </div>
+        </div>
+        <div style="margin-left: -15px" class="inner-boxes">
+          <div style="padding-right: 50px" class="one">
+            <span>Active Clients</span>
+            <span style="font-size: 37px; margin-top: 10px; font-weight: bolder"
+              >57</span
+            >
+          </div>
+          <div style="padding-right: 50px" class="one">
+            <span>Active Leads</span>
+            <span style="font-size: 37px; margin-top: 10px; font-weight: bolder"
+              >32</span
+            >
+          </div>
+          <div class="one">
+            <span>Avg. value of won deals</span>
+            <span
+              style="
+                font-size: 37px;
+                margin-top: 10px;
+                font-weight: bolder;
+                margin-bottom: 20px;
+              "
+              >34.2M</span
+            >
+            <span>Naira</span>
+          </div>
+        </div>
+      </div>
+      <!-- Second Box -->
+      <div class="box2">
+        <div>
+          <span style="margin-left: 8px; font-weight: 600"
+            >Human Resourses</span
+          >
+        </div>
+        <div style="margin-left: -2px" class="inner-boxes">
+          <div style="padding-right: 20px; text-align: center" class="one1">
+            <span>Staff Strenght</span>
+            <span
+              style="
+                font-size: 37px;
+                margin-top: 10px;
+                font-weight: 900;
+                color: #57bc4a;
+              "
+              >80</span
+            >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                margin-top: 10px;
+                margin-left: 10px;
+              "
+            >
+              <div style="display: flex; flex-direction: column">
+                <span style="font-size: 25px">57</span>
+                <span>Men</span>
+              </div>
+              <hr style="height: 50px; margin-top: -2px" />
+              <div style="display: flex; flex-direction: column">
+                <span style="font-size: 25px">23</span>
+                <span>Women</span>
+              </div>
+            </div>
+          </div>
+          <div
+            style="padding-right: 30px; text-align: center; padding-left: 10px"
+            class="one1"
+          >
+            <span>Daily Attendance</span>
+            <span
+              style="
+                font-size: 37px;
+                margin-top: 10px;
+                font-weight: bolder;
+                color: #57bc4a;
+              "
+              >65</span
+            >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                margin-top: 10px;
+                margin-left: 10px;
+              "
+            >
+              <div style="display: flex; flex-direction: column">
+                <span style="font-size: 25px">60</span>
+                <span>Early</span>
+              </div>
+              <hr style="height: 50px; margin-top: -2px" />
+              <div style="display: flex; flex-direction: column">
+                <span style="font-size: 25px">05</span>
+                <span>Late</span>
+              </div>
+            </div>
+          </div>
+          <div
+            style="text-align: center; padding: 15px 30px 0 30px"
+            class="one1"
+          >
+            <span>Leave Taken</span>
+            <span
+              style="
+                font-size: 37px;
+                margin-top: 10px;
+                font-weight: bolder;
+                color: #57bc4a;
+              "
+              >13</span
+            >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                margin-top: 10px;
+                margin-left: 10px;
+              "
+            >
+              <div style="display: flex; flex-direction: column">
+                <span style="font-size: 25px">07</span>
+                <span>Men</span>
+              </div>
+              <hr style="height: 50px; margin-top: -2px" />
+              <div style="display: flex; flex-direction: column">
+                <span style="font-size: 25px">05</span>
+                <span>Women</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Third Box -->
+      <div class="box3">
+        <div>
+          <span style="margin-left: 10px; font-weight: 600"
+            >Ongoing Projects</span
+          >
+        </div>
+
+        <div style="margin-left: 0px" class="inner-boxes">
+          <!-- First box -->
+          <div style="padding-right: 15px" class="one3">
+            <div class="frame-parent1">
+              <div class="start-date-20-dec-2022-parent">
+                <div class="progress1">Start Date: 20 Dec 2022</div>
+                <img
+                  class="more-icon1"
+                  alt=""
+                  src="public/more.svg"
+                  id="moreIcon"
+                />
+              </div>
+              <div class="group-parent1">
+                <div class="group-container">
+                  <div class="electrical-wrapper">
+                    <div class="electrical">ATLANTIC HALL SCHOOL</div>
+                  </div>
+                </div>
+                <div class="frame-group1">
+                  <div class="progress-parent">
+                    <div class="progress1">Progress</div>
+                    <div class="progress">81%</div>
+                  </div>
+                  <div class="frame-container">
+                    <div class="group-child"></div>
+                    <div class="group-item"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="assigned-to-parent">
+                <div class="progress" style="font-size: 10px">Assigned To</div>
+                <div class="frame-wrapper">
+                  <div class="frame-div">
+                    <div class="rectangle-parent">
+                      <img
+                        class="group-inner"
+                        alt=""
+                        src="public/Rectangle 81.png"
+                      />
+                      <div class="john-doe">John Doe</div>
+                    </div>
+                    <div class="chip">
+                      <div>2 Weeks Left</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Second -->
+          <div style="padding-right: 15px" class="one3">
+            <div class="frame-parent1">
+              <div class="start-date-20-dec-2022-parent">
+                <div class="progress1">Start Date: 20 Dec 2022</div>
+                <img
+                  class="more-icon1"
+                  alt=""
+                  src="public/more.svg"
+                  id="moreIcon"
+                />
+              </div>
+              <div class="group-parent1">
+                <div class="group-container">
+                  <div class="electrical-wrapper">
+                    <div class="electrical">ATLANTIC HALL SCHOOL</div>
+                  </div>
+                </div>
+                <div class="frame-group1">
+                  <div class="progress-parent">
+                    <div class="progress1">Progress</div>
+                    <div class="progress">81%</div>
+                  </div>
+                  <div class="frame-container">
+                    <div class="group-child"></div>
+                    <div class="group-item"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="assigned-to-parent">
+                <div class="progress" style="font-size: 10px">Assigned To</div>
+                <div class="frame-wrapper">
+                  <div class="frame-div">
+                    <div class="rectangle-parent">
+                      <img
+                        class="group-inner"
+                        alt=""
+                        src="public/Rectangle 81.png"
+                      />
+                      <div class="john-doe">John Doe</div>
+                    </div>
+                    <div class="chip">
+                      <div>2 Weeks Left</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Third -->
+          <div style="padding-right: 15px" class="one3">
+            <div class="frame-parent1">
+              <div class="start-date-20-dec-2022-parent">
+                <div class="progress1">Start Date: 20 Dec 2022</div>
+                <img
+                  class="more-icon1"
+                  alt=""
+                  src="public/more.svg"
+                  id="moreIcon"
+                />
+              </div>
+              <div class="group-parent1">
+                <div class="group-container">
+                  <div class="electrical-wrapper">
+                    <div class="electrical">ATLANTIC HALL SCHOOL</div>
+                  </div>
+                </div>
+                <div class="frame-group1">
+                  <div class="progress-parent">
+                    <div class="progress1">Progress</div>
+                    <div class="progress">81%</div>
+                  </div>
+                  <div class="frame-container">
+                    <div class="group-child"></div>
+                    <div class="group-item"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="assigned-to-parent">
+                <div class="progress" style="font-size: 10px">Assigned To</div>
+                <div class="frame-wrapper">
+                  <div class="frame-div">
+                    <div class="rectangle-parent">
+                      <img
+                        class="group-inner"
+                        alt=""
+                        src="public/Rectangle 81.png"
+                      />
+                      <div class="john-doe">John Doe</div>
+                    </div>
+                    <div class="chip">
+                      <div>2 Weeks Left</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fourth Box -->
+      <div class="box4">
+        <div class="inner-box">
+          <span style="margin-left: -45px; font-weight: 600">Inventory</span>
+          <div class="dy">
+            <span style="margin-right: 25px; border-bottom: 3px solid blue"
+              >Today</span
+            >
+            <span style="margin-right: 25px">This Week</span>
+            <span style="margin-right: 25px">This Month</span>
+            <span>This Year</span>
+          </div>
+        </div>
+        <div style="margin-left: 5px" class="inner-boxes">
+          <div style="padding-right: -30px" class="one4">
+            <span>Number of Items in Stock</span>
+            <span style="font-size: 37px; margin-top: 10px; font-weight: bolder"
+              >34,561</span
+            >
+          </div>
+          <div style="padding-right: 10px" class="one4">
+            <span>Number of Items returned</span>
+            <span style="font-size: 34px; margin-top: 10px; font-weight: bolder"
+              >102</span
+            >
+          </div>
+          <div class="one4">
+            <span>Value of Items in Stock</span>
+            <span
+              style="
+                font-size: 37px;
+                margin-top: 10px;
+                font-weight: bolder;
+                margin-bottom: 20px;
+              "
+              >34.2M</span
+            >
+            <span>Naira</span>
+          </div>
+        </div>
+      </div>
+      <!-- Fifth Box -->
+      <div class="box5">
+        <div class="inner-box">
+          <span style="margin-left: -45px; font-weight: 600">Accounting</span>
+          <div class="dy">
+            <span style="margin-right: 25px; border-bottom: 3px solid blue"
+              >Today</span
+            >
+            <span style="margin-right: 25px">This Week</span>
+            <span style="margin-right: 25px">This Month</span>
+            <span>This Year</span>
+          </div>
+        </div>
+        <div style="margin-left: -15px" class="inner-boxes">
+          <div style="padding-right: 50px" class="one5">
+            <span>Total Income</span>
+            <span
+              style="
+                font-size: 37px;
+                margin-top: 10px;
+                font-weight: bolder;
+                color: #57bc4a;
+              "
+              >136M</span
+            >
+          </div>
+          <div style="padding-right: 50px" class="one5">
+            <span>Profit</span>
+            <span style="font-size: 37px; margin-top: 10px; font-weight: bolder"
+              >102M</span
+            >
+          </div>
+          <div class="one5">
+            <span>Total Expense</span>
+            <span
+              style="
+                font-size: 37px;
+                margin-top: 10px;
+                font-weight: bolder;
+                margin-bottom: 20px;
+                color: #57bc4a;
+              "
+              >34M</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Right Box -->
+      <div class="right">
+        <div class="feedheader">
+          <div class="notifications-parent">
+            <div class="notifications">Notifications</div>
+            <div class="filter">
+              <div class="filterbase">
+                <div class="all">All</div>
+                <img class="ioniconcchevrondown" alt="" src="public/down.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="markasread">
+            <div class="filterbase">
+              <div class="mark-all-as">Mark all as read</div>
+              <img
+                class="ioniconccheckmarkccircleo"
+                alt=""
+                src="public/outline.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="notificationcell">
+          <div class="notificationcellbase">
+            <div class="headercontainer">
+              <div class="isreadindicator">
+                <div class="isreadindicator-child"></div>
+              </div>
+              <div class="avatarandsubjectcontainer">
+                <div class="avatarcontainer">
+                  <div class="avatarcontainer">
+                    <div class="avatarbase">
+                      <img
+                        class="initials-icon"
+                        alt=""
+                        src="public/Initials.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="subjectlinecontainer">
+                  <div class="dennis-nedry-commented-container">
+                    <span class="lex-murphy">Lex Murphy</span>
+                    <span class="requested-access-to">
+                      requested access to
+                    </span>
+                    <b>UNIX directory tree hierarchy</b>
+                    <span class="requested-access-to"> </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="doubleactioncontainer">
+              <div class="avatarcontainer">
+                <div class="buttonbase">
+                  <div class="avatarbase">
+                    <div class="avatarbase">
+                      <div class="text">Accept</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="button2">
+                <div class="buttonbase1">
+                  <div class="avatarbase">
+                    <div class="avatarbase">
+                      <div class="text">Reject</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timestampcontainer">
+              <div class="text">Today at 9:42 AM</div>
+            </div>
+          </div>
+        </div>
+        <div class="notificationcell">
+          <div class="notificationcellbase">
+            <div class="headercontainer">
+              <div class="isreadindicator">
+                <div class="isreadindicator-child"></div>
+              </div>
+              <div class="avatarandsubjectcontainer">
+                <div class="avatarcontainer">
+                  <div class="avatarcontainer">
+                    <div class="avatarbase">
+                      <img
+                        class="initials-icon"
+                        alt=""
+                        src="public/Initials.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="subjectlinecontainer">
+                  <div class="dennis-nedry-commented-container">
+                    <span class="ray-arnold">Ray Arnold</span>
+                    <span class="left-6-comments"> left 6 comments on </span>
+                    <b>Isla Nublar SOC2 compliance report</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timestampcontainer">
+              <div class="text">Yesterday at 11:42 PM</div>
+            </div>
+          </div>
+        </div>
+        <div class="notificationcell">
+          <div class="notificationcellbase2">
+            <div class="headercontainer">
+              <div class="isreadindicator">
+                <div class="isreadindicator-child"></div>
+              </div>
+              <div class="avatarandsubjectcontainer">
+                <div class="avatarcontainer">
+                  <div class="avatarcontainer">
+                    <div class="avatarbase">
+                      <img
+                        class="initials-icon"
+                        alt=""
+                        src="public/Initials1.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="subjectlinecontainer">
+                  <div class="dennis-nedry-commented-container">
+                    <span class="john-hammond">John Hammond</span>
+                    <span class="created"> created </span>
+                    <b>Isla Nublar SOC2 compliance report</b>
+                    <span class="created"> </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timestampcontainer">
+              <div class="text">Last Wednesday at 11:15 AM</div>
+            </div>
+          </div>
+        </div>
+        <div class="appointments-parent">
+          <div class="appointments">Appointments</div>
+          <div class="chip1">
+            <img class="plus-icon" alt="" src="public/plus.svg" />
+            <div class="add-appointment">Add Appointment</div>
+          </div>
+        </div>
+        <div class="frame-parent">
+          <div class="june-parent">
+            <div class="june">June</div>
+            <img
+              class="arrow-drop-down-icon"
+              alt=""
+              src="public/arrow_drop_down.svg"
+            />
+          </div>
+          <div class="frame-group2">
+            <img class="frame-icon" alt="" src="public/Frame-left.svg" />
+            <img class="frame-icon" alt="" src="public/Frame-right.svg" />
+          </div>
+        </div>
+        <div class="dates">
+          <div style="padding: 10px 8px 0 8px" class="days">
+            <span>Sat</span>
+            <span>09</span>
+          </div>
+          <div style="padding: 10px 8px 0 8px" class="days">
+            <span>Sun</span>
+            <span>10</span>
+          </div>
+          <div style="padding: 10px 8px 0 8px" class="days">
+            <span>Mon</span>
+            <span>11</span>
+          </div>
+          <div style="padding: 10px 8px 0 8px" class="days">
+            <span>Tue</span>
+            <span>12</span>
+          </div>
+          <div class="days">
+            <span>Wed</span>
+            <span>13</span>
+          </div>
+          <div
+            style="padding: 10px 8px 0 8px; background-color: #57bc4a"
+            class="days"
+          >
+            <span>Thu</span>
+            <span>14</span>
+          </div>
+          <div style="padding: 10px 12px 0 12px" class="days">
+            <span>Fri</span>
+            <span>15</span>
+          </div>
+          <div style="padding: 10px 8px 0 8px" class="days">
+            <span>Sat</span>
+            <span>16</span>
+          </div>
+        </div>
+        <div class="frame-parent7">
+          <div class="meeting-with-mr-gabriel-parent">
+            <b class="meeting-with-mr">Meeting with Mr. Gabriel</b>
+            <div class="meeting-with-mr">09:35 - 10:20</div>
+          </div>
+          <div class="remember-to-pick">
+            Remember to pick up your system by 9:35. John Doe already sent you a
+            reminder.
+          </div>
+        </div>
+        <div class="frame-parent7">
+          <div class="meeting-with-facebook-lead-parent">
+            <b class="meeting-with-facebook">Meeting with Facebook Lead </b>
+            <div class="meeting-with-facebook">09:35 - 10:20</div>
+          </div>
+          <div class="remember-to-pick">
+            Remember to pick up your system by 9:35. John Doe already sent you a
+            reminder.
+          </div>
+        </div>
+        <div class="frame-parent7">
+          <div class="meeting-it-team-parent">
+            <b class="meeting-it-team">Meeting IT Team</b>
+            <div class="meeting-it-team">09:35 - 10:20</div>
+          </div>
+          <div class="remember-to-pick">
+            Remember to pick up your system by 9:35. John Doe already sent you a
+            reminder.
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="copyright-2023-crm128-parent">
+        <div class="copyright-2023-crm128-container">
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
+        </div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+      </div>
+    </footer>
+
+    <script>
+      const hrToggle = document.getElementById("hr-toggle");
+      const hrItems = document.getElementById("hr-items");
+      const hrChevronIcon = document.getElementById("hr-chevron-icon");
+
+      hrItems.classList.add("hidden");
+      hrToggle.addEventListener("click", function () {
+        hrItems.classList.toggle("hidden");
+        hrChevronIcon.classList.toggle("rotate");
+      });
+
+      const hrToggle1 = document.getElementById("hr-toggle1");
+      const hrItems1 = document.getElementById("hr-items1");
+      const hrChevronIcon1 = document.getElementById("hr-chevron-icon1");
+
+      hrItems1.classList.add("hidden");
+      hrToggle1.addEventListener("click", function () {
+        hrItems1.classList.toggle("hidden");
+        hrChevronIcon1.classList.toggle("rotate");
+      });
+
+      const hrToggle2 = document.getElementById("hr-toggle2");
+      const hrItems2 = document.getElementById("hr-items2");
+      const hrChevronIcon2 = document.getElementById("hr-chevron-icon2");
+
+      hrItems2.classList.add("hidden");
+      hrToggle2.addEventListener("click", function () {
+        hrItems2.classList.toggle("hidden");
+        hrChevronIcon2.classList.toggle("rotate");
+      });
+
+      const hrToggle3 = document.getElementById("hr-toggle3");
+      const hrItems3 = document.getElementById("hr-items3");
+      const hrChevronIcon3 = document.getElementById("hr-chevron-icon3");
+
+      hrItems3.classList.add("hidden");
+      hrToggle3.addEventListener("click", function () {
+        hrItems3.classList.toggle("hidden");
+        hrChevronIcon3.classList.toggle("rotate");
+      });
+
+      const hrToggle4 = document.getElementById("hr-toggle4");
+      const hrItems4 = document.getElementById("hr-items4");
+      const hrChevronIcon4 = document.getElementById("hr-chevron-icon4");
+
+      hrItems4.classList.add("hidden");
+      hrToggle4.addEventListener("click", function () {
+        hrItems4.classList.toggle("hidden");
+        hrChevronIcon4.classList.toggle("rotate");
+      });
+
+      const hrToggle5 = document.getElementById("hr-toggle5");
+      const hrItems5 = document.getElementById("hr-items5");
+      const hrChevronIcon5 = document.getElementById("hr-chevron-icon5");
+
+      hrItems5.classList.add("hidden");
+      hrToggle5.addEventListener("click", function () {
+        hrItems5.classList.toggle("hidden");
+        hrChevronIcon5.classList.toggle("rotate");
+      });
+
+      // Function to toggle the menu-active class
+      function toggleMenu() {
+        var menu = document.querySelector(".menu");
+        menu.classList.toggle("menu-active");
+      }
+
+      // Add an event listener for button click
+      var sidebarToggle = document.getElementById("sidebar-toggle");
+      sidebarToggle.addEventListener("click", function () {
+        toggleMenu();
+      });
+
+      // check if logged in
+      // if (localStorage.getItem("token")) {
+      //   console.log("already logged in");
+      // } else {
+      //   window.location.href = "/login.html";
+      // }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pay Bonus | Generate</title>
+    <link rel="stylesheet" href="css/payroll-generate-bonus.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <a href="index.html">
+          <div class="crm128-wrapper">
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
+          </div>
+        </a>
+        <div class="search-parent">
+          <div>
+            <i class="fa-solid fa-magnifying-glass fa-lg icon"></i
+            ><input
+              class="input-field"
+              type="text"
+              name="search"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+        <div class="bell">
+          <img class="vector-icon" alt="" src="./public/vector3.svg" /><sup
+            ><b class="b">2</b></sup
+          >
+        </div>
+        <div class="ellipse-group">
+          <div class="jg">JG</div>
+          <div class="josiah-gana-parent">
+            <div class="josiah-gana">Josiah Gana</div>
+            <div class="admin">Admin</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="menu">
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/dashboard.svg" />
+          <div class="side-bar">Overview</div>
+        </div>
+        <div class="client-data" id="hr-toggle">
+          <img class="more-icon" alt="" src="./public/clients.svg" />
+          <div class="side-bar">Clients</div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items">
+            <!-- <a href="index.html"><li>Overview</li></a> -->
+            <a href="add-new-clients.html"><li>Client Data</li></a>
+            <a href="client-lead-dashboard.html"><li>Leads</li></a>
+            <li>Analytics</li>
+          </ul>
+        </div>
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/appointment1.svg" />
+          <div class="side-bar">Appointment</div>
+        </div>
+        <div class="drop-hr client-bar" id="hr-toggle3">
+          <img class="more-icon" alt="" src="./public/human-resources.svg" />
+          <div class="side-bar">Human Resource</div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon3"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items3">
+            <!-- <a href="index.html"><li>Overview</li></a> -->
+            <a href="#"
+              ><li style="text-overflow: ellipsis">Employee Management</li></a
+            >
+            <a href="#"><li>Leave Management</li></a>
+            <a href="#"><li>Attendance</li></a>
+            <a href="#"><li>Recruitment</li></a>
+            <a href="#"><li class="selected">Payroll</li></a>
+            <a href="#"><li>Staff Performance</li></a>
+            <a href="#"><li>Awards and Incentives</li></a>
+            <a href="#"><li>Onboarding</li></a>
+            <a href="#"><li>Training</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle1">
+          <img class="more-icon" alt="" src="./public/projects-icon.svg" />
+          <div class="side-bar">Project Management</div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon1"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items1">
+            <!-- <a href="index.html"><li>Overview</li></a> -->
+            <a href="#"
+              ><li style="text-overflow: ellipsis">
+                Emzor Pham Industries Ltd.
+              </li></a
+            >
+            <a href="atlantic-hall-school-page.html"
+              ><li>Atlantic Hall School</li></a
+            >
+            <a href="#"><li>Apple</li></a>
+            <a href="#"><li>McDonald's</li></a>
+            <a href="#"><li>+ New Project</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle2">
+          <img class="more-icon" alt="" src="./public/inventory-icon.svg" />
+          <div class="side-bar">Inventory</div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon2"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items2">
+            <!-- <a href="index.html"><li>Overview</li></a> -->
+            <a href="new-stock-page.html"><li>New Stock</li></a>
+            <a href="stock-list-inventory.html"><li>Stock List</li></a>
+            <a href="reorder-list-page.html"><li>Reorder List</li></a>
+            <a href="return-items-page.html"><li>Return Item</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle4">
+          <img class="more-icon" alt="" src="./public/accounting.svg" />
+          <div class="side-bar">Accounting</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            id="hr-chevron-icon4"
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items4">
+            <a href="#"><li>Income</li></a>
+            <a href="#"><li>Expenses</li></a>
+            <a href="#"><li>Analytics</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle5">
+          <img class="more-icon" alt="" src="./public/Settings.svg" />
+          <div class="side-bar">Admin</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            id="hr-chevron-icon5"
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items5">
+            <a href="#"><li>General</li></a>
+            <a href="#"><li>Members</li></a>
+          </ul>
+        </div>
+        <div class="logout" style="padding-bottom: 20px">
+          <img class="more-icon" alt="" src="./public/logout.svg" />
+          <div class="side-bar"></div>
+          Logout
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="frame-group">
+        <div style="display: flex">
+          <div style="margin-right: 10px">Human Resources</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="margin-right: 10px">Payroll</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">Bonus</div>
+        </div>
+        <div class="button-group1">
+          <button class="bt2" id="overlayBtn">Add New Bonus</button>
+        </div>
+      </div>
+      <!--  -->
+      <div class="back-group">
+        <div class="back" onclick="history.back()">
+          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
+          <div class="search">Back</div>
+        </div>
+        <div class="input-group">
+          <div class="input-container">
+            <i class="fas fa-search"></i>
+            <input
+              class="input-field1"
+              type="text"
+              name="search"
+              placeholder="John Olu"
+            />
+          </div>
+          <select class="select" name="">
+            <option value="">Date</option>
+            <option value="">Weekly</option>
+            <option value="" selected>Monthly</option>
+            <option value="">Yealy</option>
+          </select>
+          <select class="select2" name="">
+            <option value="">Status</option>
+            <option value="">Admin</option>
+            <option value="">User</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Button group -->
+      <div class="button-group">
+        <button class="btn1">
+          <a href="attendance.html">Allowance</a>
+        </button>
+        <button class="btn2">
+          <a href="staff-record-summary.html">Deduction</a>
+        </button>
+        <button class="btn3">Pay Grade</button>
+        <button class="btn3 btn4">Hourly Pay Grade</button>
+        <button class="btn3 btn5">Bonus</button>
+        <button class="btn3 btn6">My Payroll</button>
+        <button class="btn3 btn7">Payment History</button>
+      </div>
+      <!-- Table -->
+      <table class="table">
+        <tr>
+          <th>Month</th>
+          <th>Employee Name</th>
+          <th>Gross Salary</th>
+          <th>Net Salary</th>
+          <th>Bonus Amount</th>
+          <th>Bonus Name</th>
+        </tr>
+        <tr>
+          <td>February</td>
+          <td>John Olu</td>
+          <td>370,000</td>
+          <td>350,250</td>
+          <td>1,000</td>
+          <td>
+            <select class="bonus" name="">
+              <option value="">End of year Bonus</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <!-- pagination -->
+      <div class="pagination">
+        <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
+
+        <div class="page-active">
+          <div class="page-active1">
+            <b class="num">1</b>
+          </div>
+        </div>
+        <div class="page-disabled">
+          <div class="page-default1">
+            <b class="num">2</b>
+          </div>
+        </div>
+        <div class="page-disabled">
+          <div class="page-default1">
+            <b class="num">...</b>
+          </div>
+        </div>
+        <div class="page-disabled">
+          <div class="page-default1">
+            <b class="num">9</b>
+          </div>
+        </div>
+        <div class="page-disabled">
+          <div class="page-default1">
+            <b class="num">10</b>
+          </div>
+        </div>
+        <img class="page-master" alt="" src="./public/page--master.svg" />
+      </div>
+    </section>
+    <footer>
+      <div class="copyright-2023-crm128-parent">
+        <div class="copyright-2023-crm128-container">
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
+        </div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+      </div>
+    </footer>
+
+    <script>
+      const hrToggle = document.getElementById("hr-toggle");
+      const hrItems = document.getElementById("hr-items");
+      const hrChevronIcon = document.getElementById("hr-chevron-icon");
+
+      hrItems.classList.add("hidden");
+      hrToggle.addEventListener("click", function () {
+        hrItems.classList.toggle("hidden");
+        hrChevronIcon.classList.toggle("rotate");
+      });
+
+      const hrToggle1 = document.getElementById("hr-toggle1");
+      const hrItems1 = document.getElementById("hr-items1");
+      const hrChevronIcon1 = document.getElementById("hr-chevron-icon1");
+
+      hrItems1.classList.add("hidden");
+      hrToggle1.addEventListener("click", function () {
+        hrItems1.classList.toggle("hidden");
+        hrChevronIcon1.classList.toggle("rotate");
+      });
+
+      const hrToggle2 = document.getElementById("hr-toggle2");
+      const hrItems2 = document.getElementById("hr-items2");
+      const hrChevronIcon2 = document.getElementById("hr-chevron-icon2");
+
+      hrItems2.classList.add("hidden");
+      hrToggle2.addEventListener("click", function () {
+        hrItems2.classList.toggle("hidden");
+        hrChevronIcon2.classList.toggle("rotate");
+      });
+
+      const hrToggle3 = document.getElementById("hr-toggle3");
+      const hrItems3 = document.getElementById("hr-items3");
+      const hrChevronIcon3 = document.getElementById("hr-chevron-icon3");
+
+      hrItems3.classList.add("hidden");
+      hrToggle3.addEventListener("click", function () {
+        hrItems3.classList.toggle("hidden");
+        hrChevronIcon3.classList.toggle("rotate");
+      });
+
+      const hrToggle4 = document.getElementById("hr-toggle4");
+      const hrItems4 = document.getElementById("hr-items4");
+      const hrChevronIcon4 = document.getElementById("hr-chevron-icon4");
+
+      hrItems4.classList.add("hidden");
+      hrToggle4.addEventListener("click", function () {
+        hrItems4.classList.toggle("hidden");
+        hrChevronIcon4.classList.toggle("rotate");
+      });
+
+      const hrToggle5 = document.getElementById("hr-toggle5");
+      const hrItems5 = document.getElementById("hr-items5");
+      const hrChevronIcon5 = document.getElementById("hr-chevron-icon5");
+
+      hrItems5.classList.add("hidden");
+      hrToggle5.addEventListener("click", function () {
+        hrItems5.classList.toggle("hidden");
+        hrChevronIcon5.classList.toggle("rotate");
+      });
+    </script>
+  </body>
+</html>

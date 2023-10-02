@@ -1,0 +1,380 @@
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1rem;
+  background-color: #f6f6f6;
+  overflow-x: hidden;
+  font-family: "Clash Grotesk", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #091e42;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-bottom: 1px solid grey;
+}
+.crm128-wrapper {
+  font-size: 30px;
+  font-weight: bold;
+}
+.search-parent {
+  display: flex;
+  background-color: #ebedf0;
+  padding: 7px;
+  border-radius: 6px;
+  width: 20%;
+}
+.input-field {
+  padding: 8px;
+  border: none;
+  outline: none;
+  background-color: #ebedf0;
+  width: 70%;
+}
+.icon {
+  margin-right: 10px;
+  padding-left: 5px;
+}
+.bell {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 10%;
+}
+.vector-icon {
+  width: 25px;
+  margin-right: 0;
+}
+.b {
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  padding: 2px 4px 2px 4px;
+  position: absolute;
+  left: 15px;
+  top: -6px;
+}
+.ellipse-group {
+  display: flex;
+}
+.jg {
+  margin: auto 20px;
+  font-size: 30px;
+  background-color: #0047b3;
+  color: #ffffff;
+  padding: 16px 10px 16px 10px;
+  border-radius: 50%;
+}
+.josiah-gana-parent {
+  margin-top: 10px;
+}
+.josiah-gana {
+  font-size: 19px;
+  font-weight: bold;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: flex-start;
+  width: 300px;
+  height: 100%;
+  padding-bottom: 20px;
+  border-right: 1px solid grey;
+}
+.hidden {
+  display: none;
+}
+ul {
+  list-style-type: none;
+  font-size: 20px;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+li {
+  padding: 20px 10px 20px 50px;
+}
+.selected {
+  background-color: #e6f0ff;
+  border-right: 2px solid #003e9c;
+  width: 238px;
+  color: #003e9c;
+}
+.side-tab,
+.client-data,
+.drop-hr,
+.logout {
+  display: flex;
+  margin-top: 10px;
+  padding: 17px;
+  position: relative;
+}
+.more-icon {
+  margin-right: 10px;
+}
+.side-bar,
+.logout {
+  margin-top: 6px;
+  font-size: 20px;
+}
+.client-icon {
+  position: absolute;
+  left: 89%;
+  top: 19px;
+}
+
+.client-bar {
+  background-color: #7ac769;
+  width: 88.5%;
+}
+.frame-group {
+  display: flex;
+  height: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 40%;
+  position: absolute;
+  top: 15px;
+  left: 320px;
+}
+.btn {
+  position: absolute;
+  top: 27px;
+  left: 85%;
+}
+.section {
+  position: relative;
+}
+.button {
+  padding: 10px;
+  color: white;
+  background-color: #003e9c;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+}
+.group-parent {
+  position: absolute;
+  top: 4em;
+  left: 1em;
+  width: 39em;
+}
+.frame-item {
+  position: relative;
+  left: 10%;
+  width: 180px;
+  background-color: #f6f6f6;
+  border: none;
+}
+.text-parent {
+  text-align: center;
+}
+.copyright-2023-crm128-parent {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  background-color: #d9d9d9;
+}
+.back {
+  position: absolute;
+  top: 80px;
+  left: 345px;
+  border-radius: 7px;
+  background-color: #f5f6f7;
+  border: 1px solid #dfe2e6;
+  padding: 10px 17px;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.josiah-chukuma-femi {
+  position: absolute;
+  font-size: 28px;
+  line-height: 120%;
+  font-weight: 600;
+  font-family: "Clash Grotesk";
+  color: #091e42;
+  text-align: left;
+  top: 23%;
+  left: 25%;
+}
+.full-name {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.josiah-chukuma-femi1 {
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  font-size: 19px;
+  line-height: 120%;
+  font-weight: 600;
+  display: inline-block;
+  width: 211px;
+  height: 23px;
+}
+.full-name-parent {
+  position: relative;
+  width: 211px;
+  height: 40px;
+}
+.group-parent {
+  position: absolute;
+  top: 30%;
+  left: 490px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  text-align: left;
+  font-size: 10px;
+  color: #091e42;
+  font-family: "Clash Grotesk", sans-serif;
+}
+
+.rectangle-icon {
+  position: absolute;
+  border-radius: 10px;
+  width: 67%;
+  height: 310px;
+  top: 19%;
+  left: 25%;
+}
+.rectangle-icon1 {
+  position: absolute;
+  border-radius: 8px;
+  width: 10%;
+  top: 30.1%;
+  left: 340px;
+  height: 170px;
+  object-fit: cover;
+}
+.title {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.engineer {
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  font-size: 19px;
+  line-height: 120%;
+  font-weight: 600;
+  display: inline-block;
+  width: 211px;
+  height: 23px;
+}
+.title-parent {
+  position: relative;
+  width: 211px;
+  height: 40px;
+}
+.group-parent2 {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  text-align: left;
+  font-size: 11px;
+  color: #091e42;
+}
+.staff-id {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.div {
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  font-size: 19px;
+  line-height: 120%;
+  font-weight: 600;
+  display: inline-block;
+  width: 211px;
+  height: 23px;
+}
+.staff-id-parent {
+  position: relative;
+  width: 211px;
+  height: 40px;
+}
+.group-parent3 {
+  position: absolute;
+  top: 30%;
+  left: 880px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  text-align: left;
+  font-size: 11px;
+  color: #091e42;
+}
+
+@media (max-width: 1366px) {
+  .menu {
+    width: 259px;
+  }
+  .client-bar {
+    width: 87%;
+  }
+  .selected {
+    width: 76%;
+  }
+}
+@media (max-width: 730px) {
+  /* .group-parent {
+                position: absolute;
+                left: 49%;
+              } */
+  .bell {
+    position: relative;
+    left: 30px;
+  }
+  .menu {
+    width: 200px;
+  }
+  .selected {
+    width: 139px;
+  }
+  .client-bar {
+    width: 167px;
+  }
+  .frame-group {
+    position: absolute;
+    left: 220px;
+  }
+  .btn {
+    position: absolute;
+    left: 520px;
+  }
+}

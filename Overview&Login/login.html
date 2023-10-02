@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img class="pic1" src="public/vector-3.svg" alt="" />
+      <div>
+        <h3 class="crm"><span>CRM</span><span class="span">128</span></h3>
+        <p>
+          Collect more leads, manage your projects and staff, keep record of
+          your finances, all in one place with CRM128
+        </p>
+      </div>
+      <div class="form-div">
+        <div class="form-div1" style="font-size: 36px; color: #091e42">
+          Log in
+        </div>
+        <form class="form" action="">
+          <label for=""
+            >Email
+            <input
+              class="input-field"
+              type="email"
+              name=""
+              id=""
+              placeholder="sample@mail.com"
+            />
+          </label>
+          <label class="password" for=""
+            >Password
+            <input
+              class="input-field"
+              type="password"
+              id="password-input"
+              placeholder="Enter password"
+            />
+            <i class="fa fa-eye" id="password-eye" aria-hidden="true"></i>
+          </label>
+          <div style="display: flex; gap: 100px">
+            <div><input type="checkbox" />Remember me</div>
+            <div>Forgot Password?</div>
+          </div>
+          <input class="input-button" type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copyright-2023-crm128-parent">
+        <div class="copyright-2023-crm128-container">
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
+        </div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#password-eye").click(function () {
+          const passwordInput = $("#password-input");
+          const type =
+            passwordInput.attr("type") === "password" ? "text" : "password";
+          passwordInput.attr("type", type);
+        });
+      });
+
+      // Plain javascript ot conne ct with the backend.
+
+      // const loginfromEl = document.querySelector("#login-form");
+      // const emailInputEl = document.querySelector("#email");
+      // const pwdInputEl = document.querySelector("#password");
+
+      // loginfromEl.addEventListener("submit", async function (event) {
+      //   event.preventDefault();
+      //   console.log("submitting");
+      //   const emailValue = emailInputEl.value;
+      //   const pwdValue = pwdInputEl.value;
+
+      //   const payload = {
+      //     email: emailValue,
+      //     password: pwdValue,
+      //   };
+
+      //   const httpRes = await fetch("https://your-backend/singup", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Accept: "application/json",
+      //     },
+      //     body: JSON.stringify(payload),
+      //   });
+      //   const jsonRes = await httpRes.json();
+
+      //   if (jsonRes.success) {
+      //     localStorage.setItem("token", jsonRes.token);
+      //     window.location.href = "/index.html";
+      //   } else {
+      //     alert("Error logging in!");
+      //   }
+      // });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task View</title>
+    <link rel="stylesheet" href="css/task-view.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <a href="#">
+          <div class="crm128-wrapper">
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
+          </div>
+        </a>
+        <div class="search-parent">
+          <div>
+            <i class="fa-solid fa-magnifying-glass fa-lg icon1"></i
+            ><input
+              class="input-field"
+              type="text"
+              name="search"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+        <div class="bell">
+          <img class="vector-icon" alt="" src="./public/vector3.svg" /><sup
+            ><b class="b">2</b></sup
+          >
+        </div>
+        <div class="ellipse-group">
+          <div class="jg">JG</div>
+          <div class="josiah-gana-parent">
+            <div class="josiah-gana">Josiah Gana</div>
+            <div class="admin">Admin</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="menu">
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/dashboard.svg" />
+          <div class="side-bar">Overview</div>
+        </div>
+        <div class="client-data">
+          <img class="more-icon" alt="" src="./public/clients.svg" />
+          <div class="side-bar">Clients</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/appointment1.svg" />
+          <div class="side-bar">Appointment</div>
+        </div>
+        <div class="drop-hr">
+          <img class="more-icon" alt="" src="./public/human-resources.svg" />
+          <div class="side-bar">Human Resource</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="drop-hr client-bar" id="hr-toggle">
+          <img class="more-icon" alt="" src="./public/projects-icon.svg" />
+          <div class="side-bar">Project Management</div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon"
+            alt=""
+            src="./public/chevron-uop.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items">
+            <a href="index.html"><li>Overview</li></a>
+            <a href="#"><li class="selected">Emzor Pham Industries Ltd.</li></a>
+            <a href="atlantic-hall-school-page.html"
+              ><li>Atlantic Hall School</li></a
+            >
+            <a href="#"><li>Apple</li></a>
+            <a href="#"><li>McDonald's</li></a>
+            <a href="#"><li>+ New Project</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr">
+          <img class="more-icon" alt="" src="./public/inventory-icon.svg" />
+          <div class="side-bar">Inventory</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+
+        <div class="drop-hr" style="border-bottom: 1px solid lightblue">
+          <img class="more-icon" alt="" src="./public/accounting.svg" />
+          <div class="side-bar">Accounting</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="drop-hr" style="border-bottom: 1px solid lightblue">
+          <img class="more-icon" alt="" src="./public/settings.svg" />
+          <div class="side-bar">Admin</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="logout">
+          <img class="more-icon" alt="" src="./public/logout.svg" />
+          <div class="side-bar"></div>
+          Logout
+        </div>
+      </div>
+      <div class="frame-group">
+        <div style="margin-right: 10px">Overview</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="margin-right: 10px">Atlantic Hall School</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="margin-right: 10px">Mechanical</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="color: #003e9c">Installation of mechanical device</div>
+      </div>
+      <a href="list-of-task-mechanical.html">
+        <div class="back">
+          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
+
+          <div class="search">Back</div>
+        </div></a
+      >
+      <div class="frame-parent">
+        <div class="frame-group1">
+          <div class="installation-of-a-mechanical-d-parent">
+            <div class="installation-of-a">
+              Installation of a mechanical device
+            </div>
+            <div class="frame-child"></div>
+            <div class="button"></div>
+          </div>
+          <div class="frame-wrapper">
+            <div class="frame-container">
+              <div class="text-field-parent">
+                <div class="text-field">
+                  <div class="title">Assign To</div>
+                  <div class="text-field-inner">
+                    <div class="enter-title-wrapper">
+                      <div class="enter-title">Debbie Emeka</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-field">
+                  <div class="title">Status</div>
+                  <div class="dropdown">
+                    <div class="in-progress-parent">
+                      <div class="in-progress">In Progress</div>
+                      <img
+                        class="chevron-down-icon"
+                        alt=""
+                        src="public/chevron-down1.svg"
+                        id="chevronDownIcon"
+                      />
+                    </div>
+                  </div>
+                  <div class="how-often-should">
+                    How often should this holiday repeat?
+                  </div>
+                </div>
+              </div>
+              <div class="text-field-parent">
+                <div class="text-field" id="textFieldContainer2">
+                  <div class="title">Start Date</div>
+                  <div class="text-field-inner">
+                    <div class="enter-title-parent">
+                      <div class="enter-title">DD-MM-YYYY</div>
+                      <div class="placeholder"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-field" id="textFieldContainer3">
+                  <div class="title">Due Date</div>
+                  <div class="text-field-inner">
+                    <div class="enter-title-parent">
+                      <div class="enter-title">DD-MM-YYYY</div>
+                      <div class="placeholder"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-group1">
+          <div class="frame-group1">
+            <div class="title1">Media</div>
+            <div class="frame-item1"></div>
+          </div>
+          <div class="frame-wrapper1">
+            <div class="frame-wrapper2">
+              <div class="media-card-parent">
+                <div class="media-card">
+                  <div class="image-7-wrapper">
+                    <img class="image-7-icon" alt="" src="public/image 7.png" />
+                  </div>
+                  <div class="content">
+                    <div class="heading">
+                      <div class="heading1">device drawing. pdf</div>
+                      <div class="horizontal-dots-minor"></div>
+                      <div class="download-parent">
+                        <img
+                          class="download-icon"
+                          alt=""
+                          src="public/download.svg"
+                        />
+                        <img
+                          class="delete-icon"
+                          alt=""
+                          src="public/delete.svg"
+                        />
+                      </div>
+                    </div>
+                    <div class="body">254 kb</div>
+                    <div class="button-group"></div>
+                  </div>
+                </div>
+                <div class="media-card1">
+                  <img class="image-4-icon1" alt="" src="public/image 4.png" />
+                  <div class="content">
+                    <div class="heading">
+                      <div class="heading1">Image - 01. jpg</div>
+                      <div class="horizontal-dots-minor"></div>
+                      <div class="download-parent">
+                        <img
+                          class="download-icon"
+                          alt=""
+                          src="public/download.svg"
+                        />
+                        <img
+                          class="delete-icon"
+                          alt=""
+                          src="public/delete.svg"
+                        />
+                      </div>
+                    </div>
+                    <div class="body">4.5 mb</div>
+                    <div class="button-group"></div>
+                  </div>
+                </div>
+                <div class="media-card">
+                  <div class="image-7-wrapper">
+                    <img class="image-5-icon" alt="" src="public/image 5.png" />
+                  </div>
+                  <div class="content">
+                    <div class="heading">
+                      <div class="heading1">device drawing. pdf</div>
+                      <div class="horizontal-dots-minor"></div>
+                      <div class="download-parent">
+                        <img
+                          class="download-icon"
+                          alt=""
+                          src="public/download.svg"
+                        />
+                        <img
+                          class="delete-icon"
+                          alt=""
+                          src="public/delete.svg"
+                        />
+                      </div>
+                    </div>
+                    <div class="body">2.5 mb</div>
+                    <div class="button-group"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-div">
+        <img class="image-4-icon" alt="" src="public/image 4.png" />
+        <div class="image-01jpg">Image - 01.jpg</div>
+        <div class="frame-parent1">
+          <div class="group-parent1">
+            <div class="frame-wrapper11">
+              <div class="information-wrapper">
+                <div class="information">Information</div>
+              </div>
+            </div>
+            <div class="frame-group11">
+              <div class="title-parent">
+                <div class="title3">Title</div>
+                <div class="jpg">Image - 01</div>
+              </div>
+              <img class="edit-icon" alt="" src="public/edit.svg" />
+            </div>
+            <div class="frame-container11">
+              <div class="size-parent">
+                <div class="size">Size</div>
+                <div class="mb">2.5 mb</div>
+              </div>
+            </div>
+            <div class="frame-div">
+              <div class="frame-wrapper1">
+                <div class="size-parent">
+                  <div class="title3">Format</div>
+                  <div class="jpg jpg1">jpg</div>
+                </div>
+              </div>
+            </div>
+            <div class="frame-container11">
+              <div class="size-parent">
+                <div class="title3">Uploaded</div>
+                <div class="jpg jpg2">June 13,2023</div>
+              </div>
+            </div>
+            <div class="frame-div">
+              <div class="size-parent">
+                <div class="title3">Dimensions</div>
+                <div class="jpg jpg2">249x232</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="copyright-2023-crm128-parent">
+        <div class="copyright-2023-crm128-container">
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
+        </div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+      </div>
+    </footer>
+
+    <div id="calendarContainer" class="popup-overlay" style="display: none">
+      <div class="calendar-container">
+        <div class="change-month">
+          <div class="left">
+            <img class="icon" alt="" src="public/Icon1.svg" />
+          </div>
+          <div class="month">June 2022</div>
+          <div class="right">
+            <img class="icon" alt="" src="public/Icon2.svg" />
+          </div>
+        </div>
+        <div class="container">
+          <div class="weekdays">
+            <div class="divider"></div>
+            <div class="days">
+              <div class="day">
+                <div class="div">Su</div>
+              </div>
+              <div class="day">
+                <div class="div">Mo</div>
+              </div>
+              <div class="day">
+                <div class="div">Tu</div>
+              </div>
+              <div class="day">
+                <div class="div">We</div>
+              </div>
+              <div class="day">
+                <div class="div">Th</div>
+              </div>
+              <div class="day">
+                <div class="div">Fr</div>
+              </div>
+              <div class="day">
+                <div class="div">Sa</div>
+              </div>
+            </div>
+          </div>
+          <div class="month1">
+            <div class="week">
+              <div class="day7">
+                <div class="div">27</div>
+              </div>
+              <div class="day7">
+                <div class="div">28</div>
+              </div>
+              <div class="day7">
+                <div class="div">29</div>
+              </div>
+              <div class="day7">
+                <div class="div">30</div>
+              </div>
+              <div class="day11">
+                <div class="div">31</div>
+              </div>
+              <div class="day11">
+                <div class="div">1</div>
+              </div>
+              <div class="day11">
+                <div class="div">2</div>
+              </div>
+            </div>
+            <div class="week1">
+              <div class="day7">
+                <div class="div">3</div>
+              </div>
+              <div class="day7">
+                <div class="div">4</div>
+              </div>
+              <div class="day7">
+                <div class="div">5</div>
+              </div>
+              <div class="day7">
+                <div class="div">6</div>
+              </div>
+              <div class="day18">
+                <div class="div">7</div>
+              </div>
+              <div class="day18">
+                <div class="div">8</div>
+              </div>
+              <div class="day18">
+                <div class="div">9</div>
+              </div>
+            </div>
+            <div class="week1">
+              <div class="day18">
+                <div class="div">10</div>
+              </div>
+              <div class="day18">
+                <div class="div">11</div>
+              </div>
+              <div class="day18">
+                <div class="div">12</div>
+              </div>
+              <div class="day18">
+                <div class="div">13</div>
+              </div>
+              <div class="day18">
+                <div class="div">14</div>
+              </div>
+              <div class="day26">
+                <div class="div">15</div>
+              </div>
+              <div class="day7">
+                <div class="div">16</div>
+              </div>
+            </div>
+            <div class="week1">
+              <div class="day7">
+                <div class="div">17</div>
+              </div>
+              <div class="day7">
+                <div class="div">18</div>
+              </div>
+              <div class="day7">
+                <div class="div">19</div>
+              </div>
+              <div class="day7">
+                <div class="div">20</div>
+              </div>
+              <div class="day7">
+                <div class="div">21</div>
+              </div>
+              <div class="day7">
+                <div class="div">22</div>
+              </div>
+              <div class="day7">
+                <div class="div">23</div>
+              </div>
+            </div>
+            <div class="week1">
+              <div class="day7">
+                <div class="div">24</div>
+              </div>
+              <div class="day7">
+                <div class="div">25</div>
+              </div>
+              <div class="day7">
+                <div class="div">26</div>
+              </div>
+              <div class="day7">
+                <div class="div">27</div>
+              </div>
+              <div class="day7">
+                <div class="div">28</div>
+              </div>
+              <div class="day7">
+                <div class="div">29</div>
+              </div>
+              <div class="day7">
+                <div class="div">30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-parent">
+          <div class="buttons">
+            <div class="cancel">
+              <div class="div">Clear</div>
+            </div>
+          </div>
+          <div class="buttons">
+            <div class="cancel1">
+              <div class="div">Today</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="statusDropdownContainer"
+      class="popup-overlay"
+      style="display: none"
+    >
+      <div class="status-dropdown">
+        <div class="component-26">
+          <div class="planned-wrapper">
+            <div class="planned">Planned</div>
+          </div>
+        </div>
+        <div class="component-22">
+          <div class="planned-wrapper">
+            <div class="planned">In Progress</div>
+          </div>
+        </div>
+        <div class="component-22">
+          <div class="planned-wrapper">
+            <div class="planned">In Review</div>
+          </div>
+        </div>
+        <div class="component-22">
+          <div class="planned-wrapper">
+            <div class="planned">Overdue</div>
+          </div>
+        </div>
+        <div class="component-22">
+          <div class="planned-wrapper">
+            <div class="planned">On hold</div>
+          </div>
+        </div>
+        <div class="component-25">
+          <div class="planned-wrapper">
+            <div class="planned">Done</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const hrToggle = document.getElementById("hr-toggle");
+      const hrItems = document.getElementById("hr-items");
+      const hrChevronIcon = document.getElementById("hr-chevron-icon");
+
+      // hrItems.classList.add("hidden");
+
+      hrToggle.addEventListener("click", function () {
+        hrItems.classList.toggle("hidden");
+        hrChevronIcon.classList.toggle("rotate");
+      });
+      var chevronDownIcon = document.getElementById("chevronDownIcon");
+      if (chevronDownIcon) {
+        chevronDownIcon.addEventListener("click", function () {
+          var popup = document.getElementById("statusDropdownContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+      var textFieldContainer2 = document.getElementById("textFieldContainer2");
+      if (textFieldContainer2) {
+        textFieldContainer2.addEventListener("click", function () {
+          var popup = document.getElementById("calendarContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+      var textFieldContainer3 = document.getElementById("textFieldContainer3");
+      if (textFieldContainer3) {
+        textFieldContainer3.addEventListener("click", function () {
+          var popup = document.getElementById("calendarContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+    </script>
+  </body>
+</html>

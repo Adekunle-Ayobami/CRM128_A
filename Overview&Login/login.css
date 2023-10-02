@@ -1,0 +1,103 @@
+.body {
+  background-color: #fff;
+  font-family: "Clash Grotesk", sans-serif;
+  width: 100%;
+}
+.container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Clash Grotesk", sans-serif;
+}
+.crm {
+  color: #003e9c;
+  font-size: 48px;
+  font-weight: 600;
+}
+.span {
+  color: #5fbc4a;
+}
+p {
+  width: 308px;
+  color: #8e98a8;
+  text-align: left;
+  display: inline-block;
+  position: relative;
+  bottom: 4em;
+}
+.pic1 {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 190px;
+}
+.form-div {
+  position: relative;
+  top: 6.5em;
+  font-family: "Clash Grotesk", sans-serif;
+  background-color: #f9fff8;
+  border: 1px solid #ebedf0;
+  border-radius: 24px;
+  padding: 35px;
+}
+.form-div1 {
+  position: relative;
+  bottom: 0.5em;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.input-field::placeholder {
+  font-size: 15px;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: 600;
+  color: #091e42;
+}
+.input-field {
+  background-color: #fdfdfd;
+  border: 3px solid #ebedf0;
+  padding: 28px 32px;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+}
+.input-button {
+  font-size: 20px;
+  color: #e6f0ff;
+  border-radius: 4px;
+  background-color: #0047b3;
+  border: 2px solid #0047b3;
+  padding: 8px 24px;
+  width: 150px;
+  position: relative;
+  left: 5em;
+}
+.copyright-2023-crm128-parent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  background-color: #d9d9d9;
+  font-family: "Clash Grotesk", sans-serif;
+}
+.password {
+  position: relative;
+}
+
+#password-eye {
+  position: absolute;
+  top: 60%;
+  right: 1em;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

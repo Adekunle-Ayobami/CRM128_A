@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="css/new-leads-overlay.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Clash Grotesk:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="new-lead-overlay">
+      <div class="new-lead-overlay-child"></div>
+      <div class="add-new-lead-parent">
+        <div class="add-new-lead">Add New Lead</div>
+        <img class="close-icon" alt="" src="./public/close.svg" />
+      </div>
+      <div class="frame-parent">
+        <div class="text-field-parent">
+          <div class="text-field">
+            <div class="add-new-lead">Contact Person</div>
+            <div class="text-field-inner">
+              <div class="enter-title-wrapper">
+                <div class="enter-title">Enter title</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field">
+            <div class="add-new-lead">Organisation</div>
+            <div class="text-field-inner">
+              <div class="enter-title-wrapper">
+                <div class="enter-title">Enter title</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field">
+            <div class="add-new-lead">Title</div>
+            <div class="text-field-inner">
+              <div class="enter-title-wrapper">
+                <div class="enter-title">Enter title</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field-group">
+            <div class="text-field3">
+              <div class="add-new-lead">Value</div>
+              <div class="text-field-inner1">
+                <div class="frame-div">
+                  <div class="select">300,000</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-field">
+              <div class="add-new-lead">Currency</div>
+              <div class="dropdown">
+                <div class="select-parent">
+                  <div class="select">Select</div>
+                  <img
+                    class="close-icon"
+                    alt=""
+                    src="./public/chevron-down.svg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field-group">
+            <div class="text-field3">
+              <div class="add-new-lead">Phone</div>
+              <div class="text-field-inner1">
+                <div class="frame-div">
+                  <div class="select">John Doe</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-field3">
+              <div class="add-new-lead">Email</div>
+              <div class="text-field-inner1">
+                <div class="frame-div">
+                  <div class="select">John Doe</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field-group">
+            <div class="text-field3">
+              <div class="add-new-lead">State Date</div>
+              <div class="text-field-inner1">
+                <div class="frame-div">
+                  <div class="select">DD-MM-YYYY</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-field3">
+              <div class="add-new-lead">Due Date</div>
+              <div class="text-field-inner1">
+                <div class="frame-div">
+                  <div class="select">DD-MM-YYYY</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field">
+            <div class="add-new-lead">Description</div>
+            <div class="rectangle-parent">
+              <div class="group-child"></div>
+              <div class="enter-description">Enter Description</div>
+            </div>
+            <div class="extra-info-to-guide-the-user-parent">
+              <div class="extra-info-to">Extra info to guide the user</div>
+              <div class="group-item"></div>
+            </div>
+          </div>
+        </div>
+        <div class="big-button" id="bigButtonContainer">
+          <div class="add-new-lead">Save</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var bigButtonContainer = document.getElementById("bigButtonContainer");
+      if (bigButtonContainer) {
+        bigButtonContainer.addEventListener("click", function (e) {
+          // Please sync "Leads _List" to the project
+        });
+      }
+    </script>
+  </body>
+</html>

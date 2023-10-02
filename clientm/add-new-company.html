@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="css/add-new-company.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Clash Grotesk:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="add-company">
+      <div class="add-company-child"></div>
+      <div class="add-new-company-parent">
+        <div class="add-new-company">Add New Company</div>
+        <img class="close-icon" alt="" src="./public/close.svg" />
+      </div>
+      <div class="frame-parent">
+        <div class="text-field-parent">
+          <div class="text-field">
+            <div class="add-new-company">Company Name</div>
+            <div class="text-field-inner">
+              <div class="enter-title-wrapper">
+                <div class="enter-title">Enter company name</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field">
+            <div class="add-new-company">Company Type</div>
+            <div class="rectangle-parent">
+              <div class="group-child"></div>
+              <div class="enter-company-type">Enter company type</div>
+            </div>
+          </div>
+          <div class="component-24-parent">
+            <div class="component-24">
+              <div class="website">Website</div>
+              <div class="group-parent">
+                <div class="rectangle-wrapper">
+                  <div class="group-item"></div>
+                </div>
+                <img class="frame-icon" alt="" src="./public/frame.svg" />
+              </div>
+            </div>
+            <div class="component-24">
+              <div class="website">Email</div>
+              <img
+                class="component-23-child"
+                alt=""
+                src="./public/group-241.svg"
+              />
+            </div>
+          </div>
+          <div class="frame-group">
+            <div class="phone-number-parent">
+              <div class="phone-number">Phone Number</div>
+              <div class="dropdown">
+                <div class="dropdown-child"></div>
+              </div>
+              <img class="call-icon" alt="" src="./public/call.svg" />
+            </div>
+            <div class="phone-number-parent">
+              <div class="phone-number">Mobile Number</div>
+              <div class="dropdown">
+                <div class="dropdown-child"></div>
+              </div>
+              <img class="call-icon1" alt="" src="./public/call.svg" />
+            </div>
+          </div>
+          <div class="text-field">
+            <div class="add-new-company">Description</div>
+            <div class="rectangle-group">
+              <div class="group-inner"></div>
+              <div class="enter-description">Enter Description</div>
+            </div>
+            <div class="extra-info-to-guide-the-user-parent">
+              <div class="extra-info-to">Extra info to guide the user</div>
+              <div class="rectangle-div"></div>
+            </div>
+          </div>
+        </div>
+        <div class="big-button" id="bigButtonContainer">
+          <div class="add-new-company">Save</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var bigButtonContainer = document.getElementById("bigButtonContainer");
+      if (bigButtonContainer) {
+        bigButtonContainer.addEventListener("click", function (e) {
+          // Please sync "Client Data-List of companies" to the project
+        });
+      }
+    </script>
+  </body>
+</html>

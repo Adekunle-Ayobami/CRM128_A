@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock List Details</title>
+    <link rel="stylesheet" href="css/stock-list-details.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <a href="client-management-dash.html">
+          <div class="crm128-wrapper">
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
+          </div>
+        </a>
+        <div class="search-parent">
+          <div>
+            <i class="fa-solid fa-magnifying-glass fa-lg icon"></i
+            ><input
+              class="input-field"
+              type="text"
+              name="search"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+        <div class="bell">
+          <img class="vector-icon" alt="" src="./public/vector3.svg" /><sup
+            ><b class="b">2</b></sup
+          >
+        </div>
+        <div class="ellipse-group">
+          <div class="jg">JG</div>
+          <div class="josiah-gana-parent">
+            <div class="josiah-gana">Josiah Gana</div>
+            <div class="admin">Admin</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="menu">
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/dashboard.svg" />
+          <div class="side-bar">Overview</div>
+        </div>
+        <div class="client-data">
+          <img class="more-icon" alt="" src="./public/clients.svg" />
+          <div class="side-bar">Clients</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/appointment1.svg" />
+          <div class="side-bar">Appointment</div>
+        </div>
+        <div class="drop-hr">
+          <img class="more-icon" alt="" src="./public/human-resources.svg" />
+          <div class="side-bar">Human Resource</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="drop-hr">
+          <img class="more-icon" alt="" src="./public/projects-icon.svg" />
+          <div class="side-bar">Project Management</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="drop-hr client-bar" id="hr-toggle">
+          <img class="more-icon" alt="" src="./public/inventory-icon.svg" />
+          <div class="side-bar">Inventory</div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items">
+            <a href="index.html"><li>Overview</li></a>
+            <a href="new-stock-page.html"><li>New Stock</li></a>
+            <a href="stock-list-inventory.html"
+              ><li class="selected">Stock List</li></a
+            >
+            <a href="reorder-list-page.html"><li>Reorder List</li></a>
+            <a href="return-items-page.html"><li>Return Item</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" style="border-bottom: 1px solid black">
+          <img class="more-icon" alt="" src="./public/accounting.svg" />
+          <div class="side-bar">Accounting</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="drop-hr" style="border-bottom: 1px solid black">
+          <img class="more-icon" alt="" src="./public/settings.svg" />
+          <div class="side-bar"><a href="/~g12dev/CRM128_A/adminm/">Admin</a></div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="logout">
+          <img class="more-icon" alt="" src="./public/logout.svg" />
+          <div class="side-bar"></div>
+          Logout
+        </div>
+      </div>
+      <div class="frame-group">
+        <div style="margin-right: 10px">Inventory</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="margin-right: 10px">Stock List</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="color: #003e9c; text-overflow: ellipsis">
+          Stock Name(Nico Lithium Powersport Battery)
+        </div>
+      </div>
+      <div class="btn">
+        <button class="button">Add To Reorder List</button>
+      </div>
+      <a href="stock-list-inventory.html"
+        ><div class="back">
+          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
+
+          <div class="search">Back</div>
+        </div></a
+      >
+      <!-- Field -->
+      <div class="field">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            width: 85%;
+            margin: 55px 0 20px 55px;
+          "
+        >
+          <span style="font-size: 30px; font-weight: 700"
+            >Nico Lithium Powersport Battery</span
+          >
+          <button
+            style="
+              background-color: #003e9c;
+              color: white;
+              padding: 9px 21px;
+              border: none;
+              border-radius: 5px;
+            "
+          >
+            Update
+          </button>
+        </div>
+        <hr />
+        <!-- First Input -->
+        <div style="margin-top: 30px; width: 90%" class="input1">
+          <div>
+            <span class="naming">Date</span>
+            <input
+              style="border: none; outline: none; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="14-07-2015"
+            />
+          </div>
+          <div>
+            <span class="naming">Category</span>
+            <select
+              style="
+                border: 1px solid lightblue;
+                color: #9a9a9a;
+                margin-top: 10px;
+              "
+              class="expand"
+              name=""
+              id=""
+            >
+              <option value="">Batteries and Electricals</option>
+              <option value="">Batteries and Electricals</option>
+              <option value="">Batteries and Electricals</option>
+            </select>
+          </div>
+          <div>
+            <span class="naming">Quantity in Stock</span>
+            <input
+              style="border: 1px solid lightblue; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="20"
+            />
+          </div>
+          <div>
+            <span class="naming">Unit Cost</span>
+            <input
+              style="border: none; outline: none; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="135,000.00"
+            />
+          </div>
+        </div>
+        <!-- Second Input -->
+        <div style="margin-top: 30px; width: 90%" class="input1">
+          <div>
+            <span class="naming">Reorder Quantity</span>
+            <input
+              style="border: none; outline: none; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="5"
+            />
+          </div>
+          <div style="margin-left: -40px">
+            <span class="naming">SKU</span>
+            <input
+              style="border: none; outline: none; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="N2,700,000"
+            />
+          </div>
+          <div style="margin-left: 20px">
+            <span class="naming">Order</span>
+            <input
+              style="border: 1px solid lightblue; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="Yes"
+            />
+          </div>
+          <div style="margin-left: 20px">
+            <span class="naming">Total Value</span>
+            <input
+              style="border: none; outline: none; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="N2,700,000"
+            />
+          </div>
+        </div>
+        <!-- Another Heading -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            width: 85%;
+            margin: 80px 0 20px 55px;
+          "
+        >
+          <span style="font-size: 30px; font-weight: 700">Reorder Info</span>
+        </div>
+        <hr />
+        <!-- Last Input -->
+        <div style="margin-top: 30px" class="input1">
+          <div>
+            <span class="naming">Suggested Reorder Qty</span>
+            <input
+              style="border: none; outline: none; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="10"
+            />
+          </div>
+          <div>
+            <span class="naming">Order Qty</span>
+            <input
+              style="border: none; outline: none; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="20"
+            />
+          </div>
+          <div>
+            <span class="naming">Current Unity Cost</span>
+            <input
+              style="border: 1px solid lightblue; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="N210,000.00"
+            />
+          </div>
+          <div style="margin-left: -40px">
+            <span class="naming">Total Reorder Cost</span>
+            <input
+              style="border: none; outline: none; margin-top: 10px"
+              class="expand"
+              type="text"
+              name="name"
+              placeholder="N1,135,000.00"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="copyright-2023-crm128-parent">
+        <div class="copyright-2023-crm128-container">
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
+        </div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+      </div>
+    </footer>
+
+    <script>
+      const hrToggle = document.getElementById("hr-toggle");
+      const hrItems = document.getElementById("hr-items");
+      const hrChevronIcon = document.getElementById("hr-chevron-icon");
+
+      hrToggle.addEventListener("click", function () {
+        hrItems.classList.toggle("hidden");
+        hrChevronIcon.classList.toggle("rotate");
+      });
+    </script>
+  </body>
+</html>

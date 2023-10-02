@@ -1,0 +1,228 @@
+.new-lead-overlay-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #7ac769;
+  width: 650px;
+  height: 100px;
+}
+.add-new-lead {
+  position: relative;
+  line-height: 120%;
+  font-weight: 600;
+}
+.close-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.add-new-lead-parent {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  width: 615px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+.enter-title {
+  position: relative;
+  line-height: 120%;
+  display: inline-block;
+  width: 504px;
+  flex-shrink: 0;
+}
+.enter-title-wrapper {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  border: 1px solid #0047b3;
+  box-sizing: border-box;
+  width: 571px;
+  display: flex;
+  flex-direction: row;
+  padding: 15px 17px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.text-field-inner {
+  position: relative;
+  width: 569px;
+  height: 53px;
+  color: #7a8699;
+}
+.frame-div,
+.text-field {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.text-field {
+  flex-direction: column;
+  gap: 9px;
+}
+.frame-div {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  border: 1px solid #0047b3;
+  box-sizing: border-box;
+  width: 276px;
+  flex-direction: row;
+  padding: 15px 17px;
+}
+.text-field-inner1 {
+  position: relative;
+  width: 274px;
+  height: 53px;
+  color: #7a8699;
+}
+.text-field3 {
+  width: 274px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 9px;
+}
+.select {
+  position: relative;
+  line-height: 120%;
+  display: inline-block;
+  width: 200px;
+  flex-shrink: 0;
+}
+.select-parent {
+  position: absolute;
+  height: 103.7%;
+  width: 100.73%;
+  top: -1.85%;
+  right: -0.36%;
+  bottom: -1.85%;
+  left: -0.36%;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  border: 1px solid #0047b3;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: 15px 17px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.dropdown {
+  position: relative;
+  width: 274px;
+  height: 54px;
+  color: #7a8699;
+}
+.text-field-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.group-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  border: 1px solid #0047b3;
+  box-sizing: border-box;
+  width: 572px;
+  height: 126px;
+}
+.enter-description {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  line-height: 120%;
+}
+.rectangle-parent {
+  position: relative;
+  width: 572px;
+  height: 126px;
+}
+.extra-info-to {
+  position: absolute;
+  top: 1px;
+  left: 24px;
+  line-height: 112.5%;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.group-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #d9d9d9;
+  width: 16px;
+  height: 16px;
+}
+.extra-info-to-guide-the-user-parent {
+  position: relative;
+  width: 192px;
+  height: 16px;
+  display: none;
+  font-size: 13px;
+  color: #000;
+}
+.text-field-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.big-button,
+.frame-parent {
+  display: flex;
+  align-items: center;
+}
+.big-button {
+  border-radius: 8px;
+  background-color: #7ac769;
+  width: 300px;
+  height: 60px;
+  flex-direction: row;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+}
+.frame-parent {
+  position: absolute;
+  top: 129px;
+  left: 39px;
+  height: 1018px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 109px;
+  font-size: 19px;
+  font-family: Archivo;
+}
+.new-lead-overlay {
+  position: relative;
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 1134px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 28px;
+  color: #091e42;
+  font-family: "Clash Grotesk";
+}

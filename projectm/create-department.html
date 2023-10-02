@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/create-department.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="creat-project" id="overlay">
+      <div class="creat-project-child"></div>
+      <div class="create-new-project-parent">
+        <div class="create-new-project">Create New Project</div>
+        <button id="closeBtn">
+          <img class="close-icon" alt="" src="public/close.svg" />
+        </button>
+      </div>
+      <div class="frame-parent">
+        <div class="text-field-parent">
+          <div class="text-field">
+            <div class="create-new-project">Project Title</div>
+            <div class="text-field-inner">
+              <div class="enter-title-wrapper">
+                <div class="enter-title">Enter title</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field-group">
+            <div class="text-field1" id="textFieldContainer1">
+              <div class="create-new-project">Start Date</div>
+              <div class="text-field-child">
+                <div class="enter-title-parent">
+                  <div class="select">DD-MM-YYYY</div>
+                  <div class="placeholder"></div>
+                </div>
+              </div>
+            </div>
+            <div class="text-field1" id="textFieldContainer2">
+              <div class="create-new-project">Due Date</div>
+              <div class="text-field-child">
+                <div class="enter-title-parent">
+                  <div class="select">DD-MM-YYYY</div>
+                  <div class="placeholder"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field-group">
+            <div class="text-field1">
+              <div class="create-new-project">Supervised by</div>
+              <div class="text-field-child">
+                <div class="enter-title-container">
+                  <div class="select">John Doe</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-field">
+              <div class="create-new-project">Status</div>
+              <div class="dropdown">
+                <div class="select-parent">
+                  <div class="select">Select</div>
+                  <img
+                    class="close-icon"
+                    alt=""
+                    src="public/chevron-down1.svg"
+                    id="chevronDownIcon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="description-parent">
+            <div class="create-new-project">Description</div>
+            <div class="rectangle-parent">
+              <div class="group-child"></div>
+              <div class="enter-description">Enter Description</div>
+            </div>
+            <div class="extra-info-to-guide-the-user-parent">
+              <div class="extra-info-to">Extra info to guide the user</div>
+              <div class="group-item"></div>
+            </div>
+          </div>
+          <div class="more-details">More Details</div>
+          <div class="add-file" id="addFile"></div>
+        </div>
+        <div class="big-button">
+          <div class="create-new-project">Save</div>
+        </div>
+      </div>
+    </div>
+    <div id="calendarContainer" class="popup-overlay" style="display: none">
+      <div class="calendar-container">
+        <div class="change-month">
+          <div class="left">
+            <img class="icon2" alt="" src="Icon.svg" />
+          </div>
+          <div class="month">June 2022</div>
+          <div class="right">
+            <img class="icon2" alt="" src="Icon.svg" />
+          </div>
+        </div>
+        <div class="container1">
+          <div class="weekdays">
+            <div class="divider"></div>
+            <div class="days">
+              <div class="day">
+                <div class="div">Su</div>
+              </div>
+              <div class="day">
+                <div class="div">Mo</div>
+              </div>
+              <div class="day">
+                <div class="div">Tu</div>
+              </div>
+              <div class="day">
+                <div class="div">We</div>
+              </div>
+              <div class="day">
+                <div class="div">Th</div>
+              </div>
+              <div class="day">
+                <div class="div">Fr</div>
+              </div>
+              <div class="day">
+                <div class="div">Sa</div>
+              </div>
+            </div>
+          </div>
+          <div class="month1">
+            <div class="week">
+              <div class="day7">
+                <div class="div">27</div>
+              </div>
+              <div class="day7">
+                <div class="div">28</div>
+              </div>
+              <div class="day7">
+                <div class="div">29</div>
+              </div>
+              <div class="day7">
+                <div class="div">30</div>
+              </div>
+              <div class="day11">
+                <div class="div">31</div>
+              </div>
+              <div class="day11">
+                <div class="div">1</div>
+              </div>
+              <div class="day11">
+                <div class="div">2</div>
+              </div>
+            </div>
+            <div class="week1">
+              <div class="day7">
+                <div class="div">3</div>
+              </div>
+              <div class="day7">
+                <div class="div">4</div>
+              </div>
+              <div class="day7">
+                <div class="div">5</div>
+              </div>
+              <div class="day7">
+                <div class="div">6</div>
+              </div>
+              <div class="day18">
+                <div class="div">7</div>
+              </div>
+              <div class="day18">
+                <div class="div">8</div>
+              </div>
+              <div class="day18">
+                <div class="div">9</div>
+              </div>
+            </div>
+            <div class="week1">
+              <div class="day18">
+                <div class="div">10</div>
+              </div>
+              <div class="day18">
+                <div class="div">11</div>
+              </div>
+              <div class="day18">
+                <div class="div">12</div>
+              </div>
+              <div class="day18">
+                <div class="div">13</div>
+              </div>
+              <div class="day18">
+                <div class="div">14</div>
+              </div>
+              <div class="day26">
+                <div class="div">15</div>
+              </div>
+              <div class="day7">
+                <div class="div">16</div>
+              </div>
+            </div>
+            <div class="week1">
+              <div class="day7">
+                <div class="div">17</div>
+              </div>
+              <div class="day7">
+                <div class="div">18</div>
+              </div>
+              <div class="day7">
+                <div class="div">19</div>
+              </div>
+              <div class="day7">
+                <div class="div">20</div>
+              </div>
+              <div class="day7">
+                <div class="div">21</div>
+              </div>
+              <div class="day7">
+                <div class="div">22</div>
+              </div>
+              <div class="day7">
+                <div class="div">23</div>
+              </div>
+            </div>
+            <div class="week1">
+              <div class="day7">
+                <div class="div">24</div>
+              </div>
+              <div class="day7">
+                <div class="div">25</div>
+              </div>
+              <div class="day7">
+                <div class="div">26</div>
+              </div>
+              <div class="day7">
+                <div class="div">27</div>
+              </div>
+              <div class="day7">
+                <div class="div">28</div>
+              </div>
+              <div class="day7">
+                <div class="div">29</div>
+              </div>
+              <div class="day7">
+                <div class="div">30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-parent">
+          <div class="buttons">
+            <div class="cancel">
+              <div class="div">Clear</div>
+            </div>
+          </div>
+          <div class="buttons">
+            <div class="cancel1">
+              <div class="div">Today</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="statusDropdownContainer"
+      class="popup-overlay"
+      style="display: none"
+    >
+      <div class="status-dropdown">
+        <div class="component-26">
+          <div class="planned-wrapper">
+            <div class="planned">Planned</div>
+          </div>
+        </div>
+        <div class="component-22">
+          <div class="planned-wrapper">
+            <div class="planned">In Progress</div>
+          </div>
+        </div>
+        <div class="component-22">
+          <div class="planned-wrapper">
+            <div class="planned">In Review</div>
+          </div>
+        </div>
+        <div class="component-22">
+          <div class="planned-wrapper">
+            <div class="planned">Overdue</div>
+          </div>
+        </div>
+        <div class="component-22">
+          <div class="planned-wrapper">
+            <div class="planned">On hold</div>
+          </div>
+        </div>
+        <div class="component-25">
+          <div class="planned-wrapper">
+            <div class="planned">Done</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="addMediaContainer" class="popup-overlay" style="display: none">
+      <div class="add-media">
+        <div class="add-media-parent">
+          <div class="add-media1">Add Media</div>
+          <div class="close"></div>
+        </div>
+        <div class="container">
+          <div class="content">
+            <img class="icon" alt="" src="Icon.svg" />
+            <div class="paragraph">
+              Browse and chose the files you want to upload from your computer
+            </div>
+            <div class="cta">
+              <img class="icon1" alt="" src="Icon.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="add-media-buton-parent">
+          <div class="add-media-buton">
+            <div class="add-document">CANCEL</div>
+          </div>
+          <div class="add-document-wrapper">
+            <div class="add-document">SAVE DOCUMENT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var textFieldContainer1 = document.getElementById("textFieldContainer1");
+      if (textFieldContainer1) {
+        textFieldContainer1.addEventListener("click", function () {
+          var popup = document.getElementById("calendarContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+      var textFieldContainer2 = document.getElementById("textFieldContainer2");
+      if (textFieldContainer2) {
+        textFieldContainer2.addEventListener("click", function () {
+          var popup = document.getElementById("calendarContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+      var chevronDownIcon = document.getElementById("chevronDownIcon");
+      if (chevronDownIcon) {
+        chevronDownIcon.addEventListener("click", function () {
+          var popup = document.getElementById("statusDropdownContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+      var addFile = document.getElementById("addFile");
+      if (addFile) {
+        addFile.addEventListener("click", function () {
+          var popup = document.getElementById("addMediaContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+    </script>
+  </body>
+</html>

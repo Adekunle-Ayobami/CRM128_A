@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member | Profile Page</title>
+    <link rel="stylesheet" href="css/member-profile-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <a href="#">
+          <div class="crm128-wrapper">
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
+          </div>
+        </a>
+        <div class="search-parent">
+          <div>
+            <i class="fa-solid fa-magnifying-glass fa-lg icon"></i
+            ><input
+              class="input-field"
+              type="text"
+              name="search"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+        <div class="bell">
+          <img class="vector-icon" alt="" src="public/vector3.svg" /><sup
+            ><b class="b">2</b></sup
+          >
+        </div>
+        <div class="ellipse-group">
+          <div class="jg">JG</div>
+          <div class="josiah-gana-parent">
+            <div class="josiah-gana">Josiah Gana</div>
+            <div class="admin">Admin</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="menu">
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/dashboard.svg" />
+          <div class="side-bar">Overview</div>
+        </div>
+        <div class="client-data">
+          <img class="more-icon" alt="" src="./public/clients.svg" />
+          <div class="side-bar">Clients</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/appointment1.svg" />
+          <div class="side-bar">Appointment</div>
+        </div>
+        <div class="drop-hr">
+          <img class="more-icon" alt="" src="./public/human-resources.svg" />
+          <div class="side-bar">Human Resource</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="drop-hr client-bar" id="hr-toggle">
+          <img class="more-icon" alt="" src="./public/projects-icon.svg" />
+          <div class="side-bar">Project Management</div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items">
+            <a href="index.html"><li class="selected">Overview</li></a>
+            <a href="#"
+              ><li style="text-overflow: ellipsis">
+                Emzor Pham Industries Ltd.
+              </li></a
+            >
+            <a href="atlantic-hall-school-page.html"
+              ><li>Atlantic Hall School</li></a
+            >
+            <a href="#"><li>Apple</li></a>
+            <a href="#"><li>McDonald's</li></a>
+            <a href="#"><li>+ New Project</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr">
+          <img class="more-icon" alt="" src="./public/inventory-icon.svg" />
+          <div class="side-bar">Inventory</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+
+        <div class="drop-hr" style="border-bottom: 1px solid lightblue">
+          <img class="more-icon" alt="" src="./public/accounting.svg" />
+          <div class="side-bar">Accounting</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="drop-hr" style="border-bottom: 1px solid lightblue">
+          <img class="more-icon" alt="" src="./public/settings.svg" />
+          <div class="side-bar">Admin</div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="logout">
+          <img class="more-icon" alt="" src="./public/logout.svg" />
+          <div class="side-bar"></div>
+          Logout
+        </div>
+      </div>
+      <div class="frame-group">
+        <div style="margin-right: 10px">Overview</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="margin-right: 10px">Atlantic Hall School</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="margin-right: 10px">Team Members</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="color: #003e9c">Profile</div>
+      </div>
+      <div class="btn">
+        <button class="button">Edit</button>
+      </div>
+      <div class="back">
+        <img class="search-icon" alt="" src="./public/arrow-back.svg" />
+
+        <div class="search">Back</div>
+      </div>
+      <div>
+        <div class="josiah-chukuma-femi">Josiah Chukuma Femi</div>
+        <img class="rectangle-icon" alt="" src="public/rectangle-706.svg" />
+
+        <img class="rectangle-icon1" alt="" src="public/Rectangle 707.png" />
+        <div class="group-parent">
+          <div class="full-name-parent">
+            <div class="full-name">Full Name</div>
+            <div class="josiah-chukuma-femi1">Josiah Chukuma Femi</div>
+          </div>
+          <div class="full-name-parent">
+            <div class="full-name">EMAIL</div>
+            <div class="josiah-chukuma-femi1">sample@mail.com</div>
+          </div>
+          <div class="full-name-parent">
+            <div class="full-name">PHONE NUMBER</div>
+            <div class="josiah-chukuma-femi1">+234 703 603 9249</div>
+          </div>
+          <div class="group-parent2">
+            <div class="title-parent">
+              <div class="title">Title</div>
+              <div class="engineer">Engineer</div>
+            </div>
+            <div class="title-parent">
+              <div class="title">DEPARTMENT</div>
+              <div class="engineer">Project Management</div>
+            </div>
+            <div class="title-parent">
+              <div class="title">STATUS</div>
+              <div class="engineer">Probation</div>
+            </div>
+          </div>
+        </div>
+        <div class="group-parent3">
+          <div class="staff-id-parent">
+            <div class="staff-id">STAFF ID</div>
+            <div class="div">455</div>
+          </div>
+          <div class="staff-id-parent">
+            <div class="staff-id">JOINING DATA</div>
+            <div class="div">22 January 2023</div>
+          </div>
+          <div class="staff-id-parent">
+            <div class="staff-id">PHONE NUMBER</div>
+            <div class="div">+234 703 603 9249</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="copyright-2023-crm128-parent">
+        <div class="copyright-2023-crm128-container">
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
+        </div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+      </div>
+    </footer>
+
+    <script>
+      const hrToggle = document.getElementById("hr-toggle");
+      const hrItems = document.getElementById("hr-items");
+      const hrChevronIcon = document.getElementById("hr-chevron-icon");
+
+      hrItems.classList.add("hidden");
+
+      hrToggle.addEventListener("click", function () {
+        hrItems.classList.toggle("hidden");
+        hrChevronIcon.classList.toggle("rotate");
+      });
+    </script>
+  </body>
+</html>
