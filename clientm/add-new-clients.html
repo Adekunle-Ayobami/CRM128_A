@@ -251,7 +251,7 @@
           <span style="margin-bottom: 5px">Company Name</span>
           <input
             type="text"
-            id="company-name"
+            id="company_name"
             placeholder="Enter company name"
           />
         </div>
@@ -259,7 +259,7 @@
           <span style="margin-bottom: 5px">Company Type</span>
           <input
             type="text"
-            id="company-type"
+            id="company_type"
             placeholder="Enter company type"
           />
         </div>
@@ -269,7 +269,7 @@
             <div class="input-container" style="margin-top: 5px">
               <img class="frame-icon" alt="" src="public/frame.svg" />
               <input
-                id="website-url"
+                id="website_url"
                 style="width: 60%"
                 class="input-field1"
                 type="text"
@@ -430,9 +430,9 @@
       // Plain javascript ot conne ct with the backend.
 
       const clientfromEl = document.querySelector("#client-form");
-      const companyInput = document.querySelector("#company-name");
-      const companyTypeInput = document.querySelector("#company-type");
-      const websiteInput = document.querySelector("#website-url");
+      const companyInput = document.querySelector("#company_name");
+      const companyTypeInput = document.querySelector("#company_type");
+      const websiteInput = document.querySelector("#website_url");
       const emailInput = document.querySelector("#email");
       const phoneInput = document.querySelector("#phone");
       const statusInput = document.querySelector("#status");
@@ -476,7 +476,7 @@
         if (jsonRes.success === true) {
           console.log(jsonRes);
           localStorage.setItem("token", jsonRes.token);
-          localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+          // localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
           window.location.href = "../clientm/client-company-list.html";
           console.log(jsonRes.token);
         } else {
