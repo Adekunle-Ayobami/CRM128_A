@@ -399,8 +399,8 @@
         <div class="active-clients">Active Clients</div>
         <div class="active-leads">Active Leads</div>
         <div class="average-value-of">Average value of won deals</div>
-        <div class="div">34</div>
-        <div class="div1">34</div>
+        <div id="active-client" class="div"></div>
+        <div id="active-lead" class="div1"></div>
         <div class="div2">34</div>
       </div>
     </section>
@@ -486,6 +486,60 @@
       sidebarToggle.addEventListener("click", function () {
         toggleMenu();
       });
+
+      const backendURL = "http://localhost:7070"; // Replace with your actual backend API URL
+const authToken =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc  "; // Replace with your authentication token
+
+async function fetchDataAndDisplay() {
+  try {
+    // Fetch active client count
+    const clientResponse = await fetch(`${backendURL}/client/getactiveclientcount`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    if (!clientResponse.ok) {
+      throw new Error(`Client network response was not ok (${clientResponse.status})`);
+    }
+
+    const clientData = await clientResponse.json();
+    const activeClientCount = clientData.count;
+
+    const activeClient = document.querySelector("#active-client");
+    activeClient.innerHTML = activeClientCount;
+
+    // Fetch active lead count
+    const leadResponse = await fetch(`${backendURL}/lead/getactiveleadcount`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    if (!leadResponse.ok) {
+      throw new Error(`Lead network response was not ok (${leadResponse.status})`);
+    }
+
+    const leadData = await leadResponse.json();
+    const activeLeadCount = leadData.count;
+
+    const activeLead = document.querySelector("#active-lead");
+    activeLead.innerHTML = activeLeadCount;
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+  }
+}
+
+// Call the combined function to fetch and display both counts
+fetchDataAndDisplay();
+
     </script>
   </body>
 </html>

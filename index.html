@@ -119,6 +119,7 @@
           localStorage.setItem("token", jsonRes.token);
           localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
           window.location.href = "../Overview&Login/index.html";
+          console.log (jsonRes.token);
         } else {
           alert("Error logging in, detail: "+jsonRes.message);
         }
