@@ -251,7 +251,11 @@
           <span style="margin-bottom: 5px">Company Name</span>
           <input
             type="text"
+<<<<<<< HEAD
             id="company-name"
+=======
+            id="company_name"
+>>>>>>> 82bb73ccf42af97c1730b663a35733d623790381
             placeholder="Enter company name"
           />
         </div>
@@ -259,7 +263,11 @@
           <span style="margin-bottom: 5px">Company Type</span>
           <input
             type="text"
+<<<<<<< HEAD
             id="company-type"
+=======
+            id="company_type"
+>>>>>>> 82bb73ccf42af97c1730b663a35733d623790381
             placeholder="Enter company type"
           />
         </div>
@@ -269,7 +277,11 @@
             <div class="input-container" style="margin-top: 5px">
               <img class="frame-icon" alt="" src="public/frame.svg" />
               <input
+<<<<<<< HEAD
                 id="website-url"
+=======
+                id="website_url"
+>>>>>>> 82bb73ccf42af97c1730b663a35733d623790381
                 style="width: 60%"
                 class="input-field1"
                 type="text"
@@ -430,9 +442,15 @@
       // Plain javascript ot conne ct with the backend.
 
       const clientfromEl = document.querySelector("#client-form");
+<<<<<<< HEAD
       const companyInput = document.querySelector("#company-name");
       const companyTypeInput = document.querySelector("#company-type");
       const websiteInput = document.querySelector("#website-url");
+=======
+      const companyInput = document.querySelector("#company_name");
+      const companyTypeInput = document.querySelector("#company_type");
+      const websiteInput = document.querySelector("#website_url");
+>>>>>>> 82bb73ccf42af97c1730b663a35733d623790381
       const emailInput = document.querySelector("#email");
       const phoneInput = document.querySelector("#phone");
       const statusInput = document.querySelector("#status");
@@ -476,7 +494,11 @@
         if (jsonRes.success === true) {
           console.log(jsonRes);
           localStorage.setItem("token", jsonRes.token);
+<<<<<<< HEAD
           localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+=======
+          // localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+>>>>>>> 82bb73ccf42af97c1730b663a35733d623790381
           window.location.href = "../clientm/client-company-list.html";
           console.log(jsonRes.token);
         } else {

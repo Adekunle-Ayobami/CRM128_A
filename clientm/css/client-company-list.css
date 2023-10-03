@@ -480,9 +480,12 @@ td {
   z-index: 1;
   display: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-shadow: 0 0 100vw 100vh rgba(0, 0, 0, 0.5);
 =======
 >>>>>>> d27a68d8da0f7e1667141758d45206ccdae9d558
+=======
+>>>>>>> 82bb73ccf42af97c1730b663a35733d623790381
 }
 .add-lead1 span {
   font-size: 20px;
