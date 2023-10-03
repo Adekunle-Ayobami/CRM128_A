@@ -18,6 +18,9 @@ a {
   padding: 10px;
   border-bottom: 1px solid grey;
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 .crm128-wrapper {
   font-size: 30px;
@@ -84,11 +87,12 @@ a {
   background-color: white;
   justify-content: flex-start;
   width: 265px;
-  height: 800px;
+  height: 100%;
   padding-bottom: 20px;
   border-right: 1px solid grey;
   transition: width 0.3s ease-in-out;
-  z-index: 2;
+  position: relative;
+  top: 4.3em;
 }
 .hidden {
   display: none;
@@ -128,7 +132,6 @@ li {
 .side-bar,
 .logout {
   margin-top: 6px;
-
   font-weight: 600;
 }
 .client-icon {
@@ -136,7 +139,9 @@ li {
   left: 89%;
   top: 19px;
 }
-
+.logout {
+  padding-bottom: 100px;
+}
 .client-bar {
   background-color: #7ac769;
   width: 90.5%;
@@ -193,13 +198,10 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
-<<<<<<< HEAD
-   position: fixed;
-  bottom: 0; 
-=======
+  position: fixed;
+  bottom: 0;
   /* position: fixed;
   bottom: 0; */
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   width: 100%;
 }
 .overview-client-management-inner {
@@ -921,13 +923,12 @@ li {
   font-size: 24px;
   display: none;
 }
-<<<<<<< HEAD
 /* 1366px and above */
 /*@media (min-width: 1368px) {*/
 /*    .client-bar {*/
 /*        width: 230px;*/
 /*    }*/
-    
+
 /*    .march-2023 {*/
 /*      font-size: 17px;*/
 /*  }*/
@@ -985,8 +986,6 @@ li {
 /*      width: 450px;*/
 /*  }*/
 /*}*/
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
 
 /* 1366px and below */
 @media (max-width: 1366px) {
@@ -1025,7 +1024,6 @@ li {
   .bell {
     position: relative;
     left: 5%;
-<<<<<<< HEAD
   }
   /* .rectangle-div {
     width: 100%;
@@ -1045,8 +1043,7 @@ li {
     height: 100%;
   }
   .logout {
-      padding-bottom: 720px;
-=======
+    padding-bottom: 720px;
   }
   /* .rectangle-div {
     width: 100%;
@@ -1087,7 +1084,6 @@ li {
   }
   .menu {
     height: 910px;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .group-child {
     width: 47%;
@@ -1120,12 +1116,11 @@ li {
     left: 10px;
   }
   .rectangle-group {
-<<<<<<< HEAD
     top: 52em;
     left: 19em;
   }
   .rectangle-div {
-      width: 576px;
+    width: 576px;
   }
   .overview-client-management-inner {
     top: 30em;
@@ -1133,89 +1128,107 @@ li {
     overflow-x: auto;
   }
   .chevron-left-parent {
-      position: relative;
-      left: 14em;
+    position: relative;
+    left: 14em;
   }
   .march-2023 {
-      font-size: 17px;
+    font-size: 17px;
   }
-  .sun, .mon, .tue, .wed, .fri {
-      margin-right: 70px;
-      font-size: 17px;
+  .sun,
+  .mon,
+  .tue,
+  .wed,
+  .fri {
+    margin-right: 70px;
+    font-size: 17px;
   }
   .sat {
-      font-size: 17px;
+    font-size: 17px;
   }
   .parent {
-     left: 3em;
+    left: 3em;
   }
   .parent2 {
-     left: 32em;
+    left: 32em;
   }
   .parent1 {
-     left: 27em;
+    left: 27em;
   }
   .parent3 {
-     left: 22.5em;
+    left: 22.5em;
   }
   .container {
-      left: 18em;
+    left: 18em;
   }
   .parent4 {
-      left: 12.5em;
+    left: 12.5em;
   }
   .group {
-      left: 8em;
+    left: 8em;
   }
-  .div3, .div4, .div5, .div6, .div7, .div8 {
-      margin-bottom: 20px;
-      font-size: 16px;
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7,
+  .div8 {
+    margin-bottom: 20px;
+    font-size: 16px;
   }
-  .div9, .div10, .div12, .div13, .div14, .div14 {
-      margin-bottom: 20px;
-      font-size: 16px;
+  .div9,
+  .div10,
+  .div12,
+  .div13,
+  .div14,
+  .div14 {
+    margin-bottom: 20px;
+    font-size: 16px;
   }
-  .div15, .div22, .div23, .div24, .div25, .div27 {
-      margin-bottom: 20px;
-      font-size: 16px;
+  .div15,
+  .div22,
+  .div23,
+  .div24,
+  .div25,
+  .div27 {
+    margin-bottom: 20px;
+    font-size: 16px;
   }
-  .div28, .div31, .div32, .div33, .div39, .div41, .div42, .div43 {
-      margin-bottom: 20px;
-      font-size: 16px;
+  .div28,
+  .div31,
+  .div32,
+  .div33,
+  .div39,
+  .div41,
+  .div42,
+  .div43 {
+    margin-bottom: 20px;
+    font-size: 16px;
   }
   .group-child11 {
-      width: 555px;
-=======
+    width: 555px;
     display: none;
   }
   .overview-client-management-inner {
     top: 50%;
     width: 64.4%;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .task-parent {
     width: 100%;
   }
-<<<<<<< HEAD
   .womens-day-wrapper {
-      left: 16em;
+    left: 16em;
   }
   .rectangle-icon {
-      left: 10.5em;
-      top: 5.7em;
-      width: 50px;
+    left: 10.5em;
+    top: 5.7em;
+    width: 50px;
   }
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   .frame-wrapper {
     width: 40em;
   }
   .group-parent {
     width: 95%;
-<<<<<<< HEAD
     overflow-x: scroll;
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .installation-of-a {
     margin-right: 20px;
@@ -1226,17 +1239,14 @@ li {
   .black-marvin {
     margin-right: 30px;
   }
-<<<<<<< HEAD
   /*.copyright-2023-crm128-parent {*/
   /*  position: relative;*/
   /*  width: 100%;*/
   /*}*/
-=======
   .copyright-2023-crm128-parent {
     position: relative;
     width: 100%;
   }
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
 }
 
 /* 800px and below */
@@ -1255,28 +1265,22 @@ li {
     display: none;
   }
   body {
-<<<<<<< HEAD
     width: 360px;
     height: 1100px;
-=======
     width: 450px;
     height: 1400px;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .nav-bar {
     width: 100%;
   }
   .menu {
-<<<<<<< HEAD
     position: relative;
     display: none;
     margin-top: -10px;
     height: 1100px;
     z-index: 10;
-=======
     display: none;
     margin-top: -10px;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .menu.menu-active {
     display: block;
@@ -1289,10 +1293,7 @@ li {
     position: fixed;
     bottom: 0;
     width: 95%;
-<<<<<<< HEAD
     z-index: 20;
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
     gap: 10px;
   }
   .nav-bar {
@@ -1300,35 +1301,28 @@ li {
   }
   .rectangle-parent {
     position: absolute;
-<<<<<<< HEAD
     top: 30px;
     left: 2em;
     width: 90%;
     height: 12.87em;
     /*z-index: -10;*/
-=======
     top: 90px;
     left: 2em;
     width: 90%;
     height: 12.87em;
     z-index: -10;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .group-child,
   .group-item {
     width: 47%;
-<<<<<<< HEAD
     height: 110px;
   }
   .group-inner {
     width: 27%;
     height: 110px;
-    
-=======
   }
   .group-inner {
     width: 27%;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .group-item {
     position: absolute;
@@ -1336,10 +1330,7 @@ li {
   }
   .group-inner {
     position: absolute;
-<<<<<<< HEAD
     top: 8em;
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
     left: 0;
     width: 100%;
   }
@@ -1354,15 +1345,11 @@ li {
   .average-value-of,
   .div2 {
     position: absolute;
-<<<<<<< HEAD
     top: 7em;
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
     left: 2%;
   }
   .overview-client-management-inner {
     position: absolute;
-<<<<<<< HEAD
     top: 18em;
     left: 2em;
     width: 90%;
@@ -1378,7 +1365,6 @@ li {
     left: 2em;
     width: 10px;
     /*z-index: -10;*/
-=======
     top: 29em;
     left: 2em;
     width: 90%;
@@ -1394,7 +1380,6 @@ li {
     left: 2em;
     width: 10px;
     z-index: -10;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
     display: block;
   }
   .rectangle-div {
@@ -1405,18 +1390,15 @@ li {
   }
   .group-child11 {
     width: 24em;
-<<<<<<< HEAD
   }
   .div {
-      font-size: 55px;
+    font-size: 55px;
   }
   .div1 {
-      font-size: 55px;
+    font-size: 55px;
   }
   .div2 {
-      font-size: 55px;
-      top: 3em;
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
+    font-size: 55px;
+    top: 3em;
   }
 }

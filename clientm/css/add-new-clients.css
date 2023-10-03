@@ -4,10 +4,7 @@ body {
   line-height: 1rem;
   background-color: #f6f6f6;
   font-family: "Clash Grotesk", sans-serif;
-<<<<<<< HEAD
   overflow-x: hidden;
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   width: 1345px;
 }
 a {
@@ -143,6 +140,9 @@ li {
   padding-right: 22px;
   width: 88.5%;
 }
+.logout {
+  padding-bottom: 50px;
+}
 .frame-group {
   display: flex;
   height: 20px;
@@ -202,11 +202,8 @@ li {
 .add-lead {
   position: absolute;
   top: 0;
-<<<<<<< HEAD
   right: -30px;
-=======
   right: 0;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   background-color: #f6f6f6;
   width: 36.8%;
   height: 94.4%;
@@ -296,7 +293,6 @@ li {
 }
 .input-container {
   position: relative;
-<<<<<<< HEAD
 }
 
 .input-container img {
@@ -325,7 +321,7 @@ li {
 }
 
 /* 1366 and above */
-@media (min-width: 1368px) {
+/* @media (min-width: 1368px) {
   body {
     width: 1460px;
   }
@@ -333,8 +329,7 @@ li {
     padding-bottom: 180px;
   }
 }
-=======
-}
+} */
 
 .input-container img {
   position: absolute;
@@ -361,7 +356,6 @@ li {
   display: none;
 }
 
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
 @media (max-width: 1366px) {
   .menu {
     width: 259px;
@@ -388,7 +382,6 @@ li {
 }
 @media (max-width: 1100px) {
   body {
-<<<<<<< HEAD
     width: 900px;
     height: 10px;
   }
@@ -420,7 +413,6 @@ li {
     z-index: 10;
     overflow-y: auto;
     overflow-x: hidden;
-=======
     width: 1070px;
     height: 10px;
   }
@@ -429,7 +421,6 @@ li {
   }
   .group-parent {
     left: 35em;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
 }
 @media (max-width: 500px) {
@@ -441,11 +432,8 @@ li {
   }
   body {
     width: 450px;
-<<<<<<< HEAD
     height: 700px;
-=======
     height: 1400px;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .nav-bar {
     width: 100%;
@@ -460,39 +448,29 @@ li {
 
   .nav-bar .toggle-button {
     display: block;
-<<<<<<< HEAD
     margin-left: -25px;
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .frame-group {
     left: 0.4em;
     width: 70%;
-<<<<<<< HEAD
     z-index: -10;
   }
   .btn {
     left: 20em;
-=======
   }
   .btn {
     left: 18em;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .copyright-2023-crm128-parent {
     position: fixed;
     bottom: 0;
     width: 100%;
     gap: 10px;
-<<<<<<< HEAD
     z-index: 10;
-=======
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
   .group-parent {
     top: 15em;
     left: 7em;
-<<<<<<< HEAD
     z-index: -10;
   }
   .crm128-wrapper {
@@ -506,11 +484,9 @@ li {
     z-index: 10;
     overflow-y: auto;
     overflow-x: hidden;
-=======
   }
   .add-lead {
     width: 100%;
     height: 100%;
->>>>>>> ab995b3267fa86950d1804446ebdd2e42251b759
   }
 }
