@@ -61,13 +61,14 @@ a {
 .ellipse-group {
   display: flex;
 }
-.jg {
+.avatar {
   margin: auto 20px;
   font-size: 30px;
   background-color: #0047b3;
   color: #ffffff;
   padding: 16px 10px 16px 10px;
   border-radius: 50%;
+  text-transform: uppercase;
 }
 .josiah-gana-parent {
   margin-top: 10px;
@@ -478,7 +479,10 @@ td {
   padding-bottom: 20px;
   z-index: 1;
   display: none;
+<<<<<<< HEAD
   box-shadow: 0 0 100vw 100vh rgba(0, 0, 0, 0.5);
+=======
+>>>>>>> d27a68d8da0f7e1667141758d45206ccdae9d558
 }
 .add-lead1 span {
   font-size: 20px;
