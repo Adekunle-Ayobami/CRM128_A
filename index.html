@@ -31,14 +31,14 @@
         <div class="form-div1" style="font-size: 36px; color: #091e42">
           Log in
         </div>
-        <form class="form" action="../Overview&Login/index.html">
+        <form class="form" action="" id="login-form">
           <label for=""
             >Email
             <input
               class="input-field"
               type="email"
               name=""
-              id=""
+              id="email"
               placeholder="sample@mail.com"
             />
           </label>
@@ -47,18 +47,16 @@
             <input
               class="input-field"
               type="password"
-              id="password-input"
+              id="password"
               placeholder="Enter password"
             />
             <i class="fa fa-eye" id="password-eye" aria-hidden="true"></i>
           </label>
           <div style="display: flex; gap: 100px">
-            <div><input type="checkbox" />Remember me</div>
+            <div><input type="checkbox" checked />Remember me</div>
             <div>Forgot Password?</div>
           </div>
-      
-            ><input class="input-button" type="submit" value="Login"
-          /></a>
+          <input class="input-button" type="submit" value="Login" />
         </form>
       </div>
     </div>
@@ -73,6 +71,11 @@
       </div>
     </footer>
 
+
+    
+    <script src="main.js"></script>
+
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -82,6 +85,43 @@
             passwordInput.attr("type") === "password" ? "text" : "password";
           passwordInput.attr("type", type);
         });
+      });
+
+       // Plain javascript ot conne ct with the backend.
+
+       const loginfromEl = document.querySelector("#login-form");
+      const emailInputEl = document.querySelector("#email");
+      const pwdInputEl = document.querySelector("#password");
+
+      loginfromEl.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        console.log("submitting");
+        const emailValue = emailInputEl.value;
+        const pwdValue = pwdInputEl.value;
+
+        const payload = {
+          email: emailValue,
+          password: pwdValue,
+        };
+
+        const httpRes = await fetch(backendURl+'/admin/login', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+        const jsonRes = await httpRes.json();
+
+        if (jsonRes.success===true) {
+          console.log(jsonRes);
+          localStorage.setItem("token", jsonRes.token);
+          localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+          window.location.href = "../Overview&Login/index.html";
+        } else {
+          alert("Error logging in, detail: "+jsonRes.message);
+        }
       });
 
       // Plain javascript ot conne ct with the backend.
