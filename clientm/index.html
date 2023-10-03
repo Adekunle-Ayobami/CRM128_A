@@ -47,9 +47,9 @@
           >
         </div>
         <div class="ellipse-group">
-          <div class="jg">JG</div>
+          <div class="avatar">JG</div>
           <div class="josiah-gana-parent">
-            <div class="josiah-gana">Josiah Gana</div>
+            <div class="josiah-gana" id="admin-email">Josiah Gana</div>
             <div class="admin">Admin</div>
           </div>
         </div>
@@ -486,6 +486,12 @@
       sidebarToggle.addEventListener("click", function () {
         toggleMenu();
       });
+
+      const adminEmailEl = document.querySelector("#admin-email");
+      const avatarEl = document.querySelector(".avatar");
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      adminEmailEl.innerHTML = admin.email;
+      avatarEl.innerHTML = admin.email.substring(0, 2);
 
       const backendURL = "http://localhost:7070"; // Replace with your actual backend API URL
 const authToken =
