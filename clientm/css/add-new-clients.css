@@ -363,6 +363,18 @@ li {
   .group-parent {
     left: 60em;
   }
+  .frame-group {
+    left: 28em;
+  }
+  .menu {
+    width: 330px;
+  }
+  .client-bar {
+    width: 295px;
+  }
+  .selected {
+    width: 269px;
+  }
 }
 
 @media (max-width: 1366px) {

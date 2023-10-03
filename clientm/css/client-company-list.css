@@ -178,6 +178,9 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 /* Table */
 .table {
@@ -213,8 +216,7 @@ td {
   text-align: left;
   font-size: 16px;
   color: #091e42;
-  font-family: Archivo;
-  top: 200px;
+  top: 14em;
   left: 87%;
 }
 .component-19,
@@ -460,13 +462,13 @@ td {
 
 /* Overlay Page */
 .add-lead1 {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 10em;
+  right: 12em;
   background-color: white;
   width: 36.8%;
   height: 94.4%;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   text-align: left;
   font-size: 28px;
@@ -475,7 +477,8 @@ td {
   padding-top: 10px;
   padding-bottom: 20px;
   z-index: 1;
-  /*display: none;*/
+  display: none;
+  box-shadow: 0 0 100vw 100vh rgba(0, 0, 0, 0.5);
 }
 .add-lead1 span {
   font-size: 20px;
@@ -495,6 +498,8 @@ td {
   flex-direction: column;
   margin-top: 30px;
   padding-left: 30px;
+  position: relative;
+  bottom: 2em;
 }
 .form-text1 textarea {
   width: 80%;
@@ -506,6 +511,8 @@ td {
 .form11 {
   margin-top: 30px;
   padding-left: 30px;
+  position: relative;
+  bottom: 2em;
 }
 .form11 input {
   width: 80%;
@@ -517,6 +524,8 @@ td {
 .form71 {
   margin-top: 30px;
   padding-left: 30px;
+  position: relative;
+  bottom: 2em;
 }
 .form71 input {
   width: 65%;
@@ -543,14 +552,14 @@ td {
 }
 .bigbutton1 {
   position: relative;
-  top: 1em;
-  left: 18em;
+  bottom: 4em;
+  left: 13em;
   padding: 20px 70px 10px 70px;
   background-color: #7ac769;
   border: none;
   margin-top: 10px;
   border-radius: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .input-container1 {
   position: relative;
@@ -577,6 +586,21 @@ td {
   width: 90%;
   position: relative;
   bottom: 1em;
+}
+
+@media (min-width: 1368px) {
+  .logout {
+    padding-bottom: 350px;
+  }
+  .table {
+    left: 25em;
+  }
+  .frame-group {
+    left: 24em;
+  }
+  .options-overlay {
+    top: 18em;
+  }
 }
 
 @media (max-width: 1366px) {

@@ -99,17 +99,19 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items3">
-            <a href="../hrm/dashboard.html"><li>Employee Management</li></a>
-            <a href="../hrm/leaveDashboard.html"><li>Leave Management</li></a>
-            <a href="../hrm/UserAttenDashboard.html"><li>Attendance</li></a>
-            <a href="../hrm/jobPosting.html"><li>Recruitment</li></a>
-            <a href="../hrm/payrolAllowance.html"><li>Payroll</li></a>
-            <a href="../hrm/staffPerfomance.html"><li>Staff Performance</li></a>
-            <a href="../hrm/awardPageDashboard.html"
-              ><li>Awards and Incentives</li></a
+            <a href="../hrm/employment-management.html"
+              ><li>Employee Management</li></a
             >
-            <a href="../hrm/onboardingDash.html"><li>Onboarding</li></a>
-            <a href="../hrm/trainingDash.html"><li>Training</li></a>
+            <a href="../hrm/leave-management.html"><li>Leave Management</li></a>
+            <a href="../hrm/attendance.html"><li>Attendance</li></a>
+            <a href="../hrm/recruitment.html"><li>Recruitment</li></a>
+            <a href="../hrm/payroll-allowance.html"><li>Payroll</li></a>
+            <a href="../hrm/staff-perfomance.html"
+              ><li>Staff Performance</li></a
+            >
+            <a href="../hrm/award-page.html"><li>Awards and Incentives</li></a>
+            <a href="../hrm/onboarding-page.html"><li>Onboarding</li></a>
+            <a href="../hrm/training-page.html"><li>Training</li></a>
           </ul>
         </div>
         <div class="drop-hr" id="hr-toggle1">
@@ -251,7 +253,7 @@
               class="search-icon"
               alt=""
               src="./public/more.svg"
-              id="moreIcon"
+              id="moreIcon1"
             />
           </td>
         </tr>
@@ -317,6 +319,7 @@
         </div>
         <img class="page-master" alt="" src="./public/page--master.svg" />
       </div>
+
       <div
         id="optionsOverlayContainer"
         class="popup-overlay"
@@ -539,7 +542,7 @@
       const hrItems = document.getElementById("hr-items");
       const hrChevronIcon = document.getElementById("hr-chevron-icon");
 
-      hrItems.classList.add("hidden");
+      // hrItems.classList.add("hidden");
       hrToggle.addEventListener("click", function () {
         hrItems.classList.toggle("hidden");
         hrChevronIcon.classList.toggle("rotate");
@@ -617,47 +620,16 @@
           document.getElementById("overlay2").style.display = "none";
         });
 
-      var sideTabContainer2 = document.getElementById("sideTabContainer2");
-      if (sideTabContainer2) {
-        sideTabContainer2.addEventListener("click", function (e) {
-          // Please sync "Overview - Client Management" to the project
-        });
-      }
-
-      var sideTabContainer3 = document.getElementById("sideTabContainer3");
-      if (sideTabContainer3) {
-        sideTabContainer3.addEventListener("click", function (e) {
-          // Please sync "Client Data- blank page" to the project
-        });
-      }
-
-      var sideTabContainer4 = document.getElementById("sideTabContainer4");
-      if (sideTabContainer4) {
-        sideTabContainer4.addEventListener("click", function (e) {
-          // Please sync "Leads" to the project
-        });
-      }
-
-      var sideTabContainer5 = document.getElementById("sideTabContainer5");
-      if (sideTabContainer5) {
-        sideTabContainer5.addEventListener("click", function (e) {
-          // Please sync "Client Data- Analytics" to the project
-        });
-      }
-
-      var sideTabContainer6 = document.getElementById("sideTabContainer6");
-      if (sideTabContainer6) {
-        sideTabContainer6.addEventListener("click", function (e) {
-          // Please sync "Appointment" to the project
-        });
-      }
-
       var moreIcon = document.getElementById("moreIcon");
+
       if (moreIcon) {
         moreIcon.addEventListener("click", function () {
           var popup = document.getElementById("optionsOverlayContainer");
+
           if (!popup) return;
+
           var popupStyle = popup.style;
+
           if (popupStyle) {
             popupStyle.display = "flex";
             popupStyle.zIndex = 100;
@@ -665,15 +637,20 @@
             popupStyle.alignItems = "center";
             popupStyle.justifyContent = "center";
           }
-          popup.setAttribute("closable", "");
 
-          var onClick =
-            popup.onClick ||
-            function (e) {
-              if (e.target === popup && popup.hasAttribute("closable")) {
-                popupStyle.display = "none";
-              }
-            };
+          // Add a custom attribute to mark the popup as closable
+          popup.setAttribute("data-closable", "true");
+
+          var onClick = function (e) {
+            if (popup.getAttribute("data-closable") === "true") {
+              // Close the popup by setting its display to "none"
+              popupStyle.display = "none";
+              // Remove the attribute to prevent further clicks from closing it
+              popup.removeAttribute("data-closable");
+            }
+          };
+
+          // Add a click event listener to the popup container
           popup.addEventListener("click", onClick);
         });
       }
@@ -776,6 +753,11 @@
           popup.addEventListener("click", onClick);
         });
       }
+
+      // Get a reference to the overlay container
+      const overlayContainer = document.getElementById(
+        "optionsOverlayContainer"
+      );
 
       var frameContainer14 = document.getElementById("frameContainer14");
       if (frameContainer14) {
