@@ -474,15 +474,12 @@ tr:nth-child(2) td {
 
   .nav-bar .toggle-button {
     display: block;
-<<<<<<< HEAD
     position: relative;
     right: 1em;
   }
   .crm128-wrapper {
-      position: relative;
-      right: 2em;
-=======
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
+    position: relative;
+    right: 2em;
   }
   .frame-group {
     left: 0.2em;
@@ -491,35 +488,29 @@ tr:nth-child(2) td {
   .adm-container {
     left: 1em;
     width: 340px;
-<<<<<<< HEAD
     height: 867px;
   }
   .table {
     left: 0.5em;
     width: 95%;
-=======
     height: 817px;
   }
   .table {
     left: 0.5em;
     width: 65%;
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
     font-size: 14px;
   }
   th {
     padding: 16px;
   }
   td {
-<<<<<<< HEAD
     padding: 4px 1px 25px 20px;
     border: 1px solid lightblue;
     border-left: none;
-=======
     padding: 1px 1px 25px 20px;
     border: 1px solid lightblue;
     border-left: none;
     width: 40%;
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
   }
   .add-lead {
     width: 300px;

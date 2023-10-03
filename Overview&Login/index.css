@@ -921,7 +921,7 @@ li {
   .nav-bar {
     width: 100%;
   }
- .menu {
+  .menu {
     position: relative;
     display: none;
     margin-top: -10px;
@@ -930,10 +930,10 @@ li {
     z-index: 10;
   }
   .client-bar {
-      width: 204px;
+    width: 204px;
   }
   .side-bar {
-      font-size: 14px;
+    font-size: 14px;
   }
   .menu.menu-active {
     display: block;
@@ -945,11 +945,11 @@ li {
     right: 1em;
   }
   .crm128-wrapper {
-      position: relative;
-      right: 1.5em;
+    position: relative;
+    right: 1.5em;
   }
   .copyright-2023-crm128-parent {
-      z-index: 10;
+    z-index: 10;
   }
   .right {
     display: none;

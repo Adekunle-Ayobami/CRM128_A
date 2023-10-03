@@ -4,6 +4,7 @@ body {
   line-height: 1rem;
   background-color: #f6f6f6;
   font-family: "Clash Grotesk", sans-serif;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -297,11 +298,8 @@ button a {
 @media (max-width: 500px) {
   html {
     width: 80%;
-<<<<<<< HEAD
     height: 1100px;
-=======
     height: 1900px;
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
   }
   .bell {
     display: none;
@@ -310,29 +308,23 @@ button a {
     display: none;
   }
   body {
-<<<<<<< HEAD
-    width: 350px
-=======
+    width: 350px;
     width: 450px;
     /*height: 700px;*/
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
   }
   .nav-bar {
     width: 100%;
   }
   .menu {
-<<<<<<< HEAD
     position: relative;
     display: none;
     margin-top: -10px;
     width: 259px;
     height: 1000px;
     z-index: 10;
-=======
     display: none;
     margin-top: -10px;
     width: 259px;
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
   }
   .client-bar {
     width: 87%;
@@ -357,11 +349,8 @@ button a {
   }
   .frame-group {
     left: 0.4em;
-<<<<<<< HEAD
     width: 90%;
-=======
     width: 70%;
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
     z-index: -10;
   }
   .back {
@@ -374,22 +363,16 @@ button a {
   }
   .inner-page {
     left: 2em;
-<<<<<<< HEAD
     width: 90.5%;
-=======
     width: 90%;
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
     height: 650px;
   }
   .form {
     display: flex;
     flex-direction: column;
   }
-<<<<<<< HEAD
   .form input {
-      margin-bottom: 11px;
-      width: 93%;
+    margin-bottom: 11px;
+    width: 93%;
   }
-=======
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
 }

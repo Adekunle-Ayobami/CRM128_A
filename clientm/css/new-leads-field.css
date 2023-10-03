@@ -305,7 +305,7 @@ li {
 .expand {
   padding: 10px;
   background-color: #f6f6f6;
-  color: #7A8699;
+  color: #7a8699;
   border: 1px solid lightblue;
   border-radius: 10px;
 }
@@ -314,11 +314,11 @@ li {
   margin-bottom: 15px;
 }
 input[type="text"]::placeholder {
-  color: #7A8699;
+  color: #7a8699;
 }
 
 .expand option {
-  color: #7A8699;
+  color: #7a8699;
 }
 
 @media (max-width: 1366px) {

@@ -446,45 +446,41 @@ tr:nth-child(2) td {
   display: none;
 }
 
-<<<<<<< HEAD
-
 @media (max-width: 1100px) {
-    body {
-        width: 895px;
-    }
-    .frame-group {
-        left: 17em;
-        gap: 100px;
-    }
-    .logout {
-        padding-bottom: 820px;
-    }
-    .adm-container {
-        width: 590px;
-        left: 18em;
-        height: 1050px;
+  body {
+    width: 895px;
+  }
+  .frame-group {
+    left: 17em;
+    gap: 100px;
+  }
+  .logout {
+    padding-bottom: 820px;
+  }
+  .adm-container {
+    width: 590px;
+    left: 18em;
+    height: 1050px;
   }
   .table {
-      width: 30%;
-      left: 2em;
+    width: 30%;
+    left: 2em;
   }
   th {
-      padding: 15px 15px 15px 23px;
+    padding: 15px 15px 15px 23px;
   }
   td {
-      padding: 1px 5px 40px 10px;
-      text-align: center;
+    padding: 1px 5px 40px 10px;
+    text-align: center;
   }
   .women span {
-      left: 1em;
+    left: 1em;
   }
   /*.bt2 {*/
   /*    position: relative;*/
   /*    left: 25em;*/
   /*}*/
 }
-=======
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
 @media (max-width: 500px) {
   .bell {
     display: none;
@@ -493,11 +489,8 @@ tr:nth-child(2) td {
     display: none;
   }
   body {
-<<<<<<< HEAD
     width: 350px;
-=======
     width: 390px;
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
     height: 1300px;
   }
   .nav-bar {
@@ -519,25 +512,21 @@ tr:nth-child(2) td {
   }
   .frame-group {
     left: 0.2em;
-<<<<<<< HEAD
     gap: 90px;
   }
   .adm-container {
     left: 1em;
     width: 340px;
-=======
     gap: 120px;
   }
   .adm-container {
     left: 1em;
     width: 385px;
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
     height: 817px;
   }
   .table {
     left: 0.5em;
     width: 35%;
-<<<<<<< HEAD
     font-size: 14px;
   }
   th {
@@ -545,7 +534,6 @@ tr:nth-child(2) td {
   }
   td {
     padding: 1px 1px 25px 1px;
-=======
   }
   th {
     background-color: #7ac769;
@@ -553,38 +541,26 @@ tr:nth-child(2) td {
   }
   td {
     padding: 1px 1px 25px 13px;
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
     border: 1px solid lightblue;
     border-left: none;
   }
   .women span {
     top: 2em;
-<<<<<<< HEAD
     left: 1em;
-=======
-    left: -1em;
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
     font-size: 5px;
     padding: 0;
     width: 10%;
   }
   .add-lead {
-<<<<<<< HEAD
     width: 300px;
     right: 0.5px;
     padding: 15px;
   }
   .josiah-gana-parent {
-      display: none;
+    display: none;
   }
   .jg {
-      position: relative;
-      left:1em;
+    position: relative;
+    left: 1em;
   }
-=======
-    width: 400px;
-    right: 0.5px;
-    padding: 15px;
-  }
->>>>>>> cf9ee6b3a30097e90c93eba81acca5a5198940e3
 }

@@ -389,13 +389,8 @@ input:checked + .slider:before {
     display: none;
   }
   body {
-<<<<<<< HEAD
     width: 350px;
     height: 2000px;
-=======
-    width: 450px;
-    height: 700px;
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
   }
   .nav-bar {
     width: 100%;
@@ -403,16 +398,13 @@ input:checked + .slider:before {
   .menu {
     display: none;
     margin-top: -10px;
-<<<<<<< HEAD
     width: 259px;
   }
   .client-bar {
     width: 87%;
   }
-   .selected {
+  .selected {
     width: 76%;
-=======
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
   }
   .menu.menu-active {
     display: block;
@@ -422,13 +414,10 @@ input:checked + .slider:before {
     display: block;
     margin-left: -25px;
   }
-<<<<<<< HEAD
   .crm128-wrapper {
-      position: relative;
-      right: 1em;
+    position: relative;
+    right: 1em;
   }
-=======
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
   .copyright-2023-crm128-parent {
     position: fixed;
     bottom: 0;
@@ -444,14 +433,13 @@ input:checked + .slider:before {
   .back {
     top: 4em;
     left: 1.5em;
-<<<<<<< HEAD
     z-index: -10;
   }
   .move {
-      margin-right: 20px;
+    margin-right: 20px;
   }
   .move1 {
-      margin-right: 40px;
+    margin-right: 40px;
   }
   .night {
     left: 10em;
@@ -485,45 +473,13 @@ input:checked + .slider:before {
     left: -1.9em;
   }
   .toggle1 {
-      right: -0.1em;
+    right: -0.1em;
   }
   .josiah-gana-parent {
-      display: none;
+    display: none;
   }
   .jg {
-     position: relative;
-      left: 1em;
-=======
-  }
-  .night {
-    left: 16.4em;
-    width: 100%;
-  }
-  .inner-page {
-    top: 7em;
-    left: 1.5em;
-    width: 28em;
-    height: 1570px;
-  }
-  .first {
     position: relative;
-    left: -1.6em;
-  }
-  .second {
-    position: relative;
-    left: -1.6em;
-  }
-  .third {
-    position: relative;
-    left: -1.6em;
-  }
-  .notification {
-    position: relative;
-    left: -1.6em;
-  }
-  .fifth {
-    position: relative;
-    left: -1.6em;
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
+    left: 1em;
   }
 }

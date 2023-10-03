@@ -4,6 +4,7 @@ body {
   line-height: 1rem;
   background-color: #f6f6f6;
   font-family: "Clash Grotesk", sans-serif;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -332,11 +333,8 @@ button a {
 @media only screen and (max-width: 500px) {
   html {
     width: 80%;
-<<<<<<< HEAD
     height: 900px;
-=======
     height: 1100px;
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
   }
   .bell {
     display: none;
@@ -390,11 +388,10 @@ button a {
     z-index: -10;
   }
   .button-group {
-<<<<<<< HEAD
     left: 1.5em;
   }
   .select {
-      display: none;
+    display: none;
   }
   .table {
     left: 2em;
@@ -406,12 +403,10 @@ button a {
     padding: 11.4px;
   }
   td {
-      padding: 6px 6px 15px 6px;
-=======
+    padding: 6px 6px 15px 6px;
     left: 2em;
   }
   .table {
     left: 2em;
->>>>>>> 6eae845ab476829a7c0c3944a437ceb7f6977b07
   }
 }
