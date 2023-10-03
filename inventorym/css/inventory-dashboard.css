@@ -135,7 +135,9 @@ li {
   left: 89%;
   top: 19px;
 }
-
+.logout {
+  padding-bottom: 200px;
+}
 .client-bar {
   background-color: #7ac769;
   width: 88.5%;
@@ -193,6 +195,9 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .overview-client-management-inner {
   top: 20.06em;
@@ -1153,7 +1158,7 @@ li {
     width: 25.9em;
   }
   .div {
-      left: 0.1em;
+    left: 0.1em;
   }
   .frame-parent {
     width: 30%;

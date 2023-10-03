@@ -5,7 +5,7 @@ body {
   background-color: #f6f6f6;
   font-family: "Clash Grotesk", sans-serif;
   overflow-x: hidden;
-  width: 1345px;
+  /* width: 1345px; */
 }
 a {
   text-decoration: none;
@@ -202,11 +202,10 @@ li {
 .add-lead {
   position: absolute;
   top: 0;
-  right: -30px;
-  right: 0;
+  right: -0.5em;
   background-color: #f6f6f6;
   width: 36.8%;
-  height: 94.4%;
+  height: 96.5%;
   overflow-y: auto;
   overflow-x: hidden;
   text-align: left;
@@ -216,6 +215,7 @@ li {
   padding-top: 10px;
   padding-bottom: 20px;
   z-index: 1;
+  display: none;
 }
 .add-lead span {
   font-size: 20px;
@@ -354,6 +354,15 @@ li {
   cursor: pointer;
   font-size: 24px;
   display: none;
+}
+
+@media (min-width: 1368px) {
+  .logout {
+    padding-bottom: 240px;
+  }
+  .group-parent {
+    left: 60em;
+  }
 }
 
 @media (max-width: 1366px) {
