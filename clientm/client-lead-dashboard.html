@@ -47,9 +47,9 @@
           >
         </div>
         <div class="ellipse-group">
-          <div class="jg">JG</div>
+          <div class="avatar">JG</div>
           <div class="josiah-gana-parent">
-            <div class="josiah-gana">Josiah Gana</div>
+            <div class="josiah-gana" id="admin-email">Josiah Gana</div>
             <div class="admin">Admin</div>
           </div>
         </div>
@@ -234,90 +234,97 @@
       </div>
 
       <!-- Overlay Page -->
-      <div class="add-lead" id="overlay" style="display: none">
-        <div class="lead">
-          <div style="width: 100%; font-weight: 600">Add New Lead</div>
-          <img src="public/close.svg" id="closeBtn" alt="" />
-        </div>
-        <div class="form form1">
-          <span>Contact Person</span>
-          <input type="text" placeholder="Enter title" />
-        </div>
-        <div class="form form1">
-          <span>Organization</span>
-          <input type="text" placeholder="Enter title" />
-        </div>
-        <div class="form form1">
-          <span>Title</span>
-          <input type="text" placeholder="Enter title" />
-        </div>
-        <div class="form2 form1">
+      <form action="" method="" id="lead-form">
+        <div class="add-lead" id="overlay" style="display: none">
+          <div class="lead">
+            <div style="width: 100%; font-weight: 600">Add New Lead</div>
+            <img src="public/close.svg" id="closeBtn" alt="" />
+          </div>
+          <label class="form form1">
+            <span>Contact Person</span>
+            <input type="text" id="contact_person" placeholder="Enter title" />
+          </label>
+          <label class="form form1">
+            <span>Organization</span>
+            <input type="text" id="organization" placeholder="Enter title" />
+          </label>
+          <label class="form form1">
+            <span>Title</span>
+            <input type="text" id="title" placeholder="Enter title" />
+          </label>
+          <div class="form2 form1">
+            <label>
+              <span>Currency</span> <br />
+              <input
+                style="margin-top: 5px"
+                id="currency"
+                type="text"
+                placeholder="NAIRA"
+              />
+            </label>
+            <label>
+              <span>Status</span> <br />
+              <select id="status" style="margin-top: 5px">
+                <option value="" selected>active</option>
+                <option value="">In active</option>
+              </select>
+            </label>
+          </div>
+          <label class="form7 form3">
+            <label style="margin-right: 20px">
+              <span>Phone</span> <br />
+              <input
+                id="phone"
+                style="width: 80%; margin-top: 5px"
+                type="text"
+                placeholder="John Doe"
+              />
+            </label>
+            <label>
+              <span>Email</span> <br />
+              <input
+                id="email"
+                style="width: 75%; margin-top: 5px"
+                type="email"
+                placeholder="johndoe@gmail.com"
+              />
+            </label>
+          </label>
+          <label class="form1 form2">
+            <div>
+              <span>Start Date</span>
+              <input
+                id="start_date"
+                style="width: 65%; margin-top: 5px"
+                type="date"
+                placeholder="DD-MM-YY"
+              />
+            </div>
+            <div style="margin-left: -40px">
+              <span>Due Date</span>
+              <input
+                id="due_date"
+                style="width: 65%; margin-top: 5px"
+                type="date"
+                placeholder="DD-MM-YY"
+              />
+            </div>
+          </label>
+          <label class="form-text">
+            <span>Description</span>
+            <textarea
+              name=""
+              id="description"
+              cols="30"
+              rows="10"
+              placeholder="Enter Description"
+            ></textarea>
+          </label>
           <div>
-            <span>Value</span> <br />
-            <input style="margin-top: 5px" type="text" placeholder="300,000" />
-          </div>
-          <div>
-            <span>Currency</span> <br />
-            <select style="margin-top: 5px">
-              <option value="">Select</option>
-              <option value="">Dollar</option>
-              <option value="">Naira</option>
-              <option value="">Pounds</option>
-            </select>
+            <input type="submit" class="bigbutton" />
           </div>
         </div>
-        <div class="form7 form3">
-          <div style="margin-right: 20px">
-            <span>Phone</span> <br />
-            <input
-              style="width: 80%; margin-top: 5px"
-              type="text"
-              placeholder="John Doe"
-            />
-          </div>
-          <div>
-            <span>Email</span> <br />
-            <input
-              style="width: 75%; margin-top: 5px"
-              type="email"
-              placeholder="johndoe@gmail.com"
-            />
-          </div>
-        </div>
-        <div class="form1 form2">
-          <div>
-            <span>Start Date</span>
-            <input
-              style="width: 65%; margin-top: 5px"
-              type="date"
-              placeholder="DD-MM-YY"
-            />
-          </div>
-          <div style="margin-left: -40px">
-            <span>Due Date</span>
-            <input
-              style="width: 65%; margin-top: 5px"
-              type="date"
-              placeholder="DD-MM-YY"
-            />
-          </div>
-        </div>
-        <div class="form-text">
-          <span>Description</span>
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Enter Description"
-          ></textarea>
-        </div>
-        <div>
-          <a href="client-leads-list.html"
-            ><button class="bigbutton">Save</button></a
-          >
-        </div>
-      </div>
+      </form>
     </section>
     <footer>
       <div class="copyright-2023-crm128-parent">
@@ -329,6 +336,7 @@
       </div>
     </footer>
 
+    <script src="../main.js"></script>
     <script>
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
@@ -410,6 +418,88 @@
       var sidebarToggle = document.getElementById("sidebar-toggle");
       sidebarToggle.addEventListener("click", function () {
         toggleMenu();
+      });
+
+      const adminEmailEl = document.querySelector("#admin-email");
+      const avatarEl = document.querySelector(".avatar");
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      adminEmailEl.innerHTML = admin.email;
+      avatarEl.innerHTML = admin.email.substring(0, 2);
+
+      const leadfromEl = document.querySelector("#lead-form");
+      const contactInputEl = document.querySelector("#contact_person");
+      const organizationInputEl = document.querySelector("#organization");
+      const titleInputEl = document.querySelector("#title");
+      const currencyInputEl = document.querySelector("#currency");
+      const statusInputEl = document.querySelector("#status");
+      const phoneInputEl = document.querySelector("#phone");
+      const emailInputEl = document.querySelector("#email");
+      const startInputEl = document.querySelector("#start_date");
+      const dueInputEl = document.querySelector("#due_date");
+      const descriptionInputEl = document.querySelector("#description");
+
+      const backendURL = "http://localhost:7070";
+
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc ";
+
+      leadfromEl.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const contactValue = contactInputEl.value;
+        const organizationValue = organizationInputEl.value;
+        const titleValue = titleInputEl.value;
+        const currencyValue = currencyInputEl.value;
+        const statusValue = statusInputEl.value;
+        const phoneValue = phoneInputEl.value;
+        const emailValue = emailInputEl.value;
+        const startDateValue = startInputEl.value;
+        const dueDateValue = dueInputEl.value;
+        const descriptionValue = descriptionInputEl.value;
+
+        const payload = {
+          contact: contactValue,
+          organization: organizationValue,
+          title: titleValue,
+          currency: currencyValue,
+          status: statusValue,
+          phone: phoneValue,
+          email: emailValue,
+          startDate: startDateValue,
+          dueDate: dueDateValue,
+          description: descriptionValue,
+        };
+
+        try {
+          const httpRes = await fetch(backendURL + "/lead/addlead", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+            body: JSON.stringify(payload),
+          });
+
+          if (!httpRes.ok) {
+            const jsonRes = await httpRes.json();
+            if (jsonRes.success === true) {
+              localStorage.setItem("token", jsonRes.token);
+              localStorage.setItem(
+                "admin",
+                JSON.stringify(jsonRes.existingAdmin)
+              );
+              window.location.href = "../clientm/client-leads-list.html";
+            } else {
+              alert("Error creating lead: " + jsonRes.message);
+            }
+          } else {
+            alert("HTTP Error: " + httpRes.statusText);
+          }
+        } catch (error) {
+          console.error("An error occurred:", error);
+          alert("An error occurred while creating the lead.");
+        }
       });
     </script>
   </body>

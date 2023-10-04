@@ -476,7 +476,7 @@
         if (jsonRes.success === true) {
           console.log(jsonRes);
           localStorage.setItem("token", jsonRes.token);
-          // localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+          localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
           window.location.href = "../clientm/client-company-list.html";
           console.log(jsonRes.token);
         } else {

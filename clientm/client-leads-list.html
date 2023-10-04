@@ -442,76 +442,78 @@
         </div>
       </div>
       <!-- Overlay Page -->
-      <div class="add-lead" id="overlay" style="display: none">
-        <div class="lead">
-          <div style="width: 100%; font-weight: 600">Add New Lead</div>
-          <img src="public/close.svg" id="closeBtn" alt="" />
-        </div>
-        <div class="form form1">
-          <span>Contact Person</span>
-          <input type="text" placeholder="Enter title" />
-        </div>
-        <div class="form form1">
-          <span>Organization</span>
-          <input type="text" placeholder="Enter title" />
-        </div>
-        <div class="form form1">
-          <span>Title</span>
-          <input type="text" placeholder="Enter title" />
-        </div>
-        <div class="form2 form1">
-          <div>
-            <span>Value</span> <br />
-            <input type="text" placeholder="300,000" />
+      <form action="" id="lead-form">
+        <div class="add-lead" id="overlay" style="display: none">
+          <div class="lead">
+            <div style="width: 100%; font-weight: 600">Add New Lead</div>
+            <img src="public/close.svg" id="closeBtn" alt="" />
+          </div>
+          <div class="form form1">
+            <span>Contact Person</span>
+            <input type="text" placeholder="Enter title" />
+          </div>
+          <div class="form form1">
+            <span>Organization</span>
+            <input type="text" placeholder="Enter title" />
+          </div>
+          <div class="form form1">
+            <span>Title</span>
+            <input type="text" placeholder="Enter title" />
+          </div>
+          <div class="form2 form1">
+            <div>
+              <span>Value</span> <br />
+              <input type="text" placeholder="300,000" />
+            </div>
+            <div>
+              <span>Currency</span> <br />
+              <select>
+                <option value="">Select</option>
+                <option value="">Dollar</option>
+                <option value="">Naira</option>
+                <option value="">Pounds</option>
+              </select>
+            </div>
+          </div>
+          <div class="form7 form3">
+            <div style="margin-right: 20px">
+              <span style="margin-bottom: 5px">Phone</span> <br />
+              <input style="width: 80%" type="text" placeholder="John Doe" />
+            </div>
+            <div>
+              <span style="margin-bottom: 5px">Email</span> <br />
+              <input
+                style="width: 75%"
+                type="email"
+                placeholder="johndoe@gmail.com"
+              />
+            </div>
+          </div>
+          <div class="form1 form2">
+            <div>
+              <span style="margin-bottom: 5px">Start Date</span>
+              <input style="width: 65%" type="date" placeholder="DD-MM-YY" />
+            </div>
+            <div style="margin-left: -40px">
+              <span style="margin-bottom: 5px">Due Date</span>
+              <input style="width: 65%" type="date" placeholder="DD-MM-YY" />
+            </div>
+          </div>
+          <div class="form-text">
+            <span>Description</span>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="5"
+              placeholder="Enter Description"
+            ></textarea>
           </div>
           <div>
-            <span>Currency</span> <br />
-            <select>
-              <option value="">Select</option>
-              <option value="">Dollar</option>
-              <option value="">Naira</option>
-              <option value="">Pounds</option>
-            </select>
+            <button class="bigbutton">Save</button>
           </div>
         </div>
-        <div class="form7 form3">
-          <div style="margin-right: 20px">
-            <span style="margin-bottom: 5px">Phone</span> <br />
-            <input style="width: 80%" type="text" placeholder="John Doe" />
-          </div>
-          <div>
-            <span style="margin-bottom: 5px">Email</span> <br />
-            <input
-              style="width: 75%"
-              type="email"
-              placeholder="johndoe@gmail.com"
-            />
-          </div>
-        </div>
-        <div class="form1 form2">
-          <div>
-            <span style="margin-bottom: 5px">Start Date</span>
-            <input style="width: 65%" type="date" placeholder="DD-MM-YY" />
-          </div>
-          <div style="margin-left: -40px">
-            <span style="margin-bottom: 5px">Due Date</span>
-            <input style="width: 65%" type="date" placeholder="DD-MM-YY" />
-          </div>
-        </div>
-        <div class="form-text">
-          <span>Description</span>
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="5"
-            placeholder="Enter Description"
-          ></textarea>
-        </div>
-        <div>
-          <button class="bigbutton">Save</button>
-        </div>
-      </div>
+      </form>
     </section>
     <footer>
       <div class="copyright-2023-crm128-parent">

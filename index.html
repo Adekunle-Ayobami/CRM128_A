@@ -71,11 +71,8 @@
       </div>
     </footer>
 
-
-    
     <script src="main.js"></script>
 
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -87,9 +84,9 @@
         });
       });
 
-       // Plain javascript ot conne ct with the backend.
+      // Plain javascript ot conne ct with the backend.
 
-       const loginfromEl = document.querySelector("#login-form");
+      const loginfromEl = document.querySelector("#login-form");
       const emailInputEl = document.querySelector("#email");
       const pwdInputEl = document.querySelector("#password");
 
@@ -104,7 +101,7 @@
           password: pwdValue,
         };
 
-        const httpRes = await fetch(backendURl+'/admin/login', {
+        const httpRes = await fetch(backendURl + "/admin/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -114,14 +111,14 @@
         });
         const jsonRes = await httpRes.json();
 
-        if (jsonRes.success===true) {
+        if (jsonRes.success === true) {
           console.log(jsonRes);
           localStorage.setItem("token", jsonRes.token);
           localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
           window.location.href = "../Overview&Login/index.html";
-          console.log (jsonRes.token);
+          console.log(jsonRes.token);
         } else {
-          alert("Error logging in, detail: "+jsonRes.message);
+          alert("Error logging in, detail: " + jsonRes.message);
         }
       });
 
