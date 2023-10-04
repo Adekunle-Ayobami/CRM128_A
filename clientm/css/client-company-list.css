@@ -478,7 +478,9 @@ td {
   padding-top: 10px;
   padding-bottom: 20px;
   z-index: 1;
-  /*display: none;*/
+  display: none;
+
+  box-shadow: 0 0 100vw 100vh rgba(0, 0, 0, 0.5);
 }
 .add-lead1 span {
   font-size: 20px;
