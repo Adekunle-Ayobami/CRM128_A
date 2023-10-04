@@ -236,15 +236,14 @@
             <span
               id="active-client"
               style="font-size: 37px; margin-top: 10px; font-weight: bolder"
-              ></span
-            >
+            ></span>
           </div>
           <div style="padding-right: 50px" class="one">
             <span>Active Leads</span>
-            <span id="active-lead"
-             style="font-size: 37px; margin-top: 10px; font-weight: bolder"
-              ></span
-            >
+            <span
+              id="active-lead"
+              style="font-size: 37px; margin-top: 10px; font-weight: bolder"
+            ></span>
           </div>
           <div class="one">
             <span>Avg. value of won deals</span>
@@ -946,134 +945,70 @@
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
       const backendURL = "http://localhost:7070"; // Replace with your actual backend API URL
-const authToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc  "; // Replace with your authentication token
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc  "; // Replace with your authentication token
 
-async function fetchDataAndDisplay() {
-  try {
-    // Fetch active client count
-    const clientResponse = await fetch(`${backendURL}/client/getactiveclientcount`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+      async function fetchDataAndDisplay() {
+        try {
+          // Fetch active client count
+          const clientResponse = await fetch(
+            `${backendURL}/client/getactiveclientcount`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-    if (!clientResponse.ok) {
-      throw new Error(`Client network response was not ok (${clientResponse.status})`);
-    }
+          if (!clientResponse.ok) {
+            throw new Error(
+              `Client network response was not ok (${clientResponse.status})`
+            );
+          }
 
-    const clientData = await clientResponse.json();
-    const activeClientCount = clientData.count;
+          const clientData = await clientResponse.json();
+          const activeClientCount = clientData.count;
 
-    const activeClient = document.querySelector("#active-client");
-    activeClient.innerHTML = activeClientCount;
+          const activeClient = document.querySelector("#active-client");
+          activeClient.innerHTML = activeClientCount;
 
-    // Fetch active lead count
-    const leadResponse = await fetch(`${backendURL}/lead/getactiveleadcount`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+          // Fetch active lead count
+          const leadResponse = await fetch(
+            `${backendURL}/lead/getactiveleadcount`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-    if (!leadResponse.ok) {
-      throw new Error(`Lead network response was not ok (${leadResponse.status})`);
-    }
+          if (!leadResponse.ok) {
+            throw new Error(
+              `Lead network response was not ok (${leadResponse.status})`
+            );
+          }
 
-    const leadData = await leadResponse.json();
-    const activeLeadCount = leadData.count;
+          const leadData = await leadResponse.json();
+          const activeLeadCount = leadData.count;
 
-    const activeLead = document.querySelector("#active-lead");
-    activeLead.innerHTML = activeLeadCount;
-  } catch (error) {
-    console.error("There was a problem with the fetch operation:", error);
-  }
-}
+          const activeLead = document.querySelector("#active-lead");
+          activeLead.innerHTML = activeLeadCount;
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+        }
+      }
+      fetchDataAndDisplay();
 
-// Call the combined function to fetch and display both counts
-fetchDataAndDisplay();
-
-
-      // const backendURL = "http://localhost:7070"; // Replace with your actual backend API URL
-      // const authToken =
-      //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NjMzMzI3OCwiZXhwIjoxNjk2MzQ0MDc4fQ.2cneQirIcL4p_cOG9qSxoXZsdrOEpKTybY3WfK5eMl4"; // Replace with your authentication token
-
-      // async function fetchDataAndDisplay() {
-      //   try {
-      //     const response = await fetch(
-      //      `${backendURL}/client/getactiveclientcount`,
-      //       {
-      //         method: "GET",
-      //         headers: {
-      //           "Content-Type": "application/json",
-      //           Accept: "application/json",
-      //           Authorization: `Bearer ${authToken}`,
-      //         },
-      //       }
-      //     );
-
-      //     if (!response.ok) {
-      //       throw new Error(`Network response was not ok (${response.status})`);
-      //     }
-
-      //     const data = await response.json();
-      //     const activeClientCount = data.count; 
-
-      //     const activeClient = document.querySelector("#active-client");
-      //     activeClient.innerHTML = activeClientCount;
-      //   } catch (error) {
-      //     console.error("There was a problem with the fetch operation:", error);
-      //   }
-      // }
-
-
-      // async function fetchDataAndDisplay() {
-      //   try {
-      //     const response = await fetch(
-      //      `${backendURL}/client/lead/getactiveleadcount`,
-      //       {
-      //         method: "GET",
-      //         headers: {
-      //           "Content-Type": "application/json",
-      //           Accept: "application/json",
-      //           Authorization: `Bearer ${authToken}`,
-      //         },
-      //       }
-      //     );
-
-      //     if (!response.ok) {
-      //       throw new Error(`Network response was not ok (${response.status})`);
-      //     }
-
-      //     const data = await response.json();
-      //     const activeLeadCount = data.count; 
-
-      //     const activeLead = document.querySelector("#active-lead");
-      //     activeLead.innerHTML = activeLeadCount;
-      //   } catch (error) {
-      //     console.error("There was a problem with the fetch operation:", error);
-      //   }
-      // }
+     
 
       fetchDataAndDisplay();
-      // const logoutBtn = document.querySelector(".logout");
-      // logoutBtn.addEventListener("click", function () {
-      //   localStorage.removeItem("token");
-      //   localStorage.removeItem("admin");
-      //   window.location.href = "/index.html";
-      // });
-
-      // check if logged in
-      // if (localStorage.getItem("token")) {
-      //   console.log("already logged in");
-      // } else {
-      //   window.location.href = "/login.html";
-      // }
+ 
     </script>
   </body>
 </html>

@@ -297,7 +297,7 @@
             <div class="input-container" style="margin-top: 5px">
               <img class="call-icon" alt="" src="public/call.svg" />
               <input
-                id="phone"
+                id="contact"
                 style="width: 60%"
                 class="input-field1"
                 type="text"
@@ -306,10 +306,11 @@
             </div>
           </div>
           <div>
-            <span>Mobile Number</span> <br />
+            <span>status</span> <br />
             <div class="input-container" style="margin-top: 5px">
               <img class="call-icon" alt="" src="public/call.svg" />
               <input
+              placeholder="active/inactive"
                 id="status"
                 style="width: 60%"
                 class="input-field1"
@@ -434,7 +435,7 @@
       const companyTypeInput = document.querySelector("#company_type");
       const websiteInput = document.querySelector("#website_url");
       const emailInput = document.querySelector("#email");
-      const phoneInput = document.querySelector("#phone");
+      const contactInput = document.querySelector("#contact");
       const statusInput = document.querySelector("#status");
       const descriptionInput = document.querySelector("#description");
 
@@ -448,19 +449,20 @@
         const companyTypeValue = companyTypeInput.value;
         const websiteValue = websiteInput.value;
         const emailValue = emailInput.value;
-        const phoneValue = phoneInput.value;
+        const contactValue = contactInput.value;
         const statusValue = statusInput.value;
         const descriptionValue = descriptionInput.value;
 
         const payload = {
-          company: companyValue,
-          companyType: companyTypeValue,
-          website: websiteValue,
+          company_name: companyValue,
+          company_type: companyTypeValue,
+          website_url: websiteValue,
           email: emailValue,
-          phone: phoneValue,
+          contact: contactValue,
           status: statusValue,
           description: descriptionValue,
         };
+        console.log(payload)
 
         const httpRes = await fetch(backendURl + "/client/addclient", {
           method: "POST",
@@ -471,16 +473,17 @@
           },
           body: JSON.stringify(payload),
         });
+        window.location.href = "/clientm/client-company-list.html";
         const jsonRes = await httpRes.json();
 
         if (jsonRes.success === true) {
           console.log(jsonRes);
           localStorage.setItem("token", jsonRes.token);
           localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
-          window.location.href = "../clientm/client-company-list.html";
+         
           console.log(jsonRes.token);
         } else {
-          alert("Error logging in, detail: " + jsonRes.message);
+          alert("Error logging in detail: " + jsonRes.message);
         }
       });
     </script>

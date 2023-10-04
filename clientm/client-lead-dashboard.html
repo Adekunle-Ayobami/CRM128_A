@@ -264,10 +264,16 @@
             </label>
             <label>
               <span>Status</span> <br />
-              <select id="status" style="margin-top: 5px">
+              <input
+                style="margin-top: 5px"
+                id="status"
+                type="text"
+                placeholder="active/ in active"
+              />
+              <!-- <select id="status" style="margin-top: 5px">
                 <option value="" selected>active</option>
                 <option value="">In active</option>
-              </select>
+              </select> -->
             </label>
           </div>
           <label class="form7 form3">
@@ -458,17 +464,19 @@
         const descriptionValue = descriptionInputEl.value;
 
         const payload = {
-          contact: contactValue,
+          contact_person: contactValue,
           organization: organizationValue,
           title: titleValue,
           currency: currencyValue,
           status: statusValue,
           phone: phoneValue,
           email: emailValue,
-          startDate: startDateValue,
-          dueDate: dueDateValue,
+          start_date: startDateValue,
+          due_date: dueDateValue,
           description: descriptionValue,
         };
+
+        console.log(payload);
 
         try {
           const httpRes = await fetch(backendURL + "/lead/addlead", {
@@ -481,23 +489,27 @@
             body: JSON.stringify(payload),
           });
 
+          window.location.href = "/clientm/client-leads-list.html";
+
           if (!httpRes.ok) {
             const jsonRes = await httpRes.json();
+            // window.location.href = "./clientm/client-leads-list.html";
             if (jsonRes.success === true) {
               localStorage.setItem("token", jsonRes.token);
+              // window.location.href = "./clientm/client-leads-list.html";
               localStorage.setItem(
                 "admin",
-                JSON.stringify(jsonRes.existingAdmin)
-              );
-              window.location.href = "../clientm/client-leads-list.html";
+                JSON.stringify(jsonRes.existingAdmin));
+                // window.location.href = "./clientm/client-leads-list.html";
             } else {
               alert("Error creating lead: " + jsonRes.message);
             }
           } else {
-            alert("HTTP Error: " + httpRes.statusText);
+            alert("Success: " + httpRes.statusText);
           }
+          
         } catch (error) {
-          console.error("An error occurred:", error);
+          console.error("An error occurred:", Success);
           alert("An error occurred while creating the lead.");
         }
       });
