@@ -227,8 +227,8 @@
           <th>Website</th>
           <th>Options</th>
         </tr>
-        <tr id="getAllClient">
-          <td><a href="company-profile-archive.html">Daniel & Sons Ltd.</a></td>
+        <tr id="getAll-Client">
+          <td id="getCompany-Name"><a href="company-profile-archive.html"></a></td>
           <td>+2346478999810</td>
           <td>School</td>
           <td>atlantichall.edu@gmail.com</td>
@@ -800,7 +800,11 @@
 
           const clientData = await clientResponse.json();
           const getAllClient = clientData.clients;
+
+          
+        
           console.log(getAllClient);
+
           getAllClient.forEach((client) => {
             console.log("Client ID:", client.id);
             console.log("Company Name:", client.company_name);
@@ -810,7 +814,7 @@
             console.log("Phone Number:", client.contact);
             console.log("Mobile description:", client.description);
           });
-          const allClient = document.querySelector("#getAllClient");
+          const allClient = document.querySelector("#getAll-Client");
           allClient.innerHTML = getAllClient;
         } catch (error) {
           console.error("There was a problem with the fetch operation:", error);

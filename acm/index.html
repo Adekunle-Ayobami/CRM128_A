@@ -47,9 +47,9 @@
           >
         </div>
         <div class="ellipse-group">
-          <div class="jg">JG</div>
+          <div class="avatar">JG</div>
           <div class="josiah-gana-parent">
-            <div class="josiah-gana">Josiah Gana</div>
+            <div class="josiah-gana" id="admin-email">Josiah Gana</div>
             <div class="admin">Admin</div>
           </div>
         </div>
@@ -229,17 +229,17 @@
         <div class="income">
           <span>Income</span>
           <img class="open-eyes" src="public/Open eyes.png" alt="" />
-          <span class="naira">N200,000.00</span>
+          <span id="total-income" class="naira">N</span>
         </div>
         <div class="balance">
           <span>Balance</span>
           <img class="open-eyes1" src="public/eye closed.png" alt="" />
-          <span class="naira1">N200,000.00</span>
+          <span id="total-balance" class="naira1">N200,000.00</span>
         </div>
         <div class="expences">
           <span>Expences</span>
           <img class="open-eyes2" src="public/Open eyes.png" alt="" />
-          <span class="naira2">N200,000.00</span>
+          <span id="total-expenses" class="naira2">N200,000.00</span>
         </div>
       </div>
       <table class="table">
@@ -381,6 +381,7 @@
       </div>
 
       <!-- Overlay Pages -->
+    <form action="" id="income-form">
       <div class="add-lead" id="overlay" style="display: none">
         <div class="lead">
           <div style="width: 100%; font-weight: 600">Add New Income</div>
@@ -388,109 +389,113 @@
         </div>
         <div class="form form1">
           <span style="margin-bottom: 5px">Date</span>
-          <input type="date" placeholder="DD-MM-YY" />
+          <input type="date" id="date" placeholder="DD-MM-YY" />
         </div>
         <div class="form form1">
           <span style="margin-bottom: 5px">Source</span>
-          <input type="text" placeholder="Source" />
+          <input id="source" type="text" placeholder="Source" />
         </div>
         <div class="form2 form1">
           <div>
             <span>Category</span> <br />
             <div class="input-container" style="margin-top: 5px">
-              <select name="">
-                <option value="">Direct Sales</option>
-                <option value="">Referral</option>
-                <option value="">Operating Income</option>
-                <option value="">Exceptional Income</option>
-              </select>
+              <input id="category" type="text" placeholder="category" />
+              <!-- <select name="">
+                <option id="category" value="">Direct Sales</option>
+                <option id="category" value="">Referral</option>
+                <option id="category" value="">Operating Income</option>
+                <option id="category" value="">Exceptional Income</option>
+              </select> -->
             </div>
           </div>
-          <div>
+          <label>
             <span>Amount</span> <br />
             <div class="input-container" style="margin-top: 5px">
-              <select name="">
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
-              </select>
+              <input id="amount" type="text" placeholder="amount" />
+              <!-- <select id="amount" name="">
+                <option id="amount" value="">Option 1</option>
+                <option id="amount" value="">Option 1</option>
+                <option id="amount" value="">Option 1</option>
+                <option id="amount" value="">Option 1</option>
+              </select> -->
             </div>
-          </div>
+          </label>
         </div>
         <div class="form-text">
           <span>Description</span>
           <textarea
             style="margin-top: 5px"
             name=""
-            id=""
+            id="description"
             cols="10"
             rows="5"
             placeholder="Enter Description"
           ></textarea>
         </div>
         <div>
-          <a href="client-company-list.html"
-            ><button class="bigbutton">Save</button></a
-          >
+          <button type="submit" class="bigbutton">Save</button>
         </div>
       </div>
+    </form>
 
       <!-- Overlay Pages2 -->
-      <div class="add-lead" id="overlay2" style="display: none">
-        <div class="lead">
-          <div style="width: 100%; font-weight: 600">Add New Expenses</div>
-          <img src="public/close.svg" id="closeBtn2" alt="" />
-        </div>
-        <div class="form form1">
-          <span style="margin-bottom: 5px">Date</span>
-          <input type="date" placeholder="DD-MM-YY" />
-        </div>
-        <div class="form form1">
-          <span style="margin-bottom: 5px">Paid To</span>
-          <input type="text" placeholder="Source" />
-        </div>
-        <div class="form2 form1">
-          <div>
-            <span>Category</span> <br />
-            <div class="input-container" style="margin-top: 5px">
-              <select name="">
-                <option value="">Direct Sales</option>
-                <option value="">Referral</option>
-                <option value="">Operating Income</option>
-                <option value="">Exceptional Income</option>
-              </select>
+      <form action="" id="expenses-form">
+        <div class="add-lead" id="overlay2" style="display: none">
+          <div class="lead">
+            <div style="width: 100%; font-weight: 600">Add New Expenses</div>
+            <img src="public/close.svg" id="closeBtn2" alt="" />
+          </div>
+          <div class="form form1">
+            <span style="margin-bottom: 5px">Date</span>
+            <input id="date" type="date" placeholder="DD-MM-YY" />
+          </div>
+          <div class="form form1">
+            <span style="margin-bottom: 5px">Source</span>
+            <input id="source" type="text" placeholder="Source" />
+          </div>
+          <div class="form2 form1">
+            <div>
+              <span>Category</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input id="category" type="text" placeholder="category" />
+                <!-- <select name="">
+                  <option value="">Direct Sales</option>
+                  <option value="">Referral</option>
+                  <option value="">Operating Income</option>
+                  <option value="">Exceptional Income</option>
+                </select> -->
+              </div>
+            </div>
+            <div>
+              <span>Amount</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input id="amount" type="text" placeholder="amount" />
+                <!-- <select name="">
+                  <option value="">Option 1</option>
+                  <option value="">Option 1</option>
+                  <option value="">Option 1</option>
+                  <option value="">Option 1</option>
+                </select> -->
+              </div>
             </div>
           </div>
+          <div class="form-text">
+            <span>Description</span>
+            <textarea
+              style="margin-top: 5px"
+              name=""
+              id="description"
+              cols="10"
+              rows="5"
+              placeholder="Enter Description"
+            ></textarea>
+          </div>
           <div>
-            <span>Amount</span> <br />
-            <div class="input-container" style="margin-top: 5px">
-              <select name="">
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
-              </select>
-            </div>
+         
+                <button type="submit" class="bigbutton">Save</button>
           </div>
         </div>
-        <div class="form-text">
-          <span>Description</span>
-          <textarea
-            style="margin-top: 5px"
-            name=""
-            id=""
-            cols="10"
-            rows="5"
-            placeholder="Enter Description"
-          ></textarea>
-        </div>
-        <div>
-          <a href="client-company-list.html"
-            ><button class="bigbutton">Save</button></a
-          >
-        </div>
-      </div>
+      </form>
 
       <!-- Overlay Pages3 -->
       <div class="add-lead2" id="overlay3">
@@ -566,7 +571,9 @@
         <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
+        
 
+    <script src="../main.js"></script>
     <script>
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
@@ -723,6 +730,181 @@
       sidebarToggle.addEventListener("click", function () {
         toggleMenu();
       });
+
+      const adminEmailEl = document.querySelector("#admin-email");
+      const avatarEl = document.querySelector(".avatar");
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      adminEmailEl.innerHTML = admin.email;
+      avatarEl.innerHTML = admin.email.substring(0, 2);
+
+       // Plain javascript ot conne ct with the backend.
+
+           const incomefromEl = document.querySelector("#income-form");
+           const expensesfromEl = document.querySelector("#expenses-form");
+           const categoryInput = document.querySelector("#category"); 
+           const descriptionInput = document.querySelector("#description");
+           const sourceInput = document.querySelector("#source");
+           const dateInput = document.querySelector("#date");
+           const amountInput = document.querySelector("#amount");
+          
+     
+           const authToken =
+             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc ";
+     
+           incomefromEl.addEventListener("submit", async function (event) {
+             event.preventDefault();
+             console.log("submitting");
+             const categoryValue = categoryInput.value;
+             const descriptionValue = descriptionInput.value;
+             const sourceValue = sourceInput.value;
+             const amountValue = amountInput.value;
+              const dateValue = dateInput.value;
+     
+             const payload = {
+              category: categoryValue,
+              description: descriptionValue,
+              source: sourceValue,
+              date: dateValue,
+              amount: amountValue,
+             };
+             console.log(payload)
+     
+             const httpRes = await fetch(backendURl + "/income/addIncome", {
+               method: "POST",
+               headers: {
+                 "Content-Type": "application/json",
+                 Accept: "application/json",
+                 Authorization: `Bearer ${authToken}`,
+               },
+               body: JSON.stringify(payload),
+             });
+             window.location.href = "/acm/index.html";
+             const jsonRes = await httpRes.json();
+              console.log(jsonRes);
+             if (jsonRes.success === true) {
+               console.log(jsonRes);
+               localStorage.setItem("token", jsonRes.token);
+               localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+              
+               console.log(jsonRes.token);
+             } else {
+               alert("Income added successful:");
+             }
+           });
+     
+           expensesfromEl.addEventListener("submit", async function (event) {
+             event.preventDefault();
+             console.log("submitting");
+             const categoryValue = categoryInput.value;
+             const descriptionValue = descriptionInput.value;
+             const sourceValue = sourceInput.value;
+             const amountValue = amountInput.value;
+              const dateValue = dateInput.value;
+     
+             const payload = {
+              category: categoryValue,
+              description: descriptionValue,
+              source: sourceValue,
+              date: dateValue,
+              amount: amountValue,
+             };
+             console.log(payload)
+     
+             const httpRes = await fetch(backendURl + "/expenses/addExpense", {
+               method: "POST",
+               headers: {
+                 "Content-Type": "application/json",
+                 Accept: "application/json",
+                 Authorization: `Bearer ${authToken}`,
+               },
+               body: JSON.stringify(payload),
+             });
+             window.location.href = "/acm/index.html";
+             const jsonRes = await httpRes.json();
+              console.log(jsonRes);
+             if (jsonRes.success === true) {
+               console.log(jsonRes);
+               localStorage.setItem("token", jsonRes.token);
+               localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+              
+               console.log(jsonRes.token);
+             } else {
+               alert("Expenses added successful:");
+             }
+           });
+
+           async function fetchDataAndDisplay() {
+            try {
+              const backendURL = 'http://localhost:7070'; // Replace with your actual backend URL
+              const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc'; // Replace with your actual authentication token
+          
+              // Fetch total income
+              const incomeResponse = await fetch(`${backendURL}/income/calculateIncome`, {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Accept: 'application/json',
+                  Authorization: `Bearer ${authToken}`,
+                },
+              });
+          
+              if (!incomeResponse.ok) {
+                throw new Error(`Income network response was not ok (${incomeResponse.status})`);
+              }
+          
+              const totalIncome = await incomeResponse.json();
+              const activeTotalIncome = totalIncome.totalIncome;
+          
+              const activeIncome = document.querySelector('#total-income');
+              activeIncome.innerHTML = activeTotalIncome;
+          
+              // Fetch total balance
+              const balanceResponse = await fetch(`${backendURL}/balance/calculateBalance`, {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Accept: 'application/json',
+                  Authorization: `Bearer ${authToken}`,
+                },
+              });
+          
+              if (!balanceResponse.ok) {
+                throw new Error(`Balance network response was not ok (${balanceResponse.status})`);
+              }
+          
+              const totalBalance = await balanceResponse.json();
+              const activeTotalBalance = totalBalance.balance;
+          
+              const activeBalance = document.querySelector('#total-balance');
+              activeBalance.innerHTML = activeTotalBalance;
+          
+              // Fetch total expenses
+              const expensesResponse = await fetch(`${backendURL}/expenses/calculateExpenses`, {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Accept: 'application/json',
+                  Authorization: `Bearer ${authToken}`,
+                },
+              });
+          
+              if (!expensesResponse.ok) {
+                throw new Error(`Expenses network response was not ok (${expensesResponse.status})`);
+              }
+          
+              const totalExpenses = await expensesResponse.json();
+              const activeTotalExpenses = totalExpenses.totalAmount;
+          
+              const activeExpenses = document.querySelector('#total-expenses');
+              activeExpenses.innerHTML = activeTotalExpenses;
+            } catch (error) {
+              console.error('There was a problem with the fetch operation:', error);
+            }
+          }
+          
+          fetchDataAndDisplay();
+          
+     
     </script>
   </body>
 </html>
