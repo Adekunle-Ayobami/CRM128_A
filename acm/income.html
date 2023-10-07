@@ -397,62 +397,62 @@
       </div>
 
       <!-- Overlay Pages -->
-    <form action="" id="income-form">
+      <form action="" id="income-form">
         <div class="add-lead" id="overlay" style="display: none">
-        <div class="lead">
-          <div style="width: 100%; font-weight: 600">Add New Income</div>
-          <img src="public/close.svg" id="closeBtn" alt="" />
-        </div>
-        <div class="form form1">
-          <span style="margin-bottom: 5px">Date</span>
-          <input id="date" type="date" placeholder="DD-MM-YY" />
-        </div>
-        <div class="form form1">
-          <span style="margin-bottom: 5px">Source</span>
-          <input id="source" type="text" placeholder="Source" />
-        </div>
-        <div class="form2 form1">
-          <div>
-            <span>Category</span> <br />
-            <div class="input-container" style="margin-top: 5px">
-              <input id="category" type="text" placeholder="category" />
-              <!-- <select name="">
+          <div class="lead">
+            <div style="width: 100%; font-weight: 600">Add New Income</div>
+            <img src="public/close.svg" id="closeBtn" alt="" />
+          </div>
+          <div class="form form1">
+            <span style="margin-bottom: 5px">Date</span>
+            <input id="date" type="date" placeholder="DD-MM-YY" />
+          </div>
+          <div class="form form1">
+            <span style="margin-bottom: 5px">Source</span>
+            <input id="source" type="text" placeholder="Source" />
+          </div>
+          <div class="form2 form1">
+            <div>
+              <span>Category</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input id="category" type="text" placeholder="category" />
+                <!-- <select name="">
                 <option value="">Direct Sales</option>
                 <option value="">Referral</option>
                 <option value="">Operating Income</option>
                 <option value="">Exceptional Income</option>
               </select> -->
+              </div>
             </div>
-          </div>
-          <div>
-            <span>Amount</span> <br />
-            <div class="input-container" style="margin-top: 5px">
-              <input id="amount" type="text" placeholder="amount" />
-              <!-- <select name="">
+            <div>
+              <span>Amount</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input id="amount" type="text" placeholder="amount" />
+                <!-- <select name="">
                 <option value="">Option 1</option>
                 <option value="">Option 1</option>
                 <option value="">Option 1</option>
                 <option value="">Option 1</option>
               </select> -->
+              </div>
             </div>
           </div>
+          <div class="form-text">
+            <span>Description</span>
+            <textarea
+              style="margin-top: 5px"
+              name=""
+              id="description"
+              cols="10"
+              rows="5"
+              placeholder="Enter Description"
+            ></textarea>
+          </div>
+          <div>
+            <button type="submit" class="bigbutton">Save</button>
+          </div>
         </div>
-        <div class="form-text">
-          <span>Description</span>
-          <textarea
-            style="margin-top: 5px"
-            name=""
-            id="description"
-            cols="10"
-            rows="5"
-            placeholder="Enter Description"
-          ></textarea>
-        </div>
-        <div>
-          <button type="submit" class="bigbutton">Save</button>
-        </div>
-      </div>
-    </form>
+      </form>
     </section>
 
     <!-- Footer -->
@@ -686,12 +686,11 @@
 
       const incomefromEl = document.querySelector("#income-form");
       const expensesfromEl = document.querySelector("#expenses-form");
-      const categoryInput = document.querySelector("#category"); 
+      const categoryInput = document.querySelector("#category");
       const descriptionInput = document.querySelector("#description");
       const sourceInput = document.querySelector("#source");
       const dateInput = document.querySelector("#date");
       const amountInput = document.querySelector("#amount");
-     
 
       const authToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc ";
@@ -703,16 +702,16 @@
         const descriptionValue = descriptionInput.value;
         const sourceValue = sourceInput.value;
         const amountValue = amountInput.value;
-         const dateValue = dateInput.value;
+        const dateValue = dateInput.value;
 
         const payload = {
-         category: categoryValue,
-         description: descriptionValue,
-         source: sourceValue,
-         date: dateValue,
-         amount: amountValue,
+          category: categoryValue,
+          description: descriptionValue,
+          source: sourceValue,
+          date: dateValue,
+          amount: amountValue,
         };
-        console.log(payload)
+        console.log(payload);
 
         const httpRes = await fetch(backendURl + "/income/addIncome", {
           method: "POST",
@@ -725,12 +724,12 @@
         });
         window.location.href = "/acm/income.html";
         const jsonRes = await httpRes.json();
-         console.log(jsonRes);
+        console.log(jsonRes);
         if (jsonRes.success === true) {
           console.log(jsonRes);
           localStorage.setItem("token", jsonRes.token);
           localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
-         
+
           console.log(jsonRes.token);
         } else {
           alert("Income added successful:");

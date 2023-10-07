@@ -72,7 +72,7 @@
             class="more-icon client-icon"
             id="hr-chevron-icon"
             alt=""
-            src="./public/chevron-uop.svg"
+            src="./public/chevron-down1.svg"
           />
         </div>
         <div class="client-dropdown">
@@ -225,9 +225,13 @@
       <div class="adm-container">
         <div class="thead">
           <button class="today">Today</button>
-          <img src="public/chevron-left.svg" alt="" />
-          <span style="margin-top: 1em">March 2023</span>
-          <img src="public/chevron-right.svg" alt="" />
+          <button class="toggler" id="prevMonth">
+            <img class="toggle" src="public/chevron-left.svg" alt="" />
+          </button>
+          <h2 class="month-year" id="monthYear"></h2>
+          <button class="toggler" id="nextMonth">
+            <img class="toggle" src="public/chevron-right.svg" alt="" />
+          </button>
           <!-- <select class="select" name="">
             <option value="" selected>Month</option>
             <option value="">Week</option>
@@ -242,17 +246,20 @@
             </div>
           </div>
         </div>
-        <table class="table">
-          <tr>
-            <th>Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thur</th>
-            <th>Fri</th>
-            <th>Sat</th>
-          </tr>
-          <tr>
+        <table id="calenderTable" class="table">
+          <thead>
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thur</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+          <!-- <tr>
             <td class="color">29</td>
             <td class="color">30</td>
             <td>31</td>
@@ -314,7 +321,7 @@
             <td class="color">7</td>
             <td class="color">8</td>
             <td class="color">9</td>
-          </tr>
+          </tr> -->
         </table>
       </div>
       <!-- Overlay Page -->
@@ -504,6 +511,100 @@
       var sidebarToggle = document.getElementById("sidebar-toggle");
       sidebarToggle.addEventListener("click", function () {
         toggleMenu();
+      });
+
+      // Calender
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarBody = document.getElementById("calendarBody");
+        const monthYearElement = document.getElementById("monthYear");
+        const prevMonthButton = document.getElementById("prevMonth");
+        const nextMonthButton = document.getElementById("nextMonth");
+
+        async function getAppointments() {
+          const response = await fetch("./calender.json");
+          const data = await response.json();
+          return data;
+        }
+
+        let currentDate = new Date(); // Define currentDate outside the renderCalendar function
+
+        function renderCalendar(appointmentsData) {
+          const currentDay = currentDate.getDate();
+          const currentMonth = currentDate.getMonth();
+          const currentYear = currentDate.getFullYear();
+
+          const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+          const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+
+          const monthYearString = currentDate.toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+          });
+          monthYearElement.innerText = monthYearString;
+
+          let calendarHtml = "<tr>";
+
+          for (let i = 0; i < firstDayIndex; i++) {
+            calendarHtml += "<td></td>";
+          }
+
+          for (let day = 1; day <= lastDay; day++) {
+            const dateKey = `appointment${day}`;
+            const appointmentData = appointmentsData[dateKey];
+
+            if ((day + firstDayIndex - 1) % 7 === 0 && day !== 1) {
+              calendarHtml += "</tr><tr>";
+            }
+
+            let cell = `<td>${day}`;
+
+            if (
+              currentDay === day &&
+              currentMonth === currentDate.getMonth() &&
+              currentYear === currentDate.getFullYear()
+            ) {
+              cell = `<td class="highlighted-day">${day}`;
+            }
+
+            if (appointmentData) {
+              const appointmentList = `<div class="appointments">
+                                <span class="appointment-title">${appointmentData.title}</span>
+                                <span class="appointment-time">${appointmentData.fromTime} - ${appointmentData.toTime}</span>
+                              </div>`;
+              cell += appointmentList;
+            }
+
+            cell += "</td>";
+            calendarHtml += cell;
+          }
+
+          calendarHtml += "</tr>";
+          calendarBody.innerHTML = calendarHtml;
+        }
+
+        let appointment = {};
+
+        getAppointments()
+          .then((appointments) => {
+            // Do something with the appointments data, like displaying them on the calendar
+            // displayAppointmentsOnCalendar(appointments);
+            console.log("Appointments:", appointments);
+            appointment = appointments;
+            renderCalendar(appointments);
+          })
+          .catch((error) =>
+            console.error("Error fetching appointments:", error)
+          );
+
+        prevMonthButton.addEventListener("click", function () {
+          currentDate.setMonth(currentDate.getMonth() - 1);
+          renderCalendar(appointment);
+        });
+
+        nextMonthButton.addEventListener("click", function () {
+          currentDate.setMonth(currentDate.getMonth() + 1);
+          renderCalendar(appointment);
+        });
       });
     </script>
   </body>

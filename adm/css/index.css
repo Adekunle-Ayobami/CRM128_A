@@ -131,6 +131,19 @@ li {
 
   font-weight: 600;
 }
+.highlighted-day {
+  background-color: #f0f0f0;
+}
+.toggle {
+  width: 17px;
+}
+.toggler {
+  height: 20px;
+  position: relative;
+  top: 1em;
+  border: none;
+  background: none;
+}
 .client-icon {
   position: absolute;
   left: 89%;
@@ -240,7 +253,7 @@ li {
   top: 6em;
   left: 21em;
   width: 71.4%;
-  height: 550px;
+  height: 670px;
   border-radius: 8px;
 }
 .thead {
@@ -254,6 +267,9 @@ li {
   border: 1px solid #dfe2e6;
   padding: 10px 17px;
 }
+.month-year {
+  font-size: 18px;
+}
 .table {
   position: relative;
   top: 1em;
@@ -263,16 +279,16 @@ li {
 }
 th {
   background-color: #7ac769;
-  padding: 10px;
+  padding: 12px;
 }
 td {
-  padding: 15px 15px 25px 49px;
+  padding: 15px 15px 35px 49px;
   border: 1px solid lightblue;
-  border-left: none;
+  /* border-left: none; */
 }
-td:last-child {
+/* td:last-child {
   border-right: none;
-}
+} */
 tr:last-child td {
   border-bottom: none;
 }
@@ -294,7 +310,7 @@ tr:last-child td {
   text-align: center;
 }
 .logout {
-  padding-bottom: 190px;
+  padding-bottom: 290px;
 }
 /* Overlay Page */
 .add-lead {
@@ -314,7 +330,7 @@ tr:last-child td {
   padding-bottom: 20px;
   z-index: 1;
 }
-.add-lead span {
+.add-lead label {
   font-size: 20px;
   font-weight: 500;
 }
@@ -427,8 +443,8 @@ tr:last-child td {
 }
 .location {
   position: relative;
-  top: -2.1em;
-  left: 13.5em;
+  top: -1.4em;
+  left: 13.9em;
   width: 24px;
   height: 24px;
 }
@@ -447,33 +463,31 @@ tr:last-child td {
   display: none;
 }
 
-
-
 @media (max-width: 1100px) {
-    body {
-        width: 895px;
-    }
-    .frame-group {
-        left: 17em;
-        gap: 100px;
-    }
-    .logout {
-        padding-bottom: 820px;
-    }
-    .adm-container {
-        width: 590px;
-        left: 18em;
+  body {
+    width: 895px;
+  }
+  .frame-group {
+    left: 17em;
+    gap: 100px;
+  }
+  .logout {
+    padding-bottom: 820px;
+  }
+  .adm-container {
+    width: 590px;
+    left: 18em;
   }
   .table {
-      width: 30%;
-      left: 2em;
+    width: 30%;
+    left: 2em;
   }
   th {
-      padding: 15px 15px 15px 32px;
+    padding: 15px 15px 15px 32px;
   }
   td {
-      padding: 1px 5px 40px 10px;
-      text-align: center;
+    padding: 1px 5px 40px 10px;
+    text-align: center;
   }
   /*.bt2 {*/
   /*    position: relative;*/
@@ -546,10 +560,10 @@ tr:last-child td {
     width: 10%;
   }
   .josiah-gana-parent {
-      display: none;
+    display: none;
   }
   .jg {
-      position: relative;
-      left:1em;
+    position: relative;
+    left: 1em;
   }
 }
