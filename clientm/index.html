@@ -26,8 +26,8 @@
 
         <a href="client-management-dash.html">
           <div class="crm128-wrapper">
-            <span style="color: #003e9c">CRM</span
-            ><span style="color: #57bc4a">128</span>
+            <span style="color: #003e9c;">CRM</span
+            ><span style="color: #57bc4a;">128</span>
           </div>
         </a>
         <div class="search-parent">
@@ -130,7 +130,7 @@
           <ul id="hr-items1">
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="#"
-              ><li style="text-overflow: ellipsis">
+              ><li style="text-overflow: ellipsis;">
                 Emzor Pham Industries Ltd.
               </li></a
             >
@@ -234,7 +234,7 @@
             <div class="frame-container">
               <div
                 class="installation-of-a-mechanical-d-parent"
-                style="margin-top: 30px"
+                style="margin-top: 30px;"
               >
                 <div class="installation-of-a">
                   Installation of a mechanical device
@@ -407,10 +407,10 @@
     <footer>
       <div class="copyright-2023-crm128-parent">
         <div class="copyright-2023-crm128-container">
-          <span style="color: #003e9c">© Copyright 2023 CRM</span>
-          <span style="color: #57bc4a">128</span>
+          <span style="color: #003e9c;">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a;">128</span>
         </div>
-        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+        <div style="color: #003e9c;">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
 
@@ -493,59 +493,68 @@
       adminEmailEl.innerHTML = admin.email;
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
-      const backendURL = "http://localhost:7070"; // Replace with your actual backend API URL
-const authToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc  "; // Replace with your authentication token
+      const backendURL = "https://crm-ujle.onrender.com"; // Replace with your actual backend API URL
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU "; // Replace with your authentication token
 
-async function fetchDataAndDisplay() {
-  try {
-    // Fetch active client count
-    const clientResponse = await fetch(`${backendURL}/client/getactiveclientcount`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+      async function fetchDataAndDisplay() {
+        try {
+          // Fetch active client count
+          const clientResponse = await fetch(
+            `${backendURL}/client/getactiveclientcount`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-    if (!clientResponse.ok) {
-      throw new Error(`Client network response was not ok (${clientResponse.status})`);
-    }
+          if (!clientResponse.ok) {
+            throw new Error(
+              `Client network response was not ok (${clientResponse.status})`
+            );
+          }
 
-    const clientData = await clientResponse.json();
-    const activeClientCount = clientData.count;
+          const clientData = await clientResponse.json();
+          const activeClientCount = clientData.count;
 
-    const activeClient = document.querySelector("#active-client");
-    activeClient.innerHTML = activeClientCount;
+          const activeClient = document.querySelector("#active-client");
+          activeClient.innerHTML = activeClientCount;
 
-    // Fetch active lead count
-    const leadResponse = await fetch(`${backendURL}/lead/getactiveleadcount`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+          // Fetch active lead count
+          const leadResponse = await fetch(
+            `${backendURL}/lead/getactiveleadcount`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-    if (!leadResponse.ok) {
-      throw new Error(`Lead network response was not ok (${leadResponse.status})`);
-    }
+          if (!leadResponse.ok) {
+            throw new Error(
+              `Lead network response was not ok (${leadResponse.status})`
+            );
+          }
 
-    const leadData = await leadResponse.json();
-    const activeLeadCount = leadData.count;
+          const leadData = await leadResponse.json();
+          const activeLeadCount = leadData.count;
 
-    const activeLead = document.querySelector("#active-lead");
-    activeLead.innerHTML = activeLeadCount;
-  } catch (error) {
-    console.error("There was a problem with the fetch operation:", error);
-  }
-}
+          const activeLead = document.querySelector("#active-lead");
+          activeLead.innerHTML = activeLeadCount;
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+        }
+      }
 
-// Call the combined function to fetch and display both counts
-fetchDataAndDisplay();
-
+      // Call the combined function to fetch and display both counts
+      fetchDataAndDisplay();
     </script>
   </body>
 </html>

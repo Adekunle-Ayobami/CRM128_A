@@ -1,1 +1,1 @@
-const backendURl = "http://localhost:7070"
+const backendURl = "https://crm-ujle.onrender.com"
