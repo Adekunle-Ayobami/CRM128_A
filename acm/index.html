@@ -857,6 +857,7 @@
           
               const activeIncome = document.querySelector('#total-income');
               activeIncome.innerHTML = activeTotalIncome;
+              console.log(activeTotalIncome)
           
               // Fetch total balance
               const balanceResponse = await fetch(`${backendURL}/balance/calculateBalance`, {
@@ -874,6 +875,7 @@
           
               const totalBalance = await balanceResponse.json();
               const activeTotalBalance = totalBalance.balance;
+              console.log(activeTotalBalance)
           
               const activeBalance = document.querySelector('#total-balance');
               activeBalance.innerHTML = activeTotalBalance;
@@ -893,7 +895,8 @@
               }
           
               const totalExpenses = await expensesResponse.json();
-              const activeTotalExpenses = totalExpenses.totalAmount;
+              const activeTotalExpenses = totalExpenses.totalExpenses;
+              console.log(activeTotalExpenses)
           
               const activeExpenses = document.querySelector('#total-expenses');
               activeExpenses.innerHTML = activeTotalExpenses;
