@@ -218,22 +218,27 @@
       </div>
       <table class="table">
         <tr>
-          <th>Title</th>
-          <th>Value</th>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Due Date</th>
           <th>Status</th>
+          <th>Description</th>
+          <th>Organization</th>
+          <th>Contact Person</th>
+          <th>Start Date</th>
+          <th>Due Date</th>
           <th>Options</th>
         </tr>
+         <tbody id="table-body">
+          
+
+          </tbody>
         <tr>
-          <td><a href="new-leads-field.html">Sample Deal Title</a></td>
-          <td>350,000,000</td>
-          <td>Ebay</td>
-          <td>Henry, Arthur</td>
-          <td>30 Jun 2023</td>
-          <td>Contact Made</td>
-          <td style="display: flex">
+         
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <!-- <td style="display: flex">
             <img
               class="search-icon"
               alt=""
@@ -244,9 +249,9 @@
               <span>Lost</span>
               <img class="cancel-icon" alt="" src="public/cancel.svg" />
             </div>
-          </td>
+          </td> -->
         </tr>
-        <tr>
+        <!-- <tr>
           <td>Sample Deal Title</td>
           <td>350,000,000</td>
           <td>Ebay</td>
@@ -266,8 +271,8 @@
             </div>
             <span class="reopen">Reopen</span>
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>Sample Deal Title</td>
           <td>350,000,000</td>
           <td>Ebay</td>
@@ -290,8 +295,8 @@
               <img class="cancel-icon" alt="" src="public/cancel.svg" />
             </div>
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>Sample Deal Title</td>
           <td>350,000,000</td>
           <td>Ebay</td>
@@ -310,8 +315,8 @@
               <img class="cancel-icon" alt="" src="public/cancel.svg" />
             </div>
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>Sample Deal Title</td>
           <td>350,000,000</td>
           <td>Ebay</td>
@@ -330,8 +335,8 @@
               <img class="cancel-icon" alt="" src="public/cancel.svg" />
             </div>
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>Sample Deal Title</td>
           <td>350,000,000</td>
           <td>Ebay</td>
@@ -351,8 +356,8 @@
             </div>
             <span class="reopen">Reopen</span>
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>Sample Deal Title</td>
           <td>350,000,000</td>
           <td>Ebay</td>
@@ -372,7 +377,7 @@
             </div>
             <span class="reopen">Reopen</span>
           </td>
-        </tr>
+        </tr> -->
       </table>
 
       <div class="pagination">
@@ -728,11 +733,50 @@
           document.getElementById("overlay").style.display = "none";
         });
 
-        const adminEmailEl = document.querySelector("#admin-email");
-        const avatarEl = document.querySelector(".avatar");
-        const admin = JSON.parse(localStorage.getItem("admin"));
-        adminEmailEl.innerHTML = admin.email;
-        avatarEl.innerHTML = admin.email.substring(0, 2);
-    </script>
+        const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
+const authToken =
+  "YOUR_AUTH_TOKEN_HERE"; // Replace with your authentication token
+
+// Function to fetch data from your API and populate the table
+async function fetchDataAndPopulateTable() {
+  try {
+    const response = await fetch(`${backendURL}/lead/getallleads`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API response was not ok (${response.status})`);
+    }
+
+    const data = await response.json();
+    const tableBody = document.getElementById('table-body');
+
+    data.leads.forEach((lead) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${lead.status}</td>
+        <td>${lead.description}</td>
+        <td>${lead.organization}</td>
+        <td>${lead.contact_person}</td>
+        <td>${lead.start_date}</td>
+        <td>${lead.due_date}</td>
+        <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.error("There was a problem with the API request:", error);
+  }
+}
+
+// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
+</script>
   </body>
 </html>
