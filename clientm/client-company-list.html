@@ -227,12 +227,16 @@
           <th>Website</th>
           <th>Options</th>
         </tr>
-        <tr id="getAllClient">
-          <td><a href="company-profile-archive.html">Daniel & Sons Ltd.</a></td>
-          <td>+2346478999810</td>
-          <td>School</td>
-          <td>atlantichall.edu@gmail.com</td>
-          <td>atlantichall.edu.ng</td>
+        <tbody id="table-body">
+          
+
+        </tbody>
+        <!-- <tr id="getAllClient"> -->
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td>
             <img
               class="search-icon"
@@ -772,7 +776,7 @@
       adminEmailEl.innerHTML = admin.email;
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
-      const backendURL = "http://localhost:7070"; // Replace with your actual backend API URL
+      const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
       const authToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc  "; // Replace with your authentication token
 
@@ -802,7 +806,7 @@
           const getAllClient = clientData.clients;
           console.log(getAllClient);
           getAllClient.forEach((client) => {
-            console.log("Client ID:", client.id);
+            console.log("Client ID:", client._id);
             console.log("Company Name:", client.company_name);
             console.log("Company Type:", client.company_type);
             console.log("Email:", client.email);
@@ -817,6 +821,47 @@
         }
       }
       fetchDataAndDisplay();
+
+// Function to fetch data from your API and populate the table
+async function fetchDataAndPopulateTable() {
+  try {
+    const response = await fetch(`${backendURL}/client/getallclients`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API response was not ok (${response.status})`);
+    }
+
+    const data = await response.json();
+    const tableBody = document.getElementById('table-body');
+
+    data.clients.forEach((client) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${client.company_name}</td>
+        <td>${client.contact}</td>
+        <td>${client.company_type}</td>
+        <td>${client.email}</td>
+        <td>${client.website_url}</td>
+        <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.error("There was a problem with the API request:", error);
+  }
+}
+
+// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
+
 
       //       document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
 
