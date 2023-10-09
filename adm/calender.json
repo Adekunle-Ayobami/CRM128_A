@@ -1,0 +1,67 @@
+{
+  "appointment1": {
+    "title": "Important Meeting",
+    "fromDate": "2023-10-10",
+    "fromTime": "14:30",
+    "toDate": "2023-10-10",
+    "toTime": "16:00",
+    "location": "123 Main St, City",
+    "guests": ["josiahg@hanstechnology.biz", "daniele@gen128bs.com"],
+    "googleMeetLink": "meet.google.com/abcd123",
+    "teamsLink": "teams.microsoft.com/abcd123",
+    "zoomLink": "zoom.us/join/abcd123",
+    "description": "Discuss project updates and future plans."
+  },
+  "appointment2": {
+    "title": "Team Lunch",
+    "fromDate": "2023-10-12",
+    "fromTime": "12:00",
+    "toDate": "2023-10-12",
+    "toTime": "13:00",
+    "location": "Restaurant XYZ",
+    "guests": ["john@example.com", "sarah@example.com"],
+    "googleMeetLink": "",
+    "teamsLink": "",
+    "zoomLink": "",
+    "description": "Team building and casual discussions."
+  },
+  "appointment3": {
+    "title": "Project Demo",
+    "fromDate": "2023-10-15",
+    "fromTime": "10:00",
+    "toDate": "2023-10-15",
+    "toTime": "11:30",
+    "location": "Office Meeting Room",
+    "guests": ["alice@example.com", "bob@example.com"],
+    "googleMeetLink": "meet.google.com/efgh456",
+    "teamsLink": "",
+    "zoomLink": "",
+    "description": "Demonstrate the latest project progress."
+  },
+  "appointment4": {
+    "title": "Client Presentation",
+    "fromDate": "2023-10-18",
+    "fromTime": "15:00",
+    "toDate": "2023-10-18",
+    "toTime": "17:00",
+    "location": "Client's Office",
+    "guests": ["client1@example.com", "client2@example.com"],
+    "googleMeetLink": "",
+    "teamsLink": "teams.microsoft.com/wxyz789",
+    "zoomLink": "",
+    "description": "Present project updates and gather feedback."
+  },
+  "appointment5": {
+    "title": "Team Training",
+    "fromDate": "2023-10-20",
+    "fromTime": "09:00",
+    "toDate": "2023-10-20",
+    "toTime": "12:00",
+    "location": "Training Center",
+    "guests": ["training1@example.com", "training2@example.com"],
+    "googleMeetLink": "",
+    "teamsLink": "",
+    "zoomLink": "zoom.us/join/efgh789",
+    "description": "Specialized training for the team."
+  }
+}

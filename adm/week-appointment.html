@@ -16,6 +16,7 @@
       href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   </head>
   <body>
     <header>
@@ -239,8 +240,8 @@
             </div>
           </div>
         </div>
-        <table class="table">
-          <tr>
+        <table class="table" id="calendar">
+          <!-- <tr>
             <th></th>
             <th>
               Sun <br /><br />
@@ -420,7 +421,7 @@
             <td></td>
             <td></td>
             <td></td>
-          </tr>
+          </tr> -->
         </table>
       </div>
       <!--  -->
@@ -611,6 +612,22 @@
       var sidebarToggle = document.getElementById("sidebar-toggle");
       sidebarToggle.addEventListener("click", function () {
         toggleMenu();
+      });
+
+      //
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          navLinks: true,
+          headerToolbar: {
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay",
+          },
+        });
+
+        calendar.render();
       });
     </script>
   </body>
