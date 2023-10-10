@@ -253,11 +253,11 @@
           <th>Options</th>
         </tr>
         <tr>
-          <td>01/02/2023</td>
-          <td>Client 1</td>
-          <td>Contract won</td>
-          <td>Direct discussion with a Client</td>
-          <td>N200,000.00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td> </td>
+          <td></td>
           <td>
             <img class="expense-arrow" src="public/Expense Arrow.svg" alt="" />
           </td>
@@ -272,11 +272,11 @@
           </td>
         </tr>
         <tr>
-          <td>01/02/2023</td>
-          <td>Client 1</td>
-          <td>Contract won</td>
-          <td>Direct discussion with a Client</td>
-          <td>N200,000.00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td> </td>
+          <td></td>
           <td>
             <img class="expense-arrow" src="public/Income Arrow.svg" alt="" />
           </td>
@@ -906,6 +906,52 @@
           }
           
           fetchDataAndDisplay();
+
+          
+        const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
+
+// Function to fetch data from your API and populate the table
+async function fetchDataAndPopulateTable() {
+  try {
+    const response = await fetch(`${backendURL}income/getAllIncome`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API response was not ok (${response.status})`);
+    }
+
+    const data = await response.json();
+    const tableBody = document.getElementById('table-body');
+
+    console.log(data)
+
+    data.leads.forEach((lead) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${lead.status}</td>
+        <td>${lead.description}</td>
+        <td>${lead.organization}</td>
+        <td>${lead.contact_person}</td>
+        <td>${lead.start_date}</td>
+        <td>${lead.due_date}</td>
+        <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.error("There was a problem with the API request:", error);
+  }
+}
+
+// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
           
      
     </script>
