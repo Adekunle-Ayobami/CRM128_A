@@ -274,6 +274,7 @@ li {
   padding: 13px 0 13px 0;
   background-color: #ffeaea;
   border: 1px solid #fd3030;
+  
 }
 .table {
   position: absolute;
@@ -281,6 +282,7 @@ li {
   left: 20em;
   width: 74.15%;
   border-collapse: collapse;
+  margin-top: 0.5em;
 }
 th {
   text-align: left;

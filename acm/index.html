@@ -249,19 +249,23 @@
           <th>Category</th>
           <th>Description</th>
           <th>Amount</th>
-          <th>Cash Flow</th>
           <th>Options</th>
         </tr>
         <tr>
+
+          <tbody id="table-body">
+          
+
+          </tbody>
+          <!-- <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td> </td>
-          <td></td>
-          <td>
+          <td></td> -->
+          <!-- <td>
             <img class="expense-arrow" src="public/Expense Arrow.svg" alt="" />
-          </td>
-          <td>
+          </td> -->
+          <!-- <td>
             <img
               id="overlayBtn3"
               src="public/edit.svg"
@@ -269,9 +273,9 @@
               style="margin-right: 10px; cursor: pointer"
             />
             <img src="public/Delete.svg" alt="" />
-          </td>
+          </td> -->
         </tr>
-        <tr>
+        <!-- <tr>
           <td></td>
           <td></td>
           <td></td>
@@ -289,8 +293,8 @@
             />
             <img src="public/Delete.svg" alt="" />
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>01/02/2023</td>
           <td>Client 1</td>
           <td>Contract won</td>
@@ -308,8 +312,8 @@
             />
             <img src="public/Delete.svg" alt="" />
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>01/02/2023</td>
           <td>Client 1</td>
           <td>Contract won</td>
@@ -327,8 +331,8 @@
             />
             <img src="public/Delete.svg" alt="" />
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>01/02/2023</td>
           <td>Client 1</td>
           <td>Contract won</td>
@@ -346,7 +350,7 @@
             />
             <img src="public/Delete.svg" alt="" />
           </td>
-        </tr>
+        </tr> -->
       </table>
       <!--  -->
       <div class="pagination">
@@ -381,62 +385,62 @@
       </div>
 
       <!-- Overlay Pages -->
-    <form action="" id="income-form">
-      <div class="add-lead" id="overlay" style="display: none">
-        <div class="lead">
-          <div style="width: 100%; font-weight: 600">Add New Income</div>
-          <img src="public/close.svg" id="closeBtn" alt="" />
-        </div>
-        <div class="form form1">
-          <span style="margin-bottom: 5px">Date</span>
-          <input type="date" id="date" placeholder="DD-MM-YY" />
-        </div>
-        <div class="form form1">
-          <span style="margin-bottom: 5px">Source</span>
-          <input id="source" type="text" placeholder="Source" />
-        </div>
-        <div class="form2 form1">
-          <div>
-            <span>Category</span> <br />
-            <div class="input-container" style="margin-top: 5px">
-              <input id="category" type="text" placeholder="category" />
-              <!-- <select name="">
+      <form action="" id="income-form">
+        <div class="add-lead" id="overlay" style="display: none">
+          <div class="lead">
+            <div style="width: 100%; font-weight: 600">Add New Income</div>
+            <img src="public/close.svg" id="closeBtn" alt="" />
+          </div>
+          <div class="form form1">
+            <span style="margin-bottom: 5px">Date</span>
+            <input type="date" id="date" placeholder="DD-MM-YY" />
+          </div>
+          <div class="form form1">
+            <span style="margin-bottom: 5px">Source</span>
+            <input id="source" type="text" placeholder="Source" />
+          </div>
+          <div class="form2 form1">
+            <div>
+              <span>Category</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input id="category" type="text" placeholder="category" />
+                <!-- <select name="">
                 <option id="category" value="">Direct Sales</option>
                 <option id="category" value="">Referral</option>
                 <option id="category" value="">Operating Income</option>
                 <option id="category" value="">Exceptional Income</option>
               </select> -->
+              </div>
             </div>
-          </div>
-          <label>
-            <span>Amount</span> <br />
-            <div class="input-container" style="margin-top: 5px">
-              <input id="amount" type="text" placeholder="amount" />
-              <!-- <select id="amount" name="">
+            <label>
+              <span>Amount</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input id="amount" type="text" placeholder="amount" />
+                <!-- <select id="amount" name="">
                 <option id="amount" value="">Option 1</option>
                 <option id="amount" value="">Option 1</option>
                 <option id="amount" value="">Option 1</option>
                 <option id="amount" value="">Option 1</option>
               </select> -->
-            </div>
-          </label>
+              </div>
+            </label>
+          </div>
+          <div class="form-text">
+            <span>Description</span>
+            <textarea
+              style="margin-top: 5px"
+              name=""
+              id="description"
+              cols="10"
+              rows="5"
+              placeholder="Enter Description"
+            ></textarea>
+          </div>
+          <div>
+            <button type="submit" class="bigbutton">Save</button>
+          </div>
         </div>
-        <div class="form-text">
-          <span>Description</span>
-          <textarea
-            style="margin-top: 5px"
-            name=""
-            id="description"
-            cols="10"
-            rows="5"
-            placeholder="Enter Description"
-          ></textarea>
-        </div>
-        <div>
-          <button type="submit" class="bigbutton">Save</button>
-        </div>
-      </div>
-    </form>
+      </form>
 
       <!-- Overlay Pages2 -->
       <form action="" id="expenses-form">
@@ -491,8 +495,7 @@
             ></textarea>
           </div>
           <div>
-         
-                <button type="submit" class="bigbutton">Save</button>
+            <button type="submit" class="bigbutton">Save</button>
           </div>
         </div>
       </form>
@@ -571,7 +574,6 @@
         <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
-        
 
     <script src="../main.js"></script>
     <script>
@@ -660,64 +662,64 @@
         });
 
       // Overlay Page3
-      document
-        .getElementById("overlayBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Overlay Page4
-      document
-        .getElementById("overlayBtn4")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn4")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Overlay Page5
-      document
-        .getElementById("overlayBtn5")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn5")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Overlay Page6
-      document
-        .getElementById("overlayBtn6")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn6")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Overlay Page7
-      document
-        .getElementById("overlayBtn7")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn7")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Function to toggle the menu-active class
       function toggleMenu() {
@@ -737,183 +739,197 @@
       adminEmailEl.innerHTML = admin.email;
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
-       // Plain javascript ot conne ct with the backend.
+      // Plain javascript ot conne ct with the backend.
 
-           const incomefromEl = document.querySelector("#income-form");
-           const expensesfromEl = document.querySelector("#expenses-form");
-           const categoryInput = document.querySelector("#category"); 
-           const descriptionInput = document.querySelector("#description");
-           const sourceInput = document.querySelector("#source");
-           const dateInput = document.querySelector("#date");
-           const amountInput = document.querySelector("#amount");
-          
-     
-           const authToken =
-             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU";
-     
-           incomefromEl.addEventListener("submit", async function (event) {
-             event.preventDefault();
-             console.log("submitting");
-             const categoryValue = categoryInput.value;
-             const descriptionValue = descriptionInput.value;
-             const sourceValue = sourceInput.value;
-             const amountValue = amountInput.value;
-              const dateValue = dateInput.value;
-     
-             const payload = {
-              category: categoryValue,
-              description: descriptionValue,
-              source: sourceValue,
-              date: dateValue,
-              amount: amountValue,
-             };
-             console.log(payload)
-     
-             const httpRes = await fetch(backendURl + "/income/addIncome", {
-               method: "POST",
-               headers: {
-                 "Content-Type": "application/json",
-                 Accept: "application/json",
-                 Authorization: `Bearer ${authToken}`,
-               },
-               body: JSON.stringify(payload),
-             });
-             window.location.href = "/acm/index.html";
-             const jsonRes = await httpRes.json();
-              console.log(jsonRes);
-             if (jsonRes.success === true) {
-               console.log(jsonRes);
-               localStorage.setItem("token", jsonRes.token);
-               localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
-              
-               console.log(jsonRes.token);
-             } else {
-               alert("Income added successful:");
-             }
-           });
-     
-           expensesfromEl.addEventListener("submit", async function (event) {
-             event.preventDefault();
-             console.log("submitting");
-             const categoryValue = categoryInput.value;
-             const descriptionValue = descriptionInput.value;
-             const sourceValue = sourceInput.value;
-             const amountValue = amountInput.value;
-              const dateValue = dateInput.value;
-     
-             const payload = {
-              category: categoryValue,
-              description: descriptionValue,
-              source: sourceValue,
-              date: dateValue,
-              amount: amountValue,
-             };
-             console.log(payload)
-     
-             const httpRes = await fetch(backendURl + "/expenses/addExpense", {
-               method: "POST",
-               headers: {
-                 "Content-Type": "application/json",
-                 Accept: "application/json",
-                 Authorization: `Bearer ${authToken}`,
-               },
-               body: JSON.stringify(payload),
-             });
-             window.location.href = "/acm/index.html";
-             const jsonRes = await httpRes.json();
-              console.log(jsonRes);
-             if (jsonRes.success === true) {
-               console.log(jsonRes);
-               localStorage.setItem("token", jsonRes.token);
-               localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
-              
-               console.log(jsonRes.token);
-             } else {
-               alert("Expenses added successful:");
-             }
-           });
+      const incomefromEl = document.querySelector("#income-form");
+      const expensesfromEl = document.querySelector("#expenses-form");
+      const categoryInput = document.querySelector("#category");
+      const descriptionInput = document.querySelector("#description");
+      const sourceInput = document.querySelector("#source");
+      const dateInput = document.querySelector("#date");
+      const amountInput = document.querySelector("#amount");
 
-           async function fetchDataAndDisplay() {
-            try {
-              const backendURL = 'http://localhost:8000'; // Replace with your actual backend URL
-              const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU'; // Replace with your actual authentication token
-          
-              // Fetch total income
-              const incomeResponse = await fetch(`${backendURL}/income/calculateIncome`, {
-                method: 'GET',
-                headers: {
-                  'Content-Type': 'application/json',
-                  Accept: 'application/json',
-                  Authorization: `Bearer ${authToken}`,
-                },
-              });
-          
-              if (!incomeResponse.ok) {
-                throw new Error(`Income network response was not ok (${incomeResponse.status})`);
-              }
-          
-              const totalIncome = await incomeResponse.json();
-              const activeTotalIncome = totalIncome.totalIncome;
-          
-              const activeIncome = document.querySelector('#total-income');
-              activeIncome.innerHTML = activeTotalIncome;
-              console.log(activeTotalIncome)
-          
-              // Fetch total balance
-              const balanceResponse = await fetch(`${backendURL}/balance/calculateBalance`, {
-                method: 'GET',
-                headers: {
-                  'Content-Type': 'application/json',
-                  Accept: 'application/json',
-                  Authorization: `Bearer ${authToken}`,
-                },
-              });
-          
-              if (!balanceResponse.ok) {
-                throw new Error(`Balance network response was not ok (${balanceResponse.status})`);
-              }
-          
-              const totalBalance = await balanceResponse.json();
-              const activeTotalBalance = totalBalance.balance;
-              console.log(activeTotalBalance)
-          
-              const activeBalance = document.querySelector('#total-balance');
-              activeBalance.innerHTML = activeTotalBalance;
-          
-              // Fetch total expenses
-              const expensesResponse = await fetch(`${backendURL}/expenses/calculateExpenses`, {
-                method: 'GET',
-                headers: {
-                  'Content-Type': 'application/json',
-                  Accept: 'application/json',
-                  Authorization: `Bearer ${authToken}`,
-                },
-              });
-          
-              if (!expensesResponse.ok) {
-                throw new Error(`Expenses network response was not ok (${expensesResponse.status})`);
-              }
-          
-              const totalExpenses = await expensesResponse.json();
-              const activeTotalExpenses = totalExpenses.totalExpenses;
-              console.log(activeTotalExpenses)
-          
-              const activeExpenses = document.querySelector('#total-expenses');
-              activeExpenses.innerHTML = activeTotalExpenses;
-            } catch (error) {
-              console.error('There was a problem with the fetch operation:', error);
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU";
+
+      incomefromEl.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        console.log("submitting");
+        const categoryValue = categoryInput.value;
+        const descriptionValue = descriptionInput.value;
+        const sourceValue = sourceInput.value;
+        const amountValue = amountInput.value;
+        const dateValue = dateInput.value;
+
+        const payload = {
+          category: categoryValue,
+          description: descriptionValue,
+          source: sourceValue,
+          date: dateValue,
+          amount: amountValue,
+        };
+        console.log(payload);
+
+        const httpRes = await fetch(backendURl + "/income/addIncome", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${authToken}`,
+          },
+          body: JSON.stringify(payload),
+        });
+        window.location.href = "/acm/index.html";
+        const jsonRes = await httpRes.json();
+        console.log(jsonRes);
+        if (jsonRes.success === true) {
+          console.log(jsonRes);
+          localStorage.setItem("token", jsonRes.token);
+          localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+
+          console.log(jsonRes.token);
+        } else {
+          alert("Income added successful:");
+        }
+      });
+
+      expensesfromEl.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        console.log("submitting");
+        const categoryValue = categoryInput.value;
+        const descriptionValue = descriptionInput.value;
+        const sourceValue = sourceInput.value;
+        const amountValue = amountInput.value;
+        const dateValue = dateInput.value;
+
+        const payload = {
+          category: categoryValue,
+          description: descriptionValue,
+          source: sourceValue,
+          date: dateValue,
+          amount: amountValue,
+        };
+        console.log(payload);
+
+        const httpRes = await fetch(backendURl + "/expenses/addExpense", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${authToken}`,
+          },
+          body: JSON.stringify(payload),
+        });
+        window.location.href = "/acm/index.html";
+        const jsonRes = await httpRes.json();
+        console.log(jsonRes);
+        if (jsonRes.success === true) {
+          console.log(jsonRes);
+          localStorage.setItem("token", jsonRes.token);
+          localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+
+          console.log(jsonRes.token);
+        } else {
+          alert("Expenses added successful:");
+        }
+      });
+
+      async function fetchDataAndDisplay() {
+        try {
+          const backendURL = "http://localhost:8000"; // Replace with your actual backend URL
+          const authToken =
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU"; // Replace with your actual authentication token
+
+          // Fetch total income
+          const incomeResponse = await fetch(
+            `${backendURL}/income/calculateIncome`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
             }
-          }
-          
-          fetchDataAndDisplay();
+          );
 
-          
-        const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
+          if (!incomeResponse.ok) {
+            throw new Error(
+              `Income network response was not ok (${incomeResponse.status})`
+            );
+          }
+
+          const totalIncome = await incomeResponse.json();
+          const activeTotalIncome = totalIncome.totalIncome;
+
+          const activeIncome = document.querySelector("#total-income");
+          activeIncome.innerHTML = activeTotalIncome;
+          console.log(activeTotalIncome);
+
+          // Fetch total balance
+          const balanceResponse = await fetch(
+            `${backendURL}/balance/calculateBalance`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
+
+          if (!balanceResponse.ok) {
+            throw new Error(
+              `Balance network response was not ok (${balanceResponse.status})`
+            );
+          }
+
+          const totalBalance = await balanceResponse.json();
+          const activeTotalBalance = totalBalance.balance;
+          console.log(activeTotalBalance);
+
+          const activeBalance = document.querySelector("#total-balance");
+          activeBalance.innerHTML = activeTotalBalance;
+
+          // Fetch total expenses
+          const expensesResponse = await fetch(
+            `${backendURL}/expenses/calculateExpenses`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
+
+          if (!expensesResponse.ok) {
+            throw new Error(
+              `Expenses network response was not ok (${expensesResponse.status})`
+            );
+          }
+
+          const totalExpenses = await expensesResponse.json();
+          const activeTotalExpenses = totalExpenses.totalExpenses;
+          console.log(activeTotalExpenses);
+
+          const activeExpenses = document.querySelector("#total-expenses");
+          activeExpenses.innerHTML = activeTotalExpenses;
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+        }
+      }
+
+      fetchDataAndDisplay();
+
+      const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
 
 // Function to fetch data from your API and populate the table
 async function fetchDataAndPopulateTable() {
   try {
-    const response = await fetch(`${backendURL}income/getAllIncome`, {
+    const response = await fetch(`${backendURL}/income/getAllIncome`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -927,19 +943,18 @@ async function fetchDataAndPopulateTable() {
     }
 
     const data = await response.json();
-    const tableBody = document.getElementById('table-body');
+    const tableBody = document.getElementById("table-body");
 
-    console.log(data)
+    console.log(data);
 
-    data.leads.forEach((lead) => {
-      const row = document.createElement('tr');
+    data.forEach((income) => {
+      const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${lead.status}</td>
-        <td>${lead.description}</td>
-        <td>${lead.organization}</td>
-        <td>${lead.contact_person}</td>
-        <td>${lead.start_date}</td>
-        <td>${lead.due_date}</td>
+        <td>${income.date}</td>
+        <td>${income.source}</td>
+        <td>${income.category}</td>
+        <td>${income.description}</td>
+        <td>${income.amount}</td>
         <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
       `;
 
@@ -951,9 +966,8 @@ async function fetchDataAndPopulateTable() {
 }
 
 // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
-          
-     
+document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+
     </script>
   </body>
 </html>
