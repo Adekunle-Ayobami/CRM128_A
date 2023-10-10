@@ -938,7 +938,7 @@ li {
   .overview-client-management-inner {
     height: 400px;
     width: 52em;
-    left: 27em;
+    left: 23em;
     top: 25em;
   }
   .group-parent {
@@ -953,8 +953,8 @@ li {
     width: 47em;
   }
   .rectangle-parent {
-    left: 27em;
-    top: 10em;
+    left: 23em;
+    top: 7em;
   }
   .rectangle-group {
     top: 25em;
@@ -962,6 +962,7 @@ li {
   }
   .rectangle-div {
     height: 25em;
+    left: -5em;
   }
   .sun-parent {
     display: flex;
