@@ -455,39 +455,49 @@
           </div>
           <div class="form form1">
             <span>Contact Person</span>
-            <input type="text" placeholder="Enter title" />
+            <input id="contact_person" type="text" placeholder="Enter title" />
           </div>
           <div class="form form1">
             <span>Organization</span>
-            <input type="text" placeholder="Enter title" />
+            <input id="organization" type="text" placeholder="Enter title" />
           </div>
           <div class="form form1">
             <span>Title</span>
-            <input type="text" placeholder="Enter title" />
+            <input id="title" type="text" placeholder="Enter title" />
           </div>
           <div class="form2 form1">
-            <div>
-              <span>Value</span> <br />
-              <input type="text" placeholder="300,000" />
-            </div>
-            <div>
+            <label>
               <span>Currency</span> <br />
-              <select>
-                <option value="">Select</option>
-                <option value="">Dollar</option>
-                <option value="">Naira</option>
-                <option value="">Pounds</option>
-              </select>
-            </div>
+              <input
+                style="margin-top: 5px"
+                id="currency"
+                type="text"
+                placeholder="NAIRA"
+              />
+            </label>
+            <label>
+              <span>Status</span> <br />
+              <input
+                style="margin-top: 5px"
+                id="status"
+                type="text"
+                placeholder="active/ in active"
+              />
+              <!-- <select id="status" style="margin-top: 5px">
+                <option value="" selected>active</option>
+                <option value="">In active</option>
+              </select> -->
+            </label>
           </div>
           <div class="form7 form3">
             <div style="margin-right: 20px">
               <span style="margin-bottom: 5px">Phone</span> <br />
-              <input style="width: 80%" type="text" placeholder="John Doe" />
+              <input style="width: 80%" id="phone" type="text" placeholder="John Doe" />
             </div>
             <div>
               <span style="margin-bottom: 5px">Email</span> <br />
               <input
+              id="email"
                 style="width: 75%"
                 type="email"
                 placeholder="johndoe@gmail.com"
@@ -497,25 +507,25 @@
           <div class="form1 form2">
             <div>
               <span style="margin-bottom: 5px">Start Date</span>
-              <input style="width: 65%" type="date" placeholder="DD-MM-YY" />
+              <input  id="start_date" style="width: 65%" type="date" placeholder="DD-MM-YY" />
             </div>
             <div style="margin-left: -40px">
               <span style="margin-bottom: 5px">Due Date</span>
-              <input style="width: 65%" type="date" placeholder="DD-MM-YY" />
+              <input id="due_date" style="width: 65%" type="date" placeholder="DD-MM-YY" />
             </div>
           </div>
           <div class="form-text">
             <span>Description</span>
             <textarea
               name=""
-              id=""
+              id="description"
               cols="30"
               rows="5"
               placeholder="Enter Description"
             ></textarea>
           </div>
           <div>
-            <button class="bigbutton">Save</button>
+            <button type="submit" class="bigbutton">Save</button>
           </div>
         </div>
       </form>
@@ -529,7 +539,8 @@
         <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
-
+              
+    <script src="../main.js"></script>
     <script>
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
@@ -735,7 +746,7 @@
 
         const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
 const authToken =
-  "YOUR_AUTH_TOKEN_HERE"; // Replace with your authentication token
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU"; // Replace with your authentication token
 
 // Function to fetch data from your API and populate the table
 async function fetchDataAndPopulateTable() {
@@ -783,6 +794,87 @@ const avatarEl = document.querySelector(".avatar");
 const admin = JSON.parse(localStorage.getItem("admin"));
 adminEmailEl.innerHTML = admin.email;
 avatarEl.innerHTML = admin.email.substring(0, 2);
+
+
+const leadfromEl = document.querySelector("#lead-form");
+const contactInputEl = document.querySelector("#contact_person");
+const organizationInputEl = document.querySelector("#organization");
+const titleInputEl = document.querySelector("#title");
+const currencyInputEl = document.querySelector("#currency");
+const statusInputEl = document.querySelector("#status");
+const phoneInputEl = document.querySelector("#phone");
+const emailInputEl = document.querySelector("#email");
+const startInputEl = document.querySelector("#start_date");
+const dueInputEl = document.querySelector("#due_date");
+const descriptionInputEl = document.querySelector("#description");
+
+
+
+leadfromEl.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const contactValue = contactInputEl.value;
+  const organizationValue = organizationInputEl.value;
+  const titleValue = titleInputEl.value;
+  const currencyValue = currencyInputEl.value;
+  const statusValue = statusInputEl.value;
+  const phoneValue = phoneInputEl.value;
+  const emailValue = emailInputEl.value;
+  const startDateValue = startInputEl.value;
+  const dueDateValue = dueInputEl.value;
+  const descriptionValue = descriptionInputEl.value;
+
+  const payload = {
+    contact_person: contactValue,
+    organization: organizationValue,
+    title: titleValue,
+    currency: currencyValue,
+    status: statusValue,
+    phone: phoneValue,
+    email: emailValue,
+    start_date: startDateValue,
+    due_date: dueDateValue,
+    description: descriptionValue,
+  };
+
+  console.log(payload);
+
+  try {
+    const httpRes = await fetch(backendURL + "/lead/addlead", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+      body: JSON.stringify(payload),
+    });
+
+    window.location.href = "/clientm/client-leads-list.html";
+
+    if (!httpRes.ok) {
+      const jsonRes = await httpRes.json();
+      // window.location.href = "./clientm/client-leads-list.html";
+      if (jsonRes.success === true) {
+        localStorage.setItem("token", jsonRes.token);
+        // window.location.href = "./clientm/client-leads-list.html";
+        localStorage.setItem(
+          "admin",
+          JSON.stringify(jsonRes.existingAdmin));
+          // window.location.href = "./clientm/client-leads-list.html";
+      } else {
+        alert("Error creating lead: " + jsonRes.message);
+      }
+    } else {
+      alert("Success: " + httpRes.statusText);
+    }
+    
+  } catch (error) {
+    console.error("An error occurred:", Success);
+    alert("An error occurred while creating the lead.");
+  }
+});
+
 </script>
   </body>
 </html>
