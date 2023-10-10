@@ -744,11 +744,6 @@
           document.getElementById("overlay").style.display = "none";
         });
 
-        const adminEmailEl = document.querySelector("#admin-email");
-      const avatarEl = document.querySelector(".avatar");
-      const admin = JSON.parse(localStorage.getItem("admin"));
-      adminEmailEl.innerHTML = admin.email;
-      avatarEl.innerHTML = admin.email.substring(0, 2);
 
         const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
 const authToken =
