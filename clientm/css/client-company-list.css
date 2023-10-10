@@ -196,6 +196,7 @@ li {
 th {
   background-color: #7ac769;
   padding: 20px;
+  text-align: center;
 }
 td {
   background-color: white;
@@ -203,6 +204,7 @@ td {
   padding-top: 15px;
   padding-bottom: 30px;
   font-weight: 600;
+  font-size: 20px;
 }
 /* overlay pages */
 .options-overlay {

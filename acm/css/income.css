@@ -275,6 +275,7 @@ li {
   left: 20em;
   width: 74.1%;
   border-collapse: collapse;
+  margin-top: 0.5em;
 }
 th {
   text-align: center;
@@ -285,6 +286,7 @@ td {
   padding: 10px 15px 15px 20px;
   background-color: white;
   font-weight: 600;
+  text-align: center;
 }
 .pagination {
   position: absolute;

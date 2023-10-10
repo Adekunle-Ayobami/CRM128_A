@@ -285,12 +285,17 @@
           <th>Options</th>
         </tr>
         <tr>
-          <td>01/02/2023</td>
+
+          <tbody id="table-body">
+          
+
+          </tbody>
+          <!-- <td>01/02/2023</td>
           <td>Client 1</td>
           <td>Contract won</td>
           <td>Direct discussion with a Client</td>
-          <td>N200,000.00</td>
-          <td>
+          <td>N200,000.00</td> -->
+          <!-- <td>
             <img
               id="overlayBtn3"
               src="public/edit.svg"
@@ -298,9 +303,9 @@
               style="margin-right: 10px; cursor: pointer"
             />
             <img src="public/Delete.svg" alt="" />
-          </td>
+          </td> -->
         </tr>
-        <tr>
+        <!-- <tr>
           <td>01/02/2023</td>
           <td>Client 2</td>
           <td>Contract won</td>
@@ -315,8 +320,8 @@
             />
             <img src="public/Delete.svg" alt="" />
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>01/02/2023</td>
           <td>Client 3</td>
           <td>Contract won</td>
@@ -331,8 +336,8 @@
             />
             <img src="public/Delete.svg" alt="" />
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>01/02/2023</td>
           <td>Client 4</td>
           <td>Contract won</td>
@@ -347,8 +352,8 @@
             />
             <img src="public/Delete.svg" alt="" />
           </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>01/02/2023</td>
           <td>Client 5</td>
           <td>Contract won</td>
@@ -363,7 +368,7 @@
             />
             <img src="public/Delete.svg" alt="" />
           </td>
-        </tr>
+        </tr> -->
       </table>
       <div class="pagination">
         <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
@@ -605,64 +610,64 @@
           document.getElementById("overlay").style.display = "none";
         });
       // Overlay Page3
-      document
-        .getElementById("overlayBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Overlay Page4
-      document
-        .getElementById("overlayBtn4")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn4")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Overlay Page5
-      document
-        .getElementById("overlayBtn5")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn5")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Overlay Page6
-      document
-        .getElementById("overlayBtn6")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn6")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Overlay Page7
-      document
-        .getElementById("overlayBtn7")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn3")
-        .addEventListener("click", function () {
-          document.getElementById("overlay3").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn7")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn3")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay3").style.display = "none";
+      //   });
 
       // Function to toggle the menu-active class
       function toggleMenu() {
@@ -767,7 +772,51 @@
       }
       
       fetchDataAndDisplay();
-      
+
+        const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
+      async function fetchDataAndPopulateTable() {
+  try {
+    const response = await fetch(`${backendURL}/income/getAllIncome`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API response was not ok (${response.status})`);
+    }
+
+    const data = await response.json();
+    const tableBody = document.getElementById("table-body");
+
+    console.log(data);
+
+    data.forEach((income) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${income.date}</td>
+        <td>${income.source}</td>
+        <td>${income.category}</td>
+        <td>${income.description}</td>
+        <td>${income.amount}</td>
+        <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.error("There was a problem with the API request:", error);
+  }
+}
+
+// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+
+
+
     </script>
   </body>
 </html>
