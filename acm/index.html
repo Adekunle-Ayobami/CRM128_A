@@ -228,17 +228,30 @@
       <div class="account">
         <div class="income">
           <span>Income</span>
-          <img class="open-eyes" src="public/Open eyes.png" alt="" />
+          <img
+            class="open-eyes eye-toggle2"
+            src="public/Open eyes.png"
+            alt=""
+          />
           <span id="total-income" class="naira">N</span>
         </div>
+
         <div class="balance">
           <span>Balance</span>
-          <img class="open-eyes1" src="public/eye closed.png" alt="" />
+          <img
+            class="open-eyes1 eye-toggle"
+            src="public/eye closed.png"
+            alt=""
+          />
           <span id="total-balance" class="naira1">N200,000.00</span>
         </div>
         <div class="expences">
           <span>Expences</span>
-          <img class="open-eyes2" src="public/Open eyes.png" alt="" />
+          <img
+            class="open-eyes1 eye-toggle1"
+            src="public/eye closed.png"
+            alt=""
+          />
           <span id="total-expenses" class="naira2">N200,000.00</span>
         </div>
       </div>
@@ -252,11 +265,7 @@
           <th>Options</th>
         </tr>
         <tr>
-
-          <tbody id="table-body">
-          
-
-          </tbody>
+          <tbody id="table-body"></tbody>
           <!-- <td></td>
           <td></td>
           <td></td>
@@ -637,6 +646,59 @@
         hrChevronIcon5.classList.toggle("rotate");
       });
 
+      const eye = document.querySelector(".eye-toggle");
+      const eye1 = document.querySelector(".eye-toggle1");
+      const eye2 = document.querySelector(".eye-toggle2");
+      
+      const incomeSpan = document.querySelector("#total-income");
+      const balanceSpan = document.querySelector("#total-balance");
+      const expensesSpan = document.querySelector("#total-expenses");
+
+      eye.addEventListener("click", () => {
+        console.log("Image clicked");
+        eye.classList.toggle("eye-open");
+
+        if (eye.classList.contains("eye-open")) {
+          eye.src = "public/Open eyes.png";
+          eye.style.filter = "none";
+          balanceSpan.style.filter = "none";
+        } else {
+          eye.src = "public/eye closed.png";
+          // eye.style.filter = "blur(4px)";
+          balanceSpan.style.filter = "blur(7px)";
+        }
+      });
+
+      eye1.addEventListener("click", () => {
+        console.log("Image clicked");
+        eye1.classList.toggle("eye-open");
+
+        if (eye1.classList.contains("eye-open")) {
+          eye1.src = "public/Open eyes.png";
+          eye1.style.filter = "none";
+          expensesSpan.style.filter = "none";
+        } else {
+          eye1.src = "public/eye closed.png";
+          // eye.style.filter = "blur(4px)";S
+          expensesSpan.style.filter = "blur(7px)";
+        }
+      });
+
+      eye2.addEventListener("click", () => {
+        console.log("Image clicked");
+        eye2.classList.toggle("eye-open");
+
+        if (eye2.classList.contains("eye-open")) {
+          eye2.src = "public/Open eyes.png";
+          eye2.style.filter = "none";
+          incomeSpan.style.filter = "none";
+        } else {
+          eye2.src = "public/eye closed.png";
+          // eye.style.filter = "blur(4px)";
+          incomeSpan.style.filter = "blur(7px)";
+  }
+});
+
       // Overlay Page
       document
         .getElementById("overlayBtn")
@@ -926,30 +988,30 @@
 
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
 
-// Function to fetch data from your API and populate the table
-async function fetchDataAndPopulateTable() {
-  try {
-    const response = await fetch(`${backendURL}/income/getAllIncome`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+      // Function to fetch data from your API and populate the table
+      async function fetchDataAndPopulateTable() {
+        try {
+          const response = await fetch(`${backendURL}/income/getAllIncome`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          });
 
-    if (!response.ok) {
-      throw new Error(`API response was not ok (${response.status})`);
-    }
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
 
-    const data = await response.json();
-    const tableBody = document.getElementById("table-body");
+          const data = await response.json();
+          const tableBody = document.getElementById("table-body");
 
-    console.log(data);
+          console.log(data);
 
-    data.forEach((income) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
+          data.forEach((income) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
         <td>${income.date}</td>
         <td>${income.source}</td>
         <td>${income.category}</td>
@@ -958,16 +1020,15 @@ async function fetchDataAndPopulateTable() {
         <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
       `;
 
-      tableBody.appendChild(row);
-    });
-  } catch (error) {
-    console.error("There was a problem with the API request:", error);
-  }
-}
+            tableBody.appendChild(row);
+          });
+        } catch (error) {
+          console.error("There was a problem with the API request:", error);
+        }
+      }
 
-// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
-
+      // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+      document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
     </script>
   </body>
 </html>
