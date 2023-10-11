@@ -263,14 +263,13 @@
             placeholder="Enter company type"
           />
         </div>
-        <div class="form2 form1">
+        <div class="form2">
           <div>
             <span>Website</span> <br />
             <div class="input-container" style="margin-top: 5px">
               <img class="frame-icon" alt="" src="public/frame.svg" />
               <input
                 id="website_url"
-                style="width: 60%"
                 class="input-field1"
                 type="text"
                 name="search"
@@ -283,7 +282,6 @@
               <img class="frame-icon" alt="" src="public/anotherframe.svg" />
               <input
                 id="email"
-                style="width: 60%"
                 class="input-field1"
                 type="text"
                 name="search"
@@ -291,14 +289,13 @@
             </div>
           </div>
         </div>
-        <div class="form7 form3">
+        <div class="form7">
           <div>
             <span>Phone Number</span> <br />
             <div class="input-container" style="margin-top: 5px">
               <img class="call-icon" alt="" src="public/call.svg" />
               <input
                 id="contact"
-                style="width: 60%"
                 class="input-field1"
                 type="text"
                 name="search"
@@ -310,9 +307,8 @@
             <div class="input-container" style="margin-top: 5px">
               <img class="call-icon" alt="" src="public/call.svg" />
               <input
-              placeholder="active/inactive"
+                placeholder="active/inactive"
                 id="status"
-                style="width: 60%"
                 class="input-field1"
                 type="text"
                 name="search"
@@ -462,7 +458,7 @@
           status: statusValue,
           description: descriptionValue,
         };
-        console.log(payload)
+        console.log(payload);
 
         const httpRes = await fetch(backendURl + "/client/addclient", {
           method: "POST",
@@ -480,7 +476,7 @@
           console.log(jsonRes);
           localStorage.setItem("token", jsonRes.token);
           localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
-         
+
           console.log(jsonRes.token);
         } else {
           alert("Error logging in detail: " + jsonRes.message);

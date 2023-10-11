@@ -4,7 +4,7 @@ body {
   line-height: 1rem;
   background-color: #f6f6f6;
   font-family: "Clash Grotesk", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -415,7 +415,7 @@ td {
 }
 /* Overlay Page */
 .add-lead {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   background-color: #f6f6f6;

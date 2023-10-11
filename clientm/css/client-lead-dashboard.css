@@ -193,9 +193,9 @@ li {
 /* Overlay Page */
 /* Overlay Page */
 .add-lead {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
+  right: -1em;
   background-color: #f6f6f6;
   width: 36.8%;
   height: 94.4%;
@@ -254,8 +254,8 @@ li {
   padding-left: 40px;
 }
 .form7 input {
-  width: 65%;
-  padding: 15px;
+  width: 96%;
+  padding: 15px 0px 15px 10px;
   border-radius: 6px;
   border: 1px solid lightblue;
   background-color: #f6f6f6;
@@ -263,11 +263,24 @@ li {
 .form2 {
   display: flex;
   flex-direction: row;
-  gap: 21px;
+  gap: 15px;
 }
-.form2 select {
-  width: 100%;
-  padding: 15px 50px 15px 60px;
+.form4 {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.form2 input {
+  width: 90%;
+  padding: 15px 0px 15px 10px;
+  border-radius: 6px;
+  border: 1px solid lightblue;
+  background-color: #f6f6f6;
+  text-align: left;
+}
+.form4 input {
+  width: 83%;
+  padding: 15px 0px 15px 10px;
   border-radius: 6px;
   border: 1px solid lightblue;
   background-color: #f6f6f6;
@@ -276,6 +289,13 @@ li {
 .form3 {
   display: flex;
   flex-direction: row;
+  gap: 15px;
+}
+.input1 {
+  width: 90%;
+}
+.input2 {
+  width: 10%;
 }
 .bigbutton {
   margin-left: 150px;
@@ -311,6 +331,32 @@ li {
   }
   .selected {
     width: 268px;
+  }
+  .form2 {
+    gap: 10px;
+  }
+  .form2 input {
+    width: 13.5vw;
+  }
+  .form3 {
+    gap: 10px;
+  }
+  .form3 input {
+    width: 13.5vw;
+  }
+  .form4 {
+    width: 100vw;
+    position: relative;
+    left: 3em;
+    padding-right: 40px;
+  }
+  .add-lead {
+    right: -1em;
+    height: 97%;
+  }
+  .bigbutton {
+    position: relative;
+    left: 6em;
   }
 }
 
