@@ -213,6 +213,8 @@
         <div style="margin-right: 10px">|</div>
         <div style="color: #003e9c">Leads</div>
       </div>
+
+
       <div class="btn">
         <button class="button" id="overlayBtn">Add New Lead</button>
       </div>
@@ -225,10 +227,12 @@
           <th>Start Date</th>
           <th>Due Date</th>
           <th>Options</th>
+          <!-- Within your <table> -->
         </tr>
+        
         <tbody id="table-body"></tbody>
+
         <tr>
-          <!-- <td></td>
          
           <td></td>
           <td></td>
@@ -552,9 +556,11 @@
         <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
-
+              
     <script src="../main.js"></script>
     <script>
+
+      
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
       const hrChevronIcon = document.getElementById("hr-chevron-icon");
@@ -789,18 +795,30 @@
         <td>${lead.contact_person}</td>
         <td>${lead.start_date}</td>
         <td>${lead.due_date}</td>
-        <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
+        <td>
+        <button  style="cursor: pointer;" class="edit-button" data-id="${lead._id}">Edit</button>
+        <img
+              class="search-icon"
+              alt=""
+              style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+              src="./public/Delete.svg"
+              id="moreIcon"
+            />
+      </td>
+    
+      
+       
       `;
 
-            tableBody.appendChild(row);
-          });
-        } catch (error) {
-          console.error("There was a problem with the API request:", error);
-        }
-      }
+      tableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.error("There was a problem with the API request:", error);
+  }
+}
 
-      // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-      document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
 
       const adminEmailEl = document.querySelector("#admin-email");
       const avatarEl = document.querySelector(".avatar");
@@ -862,28 +880,29 @@
 
           window.location.href = "/clientm/client-leads-list.html";
 
-          if (!httpRes.ok) {
-            const jsonRes = await httpRes.json();
-            // window.location.href = "./clientm/client-leads-list.html";
-            if (jsonRes.success === true) {
-              localStorage.setItem("token", jsonRes.token);
-              // window.location.href = "./clientm/client-leads-list.html";
-              localStorage.setItem(
-                "admin",
-                JSON.stringify(jsonRes.existingAdmin)
-              );
-              // window.location.href = "./clientm/client-leads-list.html";
-            } else {
-              alert("Error creating lead: " + jsonRes.message);
-            }
-          } else {
-            alert("Success: " + httpRes.statusText);
-          }
-        } catch (error) {
-          console.error("An error occurred:", Success);
-          alert("An error occurred while creating the lead.");
-        }
-      });
-    </script>
+    if (!httpRes.ok) {
+      const jsonRes = await httpRes.json();
+      // window.location.href = "./clientm/client-leads-list.html";
+      if (jsonRes.success === true) {
+        localStorage.setItem("token", jsonRes.token);
+        // window.location.href = "./clientm/client-leads-list.html";
+        localStorage.setItem(
+          "admin",
+          JSON.stringify(jsonRes.existingAdmin));
+          // window.location.href = "./clientm/client-leads-list.html";
+      } else {
+        alert("Error creating lead: " + jsonRes.message);
+      }
+    } else {
+      alert("Success: " + httpRes.statusText);
+    }
+    
+  } catch (error) {
+    console.error("An error occurred:", Success);
+    alert("An error occurred while creating the lead.");
+  }
+});
+
+</script>
   </body>
 </html>
