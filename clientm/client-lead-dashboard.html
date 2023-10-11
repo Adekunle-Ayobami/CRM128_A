@@ -499,15 +499,15 @@
               // window.location.href = "./clientm/client-leads-list.html";
               localStorage.setItem(
                 "admin",
-                JSON.stringify(jsonRes.existingAdmin));
-                // window.location.href = "./clientm/client-leads-list.html";
+                JSON.stringify(jsonRes.existingAdmin)
+              );
+              // window.location.href = "./clientm/client-leads-list.html";
             } else {
               alert("Error creating lead: " + jsonRes.message);
             }
           } else {
             alert("Success: " + httpRes.statusText);
           }
-          
         } catch (error) {
           console.error("An error occurred:", Success);
           alert("An error occurred while creating the lead.");

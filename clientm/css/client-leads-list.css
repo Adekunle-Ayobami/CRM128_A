@@ -506,6 +506,18 @@ td {
   border-radius: 5px;
 }
 
+@media (min-width: 1368px) {
+  .logout {
+    padding-bottom: 330px;
+  }
+  .table {
+    width: 74.6%;
+  }
+  .pagination {
+    left: 70em;
+  }
+}
+
 @media (max-width: 1366px) {
   /* .group-parent {
     position: absolute;

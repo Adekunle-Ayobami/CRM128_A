@@ -5,7 +5,6 @@ body {
   background-color: #f6f6f6;
   overflow-x: hidden;
   font-family: "Clash Grotesk", sans-serif;
-  width: 1350px;
 }
 a {
   text-decoration: none;
@@ -929,6 +928,12 @@ li {
   display: none;
 }
 
+
+@media (min-width: 1368px) {
+  .rectangle-parent {
+    left: 20em;
+  }
+}
 /* 1366px and below */
 @media (max-width: 1366px) {
   .menu {
@@ -966,16 +971,6 @@ li {
   .bell {
     position: relative;
     left: 5%;
-  }
-  /* .rectangle-div {
-    width: 100%;
-  } */
-}
-
-/* 1300px and below */
-/* @media (max-width: 1300px) {
-  .rectangle-parent {
-    width: 67%;
   }
 }
 
@@ -1140,7 +1135,6 @@ li {
     top: 26em;
     left: 1.3em;
     width: 92%;
-    /*z-index: -10;*/
   }
   .group-parent {
     width: 90%;
