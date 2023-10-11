@@ -100,7 +100,10 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
 }
-
+.fc {
+  position: relative;
+  right: 4em;
+}
 .rotate {
   transform: rotate(180deg);
 }
@@ -152,6 +155,10 @@ li {
   position: absolute;
   top: 15px;
   left: 320px;
+}
+#calendar {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .button-group {
   display: flex;
@@ -218,7 +225,7 @@ li {
 .table {
   position: relative;
   top: 1em;
-  left: 4.5em;
+  left: -1.5em;
   border-collapse: collapse;
   width: 85%;
 }

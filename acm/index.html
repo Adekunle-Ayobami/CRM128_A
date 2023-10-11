@@ -72,14 +72,12 @@
             class="more-icon client-icon"
             id="hr-chevron-icon"
             alt=""
-            src="./public/chevron-uop.svg"
+            src="./public/chevron-down1.svg"
           />
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"
-              ><li class="selected">Client Data</li></a
-            >
+            <a href="../clientm/add-new-clients.html"><li>Client Data</li></a>
             <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
           </ul>
         </div>
@@ -649,7 +647,7 @@
       const eye = document.querySelector(".eye-toggle");
       const eye1 = document.querySelector(".eye-toggle1");
       const eye2 = document.querySelector(".eye-toggle2");
-      
+
       const incomeSpan = document.querySelector("#total-income");
       const balanceSpan = document.querySelector("#total-balance");
       const expensesSpan = document.querySelector("#total-expenses");
@@ -696,8 +694,8 @@
           eye2.src = "public/eye closed.png";
           // eye.style.filter = "blur(4px)";
           incomeSpan.style.filter = "blur(7px)";
-  }
-});
+        }
+      });
 
       // Overlay Page
       document
@@ -1029,6 +1027,56 @@
 
       // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
       document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+
+      //
+      const dataFromDatabase = [];
+
+      const rowsPerPage = 10;
+      let currentPage = 1;
+
+      function displayData() {
+        const tableBody = document.getElementById("table-body");
+        const startIndex = (currentPage - 1) * rowsPerPage;
+        const endIndex = startIndex + rowsPerPage;
+        const currentPageData = dataFromDatabase.slice(startIndex, endIndex);
+
+        tableBody.innerHTML = "";
+
+        currentPageData.forEach((rowData) => {
+          const row = document.createElement("tr");
+
+          const dateCell = document.createElement("td");
+          dateCell.textContent = rowData.date;
+
+          row.appendChild(dateCell);
+
+          tableBody.appendChild(row);
+        });
+      }
+
+      function updatePagination() {
+        const totalPages = Math.ceil(dataFromDatabase.length / rowsPerPage);
+        const pagination = document.querySelector(".pagination");
+
+        pagination.innerHTML = "";
+
+        for (let i = 1; i <= totalPages; i++) {
+          const pageElement = document.createElement("div");
+          pageElement.className =
+            i === currentPage ? "page-active" : "page-disabled";
+          pageElement.innerHTML = `<div class="page-active1"><b class="num">${i}</b></div>`;
+          pageElement.addEventListener("click", () => {
+            currentPage = i;
+            displayData();
+            updatePagination();
+          });
+
+          pagination.appendChild(pageElement);
+        }
+      }
+
+      displayData();
+      updatePagination();
     </script>
   </body>
 </html>

@@ -53,7 +53,7 @@
             <i class="fa fa-eye" id="password-eye" aria-hidden="true"></i>
           </label>
           <div style="display: flex; gap: 100px">
-            <div><input type="checkbox" checked />Remember me</div>
+            <div><input type="checkbox" />Remember me</div>
             <div>Forgot Password?</div>
           </div>
           <input class="input-button" type="submit" value="Login" />
@@ -77,7 +77,7 @@
     <script>
       $(document).ready(function () {
         $("#password-eye").click(function () {
-          const passwordInput = $("#password-input");
+          const passwordInput = $("#password");
           const type =
             passwordInput.attr("type") === "password" ? "text" : "password";
           passwordInput.attr("type", type);

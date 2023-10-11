@@ -79,10 +79,12 @@ p {
   width: 150px;
   position: relative;
   left: 5em;
+  cursor: pointer;
 }
 .copyright-2023-crm128-parent {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   display: flex;
   padding: 10px;
@@ -100,4 +102,21 @@ p {
   right: 1em;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  /* body {
+    height: 800px;
+  } */
+  .container {
+    flex-direction: column;
+    gap: 1px;
+  }
+  .form-div {
+    position: relative;
+    top: -1em;
+  }
+  .copyright-2023-crm128-parent {
+    width: 100%;
+  }
 }
