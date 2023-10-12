@@ -1073,8 +1073,6 @@ async function deleteLead(leadId) {
       if (deletedRow) {
         deletedRow.remove();
       }
-      // Refresh the table after deleting
-      await fetchDataAndPopulateTable();
     } else {
       // Handle errors
       const jsonRes = await httpRes.json();
