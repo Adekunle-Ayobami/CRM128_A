@@ -22,8 +22,8 @@
       <div class="nav-bar">
         <a href="client-management-dash.html">
           <div class="crm128-wrapper">
-            <span style="color: #003e9c">CRM</span
-            ><span style="color: #57bc4a">128</span>
+            <span style="color: #003e9c;">CRM</span
+            ><span style="color: #57bc4a;">128</span>
           </div>
         </a>
         <div class="search-parent">
@@ -128,7 +128,7 @@
           <ul id="hr-items1">
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="#"
-              ><li style="text-overflow: ellipsis">
+              ><li style="text-overflow: ellipsis;">
                 Emzor Pham Industries Ltd.
               </li></a
             >
@@ -209,11 +209,10 @@
         </div>
       </div>
       <div class="frame-group">
-        <div style="margin-right: 10px">Clients</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c">Leads</div>
+        <div style="margin-right: 10px;">Clients</div>
+        <div style="margin-right: 10px;">|</div>
+        <div style="color: #003e9c;">Leads</div>
       </div>
-
 
       <div class="btn">
         <button class="button" id="overlayBtn">Add New Lead</button>
@@ -229,11 +228,10 @@
           <th>Options</th>
           <!-- Within your <table> -->
         </tr>
-        
+
         <tbody id="table-body"></tbody>
 
         <tr>
-         
           <td></td>
           <td></td>
           <td></td>
@@ -415,7 +413,7 @@
       <div
         id="optionsOverlayContainer"
         class="popup-overlay"
-        style="display: none"
+        style="display: none;"
       >
         <div class="options-overlay">
           <div class="component-19">
@@ -450,9 +448,9 @@
       </div>
       <!-- Overlay Page -->
       <form action="" id="lead-form">
-        <div class="add-lead" id="overlay" style="display: none">
+        <div class="add-lead" id="overlay" style="display: none;">
           <div class="lead">
-            <div style="width: 100%; font-weight: 600">Add New Lead</div>
+            <div style="width: 100%; font-weight: 600;">Add New Lead</div>
             <img src="public/close.svg" id="closeBtn" alt="" />
           </div>
           <div class="form form1">
@@ -471,7 +469,7 @@
             <label>
               <span>Currency</span> <br />
               <input
-                style="margin-top: 5px"
+                style="margin-top: 5px;"
                 id="currency"
                 type="text"
                 placeholder="NAIRA"
@@ -480,7 +478,7 @@
             <label>
               <span>Status</span> <br />
               <input
-                style="margin-top: 5px"
+                style="margin-top: 5px;"
                 id="status"
                 type="text"
                 placeholder="active/ in active"
@@ -492,20 +490,20 @@
             </label>
           </div>
           <div class="form7 form3">
-            <div style="margin-right: 20px">
-              <span style="margin-bottom: 5px">Phone</span> <br />
+            <div style="margin-right: 20px;">
+              <span style="margin-bottom: 5px;">Phone</span> <br />
               <input
-                style="width: 80%"
+                style="width: 80%;"
                 id="phone"
                 type="text"
                 placeholder="John Doe"
               />
             </div>
             <div>
-              <span style="margin-bottom: 5px">Email</span> <br />
+              <span style="margin-bottom: 5px;">Email</span> <br />
               <input
                 id="email"
-                style="width: 75%"
+                style="width: 75%;"
                 type="email"
                 placeholder="johndoe@gmail.com"
               />
@@ -513,19 +511,19 @@
           </div>
           <div class="form1 form2">
             <div>
-              <span style="margin-bottom: 5px">Start Date</span>
+              <span style="margin-bottom: 5px;">Start Date</span>
               <input
                 id="start_date"
-                style="width: 65%"
+                style="width: 65%;"
                 type="date"
                 placeholder="DD-MM-YY"
               />
             </div>
-            <div style="margin-left: -40px">
-              <span style="margin-bottom: 5px">Due Date</span>
+            <div style="margin-left: -40px;">
+              <span style="margin-bottom: 5px;">Due Date</span>
               <input
                 id="due_date"
-                style="width: 65%"
+                style="width: 65%;"
                 type="date"
                 placeholder="DD-MM-YY"
               />
@@ -550,17 +548,15 @@
     <footer>
       <div class="copyright-2023-crm128-parent">
         <div class="copyright-2023-crm128-container">
-          <span style="color: #003e9c">© Copyright 2023 CRM</span>
-          <span style="color: #57bc4a">128</span>
+          <span style="color: #003e9c;">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a;">128</span>
         </div>
-        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+        <div style="color: #003e9c;">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
-              
+
     <script src="../main.js"></script>
     <script>
-
-      
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
       const hrChevronIcon = document.getElementById("hr-chevron-icon");
@@ -763,62 +759,9 @@
           document.getElementById("overlay").style.display = "none";
         });
 
-      const backendURL = "http://localhost:7070"; // Replace with your actual backend API URL
+      const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
       const authToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU"; // Replace with your authentication token
-
-      // Function to fetch data from your API and populate the table
-      async function fetchDataAndPopulateTable() {
-        try {
-          const response = await fetch(`${backendURL}/lead/getallleads`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-              Authorization: `Bearer ${authToken}`,
-            },
-          });
-
-          if (!response.ok) {
-            throw new Error(`API response was not ok (${response.status})`);
-          }
-
-          const data = await response.json();
-          const tableBody = document.getElementById("table-body");
-
-          data.leads.forEach((lead) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-        <td>${lead.status}</td>
-        <td>${lead.description}</td>
-        <td>${lead.organization}</td>
-        <td>${lead.contact_person}</td>
-        <td>${lead.start_date}</td>
-        <td>${lead.due_date}</td>
-        <td>
-        <button  style="cursor: pointer;" class="edit-button" data-id="${lead._id}">Edit</button>
-        <img
-              class="search-icon"
-              alt=""
-              style="position: relative; left: 10px; top: 5px; cursor: pointer;"
-              src="./public/Delete.svg"
-              id="moreIcon"
-            />
-      </td>
-    
-      
-       
-      `;
-
-      tableBody.appendChild(row);
-    });
-  } catch (error) {
-    console.error("There was a problem with the API request:", error);
-  }
-}
-
-// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
 
       const adminEmailEl = document.querySelector("#admin-email");
       const avatarEl = document.querySelector(".avatar");
@@ -880,200 +823,219 @@ document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
 
           window.location.href = "/clientm/client-leads-list.html";
 
-    if (!httpRes.ok) {
-      const jsonRes = await httpRes.json();
-      // window.location.href = "./clientm/client-leads-list.html";
-      if (jsonRes.success === true) {
-        localStorage.setItem("token", jsonRes.token);
-        // window.location.href = "./clientm/client-leads-list.html";
-        localStorage.setItem(
-          "admin",
-          JSON.stringify(jsonRes.existingAdmin));
-          // window.location.href = "./clientm/client-leads-list.html";
-      } else {
-        alert("Error creating lead: " + jsonRes.message);
-      }
-    } else {
-      alert("Success: " + httpRes.statusText);
-    }
-    
-  } catch (error) {
-    console.error("An error occurred:", Success);
-    alert("An error occurred while creating the lead.");
-  }
-});
+          if (!httpRes.ok) {
+            const jsonRes = await httpRes.json();
+            // window.location.href = "./clientm/client-leads-list.html";
+            if (jsonRes.success === true) {
+              localStorage.setItem("token", jsonRes.token);
+              // window.location.href = "./clientm/client-leads-list.html";
+              localStorage.setItem(
+                "admin",
+                JSON.stringify(jsonRes.existingAdmin)
+              );
+              // window.location.href = "./clientm/client-leads-list.html";
+            } else {
+              alert("Error creating lead: " + jsonRes.message);
+            }
+          } else {
+            alert("Success: " + httpRes.statusText);
+          }
+        } catch (error) {
+          console.error("An error occurred:", Success);
+          alert("An error occurred while creating the lead.");
+        }
+      });
 
-    // Function to fetch data from your API and populate the table
-    async function fetchDataAndPopulateTable() {
-      try {
+      // Function to fetch data from your API and populate the table
+      async function fetchDataAndPopulateTable() {
+        try {
           const response = await fetch(`${backendURL}/lead/getallleads`, {
-              method: "GET",
-              headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-                  Authorization: `Bearer ${authToken}`,
-              },
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
           });
 
           if (!response.ok) {
-              throw new Error(`API response was not ok (${response.status})`);
+            throw new Error(`API response was not ok (${response.status})`);
           }
 
           const data = await response.json();
-          const tableBody = document.getElementById('table-body');
+          const tableBody = document.getElementById("table-body");
 
           data.leads.forEach((lead) => {
-              const row = document.createElement('tr');
-              row.innerHTML = `
+            const row = document.createElement("tr");
+            row.innerHTML = `
                   <td>${lead.status}</td>
                   <td>${lead.description}</td>
                   <td>${lead.organization}</td>
                   <td>${lead.contact_person}</td>
                   <td>${lead.start_date}</td>
                   <td>${lead.due_date}</td>
-                  <td><button class="edit-button" data-id="${lead._id}">Edit</button></td>
+                  <td>
+                    <button class="edit-button" data-id="${lead._id}">Edit</button>
+                    <img
+                    class="search-icon"
+                    alt=""
+                    style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+                    src="./public/Delete.svg"
+                    id="moreIcon"
+                  />
+                </td>
+
+      </td>
+    
               `;
 
-              tableBody.appendChild(row);
+            tableBody.appendChild(row);
           });
 
           // Add event listeners to edit buttons
-          const editButtons = document.querySelectorAll('.edit-button');
+          const editButtons = document.querySelectorAll(".edit-button");
           editButtons.forEach((button) => {
-              button.addEventListener('click', (event) => {
-                  const leadId = event.target.getAttribute('data-id');
-                  editLead(leadId);
-              });
+            button.addEventListener("click", (event) => {
+              const leadId = event.target.getAttribute("data-id");
+              editLead(leadId);
+            });
           });
-      } catch (error) {
+        } catch (error) {
           console.error("There was a problem with the API request:", error);
+        }
       }
-  }
 
-  // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-  document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
+      // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+      document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
 
-  // Function to edit a lead by ID
-  async function editLead(leadId) {
-      try {
-          const response = await fetch(`${backendURL}/lead/getsinglelead/${leadId}`, {
+      // Function to edit a lead by ID
+      async function editLead(leadId) {
+        try {
+          const response = await fetch(
+            `${backendURL}/lead/getsinglelead/${leadId}`,
+            {
               method: "GET",
               headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-                  Authorization: `Bearer ${authToken}`,
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
               },
-          });
+            }
+          );
 
           if (!response.ok) {
-              throw new Error(`API response was not ok (${response.status})`);
+            throw new Error(`API response was not ok (${response.status})`);
           }
 
           const leadData = await response.json();
 
           // Populate the form fields with lead data for editing
-          document.getElementById('contact_person').value = leadData.contact_person;
-          document.getElementById('organization').value = leadData.organization;
-          document.getElementById('title').value = leadData.title;
-          document.getElementById('currency').value = leadData.currency;
-          document.getElementById('status').value = leadData.status;
-          document.getElementById('phone').value = leadData.phone;
-          document.getElementById('email').value = leadData.email;
-          document.getElementById('start_date').value = leadData.start_date;
-          document.getElementById('due_date').value = leadData.due_date;
-          document.getElementById('description').value = leadData.description;
+          document.getElementById("contact_person").value =
+            leadData.lead.contact_person;
+          document.getElementById("organization").value = leadData.lead.organization;
+          document.getElementById("title").value = leadData.lead.title;
+          document.getElementById("currency").value = leadData.lead.currency;
+          document.getElementById("status").value = leadData.lead.status;
+          document.getElementById("phone").value = leadData.lead.phone;
+          document.getElementById("email").value = leadData.lead.email;
+          document.getElementById("start_date").value = leadData.lead.start_date;
+          document.getElementById("due_date").value = leadData.lead.due_date;
+          document.getElementById("description").value = leadData.lead.description;
 
           // Display the overlay for editing
-          const overlay = document.getElementById('overlay');
-          overlay.style.display = 'block';
-      } catch (error) {
+          const overlay = document.getElementById("overlay");
+          overlay.style.display = "block";
+        } catch (error) {
           console.error("There was a problem fetching lead data:", error);
+        }
       }
-  }
 
-  // Call the editLead function when clicking the "Edit" button
-  const editButtons = document.querySelectorAll('.edit-button');
-  editButtons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-          const leadId = event.target.getAttribute('data-id');
+      // Call the editLead function when clicking the "Edit" button
+      const editButtons = document.querySelectorAll(".edit-button");
+      editButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const leadId = event.target.getAttribute("data-id");
           editLead(leadId);
+        });
       });
-  });
 
-  // Function to close the overlay for lead editing
-  const closeBtn = document.getElementById('closeBtn');
-  closeBtn.addEventListener('click', () => {
-      const overlay = document.getElementById('overlay');
-      overlay.style.display = 'none';
-  });
+      // Function to close the overlay for lead editing
+      const closeBtn = document.getElementById("closeBtn");
+      closeBtn.addEventListener("click", () => {
+        const overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+      });
 
-  // Function to update a lead by ID
-  async function updateLead(leadId) {
-      try {
-          const contactValue = document.getElementById('contact_person').value;
-          const organizationValue = document.getElementById('organization').value;
-          const titleValue = document.getElementById('title').value;
-          const currencyValue = document.getElementById('currency').value;
-          const statusValue = document.getElementById('status').value;
-          const phoneValue = document.getElementById('phone').value;
-          const emailValue = document.getElementById('email').value;
-          const startDateValue = document.getElementById('start_date').value;
-          const dueDateValue = document.getElementById('due_date').value;
-          const descriptionValue = document.getElementById('description').value;
+      // Function to update a lead by ID
+      async function updateLead(leadId) {
+        try {
+          const contactValue = document.getElementById("contact_person").value;
+          const organizationValue = document.getElementById("organization")
+            .value;
+          const titleValue = document.getElementById("title").value;
+          const currencyValue = document.getElementById("currency").value;
+          const statusValue = document.getElementById("status").value;
+          const phoneValue = document.getElementById("phone").value;
+          const emailValue = document.getElementById("email").value;
+          const startDateValue = document.getElementById("start_date").value;
+          const dueDateValue = document.getElementById("due_date").value;
+          const descriptionValue = document.getElementById("description").value;
 
           const payload = {
-              contact_person: contactValue,
-              organization: organizationValue,
-              title: titleValue,
-              currency: currencyValue,
-              status: statusValue,
-              phone: phoneValue,
-              email: emailValue,
-              start_date: startDateValue,
-              due_date: dueDateValue,
-              description: descriptionValue,
+            contact_person: contactValue,
+            organization: organizationValue,
+            title: titleValue,
+            currency: currencyValue,
+            status: statusValue,
+            phone: phoneValue,
+            email: emailValue,
+            start_date: startDateValue,
+            due_date: dueDateValue,
+            description: descriptionValue,
           };
 
-          const httpRes = await fetch(`${backendURL}/lead/updatelead/${leadId}`, {
+          const httpRes = await fetch(
+            `${backendURL}/lead/updatelead/${leadId}`,
+            {
               method: "PUT",
               headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-                  Authorization: `Bearer ${authToken}`,
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
               },
               body: JSON.stringify(payload),
-          });
+            }
+          );
 
           if (!httpRes.ok) {
-              const jsonRes = await httpRes.json();
-              if (jsonRes.success === true) {
-                  alert("Lead updated successfully");
-              } else {
-                  alert("Error updating lead: " + jsonRes.message);
-              }
+            const jsonRes = await httpRes.json();
+            if (jsonRes.success === true) {
+              alert("Lead updated successfully");
+            } else {
+              alert("Error updating lead: " + jsonRes.message);
+            }
           } else {
-              alert("Success: " + httpRes.statusText);
+            alert("Success: " + httpRes.statusText);
           }
 
           // Hide the overlay
-          const overlay = document.getElementById('overlay');
-          overlay.style.display = 'none';
+          const overlay = document.getElementById("overlay");
+          overlay.style.display = "none";
 
           // Refresh the table
           fetchDataAndPopulateTable();
-      } catch (error) {
+        } catch (error) {
           console.error("An error occurred while updating the lead:", error);
           alert("An error occurred while updating the lead.");
+        }
       }
-  }
 
-  // Add event listener to the lead form for updating leads
-  leadformEl.addEventListener("submit", async function (event) {
-      event.preventDefault();
-      const leadId = event.target.getAttribute('data-id');
-      updateLead(leadId);
-  });
-
-</script>
+      // Add event listener to the lead form for updating leads
+      leadformEl.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const leadId = event.target.getAttribute("data-id");
+        updateLead(leadId);
+      });
+    </script>
   </body>
 </html>
