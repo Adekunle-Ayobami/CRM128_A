@@ -447,10 +447,10 @@
         </div>
       </div>
       <!-- Overlay Page -->
-      <form action="" id="lead-form">
+      <form action="#" data-id="lead-id" id="lead-form">
         <div class="add-lead" id="overlay" style="display: none;">
           <div class="lead">
-            <div style="width: 100%; font-weight: 600;">Add New Lead</div>
+            <div style="width: 100%; font-weight: 600;">New Lead</div>
             <img src="public/close.svg" id="closeBtn" alt="" />
           </div>
           <div class="form form1">
@@ -770,6 +770,7 @@
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
       const leadfromEl = document.querySelector("#lead-form");
+      const leadformEl = document.querySelector("#lead-form");
       const contactInputEl = document.querySelector("#contact_person");
       const organizationInputEl = document.querySelector("#organization");
       const titleInputEl = document.querySelector("#title");
@@ -932,15 +933,21 @@
           // Populate the form fields with lead data for editing
           document.getElementById("contact_person").value =
             leadData.lead.contact_person;
-          document.getElementById("organization").value = leadData.lead.organization;
+          document.getElementById("organization").value =
+            leadData.lead.organization;
           document.getElementById("title").value = leadData.lead.title;
           document.getElementById("currency").value = leadData.lead.currency;
           document.getElementById("status").value = leadData.lead.status;
           document.getElementById("phone").value = leadData.lead.phone;
           document.getElementById("email").value = leadData.lead.email;
-          document.getElementById("start_date").value = leadData.lead.start_date;
+          document.getElementById("start_date").value =
+            leadData.lead.start_date;
           document.getElementById("due_date").value = leadData.lead.due_date;
-          document.getElementById("description").value = leadData.lead.description;
+          document.getElementById("description").value =
+            leadData.lead.description;
+
+          // Set the form's data-id attribute to the lead ID
+          leadformEl.setAttribute("data-id", leadId);
 
           // Display the overlay for editing
           const overlay = document.getElementById("overlay");
@@ -1034,7 +1041,11 @@
       leadformEl.addEventListener("submit", async function (event) {
         event.preventDefault();
         const leadId = event.target.getAttribute("data-id");
-        updateLead(leadId);
+        if (leadId) {
+          updateLead(leadId);
+        } else {
+          console.log("Create new lead logic here");
+        }
       });
     </script>
   </body>
