@@ -869,30 +869,35 @@
           data.leads.forEach((lead) => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                  <td>${lead.status}</td>
-                  <td>${lead.description}</td>
-                  <td>${lead.organization}</td>
-                  <td>${lead.contact_person}</td>
-                  <td>${lead.start_date}</td>
-                  <td>${lead.due_date}</td>
-                  <td>
-                    <button style="cursor: pointer" 
-                    class="edit-button" data-id="${lead._id}">Edit</button>
-                    <img
-                    class="search-icon"
-                    alt=""
-                    style="position: relative; left: 10px; top: 5px; cursor: pointer;"
-                    src="./public/Delete.svg"
-                    id="moreIcon"
-                  />
-                </td>
-
-      </td>
-    
-              `;
-
+              <td>${lead.status}</td>
+              <td>${lead.description}</td>
+              <td>${lead.organization}</td>
+              <td>${lead.contact_person}</td>
+              <td>${lead.start_date}</td>
+              <td>${lead.due_date}</td>
+              <td>
+                <button style="cursor: pointer" class="edit-button" data-id="${lead._id}">Edit</button>
+                <img
+                  class="search-icon delete-button"
+                  alt=""
+                  style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+                  src="./public/Delete.svg"
+                  id="moreIcon"
+                  data-id="${lead._id}"
+                />
+              </td>
+            `;
+          
             tableBody.appendChild(row);
+          
+            // Add event listener to the delete button within this row
+            const deleteButton = row.querySelector(".delete-button");
+            deleteButton.addEventListener("click", (event) => {
+              const leadId = event.target.getAttribute("data-id");
+              deleteLead(leadId); // Call the deleteLead function with the lead ID
+            });
           });
+          
 
           // Add event listeners to edit buttons
           const editButtons = document.querySelectorAll(".edit-button");
@@ -1048,6 +1053,44 @@
           console.log("Create new lead logic here");
         }
       });
+
+async function deleteLead(leadId) {
+  try {
+    const httpRes = await fetch(`${backendURL}/lead/deletelead/${leadId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    if (httpRes.ok) {
+      // Lead deleted successfully
+      alert("Lead deleted successfully");
+      // Remove the deleted row from the table
+      const deletedRow = document.querySelector(`tr[data-id="${leadId}"]`);
+      if (deletedRow) {
+        deletedRow.remove();
+      }
+      // Refresh the table after deleting
+      await fetchDataAndPopulateTable();
+    } else {
+      // Handle errors
+      const jsonRes = await httpRes.json();
+      if (jsonRes.success === false && jsonRes.message) {
+        alert("Error deleting lead: " + jsonRes.message);
+      } else {
+        alert("Error deleting lead. Please check your network connection.");
+      }
+    }
+  } catch (error) {
+    console.error("An error occurred while deleting the lead:", error);
+    alert("An error occurred while deleting the lead.");
+  }
+}
+      
+ 
     </script>
   </body>
 </html>
