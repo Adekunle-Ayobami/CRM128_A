@@ -219,32 +219,26 @@
           <div style="margin-right: 10px">|</div>
           <div style="color: #003e9c">Expenses</div>
         </div>
-        <div class="button-group">
-          <button class="bt2" id="overlayBtn2">Add Expenses</button>
-        </div>
-      </div>
-      <div class="back-group">
         <div class="back" onclick="history.back()">
           <img class="search-icon" alt="" src="./public/arrow-back.svg" />
           <div class="search">Back</div>
         </div>
+      </div>
+      <div class="back-group">
         <div class="input-group">
-          <div class="input-container">
-            <i class="fas fa-search"></i>
-            <input
-              class="input-field1"
-              type="text"
-              name="search"
-              placeholder="Filter"
-            />
-          </div>
           <select class="select" name="">
-            <option value="">Daily</option>
-            <option value="">Weekly</option>
-            <option value="" selected>Monthly</option>
-            <option value="">Yealy</option>
+            <option value="" selected style="display: none">Year</option>
+            <option value="">2023</option>
+            <option value="">2022</option>
+            <option value="">2021</option>
+            <option value="">2020</option>
+            <option value="">2019</option>
+            <option value="">2018</option>
+            <option value="">2017</option>
+            <option value="">2016</option>
           </select>
           <select class="select1" name="">
+            <option value="" selected style="display: none">Month</option>
             <option value="">January</option>
             <option value="">February</option>
             <option value="">March</option>
@@ -258,16 +252,25 @@
             <option value="">November</option>
             <option value="">December</option>
           </select>
-          <select class="select2" name="">
-            <option value="">Category</option>
-            <option value="">Admin</option>
-            <option value="">User</option>
-          </select>
           <div class="sort">
             <img style="width: 15px" src="public/sort_minor.png" alt="" /><span
               style="margin-bottom: 7px"
               >Sort</span
             >
+          </div>
+        </div>
+        <div style="display: flex">
+          <div class="input-container">
+            <i class="fas fa-search"></i>
+            <input
+              class="input-field1"
+              type="text"
+              name="search"
+              placeholder="Search"
+            />
+          </div>
+          <div class="button-group">
+            <button class="bt2" id="overlayBtn">Add Expenses</button>
           </div>
         </div>
       </div>
@@ -592,16 +595,16 @@
       });
 
       // Overlay Page2
-      document
-        .getElementById("overlayBtn2")
-        .addEventListener("click", function () {
-          document.getElementById("overlay2").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn2")
-        .addEventListener("click", function () {
-          document.getElementById("overlay2").style.display = "none";
-        });
+      // document
+      //   .getElementById("overlayBtn2")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay2").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn2")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay2").style.display = "none";
+      //   });
 
       // Overlay Page3
       // document

@@ -146,21 +146,21 @@ li {
 }
 .frame-group {
   display: flex;
-  height: 20px;
+  height: 35px;
   margin-top: 20px;
   margin-left: 20px;
-  width: 20%;
-  gap: 680px;
+  width: 100%;
+  gap: 790px;
   position: absolute;
-  top: 5em;
-  left: 320px;
+  top: 4em;
+  left: 17em;
 }
 .back-group {
   display: flex;
   position: absolute;
-  top: 10em;
-  left: 320px;
-  gap: 340px;
+  top: 8em;
+  left: 18em;
+  gap: 420px;
 }
 .input-group {
   display: flex;
@@ -197,22 +197,30 @@ li {
   padding-top: 5px;
   padding-bottom: 9px;
   margin-right: 5px;
+  height: 18px;
 }
 .select {
   /* position: absolute;
   top: 75px;
   right: 11.3%; */
   padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  height: 30px;
 }
 .select1 {
   /* position: absolute;
   top: 75px;
   right: 20.3%; */
   padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  height: 30px;
+  outline: none;
+}
+.select1 option {
+  padding-bottom: 30px;
+  font-size: 16px;
 }
 .select2 {
   /* position: absolute;
@@ -223,7 +231,8 @@ li {
   padding-bottom: 5px;
 }
 .select option {
-  padding-bottom: 30px;
+  padding: 30px;
+  font-size: 16px;
 }
 .sort {
   background-color: white;
@@ -237,6 +246,7 @@ li {
   border: 1px solid black;
   text-align: center;
   margin-left: 5px;
+  height: 19px;
 }
 .copyright-2023-crm128-parent {
   display: flex;
@@ -261,9 +271,9 @@ li {
 }
 .table-head {
   position: absolute;
-  top: 14em;
-  left: 20em;
-  width: 74%;
+  top: 12em;
+  left: 17.8em;
+  width: 77%;
   text-align: center;
   padding: 13px 0 13px 0;
   background-color: #e6f0ff;
@@ -271,16 +281,16 @@ li {
 }
 .table {
   position: absolute;
-  top: 16.7em;
-  left: 20em;
-  width: 74.1%;
+  top: 14.8em;
+  left: 17.8em;
+  width: 77.1%;
   border-collapse: collapse;
   margin-top: 0.5em;
 }
 th {
   text-align: center;
   background-color: #7ac769;
-  padding: 10px;
+  padding: 12px;
 }
 td {
   padding: 10px 15px 15px 20px;

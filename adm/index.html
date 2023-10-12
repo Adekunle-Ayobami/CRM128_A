@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Appointment | Dashboard</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <title>Appointment | Week</title>
+    <link rel="stylesheet" href="css/week-appointment.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -16,6 +16,8 @@
       href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="../dist/index.global.js"></script>
   </head>
   <body>
     <header>
@@ -23,7 +25,6 @@
         <button class="toggle-button" id="sidebar-toggle">
           <i class="fa-solid fa-bars bar"></i>
         </button>
-
         <a href="client-management-dash.html">
           <div class="crm128-wrapper">
             <span style="color: #003e9c">CRM</span
@@ -47,9 +48,9 @@
           >
         </div>
         <div class="ellipse-group">
-          <div class="jg">JG</div>
+          <div class="avatar">JG</div>
           <div class="josiah-gana-parent">
-            <div class="josiah-gana">Josiah Gana</div>
+            <div class="josiah-gana" id="admin-email">Josiah Gana</div>
             <div class="admin">Admin</div>
           </div>
         </div>
@@ -72,7 +73,7 @@
             class="more-icon client-icon"
             id="hr-chevron-icon"
             alt=""
-            src="./public/chevron-down1.svg"
+            src="./public/chevron-uop.svg"
           />
         </div>
         <div class="client-dropdown">
@@ -214,116 +215,212 @@
       </div>
       <!-- Inner Page -->
       <div class="frame-group">
-        <div style="display: flex">
-          <div style="margin-right: 10px; color: #003e9c">Appointment</div>
-        </div>
+        <div style="color: #003e9c">Appointment</div>
         <div class="button-group">
           <button class="bt2" id="overlayBtn">Add Appointment</button>
         </div>
       </div>
       <!--  -->
       <div class="adm-container">
-        <div class="thead">
+        <!-- <div class="thead">
           <button class="today">Today</button>
-          <button class="toggler" id="prevMonth">
-            <img class="toggle" src="public/chevron-left.svg" alt="" />
-          </button>
-          <h2 class="month-year" id="monthYear"></h2>
-          <button class="toggler" id="nextMonth">
-            <img class="toggle" src="public/chevron-right.svg" alt="" />
-          </button>
-          <!-- <select class="select" name="">
-            <option value="" selected>Month</option>
-            <option value="">Week</option>
-            <option value="">Day</option>
-          </select> -->
+          <img src="public/chevron-left.svg" alt="" />
+          <span style="margin-top: 1em">March 5-7,2023</span>
+          <img src="public/chevron-right.svg" alt="" />
           <div class="dropdown">
-            <button>Month</button>
+            <button>Week</button>
             <div class="dropdown-content">
               <a href="index.html">Month</a>
               <a href="week-appointment.html">Week</a>
               <a href="day-appointment.html">Day</a>
             </div>
           </div>
-        </div>
-        <table id="calenderTable" class="table">
-          <thead>
-            <tr>
-              <th>Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thur</th>
-              <th>Fri</th>
-              <th>Sat</th>
-            </tr>
-          </thead>
-          <tbody id="calendarBody"></tbody>
+        </div> -->
+        <table class="table" id="calendar">
           <!-- <tr>
-            <td class="color">29</td>
-            <td class="color">30</td>
-            <td>31</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
+            <th></th>
+            <th>
+              Sun <br /><br />
+              <span>05</span>
+            </th>
+            <th>
+              Mon <br /><br />
+              <span>06</span>
+            </th>
+            <th>
+              Tue <br /><br />
+              <span>07</span>
+            </th>
+            <th>
+              Wed <br /><br />
+              <span>08</span>
+            </th>
+            <th>
+              Thur <br /><br />
+              <span>09</span>
+            </th>
+            <th>
+              Fri <br /><br />
+              <span>10</span>
+            </th>
+            <th>
+              Sat <br /><br />
+              <span>11</span>
+            </th>
           </tr>
           <tr>
-            <td>5</td>
-            <td>6</td>
-            <td style="background-color: lightgray">7</td>
-            <td class="women">8 <span>Women's Day</span></td>
-            <td>9</td>
-            <td>10</td>
-            <td>11</td>
+            <td class="color">GMT+01</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td>29</td>
-            <td>30</td>
-            <td>31</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
+            <td class="color">12AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="women"><span>Women's Day</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-            <td>16</td>
-            <td>17</td>
-            <td>18</td>
+            <td class="color">1AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td>19</td>
-            <td>20</td>
-            <td>21</td>
-            <td>22</td>
-            <td>23</td>
-            <td>24</td>
-            <td>25</td>
+            <td class="color">2AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
-            <td>30</td>
-            <td class="color">1</td>
-            <td class="color">2</td>
+            <td class="color">3AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td class="color">3</td>
-            <td class="color">4</td>
-            <td class="color">5</td>
-            <td class="color">5</td>
-            <td class="color">7</td>
-            <td class="color">8</td>
-            <td class="color">9</td>
+            <td class="color">4AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">5AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">6AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">7AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">8AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">9AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">10AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">11AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">12PM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="color">1PM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr> -->
         </table>
       </div>
+      <!--  -->
       <!-- Overlay Page -->
       <div class="add-lead" id="overlay" style="display: none">
         <div class="lead">
@@ -513,99 +610,49 @@
         toggleMenu();
       });
 
-      // Calender
+      //Calender
       document.addEventListener("DOMContentLoaded", function () {
-        const calendarBody = document.getElementById("calendarBody");
-        const monthYearElement = document.getElementById("monthYear");
-        const prevMonthButton = document.getElementById("prevMonth");
-        const nextMonthButton = document.getElementById("nextMonth");
+        var calendarEl = document.getElementById("calendar");
 
-        async function getAppointments() {
-          const response = await fetch("./calender.json");
-          const data = await response.json();
-          return data;
-        }
-
-        let currentDate = new Date(); // Define currentDate outside the renderCalendar function
-
-        function renderCalendar(appointmentsData) {
-          const currentDay = currentDate.getDate();
-          const currentMonth = currentDate.getMonth();
-          const currentYear = currentDate.getFullYear();
-
-          const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
-          const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
-
-          const monthYearString = currentDate.toLocaleString("default", {
-            month: "long",
-            year: "numeric",
-          });
-          monthYearElement.innerText = monthYearString;
-
-          let calendarHtml = "<tr>";
-
-          for (let i = 0; i < firstDayIndex; i++) {
-            calendarHtml += "<td></td>";
-          }
-
-          for (let day = 1; day <= lastDay; day++) {
-            const dateKey = `appointment${day}`;
-            const appointmentData = appointmentsData[dateKey];
-
-            if ((day + firstDayIndex - 1) % 7 === 0 && day !== 1) {
-              calendarHtml += "</tr><tr>";
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          headerToolbar: {
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay",
+          },
+          initialDate: "2023-10-12",
+          navLinks: true, // can click day/week names to navigate views
+          selectable: true,
+          selectMirror: true,
+          select: function (arg) {
+            var title = prompt("Event Title:");
+            if (title) {
+              calendar.addEvent({
+                title: title,
+                start: arg.start,
+                end: arg.end,
+                allDay: arg.allDay,
+              });
             }
-
-            let cell = `<td>${day}`;
-
-            if (
-              currentDay === day &&
-              currentMonth === currentDate.getMonth() &&
-              currentYear === currentDate.getFullYear()
-            ) {
-              cell = `<td class="highlighted-day">${day}`;
+            calendar.unselect();
+          },
+          eventClick: function (arg) {
+            if (confirm("Are you sure you want to delete this event?")) {
+              arg.event.remove();
             }
-
-            if (appointmentData) {
-              const appointmentList = `<div class="appointments">
-                                <span class="appointment-title">${appointmentData.title}</span>
-                                <span class="appointment-time">${appointmentData.fromTime} - ${appointmentData.toTime}</span>
-                              </div>`;
-              cell += appointmentList;
-            }
-
-            cell += "</td>";
-            calendarHtml += cell;
-          }
-
-          calendarHtml += "</tr>";
-          calendarBody.innerHTML = calendarHtml;
-        }
-
-        let appointment = {};
-
-        getAppointments()
-          .then((appointments) => {
-            // Do something with the appointments data, like displaying them on the calendar
-            // displayAppointmentsOnCalendar(appointments);
-            console.log("Appointments:", appointments);
-            appointment = appointments;
-            renderCalendar(appointments);
-          })
-          .catch((error) =>
-            console.error("Error fetching appointments:", error)
-          );
-
-        prevMonthButton.addEventListener("click", function () {
-          currentDate.setMonth(currentDate.getMonth() - 1);
-          renderCalendar(appointment);
+          },
+          editable: true,
+          dayMaxEvents: true, // allow "more" link when too many events
         });
 
-        nextMonthButton.addEventListener("click", function () {
-          currentDate.setMonth(currentDate.getMonth() + 1);
-          renderCalendar(appointment);
-        });
+        calendar.render();
       });
+
+      const adminEmailEl = document.querySelector("#admin-email");
+      const avatarEl = document.querySelector(".avatar");
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      adminEmailEl.innerHTML = admin.email;
+      avatarEl.innerHTML = admin.email.substring(0, 2);
     </script>
   </body>
 </html>
