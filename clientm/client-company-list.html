@@ -858,7 +858,16 @@ async function fetchDataAndPopulateTable() {
         <td>${client.company_type}</td>
         <td>${client.email}</td>
         <td>${client.website_url}</td>
-        <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
+        <td>
+                <button style="cursor: pointer" class="edit-button">Edit</button>
+                <img
+                  class="search-icon delete-button"
+                  alt=""
+                  style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+                  src="./public/Delete.svg"
+                  id="moreIcon"
+                />
+              </td>
       `;
 
       tableBody.appendChild(row);

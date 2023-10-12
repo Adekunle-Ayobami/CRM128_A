@@ -803,7 +803,17 @@
         <td>${expense.category}</td>
         <td>${expense.description}</td>
         <td>${expense.amount}</td>
-        <td><img class="search-icon" alt="" src="./public/more.svg" id="moreIcon"/></td>
+       <td>
+                <button style="cursor: pointer" class="edit-button" data-id="${expense._id}">Edit</button>
+                <img
+                  class="search-icon delete-button"
+                  alt=""
+                  style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+                  src="./public/Delete.svg"
+                  id="moreIcon"
+                  data-id="${expense._id}"
+                />
+              </td>
       `;
 
             tableBody.appendChild(row);
