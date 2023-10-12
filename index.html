@@ -86,6 +86,8 @@
 
       // Plain javascript ot conne ct with the backend.
 
+      const backendURL = "http://localhost:8000"
+
       const loginfromEl = document.querySelector("#login-form");
       const emailInputEl = document.querySelector("#email");
       const pwdInputEl = document.querySelector("#password");
@@ -101,7 +103,7 @@
           password: pwdValue,
         };
 
-        const httpRes = await fetch(backendURl + "/admin/login", {
+        const httpRes = await fetch(backendURL + "/admin/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
