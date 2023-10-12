@@ -848,7 +848,7 @@
       });
 
       // Function to fetch data from your API and populate the table
-      async function fetchDataAndPopulateTable() {
+      async function fetchDataAndPopulateTable(pageNumber) {
         try {
           const response = await fetch(`${backendURL}/lead/getallleads`, {
             method: "GET",
@@ -865,8 +865,12 @@
 
           const data = await response.json();
           const tableBody = document.getElementById("table-body");
-
-          data.leads.forEach((lead) => {
+          while (tableBody.firstChild) {
+  tableBody.removeChild(tableBody.firstChild);
+}
+const cardsToDIsplay=7;
+console.log(data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNumber*cardsToDIsplay))
+          data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNumber*cardsToDIsplay).forEach((lead) => {
             const row = document.createElement("tr");
             row.innerHTML = `
               <td>${lead.status}</td>
@@ -913,9 +917,9 @@
       }
 
       // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-      document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+      document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
 
-      // Function to edit a lead by ID
+// Function to edit a lead by ID
       async function editLead(leadId) {
         try {
           const response = await fetch(
@@ -1036,7 +1040,7 @@
           overlay.style.display = "none";
 
           // Refresh the table
-          fetchDataAndPopulateTable();
+          fetchDataAndPopulateTable(1);
         } catch (error) {
           console.error("An error occurred while updating the lead:", error);
           alert("An error occurred while updating the lead.");
@@ -1087,8 +1091,33 @@ async function deleteLead(leadId) {
     alert("An error occurred while deleting the lead.");
   }
 }
-      
- 
+
+// Get all elements with class "num"
+const numElements = document.querySelectorAll(".num");
+
+// Add a click event listener to each "num" element
+numElements.forEach((numElement) => {
+numElement.addEventListener("click", () => {                                          
+    // Reset all elements to "page-disabled" class
+    numElements.forEach((element) => {
+      element.parentElement.parentElement.classList.remove("page-active");
+      element.parentElement.classList.remove("page-active1");
+      element.parentElement.parentElement.classList.add("page-disabled");
+       element.parentElement.classList.add("page-default1")
+    });
+console.log(numElement.parentElement.parentElement.classList)
+    // Set the clicked element to "page-active" class
+    numElement.parentElement.parentElement.classList.remove("page-disabled");
+    numElement.parentElement.classList.remove("page-default1")
+    numElement.parentElement.parentElement.classList.add("page-active");
+    numElement.parentElement.classList.add("page-active1");
+    // Log the number
+    const clickedNumber = numElement.textContent;
+    fetchDataAndPopulateTable(parseInt(clickedNumber));
+
+    console.log(`Clicked number: ${clickedNumber}`);
+  });
+});
     </script>
   </body>
 </html>
