@@ -26,8 +26,8 @@
 
         <a href="client-management-dash.html">
           <div class="crm128-wrapper">
-            <span style="color: #003e9c;">CRM</span
-            ><span style="color: #57bc4a;">128</span>
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
           </div>
         </a>
         <div class="search-parent">
@@ -132,7 +132,7 @@
           <ul id="hr-items1">
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="#"
-              ><li style="text-overflow: ellipsis;">
+              ><li style="text-overflow: ellipsis">
                 Emzor Pham Industries Ltd.
               </li></a
             >
@@ -185,8 +185,8 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items4">
-            <a href="../acm/expense.html"><li class="selected">Income</li></a>
-            <a href="../acm/expense.html"><li>Expenses</li></a>
+            <a href="../acm/income.html"><li>Income</li></a>
+            <a href="../acm/expense.html"><li class="selected">Expenses</li></a>
           </ul>
         </div>
         <div class="drop-hr" id="hr-toggle5">
@@ -214,10 +214,10 @@
       </div>
       <!-- Inner Page -->
       <div class="frame-group">
-        <div style="display: flex;">
-          <div style="margin-right: 10px;">Accounting</div>
-          <div style="margin-right: 10px;">|</div>
-          <div style="color: #003e9c;">Income</div>
+        <div style="display: flex">
+          <div style="margin-right: 10px">Accounting</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">Expenses</div>
         </div>
         <div class="back" onclick="history.back()">
           <img class="search-icon" alt="" src="./public/arrow-back.svg" />
@@ -227,7 +227,7 @@
       <div class="back-group">
         <div class="input-group">
           <select class="select" name="">
-            <option value="" selected style="display: none;">Year</option>
+            <option value="" selected style="display: none">Year</option>
             <option value="">2023</option>
             <option value="">2022</option>
             <option value="">2021</option>
@@ -238,7 +238,7 @@
             <option value="">2016</option>
           </select>
           <select class="select1" name="">
-            <option value="" selected style="display: none;">Month</option>
+            <option value="" selected style="display: none">Month</option>
             <option value="">January</option>
             <option value="">February</option>
             <option value="">March</option>
@@ -253,13 +253,13 @@
             <option value="">December</option>
           </select>
           <div class="sort">
-            <img style="width: 15px;" src="public/sort_minor.png" alt="" /><span
-              style="margin-bottom: 7px;"
+            <img style="width: 15px" src="public/sort_minor.png" alt="" /><span
+              style="margin-bottom: 7px"
               >Sort</span
             >
           </div>
         </div>
-        <div style="display: flex;">
+        <div style="display: flex">
           <div class="input-container">
             <i class="fas fa-search"></i>
             <input
@@ -276,12 +276,12 @@
       </div>
       <!--  -->
       <div class="table-head">
-        <span id="total-expenses">Total Expenses :</span>
+        <span id="total-expenses">Total Expenses : </span>
       </div>
       <table class="table">
         <tr>
           <th>Date</th>
-          <th>Source</th>
+          <th>Paid To</th>
           <th>Category</th>
           <th>Description</th>
           <th>Amount</th>
@@ -290,11 +290,11 @@
         <tr>
           <tbody id="table-body"></tbody>
           <!-- <td>01/02/2023</td>
-          <td>Client 1</td>
-          <td>Contract won</td>
-          <td>Direct discussion with a Client</td>
-          <td>N200,000.00</td> -->
-          <!-- <td>
+          <td>Mr John</td>
+          <td>Mechanical</td>
+          <td>Installation of Mechanical units</td>
+          <td>N100,000.00</td>
+          <td>
             <img
               id="overlayBtn3"
               src="public/edit.svg"
@@ -306,10 +306,10 @@
         </tr>
         <!-- <tr>
           <td>01/02/2023</td>
-          <td>Client 2</td>
-          <td>Contract won</td>
-          <td>Direct discussion with a Client</td>
-          <td>N200,000.00</td>
+          <td>Mr John</td>
+          <td>HAVC</td>
+          <td>Installation of HVAC units</td>
+          <td>N100,000.00</td>
           <td>
             <img
               id="overlayBtn4"
@@ -322,10 +322,10 @@
         </tr> -->
         <!-- <tr>
           <td>01/02/2023</td>
-          <td>Client 3</td>
-          <td>Contract won</td>
-          <td>Direct discussion with a Client</td>
-          <td>N200,000.00</td>
+          <td>Mr John</td>
+          <td>Electrical Works</td>
+          <td>Wiring</td>
+          <td>N100,000.00</td>
           <td>
             <img
               id="overlayBtn5"
@@ -338,10 +338,10 @@
         </tr> -->
         <!-- <tr>
           <td>01/02/2023</td>
-          <td>Client 4</td>
-          <td>Contract won</td>
-          <td>Direct discussion with a Client</td>
-          <td>N200,000.00</td>
+          <td>Mr John</td>
+          <td>Maintenance & Repairs</td>
+          <td>The water closest needs to be repaired</td>
+          <td>N100,000.00</td>
           <td>
             <img
               id="overlayBtn6"
@@ -354,10 +354,10 @@
         </tr> -->
         <!-- <tr>
           <td>01/02/2023</td>
-          <td>Client 5</td>
-          <td>Contract won</td>
-          <td>Direct discussion with a Client</td>
-          <td>N200,000.00</td>
+          <td>Mr John</td>
+          <td>Electrical Works</td>
+          <td>Wiring</td>
+          <td>N100,000.00</td>
           <td>
             <img
               id="overlayBtn7"
@@ -400,43 +400,43 @@
         <img class="page-master" alt="" src="./public/page--master.svg" />
       </div>
 
-      <!-- Overlay Pages -->
+      <!-- Overlay Pages2 -->
       <form action="" id="expenses-form">
-        <div class="add-lead" id="overlay" style="display: none;">
+        <div class="add-lead" id="overlay2" style="display: none">
           <div class="lead">
-            <div style="width: 100%; font-weight: 600;">Add New Income</div>
-            <img src="public/close.svg" id="closeBtn" alt="" />
+            <div style="width: 100%; font-weight: 600">Add New Expenses</div>
+            <img src="public/close.svg" id="closeBtn2" alt="" />
           </div>
           <div class="form form1">
-            <span style="margin-bottom: 5px;">Date</span>
+            <span style="margin-bottom: 5px">Date</span>
             <input id="date" type="date" placeholder="DD-MM-YY" />
           </div>
           <div class="form form1">
-            <span style="margin-bottom: 5px;">Source</span>
+            <span style="margin-bottom: 5px">Source </span>
             <input id="source" type="text" placeholder="Source" />
           </div>
           <div class="form2 form1">
             <div>
               <span>Category</span> <br />
-              <div class="input-container" style="margin-top: 5px;">
+              <div class="input-container" style="margin-top: 5px">
                 <input id="category" type="text" placeholder="category" />
                 <!-- <select name="">
-                <option value="">Direct Sales</option>
-                <option value="">Referral</option>
-                <option value="">Operating Income</option>
-                <option value="">Exceptional Income</option>
+                <option id="category" value="">Direct Sales</option>
+                <option id="category" value="">Referral</option>
+                <option id="category" value="">Operating Income</option>
+                <option id="category" value="">Exceptional Income</option>
               </select> -->
               </div>
             </div>
             <div>
               <span>Amount</span> <br />
-              <div class="input-container" style="margin-top: 5px;">
+              <div class="input-container" style="margin-top: 5px">
                 <input id="amount" type="text" placeholder="amount" />
                 <!-- <select name="">
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
-                <option value="">Option 1</option>
+                <option id="amount" value="">Option 1</option>
+                <option id="amount" value="">Option 1</option>
+                <option id="amount" value="">Option 1</option>
+                <option id="amount" value="">Option 1</option>
               </select> -->
               </div>
             </div>
@@ -444,7 +444,7 @@
           <div class="form-text">
             <span>Description</span>
             <textarea
-              style="margin-top: 5px;"
+              style="margin-top: 5px"
               name=""
               id="description"
               cols="10"
@@ -458,44 +458,43 @@
         </div>
       </form>
     </section>
-
     <!-- Footer -->
     <footer>
       <div class="copyright-2023-crm128-parent">
         <div class="copyright-2023-crm128-container">
-          <span style="color: #003e9c;">© Copyright 2023 CRM</span>
-          <span style="color: #57bc4a;">128</span>
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
         </div>
-        <div style="color: #003e9c;">196 High RoadWood GreenLondon N22 8HH</div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
 
     <!-- Overlay Pages3 -->
     <div class="add-lead2" id="overlay3">
       <div class="lead2">
-        <div style="width: 100%; font-weight: 600; font-size: 20px;">
+        <div style="width: 100%; font-weight: 600; font-size: 20px">
           EXPENSES DETAILS
         </div>
         <img
-          style="cursor: pointer;"
+          style="cursor: pointer"
           src="public/close.svg"
           id="closeBtn3"
           alt=""
         />
       </div>
-      <hr style="width: 92%;" />
+      <hr style="width: 92%" />
       <div class="form form1">
-        <span style="margin-bottom: 5px;">Date</span>
+        <span style="margin-bottom: 5px">Date</span>
         <input type="date" placeholder="DD-MM-YY" />
       </div>
       <div class="form form1">
-        <span style="margin-bottom: 5px;">Paid To</span>
+        <span style="margin-bottom: 5px">Paid To</span>
         <input type="text" placeholder="Source" />
       </div>
       <div class="form2 form1">
         <div>
           <span>Category</span> <br />
-          <div class="input-container" style="margin-top: 5px;">
+          <div class="input-container" style="margin-top: 5px">
             <select name="">
               <option value="">Direct Sales</option>
               <option value="">Referral</option>
@@ -506,36 +505,34 @@
         </div>
         <div>
           <span>Amount</span> <br />
-          <div class="input-container" style="margin-top: 5px;">
-            <select name="">
+          <div class="input-container" style="margin-top: 5px">
+            <!-- <select name="">
               <option value="">Option 1</option>
               <option value="">Option 1</option>
               <option value="">Option 1</option>
               <option value="">Option 1</option>
-            </select>
+            </select> -->
           </div>
         </div>
       </div>
       <div class="form-text">
         <span>Description</span>
         <textarea
-          style="margin-top: 5px;"
+          style="margin-top: 5px"
           name=""
-          id=""
+          id="description"
           cols="10"
           rows="5"
           placeholder="Enter Description"
         ></textarea>
       </div>
       <div>
-        <a href="client-company-list.html"
-          ><button class="bigbutton">UPDATE</button></a
-        >
+        <button class="bigbutton">UPDATE</button>
       </div>
     </div>
 
     <script src="../main.js"></script>
-
+    cr
     <script>
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
@@ -597,17 +594,18 @@
         hrChevronIcon5.classList.toggle("rotate");
       });
 
-      // Overlay Page
-      document
-        .getElementById("overlayBtn")
-        .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn")
-        .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "none";
-        });
+      // Overlay Page2
+      // document
+      //   .getElementById("overlayBtn2")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay2").style.display = "block";
+      //   });
+      // document
+      //   .getElementById("closeBtn2")
+      //   .addEventListener("click", function () {
+      //     document.getElementById("overlay2").style.display = "none";
+      //   });
+
       // Overlay Page3
       // document
       //   .getElementById("overlayBtn3")
@@ -688,7 +686,6 @@
 
       // Plain javascript ot conne ct with the backend.
 
-      // const incomefromEl = document.querySelector("#expense-form");
       const expensesfromEl = document.querySelector("#expenses-form");
       const categoryInput = document.querySelector("#category");
       const descriptionInput = document.querySelector("#description");
@@ -696,11 +693,10 @@
       const dateInput = document.querySelector("#date");
       const amountInput = document.querySelector("#amount");
 
-      const expenseFormEl = document.getElementById("expenses-form");
       const authToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU";
 
-        expensesfromEl.addEventListener("submit", async function (event) {
+      expensesfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
         console.log("submitting");
         const categoryValue = categoryInput.value;
@@ -729,7 +725,7 @@
         });
         window.location.href = "/acm/expense.html";
         const jsonRes = await httpRes.json();
-        console.log(jsonRes);
+
         if (jsonRes.success === true) {
           console.log(jsonRes);
           localStorage.setItem("token", jsonRes.token);
@@ -737,17 +733,16 @@
 
           console.log(jsonRes.token);
         } else {
-          alert("Expenses added successful:");
+          alert("Error logging in detail: " + jsonRes.message);
         }
       });
-
       async function fetchDataAndDisplay() {
         try {
           const backendURL = "http://localhost:8000"; // Replace with your actual backend URL
           const authToken =
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU"; // Replace with your actual authentication token
 
-          // Fetch total expense
+          // Fetch total expenses
           const expensesResponse = await fetch(
             `${backendURL}/expenses/calculateExpenses`,
             {
@@ -768,10 +763,10 @@
 
           const totalExpenses = await expensesResponse.json();
           const activeTotalExpenses = totalExpenses.totalExpenses;
+          console.log(activeTotalExpenses);
 
           const activeExpenses = document.querySelector("#total-expenses");
           activeExpenses.innerHTML = activeTotalExpenses;
-          console.log(activeTotalExpenses);
         } catch (error) {
           console.error("There was a problem with the fetch operation:", error);
         }
@@ -782,14 +777,17 @@
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
       async function fetchDataAndPopulateTable() {
         try {
-          const response = await fetch(`${backendURL}/expenses/getAllExpenses`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-              Authorization: `Bearer ${authToken}`,
-            },
-          });
+          const response = await fetch(
+            `${backendURL}/expenses/getAllExpenses`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
           if (!response.ok) {
             throw new Error(`API response was not ok (${response.status})`);
@@ -808,7 +806,7 @@
         <td>${expense.category}</td>
         <td>${expense.description}</td>
         <td>${expense.amount}</td>
-        <td>
+       <td>
                 <button style="cursor: pointer" class="edit-button" data-id="${expense._id}">Edit</button>
                 <img
                   class="search-icon delete-button"
@@ -822,179 +820,9 @@
       `;
 
             tableBody.appendChild(row);
-
-            // Add event listener to the delete button within this row
-            const deleteButton = row.querySelector(".delete-button");
-            deleteButton.addEventListener("click", (event) => {
-              const expenseId = event.target.getAttribute("data-id");
-              deleteExpense(expenseId); // Call the deleteIncome function with the expense ID
-            });
-          });
-
-          // Add event listeners to edit buttons
-          const editButtons = document.querySelectorAll(".edit-button");
-          editButtons.forEach((button) => {
-            button.addEventListener("click", (event) => {
-              const expenseId = event.target.getAttribute("data-id");
-              editExpense(expenseId);
-            });
           });
         } catch (error) {
           console.error("There was a problem with the API request:", error);
-        }
-      }
-
-      // Function to close the overlay for expense editing
-      const closeBtn = document.getElementById("closeBtn");
-      closeBtn.addEventListener("click", () => {
-        const overlay = document.getElementById("overlay");
-        overlay.style.display = "none";
-      });
-
-      // Function to edit an expense by ID
-      async function editExpense(expenseId) {
-        try {
-          const response = await fetch(
-            `${backendURL}/expenses/getSingleExpense/${expenseId}`,
-            {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                Authorization: `Bearer ${authToken}`,
-              },
-            }
-          );
-
-          if (!response.ok) {
-            throw new Error(`API response was not ok (${response.status})`);
-          }
-
-          const expenseData = await response.json();
-
-          // Populate the form fields with expense data for editing
-          document.getElementById("date").value = expenseData.expense.date;
-          document.getElementById("source").value = expenseData.expense.source;
-          document.getElementById("category").value =
-            expenseData.expense.category;
-          document.getElementById("description").value =
-            expenseData.expense.description;
-          document.getElementById("amount").value = expenseData.expense.amount;
-
-          // Set the form's data-id attribute to the expense ID
-          expenseFormEl.setAttribute("data-id", expenseId);
-
-          // Display the overlay for editing
-          const overlay = document.getElementById("overlay");
-          overlay.style.display = "block";
-        } catch (error) {
-          console.error("There was a problem fetching expense data:", error);
-        }
-      }
-
-      // Function to update an expense by ID
-      async function updateExpense(expenseId) {
-        try {
-          const categoryValue = document.getElementById("category").value;
-          const sourceValue = document.getElementById("source").value;
-          const amountValue = document.getElementById("amount").value;
-          const dateValue = document.getElementById("date").value;
-          const descriptionValue = document.getElementById("description").value;
-
-          const payload = {
-            category: categoryValue,
-            description: descriptionValue,
-            source: sourceValue,
-            date: dateValue,
-            amount: amountValue,
-          };
-
-          const httpRes = await fetch(
-            `${backendURL}/expenses/editExpense/${expenseId}`,
-            {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                Authorization: `Bearer ${authToken}`,
-              },
-              body: JSON.stringify(payload),
-            }
-          );
-
-          if (!httpRes.ok) {
-            const jsonRes = await httpRes.json();
-            if (jsonRes.success === true) {
-              alert("Income updated successfully");
-            } else {
-              alert("Error updating expense: " + jsonRes.message);
-            }
-          } else {
-            alert("Success: " + httpRes.statusText);
-          }
-          // Hide the overlay
-          const overlay = document.getElementById("overlay");
-          overlay.style.display = "none";
-
-          // Refresh the table
-          fetchDataAndPopulateTable();
-        } catch (error) {
-          console.error("An error occurred while updating the expense:", error);
-          alert("An error occurred while updating the expense.");
-        }
-      }
-
-      // Add event listener to the expense form for updating incomes
-      expenseFormEl.addEventListener("submit", async function (event) {
-        event.preventDefault();
-        const expenseId = expenseFormEl.getAttribute("data-id");
-        if (expenseId) {
-          updateExpense(expenseId);
-        } else {
-          console.log("Create new expense logic here");
-        }
-      });
-
-      // Function to delete an expense by ID
-      async function deleteExpense(expenseId) {
-        try {
-          const httpRes = await fetch(
-            `${backendURL}/expense/deleteExpense/${expenseId}`,
-            {
-              method: "DELETE",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                Authorization: `Bearer ${authToken}`,
-              },
-            }
-          );
-
-          if (httpRes.ok) {
-            // Income deleted successfully
-            alert("Expenses deleted successfully");
-            window.location.href = "/acm/expense.html";
-            // Remove the deleted row from the table
-            const deletedRow = document.querySelector(
-              `tr[data-id="${expenseId}"]`
-            );
-            if (deletedRow) {
-              deletedRow.remove();
-            }
-          } else {
-            // Handle errors
-            const jsonRes = await httpRes.json();
-            if (jsonRes.success === false && jsonRes.message) {
-              alert("Error deleting expense: " + jsonRes.message);
-            } else {
-              alert(
-                "Error deleting expense. Please check your network connection."
-              );
-            }
-          }
-        } catch (error) {
-          console.error("An error occurred while deleting the expense:", error);
-          alert("An error occurred while deleting the expense.");
         }
       }
 
