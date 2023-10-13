@@ -959,7 +959,7 @@
       async function deleteExpense(expenseId) {
         try {
           const httpRes = await fetch(
-            `${backendURL}/expense/deleteExpense/${expenseId}`,
+            `${backendURL}/expenses/deleteExpense/${expenseId}`,
             {
               method: "DELETE",
               headers: {
