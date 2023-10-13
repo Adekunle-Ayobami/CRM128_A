@@ -1072,6 +1072,7 @@ async function deleteLead(leadId) {
     if (httpRes.ok) {
       // Lead deleted successfully
       alert("Lead deleted successfully");
+      window.location.href = "/clientm/client-leads-list.html";
       // Remove the deleted row from the table
       const deletedRow = document.querySelector(`tr[data-id="${leadId}"]`);
       if (deletedRow) {
