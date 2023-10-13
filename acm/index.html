@@ -1182,6 +1182,7 @@
           if (httpRes.ok) {
             // Income deleted successfully
             alert("Income deleted successfully");
+            window.location.href = "/acm/index.html";
             // Remove the deleted row from the table
             const deletedRow = document.querySelector(
               `tr[data-id="${incomeId}"]`
