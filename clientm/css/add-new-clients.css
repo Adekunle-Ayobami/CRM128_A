@@ -356,6 +356,98 @@ li {
   font-size: 24px;
   display: none;
 }
+/* Table */
+.table {
+  position: absolute;
+  top: 20%;
+  left: 320px;
+  width: 70%;
+  padding: 20px;
+  text-align: left;
+  border-collapse: collapse;
+}
+th {
+  background-color: #7ac769;
+  padding: 20px;
+  text-align: center;
+}
+td {
+  background-color: white;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.pagination {
+  position: absolute;
+  top: 89%;
+  left: 650px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+.page-disabled {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.num {
+  position: absolute;
+  height: calc(100% - 10px);
+  width: calc(100% - 8px);
+  top: 5px;
+  left: 4px;
+  line-height: 20px;
+  display: inline-block;
+}
+.page-active1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #0047b3;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.page-active {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  color: #0047b3;
+}
+.page-default1,
+.page-master {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.page-default1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #c2c7d0;
+  box-sizing: border-box;
+}
+.page-master {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
 
 @media (min-width: 1368px) {
   .logout {
