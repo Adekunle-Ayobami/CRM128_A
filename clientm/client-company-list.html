@@ -360,21 +360,28 @@
           </div>
         </div>
       </div>
-
-      <!-- Overlay Pages -->
+ <!-- Overlay Pages -->
  <form action="" id="client-form">
-  <div class="add-lead" id="overlay" style="display: none">
+  <div class="add-lead" id="overlay">
     <div class="lead">
       <div style="width: 100%; font-weight: 600">Add New Company</div>
       <img src="public/close.svg" id="closeBtn" alt="" />
     </div>
     <div class="form form1">
       <span style="margin-bottom: 5px">Company Name</span>
-      <input type="text" placeholder="Enter company name" />
+      <input
+        type="text"
+        id="company_name"
+        placeholder="Enter company name"
+      />
     </div>
     <div class="form form1">
       <span style="margin-bottom: 5px">Company Type</span>
-      <input type="text"  id="company_type" placeholder="Enter company type" />
+      <input
+        type="text"
+        id="company_type"
+        placeholder="Enter company type"
+      />
     </div>
     <div class="form2">
       <div>
@@ -434,18 +441,18 @@
       <textarea
         style="margin-top: 5px"
         name=""
-         id="description"
-        id=""
+        id="description"
         cols="10"
         rows="5"
         placeholder="Enter Description"
       ></textarea>
     </div>
     <div>
-     <button type="submit" class="bigbutton">Save</button>
+      <button type="submit" class="bigbutton">Save</button>
     </div>
   </div>
- </form>
+</form>
+
     </section>
     <footer>
       <div class="copyright-2023-crm128-parent">
@@ -832,7 +839,7 @@
       fetchDataAndDisplay();
 
 // Function to fetch data from your API and populate the table
-async function fetchDataAndPopulateTable() {
+async function fetchDataAndPopulateTable(pageNumber) {
   try {
     const response = await fetch(`${backendURL}/client/getallclients`, {
       method: "GET",
@@ -849,8 +856,13 @@ async function fetchDataAndPopulateTable() {
 
     const data = await response.json();
     const tableBody = document.getElementById('table-body');
-
-    data.clients.forEach((client) => {
+    while (tableBody.firstChild) {
+      tableBody.removeChild(tableBody.firstChild);
+    }
+    const cardsToDIsplay=7;
+    console.log(data.clients.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNumber*cardsToDIsplay));
+    data.clients.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNumber*cardsToDIsplay).
+   forEach((client) => {
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${client.company_name}</td>
@@ -859,18 +871,35 @@ async function fetchDataAndPopulateTable() {
         <td>${client.email}</td>
         <td>${client.website_url}</td>
         <td>
-                <button style="cursor: pointer" class="edit-button">Edit</button>
+                <button style="cursor: pointer" class="edit-button" data-id="${client._id}" >Edit</button>
                 <img
                   class="search-icon delete-button"
                   alt=""
                   style="position: relative; left: 10px; top: 5px; cursor: pointer;"
                   src="./public/Delete.svg"
                   id="moreIcon"
+                   data-id="${client._id}"
                 />
               </td>
       `;
-
       tableBody.appendChild(row);
+          
+      // Add event listener to the delete button within this row
+      const deleteButton = row.querySelector(".delete-button");
+      deleteButton.addEventListener("click", (event) => {
+        const clientId = event.target.getAttribute("data-id");
+        deleteClient(clientId); // Call the deleteClient function with the lead ID
+      });
+    });
+    
+
+    // Add event listeners to edit buttons
+    const editButtons = document.querySelectorAll(".edit-button");
+    editButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const clientId = event.target.getAttribute("data-id");
+        editClient(clientId);
+      });
     });
   } catch (error) {
     console.error("There was a problem with the API request:", error);
@@ -878,22 +907,21 @@ async function fetchDataAndPopulateTable() {
 }
 
 // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
+document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
 
 
-      // Plain javascript ot connect with the backend.
+       // Plain javascript ot conne ct with the backend.
 
-      const clientfromEl = document.querySelector("#client-form");
-      const companyInput = document.querySelector("#company_name");
-      const companyTypeInput = document.querySelector("#company_type");
-      const websiteInput = document.querySelector("#website_url");
-      const emailInput = document.querySelector("#email");
-      const contactInput = document.querySelector("#contact");
-      const statusInput = document.querySelector("#status");
-      const descriptionInput = document.querySelector("#description");
-
-
-      clientfromEl.addEventListener("submit", async function (event) {
+       const clientfromEl = document.querySelector("#client-form");
+       const companyInput = document.querySelector("#company_name");
+       const companyTypeInput = document.querySelector("#company_type");
+       const websiteInput = document.querySelector("#website_url");
+       const emailInput = document.querySelector("#email");
+       const contactInput = document.querySelector("#contact");
+       const statusInput = document.querySelector("#status");
+       const descriptionInput = document.querySelector("#description");
+ 
+       clientfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
         console.log("submitting");
         const companyValue = companyInput.value;
@@ -913,30 +941,224 @@ document.addEventListener('DOMContentLoaded', fetchDataAndPopulateTable);
           status: statusValue,
           description: descriptionValue,
         };
-        console.log(payload)
+        console.log(payload);
+ 
+         const httpRes = await fetch(backendURl + "/client/addclient", {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+             Accept: "application/json",
+             Authorization: `Bearer ${authToken}`,
+           },
+           body: JSON.stringify(payload),
+         });
+         window.location.href = "/clientm/client-company-list.html";
+         const jsonRes = await httpRes.json();
+ 
+         if (jsonRes.success === true) {
+           console.log(jsonRes);
+           localStorage.setItem("token", jsonRes.token);
+           localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+ 
+           console.log(jsonRes.token);
+         } else {
+           alert("Error logging in detail: " + jsonRes.message);
+         }
+       });
 
-        const httpRes = await fetch(backendURL + "/client/addclient", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${authToken}`,
-          },
-          body: JSON.stringify(payload),
+       // Function to edit a lead by ID
+      async function editClient(clientId) {
+        try {
+          const response = await fetch(
+            `${backendURL}/client/getsingleclient/${clientId}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const clientData = await response.json();
+
+          // Populate the form fields with client data for editing
+          document.getElementById("company_name").value =
+            clientData.client.company_name;
+          document.getElementById("company_type").value =
+            clientData.client.company_type;
+          document.getElementById("website_url").value = clientData.client.website_url;
+          document.getElementById("email").value = clientData.client.email;
+          document.getElementById("contact").value = clientData.client.contact;
+          document.getElementById("status").value = clientData.client.status;
+          document.getElementById("description").value =
+            clientData.client.description;
+
+          // Set the form's data-id attribute to the lead ID
+          clientfromEl.setAttribute("data-id", clientId);
+
+          // Display the overlay for editing
+          const overlay = document.getElementById("overlay");
+          overlay.style.display = "block";
+        } catch (error) {
+          console.error("There was a problem fetching lead data:", error);
+        }
+      }
+
+      // Call the editClient function when clicking the "Edit" button
+      const editButtons = document.querySelectorAll(".edit-button");
+      editButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const clientId = event.target.getAttribute("data-id");
+          editClient(clientId);
         });
-        window.location.href = "/clientm/client-company-list.html";
-        const jsonRes = await httpRes.json();
+      });
 
-        if (jsonRes.success === true) {
-          console.log(jsonRes);
-          localStorage.setItem("token", jsonRes.token);
-          localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
-         
-          console.log(jsonRes.token);
+      // Function to close the overlay for lead editing
+      const closeBtn = document.getElementById("closeBtn");
+      closeBtn.addEventListener("click", () => {
+        const overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+      });
+
+      // Function to update a lead by ID
+      async function updateLead(clientId) {
+        try {
+          const companyValue = document.getElementById("company_name").value;
+          const companyTypeValue = document.getElementById("company_type").value;
+          const websiteValue = document.getElementById("website_url").value;
+          const emailValue = document.getElementById("email").value;
+          const contactValue = document.getElementById("contact").value;
+          const statusValue = document.getElementById("status").value;
+          const descriptionValue = document.getElementById("description").value;
+
+          const payload = {
+            company_name: companyValue,
+            company_type: companyTypeValue,
+            website_url: websiteValue,
+            email: emailValue,
+            contact: contactValue,
+            status: statusValue,
+            description: descriptionValue,
+          };
+
+          const httpRes = await fetch(
+            `${backendURL}/client/updateclient/${clientId}`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+              body: JSON.stringify(payload),
+            }
+          );
+
+          if (!httpRes.ok) {
+            const jsonRes = await httpRes.json();
+            if (jsonRes.success === true) {
+              alert("Lead updated successfully");
+            } else {
+              alert("Error updating lead: " + jsonRes.message);
+            }
+          } else {
+            alert("Success: " + httpRes.statusText);
+          }
+
+          // Hide the overlay
+          const overlay = document.getElementById("overlay");
+          overlay.style.display = "none";
+
+          // Refresh the table
+          fetchDataAndPopulateTable(1);
+        } catch (error) {
+          console.error("An error occurred while updating the lead:", error);
+          alert("An error occurred while updating the lead.");
+        }
+      }
+
+      // Add event listener to the lead form for updating leads
+      clientfromEl.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const clientId = event.target.getAttribute("data-id");
+        if (clientId) {
+          updateLead(clientId);
         } else {
-          alert("Smooth: " + jsonRes.message);
+          console.log("Create new lead logic here");
         }
       });
+
+async function deleteClient(clientId) {
+  try {
+    const httpRes = await fetch(`${backendURL}/client/deleteclient/${clientId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    if (httpRes.ok) {
+      // Lead deleted successfully
+      alert("Client deleted successfully");
+      window.location.href = "/clientm/client-company-list.html";
+      // Remove the deleted row from the table
+      const deletedRow = document.querySelector(`tr[data-id="${clientId}"]`);
+      if (deletedRow) {
+        deletedRow.remove();
+      }
+    } else {
+      // Handle errors
+      const jsonRes = await httpRes.json();
+      if (jsonRes.success === false && jsonRes.message) {
+        alert("Error deleting lead: " + jsonRes.message);
+      } else {
+        alert("Error deleting lead. Please check your network connection.");
+      }
+    }
+  } catch (error) {
+    console.error("An error occurred while deleting the lead:", error);
+    alert("An error occurred while deleting the lead.");
+  }
+}
+
+// Get all elements with class "num"
+const numElements = document.querySelectorAll(".num");
+
+// Add a click event listener to each "num" element
+numElements.forEach((numElement) => {
+numElement.addEventListener("click", () => {                                          
+    // Reset all elements to "page-disabled" class
+    numElements.forEach((element) => {
+      element.parentElement.parentElement.classList.remove("page-active");
+      element.parentElement.classList.remove("page-active1");
+      element.parentElement.parentElement.classList.add("page-disabled");
+       element.parentElement.classList.add("page-default1")
+    });
+console.log(numElement.parentElement.parentElement.classList)
+    // Set the clicked element to "page-active" class
+    numElement.parentElement.parentElement.classList.remove("page-disabled");
+    numElement.parentElement.classList.remove("page-default1")
+    numElement.parentElement.parentElement.classList.add("page-active");
+    numElement.parentElement.classList.add("page-active1");
+    // Log the number
+    const clickedNumber = numElement.textContent;
+    fetchDataAndPopulateTable(parseInt(clickedNumber));
+
+    console.log(`Clicked number: ${clickedNumber}`);
+  });
+});
+
+       
+ 
+       
 
       //       document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
 
