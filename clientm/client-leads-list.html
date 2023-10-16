@@ -458,11 +458,11 @@
             <img style="cursor: pointer;" src="public/close.svg" id="closeBtn" alt="" />
           </div>
           <div class="form form1">
-            <span>Contact Person</span>
+            <span>Full Name</span>
             <input id="contact_person" type="text" placeholder="Enter title" />
           </div>
           <div class="form form1">
-            <span>Organization</span>
+            <span>Company</span>
             <input id="organization" type="text" placeholder="Enter title" />
           </div>
           <div class="form form1">
@@ -913,7 +913,7 @@ document
               <td>
                 <img style="cursor: pointer" class="edit-button" data-id="${lead._id}" class="edit.svg" alt="" src="public/edit.svg" />
              
-        
+                <a href="#"><img data-id="${lead._id}" style="cursor: pointer" class="search-icon" alt="" src="./public/more.svg" id="moreIcon" /></a>
                 <img
                   class="search-icon delete-button"
                   alt=""
@@ -922,6 +922,8 @@ document
                   id="moreIcon"
                   data-id="${lead._id}"
                 />
+
+               
               </td>
             `;
 
