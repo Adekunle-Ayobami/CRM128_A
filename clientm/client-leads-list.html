@@ -227,6 +227,8 @@
           <th>Contact Person</th>
           <th>Start Date</th>
           <th>Due Date</th>
+          <th>Value</th>
+
           <th>Options</th>
           <!-- Within your <table> -->
         </tr>
@@ -475,6 +477,15 @@
                 id="currency"
                 type="text"
                 placeholder="NAIRA"
+              />
+            </label>
+            <label>
+              <span>Value</span> <br />
+              <input
+                style="margin-top: 5px"
+                id="value"
+                type="text"
+                placeholder="300,000"
               />
             </label>
             <label>
@@ -787,6 +798,7 @@ document
       const startInputEl = document.querySelector("#start_date");
       const dueInputEl = document.querySelector("#due_date");
       const descriptionInputEl = document.querySelector("#description");
+      const valueInputEl = document.querySelector("#value");
 
       leadfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -801,6 +813,7 @@ document
         const startDateValue = startInputEl.value;
         const dueDateValue = dueInputEl.value;
         const descriptionValue = descriptionInputEl.value;
+        const valueValue = valueInputEl.value;
 
         const payload = {
           contact_person: contactValue,
@@ -813,6 +826,7 @@ document
           start_date: startDateValue,
           due_date: dueDateValue,
           description: descriptionValue,
+          value: valueValue,
         };
 
         console.log(payload);
@@ -895,6 +909,7 @@ document
               <td>${lead.contact_person}</td>
               <td>${lead.start_date}</td>
               <td>${lead.due_date}</td>
+              <td>${lead.value}</td>
               <td>
                 <img style="cursor: pointer" class="edit-button" data-id="${lead._id}" class="edit.svg" alt="" src="public/edit.svg" />
              
@@ -975,6 +990,8 @@ document
           document.getElementById("due_date").value = leadData.lead.due_date;
           document.getElementById("description").value =
             leadData.lead.description;
+            document.getElementById("value").value =
+            leadData.lead.value;
 
           // Set the form's data-id attribute to the lead ID
           leadformEl.setAttribute("data-id", leadId);
@@ -1017,6 +1034,7 @@ document
           const startDateValue = document.getElementById("start_date").value;
           const dueDateValue = document.getElementById("due_date").value;
           const descriptionValue = document.getElementById("description").value;
+          const valueValue = document.getElementById("value").value;
 
           const payload = {
             contact_person: contactValue,
@@ -1029,6 +1047,7 @@ document
             start_date: startDateValue,
             due_date: dueDateValue,
             description: descriptionValue,
+            value: valueValue,
           };
 
           const httpRes = await fetch(

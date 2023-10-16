@@ -77,7 +77,9 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/client-company-list.html"><li>Client Data</li></a>
+            <a href="../clientm/client-company-list.html"
+              ><li>Client Data</li></a
+            >
             <a href="../clientm/client-leads-list.html"><li>Leads</li></a>
           </ul>
         </div>
@@ -301,7 +303,34 @@
           </div>
         </div>
       </div>
-      <div class="rectangle-group">
+
+      <!-- Calender -->
+      <div class="calendar">
+        <div class="header">
+          <button id="prevMonth">
+            <img src="public/chevron-left.svg" alt="" />
+          </button>
+          <h2 id="monthYear"></h2>
+          <button id="nextMonth">
+            <img src="public/chevron-right.svg" alt="" />
+          </button>
+        </div>
+        <table id="calendarTable" class="table">
+          <thead>
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+      </div>
+      <!-- <div class="rectangle-group">
         <div class="rectangle-div"></div>
         <div class="frame-parent">
           <div class="parent">
@@ -391,7 +420,7 @@
             />
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="rectangle-parent">
         <div class="group-child"></div>
         <div class="group-item"></div>
@@ -401,7 +430,7 @@
         <div class="average-value-of">Average value of won deals</div>
         <div id="active-client" class="div"></div>
         <div id="active-lead" class="div1"></div>
-        <div class="div2">34</div>
+        <div id="totalLead-won" class="div2"></div>
       </div>
     </section>
     <footer>
@@ -415,6 +444,68 @@
     </footer>
 
     <script>
+      // Calender
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarBody = document.getElementById("calendarBody");
+        const monthYearElement = document.getElementById("monthYear");
+        const prevMonthButton = document.getElementById("prevMonth");
+        const nextMonthButton = document.getElementById("nextMonth");
+
+        let currentDate = new Date(); // Define currentDate outside the renderCalendar function
+
+        function renderCalendar() {
+          const currentDay = currentDate.getDate();
+          const currentMonth = currentDate.getMonth();
+          const currentYear = currentDate.getFullYear();
+
+          const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+          const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+
+          const monthYearString = currentDate.toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+          });
+          monthYearElement.innerText = monthYearString;
+
+          let calendarHtml = "<tr>";
+
+          for (let i = 0; i < firstDayIndex; i++) {
+            calendarHtml += "<td></td>";
+          }
+
+          for (let day = 1; day <= lastDay; day++) {
+            let cell = `<td>${day}</td>`;
+            if (
+              currentDay === day &&
+              currentMonth === currentDate.getMonth() &&
+              currentYear === currentDate.getFullYear()
+            ) {
+              cell = `<td class="highlighted-day">${day}</td>`;
+            }
+            calendarHtml += cell;
+
+            if ((day + firstDayIndex) % 7 === 0) {
+              calendarHtml += "</tr><tr>";
+            }
+          }
+
+          calendarHtml += "</tr>";
+          calendarBody.innerHTML = calendarHtml;
+        }
+
+        renderCalendar();
+
+        prevMonthButton.addEventListener("click", function () {
+          currentDate.setMonth(currentDate.getMonth() - 1);
+          renderCalendar();
+        });
+
+        nextMonthButton.addEventListener("click", function () {
+          currentDate.setMonth(currentDate.getMonth() + 1);
+          renderCalendar();
+        });
+      });
+
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
       const hrChevronIcon = document.getElementById("hr-chevron-icon");
@@ -523,6 +614,7 @@
 
           const activeClient = document.querySelector("#active-client");
           activeClient.innerHTML = activeClientCount;
+          
 
           // Fetch active lead count
           const leadResponse = await fetch(
@@ -545,16 +637,46 @@
 
           const leadData = await leadResponse.json();
           const activeLeadCount = leadData.count;
+        
 
           const activeLead = document.querySelector("#active-lead");
           activeLead.innerHTML = activeLeadCount;
-        } catch (error) {
-          console.error("There was a problem with the fetch operation:", error);
-        }
-      }
 
-      // Call the combined function to fetch and display both counts
-      fetchDataAndDisplay();
+
+       // Fetch total leadwon value
+    const totalLeadValueResponse = await fetch(
+      `${backendURL}/lead/getTotalValue`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${authToken}`,
+        },
+      }
+    );
+
+    if (!totalLeadValueResponse.ok) {
+      throw new Error(
+        `Total Lead Value network response was not ok (${totalLeadValueResponse.status})`
+      );
+    }
+
+    const totalLeadValueData = await totalLeadValueResponse.json();
+    const totalLeadValue = totalLeadValueData.totalValue[0].total;
+ 
+
+    const totalLeadValueElement = document.querySelector("#totalLead-won");
+    totalLeadValueElement.innerHTML = totalLeadValue;
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+  }
+}
+
+// Call the combined function to fetch and display both counts and the total lead value
+fetchDataAndDisplay();
+
+      
     </script>
   </body>
 </html>
