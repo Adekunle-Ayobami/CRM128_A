@@ -141,16 +141,15 @@ li {
 .frame-group {
   display: flex;
   height: 20px;
-  margin-top: 20px;
   margin-left: 20px;
   width: 20%;
   position: absolute;
-  top: 15px;
-  left: 320px;
+  top: 1em;
+  left: 17em;
 }
 .btn {
   position: absolute;
-  top: 27px;
+  top: 1em;
   left: 85%;
 }
 .section {
@@ -186,9 +185,9 @@ li {
 /* Table */
 .table {
   position: absolute;
-  top: 20%;
-  left: 320px;
-  width: 70%;
+  top: 4em;
+  left: 18em;
+  width: 75%;
   padding: 20px;
   text-align: left;
   border-collapse: collapse;

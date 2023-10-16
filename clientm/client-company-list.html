@@ -619,11 +619,14 @@
         .addEventListener("click", function () {
           document.getElementById("overlay").style.display = "block";
         });
-      document
-        .getElementById("closeBtn")
-        .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "none";
-        });
+        document
+  .getElementById("closeBtn")
+  .addEventListener("click", function () {
+    document.getElementById("overlay").style.display = "none";
+    setTimeout(function () {
+      window.location.reload("/clientm/client-company-list.html");
+    }, 100); // Adjust the timeout duration as needed
+  });
 
       document
         .getElementById("overlayBtn2")
@@ -824,7 +827,8 @@ async function fetchDataAndPopulateTable(pageNumber) {
         <td>${client.email}</td>
         <td>${client.website_url}</td>
         <td>
-                <button style="cursor: pointer" class="edit-button" data-id="${client._id}" >Edit</button>
+          <img style="cursor: pointer" class="edit-button" data-id="${client._id}" class="edit.svg" alt="" src="public/edit.svg" />
+             
                 <img
                   class="search-icon delete-button"
                   alt=""

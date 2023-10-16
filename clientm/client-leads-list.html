@@ -22,8 +22,8 @@
       <div class="nav-bar">
         <a href="client-management-dash.html">
           <div class="crm128-wrapper">
-            <span style="color: #003e9c;">CRM</span
-            ><span style="color: #57bc4a;">128</span>
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
           </div>
         </a>
         <div class="search-parent">
@@ -73,7 +73,9 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/client-company-list.html"><li>Client Data</li></a>
+            <a href="../clientm/client-company-list.html"
+              ><li>Client Data</li></a
+            >
             <a href="../clientm/client-leads-list.html"
               ><li class="selected">Leads</li></a
             >
@@ -128,7 +130,7 @@
           <ul id="hr-items1">
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="#"
-              ><li style="text-overflow: ellipsis;">
+              ><li style="text-overflow: ellipsis">
                 Emzor Pham Industries Ltd.
               </li></a
             >
@@ -209,9 +211,9 @@
         </div>
       </div>
       <div class="frame-group">
-        <div style="margin-right: 10px;">Clients</div>
-        <div style="margin-right: 10px;">|</div>
-        <div style="color: #003e9c;">Leads</div>
+        <div style="margin-right: 10px">Clients</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="color: #003e9c">Leads</div>
       </div>
 
       <div class="btn">
@@ -413,7 +415,7 @@
       <div
         id="optionsOverlayContainer"
         class="popup-overlay"
-        style="display: none;"
+        style="display: none"
       >
         <div class="options-overlay">
           <div class="component-19">
@@ -447,10 +449,10 @@
         </div>
       </div>
       <!-- Overlay Page -->
-      <form action="#" data-id="lead-id" id="lead-form">
-        <div class="add-lead" id="overlay" style="display: none;">
+      <form action="#" id="lead-form">
+        <div class="add-lead" id="overlay" style="display: none">
           <div class="lead">
-            <div style="width: 100%; font-weight: 600;">New Lead</div>
+            <div style="width: 100%; font-weight: 600">New Lead</div>
             <img src="public/close.svg" id="closeBtn" alt="" />
           </div>
           <div class="form form1">
@@ -469,7 +471,7 @@
             <label>
               <span>Currency</span> <br />
               <input
-                style="margin-top: 5px;"
+                style="margin-top: 5px"
                 id="currency"
                 type="text"
                 placeholder="NAIRA"
@@ -478,7 +480,7 @@
             <label>
               <span>Status</span> <br />
               <input
-                style="margin-top: 5px;"
+                style="margin-top: 5px"
                 id="status"
                 type="text"
                 placeholder="active/ in active"
@@ -490,20 +492,20 @@
             </label>
           </div>
           <div class="form7 form3">
-            <div style="margin-right: 20px;">
-              <span style="margin-bottom: 5px;">Phone</span> <br />
+            <div style="margin-right: 20px">
+              <span style="margin-bottom: 5px">Phone</span> <br />
               <input
-                style="width: 80%;"
+                style="width: 80%"
                 id="phone"
                 type="text"
                 placeholder="John Doe"
               />
             </div>
             <div>
-              <span style="margin-bottom: 5px;">Email</span> <br />
+              <span style="margin-bottom: 5px">Email</span> <br />
               <input
                 id="email"
-                style="width: 75%;"
+                style="width: 75%"
                 type="email"
                 placeholder="johndoe@gmail.com"
               />
@@ -511,19 +513,19 @@
           </div>
           <div class="form1 form2">
             <div>
-              <span style="margin-bottom: 5px;">Start Date</span>
+              <span style="margin-bottom: 5px">Start Date</span>
               <input
                 id="start_date"
-                style="width: 65%;"
+                style="width: 65%"
                 type="date"
                 placeholder="DD-MM-YY"
               />
             </div>
-            <div style="margin-left: -40px;">
-              <span style="margin-bottom: 5px;">Due Date</span>
+            <div style="margin-left: -40px">
+              <span style="margin-bottom: 5px">Due Date</span>
               <input
                 id="due_date"
-                style="width: 65%;"
+                style="width: 65%"
                 type="date"
                 placeholder="DD-MM-YY"
               />
@@ -548,10 +550,10 @@
     <footer>
       <div class="copyright-2023-crm128-parent">
         <div class="copyright-2023-crm128-container">
-          <span style="color: #003e9c;">© Copyright 2023 CRM</span>
-          <span style="color: #57bc4a;">128</span>
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
         </div>
-        <div style="color: #003e9c;">196 High RoadWood GreenLondon N22 8HH</div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
 
@@ -749,15 +751,19 @@
         });
       }
       document
-        .getElementById("overlayBtn")
-        .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn")
-        .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "none";
-        });
+      .getElementById("overlayBtn")
+  .addEventListener("click", function () {
+    document.getElementById("overlay").style.display = "block";
+  });
+
+document
+  .getElementById("closeBtn")
+  .addEventListener("click", function () {
+    document.getElementById("overlay").style.display = "none";
+    setTimeout(function () {
+      window.location.reload("/clientm/client-leads-list.html");
+    }, 100); // Adjust the timeout duration as needed
+  });
 
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
       const authToken =
@@ -866,13 +872,23 @@
           const data = await response.json();
           const tableBody = document.getElementById("table-body");
           while (tableBody.firstChild) {
-  tableBody.removeChild(tableBody.firstChild);
-}
-const cardsToDIsplay=7;
-console.log(data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNumber*cardsToDIsplay))
-          data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNumber*cardsToDIsplay).forEach((lead) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
+            tableBody.removeChild(tableBody.firstChild);
+          }
+          const cardsToDIsplay = 7;
+          console.log(
+            data.leads.slice(
+              pageNumber * cardsToDIsplay - cardsToDIsplay,
+              pageNumber * cardsToDIsplay
+            )
+          );
+          data.leads
+            .slice(
+              pageNumber * cardsToDIsplay - cardsToDIsplay,
+              pageNumber * cardsToDIsplay
+            )
+            .forEach((lead) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
               <td>${lead.status}</td>
               <td>${lead.description}</td>
               <td>${lead.organization}</td>
@@ -880,7 +896,9 @@ console.log(data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNu
               <td>${lead.start_date}</td>
               <td>${lead.due_date}</td>
               <td>
-                <button style="cursor: pointer" class="edit-button" data-id="${lead._id}">Edit</button>
+                <img style="cursor: pointer" class="edit-button" data-id="${lead._id}" class="edit.svg" alt="" src="public/edit.svg" />
+             
+        
                 <img
                   class="search-icon delete-button"
                   alt=""
@@ -891,17 +909,16 @@ console.log(data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNu
                 />
               </td>
             `;
-          
-            tableBody.appendChild(row);
-          
-            // Add event listener to the delete button within this row
-            const deleteButton = row.querySelector(".delete-button");
-            deleteButton.addEventListener("click", (event) => {
-              const leadId = event.target.getAttribute("data-id");
-              deleteLead(leadId); // Call the deleteLead function with the lead ID
+
+              tableBody.appendChild(row);
+
+              // Add event listener to the delete button within this row
+              const deleteButton = row.querySelector(".delete-button");
+              deleteButton.addEventListener("click", (event) => {
+                const leadId = event.target.getAttribute("data-id");
+                deleteLead(leadId); // Call the deleteLead function with the lead ID
+              });
             });
-          });
-          
 
           // Add event listeners to edit buttons
           const editButtons = document.querySelectorAll(".edit-button");
@@ -917,9 +934,12 @@ console.log(data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNu
       }
 
       // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-      document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
+      document.addEventListener(
+        "DOMContentLoaded",
+        fetchDataAndPopulateTable(1)
+      );
 
-// Function to edit a lead by ID
+      // Function to edit a lead by ID
       async function editLead(leadId) {
         try {
           const response = await fetch(
@@ -987,8 +1007,8 @@ console.log(data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNu
       async function updateLead(leadId) {
         try {
           const contactValue = document.getElementById("contact_person").value;
-          const organizationValue = document.getElementById("organization")
-            .value;
+          const organizationValue =
+            document.getElementById("organization").value;
           const titleValue = document.getElementById("title").value;
           const currencyValue = document.getElementById("currency").value;
           const statusValue = document.getElementById("status").value;
@@ -1058,67 +1078,76 @@ console.log(data.leads.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNu
         }
       });
 
-async function deleteLead(leadId) {
-  try {
-    const httpRes = await fetch(`${backendURL}/lead/deletelead/${leadId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+      async function deleteLead(leadId) {
+        try {
+          const httpRes = await fetch(
+            `${backendURL}/lead/deletelead/${leadId}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-    if (httpRes.ok) {
-      // Lead deleted successfully
-      alert("Lead deleted successfully");
-      window.location.href = "/clientm/client-leads-list.html";
-      // Remove the deleted row from the table
-      const deletedRow = document.querySelector(`tr[data-id="${leadId}"]`);
-      if (deletedRow) {
-        deletedRow.remove();
+          if (httpRes.ok) {
+            // Lead deleted successfully
+            alert("Lead deleted successfully");
+            window.location.href = "/clientm/client-leads-list.html";
+            // Remove the deleted row from the table
+            const deletedRow = document.querySelector(
+              `tr[data-id="${leadId}"]`
+            );
+            if (deletedRow) {
+              deletedRow.remove();
+            }
+          } else {
+            // Handle errors
+            const jsonRes = await httpRes.json();
+            if (jsonRes.success === false && jsonRes.message) {
+              alert("Error deleting lead: " + jsonRes.message);
+            } else {
+              alert(
+                "Error deleting lead. Please check your network connection."
+              );
+            }
+          }
+        } catch (error) {
+          console.error("An error occurred while deleting the lead:", error);
+          alert("An error occurred while deleting the lead.");
+        }
       }
-    } else {
-      // Handle errors
-      const jsonRes = await httpRes.json();
-      if (jsonRes.success === false && jsonRes.message) {
-        alert("Error deleting lead: " + jsonRes.message);
-      } else {
-        alert("Error deleting lead. Please check your network connection.");
-      }
-    }
-  } catch (error) {
-    console.error("An error occurred while deleting the lead:", error);
-    alert("An error occurred while deleting the lead.");
-  }
-}
 
-// Get all elements with class "num"
-const numElements = document.querySelectorAll(".num");
+      // Get all elements with class "num"
+      const numElements = document.querySelectorAll(".num");
 
-// Add a click event listener to each "num" element
-numElements.forEach((numElement) => {
-numElement.addEventListener("click", () => {                                          
-    // Reset all elements to "page-disabled" class
-    numElements.forEach((element) => {
-      element.parentElement.parentElement.classList.remove("page-active");
-      element.parentElement.classList.remove("page-active1");
-      element.parentElement.parentElement.classList.add("page-disabled");
-       element.parentElement.classList.add("page-default1")
-    });
-console.log(numElement.parentElement.parentElement.classList)
-    // Set the clicked element to "page-active" class
-    numElement.parentElement.parentElement.classList.remove("page-disabled");
-    numElement.parentElement.classList.remove("page-default1")
-    numElement.parentElement.parentElement.classList.add("page-active");
-    numElement.parentElement.classList.add("page-active1");
-    // Log the number
-    const clickedNumber = numElement.textContent;
-    fetchDataAndPopulateTable(parseInt(clickedNumber));
+      // Add a click event listener to each "num" element
+      numElements.forEach((numElement) => {
+        numElement.addEventListener("click", () => {
+          // Reset all elements to "page-disabled" class
+          numElements.forEach((element) => {
+            element.parentElement.parentElement.classList.remove("page-active");
+            element.parentElement.classList.remove("page-active1");
+            element.parentElement.parentElement.classList.add("page-disabled");
+            element.parentElement.classList.add("page-default1");
+          });
+          console.log(numElement.parentElement.parentElement.classList);
+          // Set the clicked element to "page-active" class
+          numElement.parentElement.parentElement.classList.remove(
+            "page-disabled"
+          );
+          numElement.parentElement.classList.remove("page-default1");
+          numElement.parentElement.parentElement.classList.add("page-active");
+          numElement.parentElement.classList.add("page-active1");
+          // Log the number
+          const clickedNumber = numElement.textContent;
+          fetchDataAndPopulateTable(parseInt(clickedNumber));
 
-    console.log(`Clicked number: ${clickedNumber}`);
-  });
-});
+          console.log(`Clicked number: ${clickedNumber}`);
+        });
+      });
     </script>
   </body>
 </html>
