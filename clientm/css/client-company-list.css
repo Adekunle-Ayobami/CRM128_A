@@ -161,6 +161,7 @@ li {
   background-color: #003e9c;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .frame-item {
@@ -201,9 +202,9 @@ td {
   background-color: white;
   text-align: center;
   padding-top: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   font-weight: 600;
-  font-size: 20px;
+  /* font-size: 18px; */
 }
 /* overlay pages */
 .options-overlay {
@@ -283,6 +284,7 @@ td {
   position: relative;
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 .num {
   position: absolute;
@@ -292,6 +294,7 @@ td {
   left: 4px;
   line-height: 20px;
   display: inline-block;
+  cursor: pointer;
 }
 .page-active1 {
   position: absolute;
@@ -306,12 +309,14 @@ td {
   border: 1px solid #0047b3;
   box-sizing: border-box;
   overflow: hidden;
+  cursor: pointer;
 }
 .page-active {
   position: relative;
   width: 32px;
   height: 32px;
   color: #0047b3;
+  cursor: pointer;
 }
 .page-default1,
 .page-master {
@@ -335,6 +340,7 @@ td {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
+  cursor: pointer;
 }
 .pagination {
   position: absolute;
@@ -447,6 +453,7 @@ td {
   margin-top: 10px;
   border-radius: 5px;
   padding-bottom: 20px;
+  cursor: pointer;
 }
 .input-container {
   position: relative;

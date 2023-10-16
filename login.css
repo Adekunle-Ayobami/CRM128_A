@@ -35,7 +35,7 @@ p {
 }
 .form-div {
   position: relative;
-  top: 6.5em;
+  top: 1em;
   font-family: "Clash Grotesk", sans-serif;
   background-color: #f9fff8;
   border: 1px solid #ebedf0;
@@ -103,6 +103,18 @@ p {
   transform: translateY(-50%);
   cursor: pointer;
 }
+.animation {
+  width: 90%;
+  height: 50%;
+  position: relative;
+  top: 3em;
+}
+@media (min-width: 1368px) {
+  .container {
+    position: relative;
+    top: 10em;
+  }
+}
 
 @media (max-width: 500px) {
   /* body {
@@ -117,6 +129,6 @@ p {
     top: -1em;
   }
   .copyright-2023-crm128-parent {
-    width: 100%;
+    width:100%;
   }
 }
