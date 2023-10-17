@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Field Leads</title>
-    <link rel="stylesheet" href="css/new-leads-field.css" />
+    <link rel="stylesheet" href="css/new-leads-field2.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -249,11 +249,16 @@
             <div style="display: flex; flex-direction: column">
               <label class="naming">Value</label>
               <input class="expand" type="text" name="amount id=""
-              placeholder="300,000" disabled>
+              placeholder="300,000" >
             </div>
             <div style="display: flex; flex-direction: column">
               <label class="naming">Currency</label>
-              <select style="width: 180%" class="expand" name="" id="" disabled>
+              <select
+                style="width: 180%; cursor: pointer"
+                class="expand"
+                name=""
+                id=""
+              >
                 <option value="">Dollar</option>
                 <option value="">Pounds</option>
                 <option value="">Naira</option>
@@ -263,7 +268,7 @@
               style="display: flex; flex-direction: column; margin-left: 60px"
             >
               <label class="naming">Status</label>
-              <select class="expand" name="" id="" disabled>
+              <select style="cursor: pointer" class="expand" name="" id="">
                 <option value="">Qualified</option>
                 <option value="">Contact Made</option>
                 <option value="">Demo Scheduled</option>
@@ -274,12 +279,12 @@
             <div style="display: flex; flex-direction: column">
               <label class="naming">Start Date</label>
               <input class="expand" type="text" name="amount id=""
-              placeholder="300,000" disabled>
+              placeholder="300,000" >
             </div>
             <div class="naming1" style="display: flex; flex-direction: column">
               <label class="naming">Due Date</label>
               <input class="expand" type="text" name="amount id=""
-              placeholder="300,000" disabled>
+              placeholder="300,000" >
             </div>
           </div>
           <!-- Second Input -->
@@ -289,22 +294,22 @@
               <div style="display: flex; flex-direction: column">
                 <label class="naming">First Name*</label>
                 <input class="expand" type="text" name="amount id=""
-                placeholder="John" disabled>
+                placeholder="John" >
               </div>
               <div style="display: flex; flex-direction: column">
                 <label class="naming">Last Name*</label>
                 <input class="expand" type="text" name="amount id=""
-                placeholder="Doe" disabled>
+                placeholder="Doe" >
               </div>
               <div style="display: flex; flex-direction: column">
                 <label class="naming">Phone</label>
                 <input class="expand" type="text" name="amount id=""
-                placeholder="09034579021" disabled>
+                placeholder="09034579021" >
               </div>
               <div style="display: flex; flex-direction: column">
                 <label class="naming">Email</label>
                 <input class="expand" type="text" name="amount id=""
-                placeholder="sample@mail.com" disabled>
+                placeholder="sample@mail.com" >
               </div>
             </div>
           </div>
@@ -320,17 +325,6 @@
               "
             >
               <label>Details</label>
-              <!-- <input
-                style="
-                  background-color: white;
-                  color: #0047b3;
-                  border: 2px solid #0047b3;
-                  padding: 6px 31px;
-                  border-radius: 4px;
-                "
-                type="submit"
-                value="Add"
-              /> -->
             </div>
             <hr style="width: 87%; margin-left: 53px; margin-top: 30px" />
             <!-- Fourth Input -->
@@ -338,13 +332,13 @@
               <div style="display: flex; flex-direction: column">
                 <label class="naming">Name of Organization*</label>
                 <input class="expand" type="text" name="amount id=""
-                placeholder="John" disabled>
+                placeholder="John" >
               </div>
               <div
                 style="display: flex; flex-direction: column; margin-left: 2px"
               >
                 <label class="naming">Institution Type</label>
-                <select class="expand" name="" id="" disabled>
+                <select style="cursor: pointer" class="expand" name="" id="">
                   <option value="">Qualified</option>
                   <option value="">Contact Made</option>
                   <option value="">Demo Scheduled</option>
@@ -355,12 +349,12 @@
               <div style="display: flex; flex-direction: column">
                 <label class="naming">Contact</label>
                 <input class="expand" type="text" name="amount id=""
-                placeholder="09034579021" disabled>
+                placeholder="09034579021" >
               </div>
               <div style="display: flex; flex-direction: column">
                 <label class="naming">Email</label>
                 <input class="expand" type="text" name="amount id=""
-                placeholder="sample@mail.com" disabled>
+                placeholder="sample@mail.com" >
               </div>
             </div>
             <!-- Last Input -->
@@ -375,9 +369,21 @@
             >
               <label class="naming">Address</label>
               <input class="expand" type="text" name="amount id=""
-              placeholder="11, Olufemi Ojo Street" disabled>
+              placeholder="11, Olufemi Ojo Street">
             </div>
           </div>
+          <input
+            style="
+              background-color: black;
+              color: white;
+              border: 2px solid #0047b3;
+              padding: 8px 31px;
+              border-radius: 4px;
+            "
+            type="submit"
+            value="Update"
+            class="input1"
+          />
         </form>
       </div>
     </section>

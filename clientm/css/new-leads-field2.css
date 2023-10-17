@@ -183,7 +183,7 @@ li {
   background-color: #d9d9d9;
 }
 .logout {
-  padding-bottom: 230px;
+  padding-bottom: 250px;
 }
 .back {
   position: absolute;
@@ -205,7 +205,7 @@ li {
 .field {
   background-color: white;
   width: 70%;
-  height: 83%;
+  height: 84%;
   position: absolute;
   top: 8em;
   left: 19em;
@@ -313,12 +313,19 @@ li {
   margin-left: 55px;
   position: relative;
 }
+.input1 {
+  margin-top: 20px;
+  margin-left: 55px;
+  position: relative;
+  top: 5em;
+}
 .expand {
   padding: 15px 10px 15px 10px;
   background-color: #f6f6f6;
   color: #7a8699;
   border: 1px solid lightblue;
   border-radius: 10px;
+  outline: 1px solid lightblue;
 }
 .naming {
   font-weight: 600;
@@ -351,9 +358,9 @@ input[type="text"]::placeholder {
 }
 @media (max-width: 730px) {
   /* .group-parent {
-    position: absolute;
-    left: 49%;
-  } */
+      position: absolute;
+      left: 49%;
+    } */
   .bell {
     position: relative;
     left: 30px;
