@@ -919,7 +919,7 @@ document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
  
            console.log(jsonRes.token);
          } else {
-           alert("Error logging in detail: " + jsonRes.message);
+           alert(" " + jsonRes.message);
          }
        });
 
@@ -984,7 +984,7 @@ document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
       });
 
       // Function to update a lead by ID
-      async function updateLead(clientId) {
+      async function updateClient(clientId) {
         try {
           const companyValue = document.getElementById("company_name").value;
           const companyTypeValue = document.getElementById("company_type").value;
@@ -993,7 +993,7 @@ document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
           const contactValue = document.getElementById("contact").value;
           const statusValue = document.getElementById("status").value;
           const descriptionValue = document.getElementById("description").value;
-
+      
           const payload = {
             company_name: companyValue,
             company_type: companyTypeValue,
@@ -1003,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
             status: statusValue,
             description: descriptionValue,
           };
-
+      
           const httpRes = await fetch(
             `${backendURL}/client/updateclient/${clientId}`,
             {
@@ -1016,41 +1016,42 @@ document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
               body: JSON.stringify(payload),
             }
           );
-
+      
           if (!httpRes.ok) {
             const jsonRes = await httpRes.json();
             if (jsonRes.success === true) {
-              alert("Lead updated successfully");
+              alert("Client updated successfully");
+              window.location.href = "/clientm/client-company-list.html";
             } else {
-              alert("Error updating lead: " + jsonRes.message);
+              alert("Error updating client: " + jsonRes.message);
             }
+            window.location.href = "/clientm/client-company-list.html";
           } else {
-            alert("Success: " + httpRes.statusText);
+            alert("updated: " + httpRes.statusText);
           }
-
+       window.location.href = "/clientm/client-company-list.html";
           // Hide the overlay
           const overlay = document.getElementById("overlay");
           overlay.style.display = "none";
-
+      
           // Refresh the table
           fetchDataAndPopulateTable(1);
         } catch (error) {
-          console.error("An error occurred while updating the lead:", error);
-          alert("An error occurred while updating the lead.");
+          console.error("An error occurred while updating the client:", error);
+          alert("An error occurred while updating the client.");
         }
       }
-
-      // Add event listener to the lead form for updating leads
+      
+      // Add event listener to the client form for updating clients
       clientfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
         const clientId = event.target.getAttribute("data-id");
         if (clientId) {
-          updateLead(clientId);
+          updateClient(clientId);
         } else {
-          console.log("Create new lead logic here");
+          console.log("Create new client logic here");
         }
       });
-
 async function deleteClient(clientId) {
   try {
     const httpRes = await fetch(`${backendURL}/client/deleteclient/${clientId}`, {
