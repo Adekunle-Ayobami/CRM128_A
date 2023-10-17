@@ -61,13 +61,14 @@ a {
 .ellipse-group {
   display: flex;
 }
-.jg {
+.avatar {
   margin: auto 20px;
   font-size: 30px;
   background-color: #0047b3;
   color: #ffffff;
   padding: 16px 10px 16px 10px;
   border-radius: 50%;
+  text-transform: uppercase;
 }
 .josiah-gana-parent {
   margin-top: 10px;
@@ -199,6 +200,16 @@ li {
 .table td {
   padding-right: 80px;
 }
+.daniel-sons {
+  font-size: 23px;
+  font-weight: 600;
+  font-family: "Clash Grotesk";
+  color: #091e42;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+  height: 34.14px;
+}
 /* .rectangle-icon {
   position: absolute;
   top: 12%;
@@ -208,20 +219,7 @@ li {
   height: 250px;
   padding: 30px;
 }
-.daniel-sons {
-  position: absolute;
-  top: 22%;
-  left: 580px;
-  font-size: 23px;
-  line-height: 120%;
-  font-weight: 600;
-  font-family: "Clash Grotesk";
-  color: #091e42;
-  text-align: left;
-  display: inline-block;
-  width: 20%;
-  height: 34.14px;
-}
+
 
 .flex {
   position: absolute;

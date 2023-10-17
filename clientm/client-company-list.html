@@ -16,6 +16,13 @@
       href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+/>
   </head>
   <body>
     <header>
@@ -832,8 +839,12 @@ async function fetchDataAndPopulateTable(pageNumber) {
           <td>${client.company_type}</td>
           <td>${client.email}</td>
           <td>${client.website_url}</td>
-          <td>
+          <td style="display: flex; justify-content: space-around;">
+            
             <img style="cursor: pointer" class="edit-button" data-id="${client._id}" class="edit.svg" alt="" src="public/edit.svg" />
+            <a href="../clientm/clients-company-profile.html?id=${client._id}">  <i class="fa fa-eye" data-id="${client._id}" id="password-eye" aria-hidden="true"></i>
+
+          </a>
                
             <img
               class="search-icon delete-button"
@@ -843,6 +854,8 @@ async function fetchDataAndPopulateTable(pageNumber) {
               id="moreIcon"
               data-id="${client._id}"
             />
+
+         
           </td>
         `;
         tableBody.appendChild(row);
