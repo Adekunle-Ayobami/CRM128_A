@@ -117,6 +117,9 @@ li {
   padding: 12px;
   position: relative;
 }
+.logout {
+  padding-bottom: 80px;
+}
 .more-icon {
   margin-right: 10px;
 }
@@ -140,12 +143,11 @@ li {
 .frame-group {
   display: flex;
   height: 20px;
-  margin-top: 20px;
   margin-left: 20px;
   width: 40%;
   position: absolute;
-  top: 15px;
-  left: 320px;
+  top: 1em;
+  left: 17.9em;
 }
 .section {
   position: relative;
@@ -158,8 +160,8 @@ li {
 }
 .back {
   position: absolute;
-  top: 80px;
-  left: 345px;
+  top: 4em;
+  left: 19em;
   border-radius: 7px;
   background-color: #f5f6f7;
   border: 1px solid #dfe2e6;
@@ -170,8 +172,34 @@ li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
-.rectangle-icon {
+
+/* First Box */
+.first-box {
+  position: absolute;
+  top: 8em;
+  left: 19em;
+  background-color: #eff8ed;
+  padding: 40px 40px 80px 40px;
+  height: 11vh;
+  width: 63%;
+  border-radius: 12px;
+}
+.ds {
+  background-color: #003e9c;
+  color: white;
+  font-size: 40px;
+  padding: 40px 40px 40px 40px;
+  border-radius: 50%;
+}
+.table th {
+  padding-right: 80px;
+}
+.table td {
+  padding-right: 80px;
+}
+/* .rectangle-icon {
   position: absolute;
   top: 12%;
   left: 310px;
@@ -194,32 +222,22 @@ li {
   width: 20%;
   height: 34.14px;
 }
-.ds {
-  position: absolute;
-  top: 23%;
-  left: 410px;
-  background-color: #003e9c;
-  color: white;
-  font-size: 40px;
-  padding: 55px 40px 55px 40px;
-  border-radius: 50%;
-}
+
 .flex {
   position: absolute;
   top: 26%;
   left: 580px;
-}
+} */
 .tarea {
   position: absolute;
-  top: 49%;
-  left: 340px;
+  top: 24em;
+  left: 19em;
   border-radius: 100px;
   border: none;
   outline: none;
 }
-textarea::placeholder {
-  padding-top: 10px;
-  padding-left: 10px;
+.tarea textarea {
+  padding: 10px;
 }
 .note {
   position: absolute;

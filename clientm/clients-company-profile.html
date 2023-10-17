@@ -73,10 +73,10 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/client-company-list.html
+            <a href="../clientm/client-company-list.html"
               ><li class="selected">Client Data</li></a
             >
-            <a href="../clientm/client-leads-list.html"><li>Leads</li></a>
+            <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
           </ul>
         </div>
         <div class="side-tab">
@@ -222,8 +222,47 @@
           <div class="search">Back</div>
         </div>
       </a>
-      <div>
-        <img class="rectangle-icon" alt="" src="public/rectangle-706.svg" />
+      <div class="first-box">
+        <table class="table">
+          <tr>
+            <th rowspan="3"><span class="ds">DS</span></th>
+          </tr>
+
+          <tr>
+            <td><div class="daniel-sons">Daniel & Sons Ltd.</div></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display: flex; flex-direction: column">
+                <span>Company Type</span>
+                <span style="font-weight: 600">Engineering Firm</span>
+                <br />
+                <span>Email</span>
+                <span style="font-weight: 600">sample@mail.com</span>
+              </div>
+            </td>
+            <td>
+              <div style="display: flex; flex-direction: column">
+                <span>Physical Address</span>
+                <span style="font-weight: 600">No, 31, Unity Road, Ikeja</span>
+                <br />
+                <span>Website</span>
+                <span style="font-weight: 600">info.edu.ng</span>
+              </div>
+            </td>
+            <td>
+              <div style="display: flex; flex-direction: column">
+                <span>Phone Number</span>
+                <span style="font-weight: 600">+234879467777</span>
+                <br />
+                <span>Mobile Number</span>
+                <span style="font-weight: 600">01- 8373910</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- <div>
         <span class="ds">DS</span>
         <div class="daniel-sons">Daniel & Sons Ltd.</div>
       </div>
@@ -249,14 +288,14 @@
           <span>Mobile Number</span>
           <span style="font-weight: 600">01- 8373910</span>
         </div>
-      </div>
+      </div> -->
       <div class="tarea">
-        <span class="note">Note</span>
+        <span class="note">Note:</span>
         <textarea
           name="note"
           id=""
-          cols="125"
-          rows="13"
+          cols="122"
+          rows="12"
           placeholder="Enter Description"
         ></textarea>
       </div>
@@ -276,9 +315,60 @@
       const hrItems = document.getElementById("hr-items");
       const hrChevronIcon = document.getElementById("hr-chevron-icon");
 
+      // hrItems.classList.add("hidden");
       hrToggle.addEventListener("click", function () {
         hrItems.classList.toggle("hidden");
         hrChevronIcon.classList.toggle("rotate");
+      });
+
+      const hrToggle1 = document.getElementById("hr-toggle1");
+      const hrItems1 = document.getElementById("hr-items1");
+      const hrChevronIcon1 = document.getElementById("hr-chevron-icon1");
+
+      hrItems1.classList.add("hidden");
+      hrToggle1.addEventListener("click", function () {
+        hrItems1.classList.toggle("hidden");
+        hrChevronIcon1.classList.toggle("rotate");
+      });
+
+      const hrToggle2 = document.getElementById("hr-toggle2");
+      const hrItems2 = document.getElementById("hr-items2");
+      const hrChevronIcon2 = document.getElementById("hr-chevron-icon2");
+
+      hrItems2.classList.add("hidden");
+      hrToggle2.addEventListener("click", function () {
+        hrItems2.classList.toggle("hidden");
+        hrChevronIcon2.classList.toggle("rotate");
+      });
+
+      const hrToggle3 = document.getElementById("hr-toggle3");
+      const hrItems3 = document.getElementById("hr-items3");
+      const hrChevronIcon3 = document.getElementById("hr-chevron-icon3");
+
+      hrItems3.classList.add("hidden");
+      hrToggle3.addEventListener("click", function () {
+        hrItems3.classList.toggle("hidden");
+        hrChevronIcon3.classList.toggle("rotate");
+      });
+
+      const hrToggle4 = document.getElementById("hr-toggle4");
+      const hrItems4 = document.getElementById("hr-items4");
+      const hrChevronIcon4 = document.getElementById("hr-chevron-icon4");
+
+      hrItems4.classList.add("hidden");
+      hrToggle4.addEventListener("click", function () {
+        hrItems4.classList.toggle("hidden");
+        hrChevronIcon4.classList.toggle("rotate");
+      });
+
+      const hrToggle5 = document.getElementById("hr-toggle5");
+      const hrItems5 = document.getElementById("hr-items5");
+      const hrChevronIcon5 = document.getElementById("hr-chevron-icon5");
+
+      hrItems5.classList.add("hidden");
+      hrToggle5.addEventListener("click", function () {
+        hrItems5.classList.toggle("hidden");
+        hrChevronIcon5.classList.toggle("rotate");
       });
     </script>
   </body>
