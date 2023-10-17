@@ -20,7 +20,7 @@
   <body>
     <header>
       <div class="nav-bar">
-        <a href="client-management-dash.html">
+        <a href="lead-management-dash.html">
           <div class="crm128-wrapper">
             <span style="color: #003e9c">CRM</span
             ><span style="color: #57bc4a">128</span>
@@ -43,9 +43,9 @@
           >
         </div>
         <div class="ellipse-group">
-          <div class="jg">JG</div>
+          <div class="avatar">JG</div>
           <div class="josiah-gana-parent">
-            <div class="josiah-gana">Josiah Gana</div>
+            <div class="josiah-gana" id="admin-email">Josiah Gana</div>
             <div class="admin">Admin</div>
           </div>
         </div>
@@ -59,22 +59,22 @@
             <div class="side-bar">Overview</div>
           </div>
         </a>
-        <div class="client-data client-bar" id="hr-toggle">
-          <img class="more-icon" alt="" src="./public/clients.svg" />
+        <div class="lead-data lead-bar" id="hr-toggle">
+          <img class="more-icon" alt="" src="./public/leads.svg" />
           <div class="side-bar">
-            <a href="../clientm/index.html">Clients</a>
+            <a href="../leadm/index.html">leads</a>
           </div>
           <img
-            class="more-icon client-icon"
+            class="more-icon lead-icon"
             id="hr-chevron-icon"
             alt=""
             src="./public/chevron-uop.svg"
           />
         </div>
-        <div class="client-dropdown">
+        <div class="lead-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"><li>Client Data</li></a>
-            <a href="../clientm/client-lead-dashboard.html"
+            <a href="../leadm/add-new-leads.html"><li>lead Data</li></a>
+            <a href="../leadm/lead-lead-dashboard.html"
               ><li class="selected">Leads</li></a
             >
           </ul>
@@ -91,13 +91,13 @@
             <a href="../hrm/index.html">Human Resource</a>
           </div>
           <img
-            class="more-icon client-icon"
+            class="more-icon lead-icon"
             id="hr-chevron-icon3"
             alt=""
             src="./public/chevron-down1.svg"
           />
         </div>
-        <div class="client-dropdown">
+        <div class="lead-dropdown">
           <ul id="hr-items3">
             <a href="../hrm/dashboard.html"><li>Employee Management</li></a>
             <a href="../hrm/leaveDashboard.html"><li>Leave Management</li></a>
@@ -118,13 +118,13 @@
             <a href="../projectm/index.html">Project Management</a>
           </div>
           <img
-            class="more-icon client-icon"
+            class="more-icon lead-icon"
             id="hr-chevron-icon1"
             alt=""
             src="./public/chevron-down1.svg"
           />
         </div>
-        <div class="client-dropdown">
+        <div class="lead-dropdown">
           <ul id="hr-items1">
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="#"
@@ -146,13 +146,13 @@
             <a href="../inventorym/index.html">Inventory</a>
           </div>
           <img
-            class="more-icon client-icon"
+            class="more-icon lead-icon"
             id="hr-chevron-icon2"
             alt=""
             src="./public/chevron-down1.svg"
           />
         </div>
-        <div class="client-dropdown">
+        <div class="lead-dropdown">
           <ul id="hr-items2">
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="../inventorym/new-stock-page.html"><li>New Stock</li></a>
@@ -173,13 +173,13 @@
             <a href="../acm/index.html">Accounting</a>
           </div>
           <img
-            class="more-icon client-icon"
+            class="more-icon lead-icon"
             alt=""
             id="hr-chevron-icon4"
             src="./public/chevron-down1.svg"
           />
         </div>
-        <div class="client-dropdown">
+        <div class="lead-dropdown">
           <ul id="hr-items4">
             <a href="../acm/income.html"><li>Income</li></a>
             <a href="../acm/expense.html"><li>Expenses</li></a>
@@ -191,13 +191,13 @@
             <a href="../adminm/index.html">Admin</a>
           </div>
           <img
-            class="more-icon client-icon"
+            class="more-icon lead-icon"
             alt=""
             id="hr-chevron-icon5"
             src="./public/chevron-down1.svg"
           />
         </div>
-        <div class="client-dropdown">
+        <div class="lead-dropdown">
           <ul id="hr-items5">
             <a href="../adminm/index.html"><li>General</li></a>
             <a href="../adminm/admin-current-user.html"><li>Members</li></a>
@@ -209,7 +209,7 @@
         </div>
       </div>
       <div class="frame-group">
-        <div style="margin-right: 10px">Client</div>
+        <div style="margin-right: 10px">lead</div>
         <div style="margin-right: 10px">|</div>
         <div style="margin-right: 10px">Leads</div>
         <div style="margin-right: 10px">|</div>
@@ -451,6 +451,103 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+            // check if logged in
+            if (localStorage.getItem("token")) {
+        console.log("already logged in");
+      } else {
+        // window.location.href = "/login.html";
+      }
+
+      const adminEmailEl = document.querySelector("#admin-email");
+      const avatarEl = document.querySelector(".avatar");
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      adminEmailEl.innerHTML = admin.email;
+      avatarEl.innerHTML = admin.email.substring(0, 2);
+
+      const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
+const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
+
+async function fetchData(url, options) {
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(`Network response was not ok (${response.status})`);
+    }
+    return response.json();
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+    return null;
+  }
+}
+
+async function displayData(elementId, data) {
+  const element = document.querySelector(elementId);
+  if (element) {
+    element.innerHTML = data;
+  }
+}
+
+async function fetchLeadData(leadId) {
+    try {
+        const response = await fetch(`${backendURL}/lead/getsinglelead/${leadId}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application json",
+                Authorization: `Bearer ${authToken}`,
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+        }
+
+        const leadData = await response.json();
+        return leadData;
+    } catch (error) {
+        console.error("An error occurred while fetching lead data:", error);
+        return null;
+    }
+}
+
+// Function to populate the profile page with lead data
+async function populateProfilePage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const leadId = urlParams.get("id"); // Get the lead ID from the URL
+
+    if (!leadId) {
+        console.error("lead ID not provided in the URL.");
+        return;
+    }
+
+    const leadData = await fetchLeadData(leadId);
+
+    if (leadData) {
+        document.getElementById("contact_person").textContent = leadData.lead.contact_person;
+        document.getElementById("organization").textContent = leadData.lead.organization;
+        document.getElementById("title").textContent = leadData.lead.title;
+        document.getElementById("currency").textContent = leadData.lead.currency;
+        document.getElementById("status").textContent = leadData.lead.status;
+        document.getElementById("phone").textContent = leadData.lead.phone;
+        document.getElementById("email").textContent = leadData.lead.email;
+        document.getElementById("start_date").textContent = leadData.lead.start_date;
+        document.getElementById("due_date").textContent = leadData.lead.due_date;
+        document.getElementById("description").textContent = leadData.lead.description;
+        document.getElementById("value").textContent = leadData.lead.value;
+        const companyInitials = leadData.lead.company_name.slice(0, 2);
+        document.getElementById("companyInitials").textContent = companyInitials;
+    } else {
+        // Handle the case where data couldn't be fetched
+        console.error("Failed to fetch lead data.");
+    }
+}
+
+// Call the function to populate the profile page when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    populateProfilePage();
+});
+
     </script>
   </body>
 </html>
