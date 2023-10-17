@@ -226,8 +226,8 @@
         <body>
           <table class="table">
             <tr>
-                <th rowspan="3"><span class="ds">DS</span></th>
-            </tr>
+              <th rowspan="3"><span class="ds" id="companyInitials"></span></th>
+          </tr>
             <tr>
                 <td><div class="daniel-sons" id="company_name"></div></td>
             </tr>
@@ -452,6 +452,8 @@ async function populateProfilePage() {
         document.getElementById("website").textContent = clientData.client.website_url;
         document.getElementById("status").textContent = clientData.client.status;
         document.getElementById("contact").textContent = clientData.client.contact;
+        const companyInitials = clientData.client.company_name.slice(0, 2);
+        document.getElementById("companyInitials").textContent = companyInitials;
     } else {
         // Handle the case where data couldn't be fetched
         console.error("Failed to fetch client data.");
