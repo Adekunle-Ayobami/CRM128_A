@@ -794,6 +794,8 @@
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
       const authToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU"; // Replace with your authentication token
+
+
 // Function to fetch data from your API and populate the table
 async function fetchDataAndPopulateTable(pageNumber) {
   try {
@@ -811,44 +813,47 @@ async function fetchDataAndPopulateTable(pageNumber) {
     }
 
     const data = await response.json();
+
+    // Reverse the order of data.clients to show the newest data at the top
+    data.clients.reverse();
+
     const tableBody = document.getElementById('table-body');
     while (tableBody.firstChild) {
       tableBody.removeChild(tableBody.firstChild);
     }
-    const cardsToDIsplay=7;
-    console.log(data.clients.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNumber*cardsToDIsplay));
-    data.clients.slice(((pageNumber*cardsToDIsplay)-cardsToDIsplay),pageNumber*cardsToDIsplay).
-   forEach((client) => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${client.company_name}</td>
-        <td>${client.contact}</td>
-        <td>${client.company_type}</td>
-        <td>${client.email}</td>
-        <td>${client.website_url}</td>
-        <td>
-          <img style="cursor: pointer" class="edit-button" data-id="${client._id}" class="edit.svg" alt="" src="public/edit.svg" />
-             
-                <img
-                  class="search-icon delete-button"
-                  alt=""
-                  style="position: relative; left: 10px; top: 5px; cursor: pointer;"
-                  src="./public/Delete.svg"
-                  id="moreIcon"
-                   data-id="${client._id}"
-                />
-              </td>
-      `;
-      tableBody.appendChild(row);
-          
-      // Add event listener to the delete button within this row
-      const deleteButton = row.querySelector(".delete-button");
-      deleteButton.addEventListener("click", (event) => {
-        const clientId = event.target.getAttribute("data-id");
-        deleteClient(clientId); // Call the deleteClient function with the lead ID
+    const cardsToDisplay = 7;
+    console.log(data.clients.slice(((pageNumber * cardsToDisplay) - cardsToDisplay), pageNumber * cardsToDisplay));
+    data.clients.slice(((pageNumber * cardsToDisplay) - cardsToDisplay), pageNumber * cardsToDisplay)
+      .forEach((client) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${client.company_name}</td>
+          <td>${client.contact}</td>
+          <td>${client.company_type}</td>
+          <td>${client.email}</td>
+          <td>${client.website_url}</td>
+          <td>
+            <img style="cursor: pointer" class="edit-button" data-id="${client._id}" class="edit.svg" alt="" src="public/edit.svg" />
+               
+            <img
+              class="search-icon delete-button"
+              alt=""
+              style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+              src="./public/Delete.svg"
+              id="moreIcon"
+              data-id="${client._id}"
+            />
+          </td>
+        `;
+        tableBody.appendChild(row);
+            
+        // Add event listener to the delete button within this row
+        const deleteButton = row.querySelector(".delete-button");
+        deleteButton.addEventListener("click", (event) => {
+          const clientId = event.target.getAttribute("data-id");
+          deleteClient(clientId); // Call the deleteClient function with the lead ID
+        });
       });
-    });
-    
 
     // Add event listeners to edit buttons
     const editButtons = document.querySelectorAll(".edit-button");
@@ -864,8 +869,9 @@ async function fetchDataAndPopulateTable(pageNumber) {
 }
 
 // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable(1));
-
+document.addEventListener("DOMContentLoaded", () => {
+  fetchDataAndPopulateTable(1);
+});
 
        // Plain javascript ot conne ct with the backend.
 
