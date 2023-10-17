@@ -43,12 +43,12 @@
           >
         </div>
         <div class="ellipse-group">
-          <div class="jg">JG</div>
+          <div class="avatar">JG</div>
           <div class="josiah-gana-parent">
-            <div class="josiah-gana">Josiah Gana</div>
+            <div class="josiah-gana" id="admin-email">Josiah Gana</div>
             <div class="admin">Admin</div>
           </div>
-        </div>
+        </div>>
       </div>
     </header>
     <section class="section">
@@ -223,44 +223,45 @@
         </div>
       </a>
       <div class="first-box">
-        <table class="table">
-          <tr>
-            <th rowspan="3"><span class="ds">DS</span></th>
-          </tr>
-
-          <tr>
-            <td><div class="daniel-sons">Daniel & Sons Ltd.</div></td>
-          </tr>
-          <tr>
-            <td>
-              <div style="display: flex; flex-direction: column">
-                <span>Company Type</span>
-                <span style="font-weight: 600">Engineering Firm</span>
-                <br />
-                <span>Email</span>
-                <span style="font-weight: 600">sample@mail.com</span>
-              </div>
-            </td>
-            <td>
-              <div style="display: flex; flex-direction: column">
-                <span>Physical Address</span>
-                <span style="font-weight: 600">No, 31, Unity Road, Ikeja</span>
-                <br />
-                <span>Website</span>
-                <span style="font-weight: 600">info.edu.ng</span>
-              </div>
-            </td>
-            <td>
-              <div style="display: flex; flex-direction: column">
-                <span>Phone Number</span>
-                <span style="font-weight: 600">+234879467777</span>
-                <br />
-                <span>Mobile Number</span>
-                <span style="font-weight: 600">01- 8373910</span>
-              </div>
-            </td>
-          </tr>
+        <body>
+          <table class="table">
+            <tr>
+                <th rowspan="3"><span class="ds">DS</span></th>
+            </tr>
+            <tr>
+                <td><div class="daniel-sons" id="company_name"></div></td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="display: flex; flex-direction: column">
+                        <span>Company Type</span>
+                        <span style="font-weight: 600" id="companyType"></span>
+                        <br />
+                        <span>Email</span>
+                        <span style="font-weight: 600" id="email"></span>
+                    </div>
+                </td>
+                <td>
+                    <div style="display: flex; flex-direction: column">
+                        <span>Physical Address</span>
+                        <span style="font-weight: 600" id="description"></span>
+                        <br />
+                        <span>Website</span>
+                        <span style="font-weight: 600" id="website"></span>
+                    </div>
+                </td>
+                <td>
+                    <div style="display: flex; flex-direction: column">
+                        <span>Status</span>
+                        <span style="font-weight: 600" id="status"></span>
+                        <br />
+                        <span>Mobile Number</span>
+                        <span style="font-weight: 600" id="contact"></span>
+                    </div>
+                </td>
+            </tr>
         </table>
+      </body>
       </div>
       <!-- <div>
         <span class="ds">DS</span>
@@ -293,10 +294,11 @@
         <span class="note">Note:</span>
         <textarea
           name="note"
-          id=""
+          id="description"
           cols="122"
           rows="12"
           placeholder="Enter Description"
+          disabled
         ></textarea>
       </div>
     </section>
@@ -370,6 +372,97 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+       // check if logged in
+       if (localStorage.getItem("token")) {
+        console.log("already logged in");
+      } else {
+        window.location.href = "/login.html";
+      }
+
+      const adminEmailEl = document.querySelector("#admin-email");
+      const avatarEl = document.querySelector(".avatar");
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      adminEmailEl.innerHTML = admin.email;
+      avatarEl.innerHTML = admin.email.substring(0, 2);
+
+      const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
+const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
+
+async function fetchData(url, options) {
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(`Network response was not ok (${response.status})`);
+    }
+    return response.json();
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+    return null;
+  }
+}
+
+async function displayData(elementId, data) {
+  const element = document.querySelector(elementId);
+  if (element) {
+    element.innerHTML = data;
+  }
+}
+
+async function fetchClientData(clientId) {
+    try {
+        const response = await fetch(`${backendURL}/client/getsingleclient/${clientId}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application json",
+                Authorization: `Bearer ${authToken}`,
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+        }
+
+        const clientData = await response.json();
+        return clientData;
+    } catch (error) {
+        console.error("An error occurred while fetching client data:", error);
+        return null;
+    }
+}
+
+// Function to populate the profile page with client data
+async function populateProfilePage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const clientId = urlParams.get("id"); // Get the client ID from the URL
+
+    if (!clientId) {
+        console.error("Client ID not provided in the URL.");
+        return;
+    }
+
+    const clientData = await fetchClientData(clientId);
+
+    if (clientData) {
+        document.getElementById("company_name").textContent = clientData.client.company_name;
+        document.getElementById("companyType").textContent = clientData.client.company_type;
+        document.getElementById("email").textContent = clientData.client.email;
+        document.getElementById("description").textContent = clientData.client.description;
+        document.getElementById("website").textContent = clientData.client.website_url;
+        document.getElementById("status").textContent = clientData.client.status;
+        document.getElementById("contact").textContent = clientData.client.contact;
+    } else {
+        // Handle the case where data couldn't be fetched
+        console.error("Failed to fetch client data.");
+    }
+}
+
+// Call the function to populate the profile page when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    populateProfilePage();
+});
+
     </script>
   </body>
 </html>

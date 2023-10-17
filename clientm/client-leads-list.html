@@ -787,7 +787,7 @@ document
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
       const leadfromEl = document.querySelector("#lead-form");
-      const leadformEl = document.querySelector("#lead-form");
+      // const leadformEl = document.querySelector("#lead-form");
       const contactInputEl = document.querySelector("#contact_person");
       const organizationInputEl = document.querySelector("#organization");
       const titleInputEl = document.querySelector("#title");
@@ -869,96 +869,91 @@ document
 
       // Function to fetch data from your API and populate the table
       async function fetchDataAndPopulateTable(pageNumber) {
-        try {
-          const response = await fetch(`${backendURL}/lead/getallleads`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-              Authorization: `Bearer ${authToken}`,
-            },
-          });
+  try {
+    const response = await fetch(`${backendURL}/lead/getallleads`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
 
-          if (!response.ok) {
-            throw new Error(`API response was not ok (${response.status})`);
-          }
+    if (!response.ok) {
+      throw new Error(`API response was not ok (${response.status})`);
+    }
 
-          const data = await response.json();
+    const data = await response.json();
+    data.leads.reverse(); // Reverse the order to show newest data at the top
 
-              // Reverse the order of data.clients to show the newest data at the top
-    data.leads.reverse();
+    const tableBody = document.getElementById("table-body");
+    while (tableBody.firstChild) {
+      tableBody.removeChild(tableBody.firstChild);
+    }
 
-          const tableBody = document.getElementById("table-body");
-          while (tableBody.firstChild) {
-            tableBody.removeChild(tableBody.firstChild);
-          }
-          const cardsToDIsplay = 7;
-          console.log(
-            data.leads.slice(
-              pageNumber * cardsToDIsplay - cardsToDIsplay,
-              pageNumber * cardsToDIsplay
-            )
-          );
-          data.leads
-            .slice(
-              pageNumber * cardsToDIsplay - cardsToDIsplay,
-              pageNumber * cardsToDIsplay
-            )
-            .forEach((lead) => {
-              const row = document.createElement("tr");
-              row.innerHTML = `
-              <td>${lead.status}</td>
-              <td>${lead.description}</td>
-              <td>${lead.organization}</td>
-              <td>${lead.contact_person}</td>
-              <td>${lead.start_date}</td>
-              <td>${lead.due_date}</td>
-              <td>${lead.value}</td>
-              <td>
-                <img style="cursor: pointer" class="edit-button" data-id="${lead._id}" class="edit.svg" alt="" src="public/edit.svg" />
-             
-                <a href="#"><img data-id="${lead._id}" style="cursor: pointer" class="search-icon" alt="" src="./public/more.svg" id="moreIcon" /></a>
-                <img
-                  class="search-icon delete-button"
-                  alt=""
-                  style="position: relative; left: 10px; top: 5px; cursor: pointer;"
-                  src="./public/Delete.svg"
-                  id="moreIcon"
-                  data-id="${lead._id}"
-                />
+    const cardsToDisplay = 7;
+    const leadsToDisplay = data.leads.slice(
+      pageNumber * cardsToDisplay - cardsToDisplay,
+      pageNumber * cardsToDisplay
+    );
 
+    leadsToDisplay.forEach((lead) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${lead.status}</td>
+        <td>${lead.description}</td>
+        <td>${lead.organization}</td>
+        <td>${lead.contact_person}</td>
+        <td>${lead.start_date}</td>
+        <td>${lead.due_date}</td>
+        <td>${lead.value}</td>
+        <td style="display: flex; justify-content: space-around;">
+            
+            <img style="cursor: pointer" class="edit-button" data-id="${lead._id}" class="edit.svg" alt="" src="public/edit.svg" />
+            <a href="../clientm/clients-company-profile.html?id=${lead._id}">  <i class="fa fa-eye" data-id="${lead._id}" id="password-eye" aria-hidden="true"></i>
+
+          </a>
                
-              </td>
-            `;
+            <img
+              class="search-icon delete-button"
+              alt=""
+              style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+              src="./public/Delete.svg"
+              id="moreIcon"
+              data-id="${lead._id}"
+            />
 
-              tableBody.appendChild(row);
+         
+          </td>
+      `;
+console.log(lead);
+      tableBody.appendChild(row);
 
-              // Add event listener to the delete button within this row
-              const deleteButton = row.querySelector(".delete-button");
-              deleteButton.addEventListener("click", (event) => {
-                const leadId = event.target.getAttribute("data-id");
-                deleteLead(leadId); // Call the deleteLead function with the lead ID
-              });
-            });
+      // Add event listener to the delete button within this row
+      const deleteButton = row.querySelector(".delete-button");
+      deleteButton.addEventListener("click", (event) => {
+        const leadId = event.target.getAttribute("data-id");
+        deleteLead(leadId); // Call the deleteLead function with the lead ID
+      });
+    });
 
-          // Add event listeners to edit buttons
-          const editButtons = document.querySelectorAll(".edit-button");
-          editButtons.forEach((button) => {
-            button.addEventListener("click", (event) => {
-              const leadId = event.target.getAttribute("data-id");
-              editLead(leadId);
-            });
-          });
-        } catch (error) {
-          console.error("There was a problem with the API request:", error);
-        }
-      }
+    // Add event listeners to edit buttons
+    const editButtons = document.querySelectorAll(".edit-button");
+    editButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const leadId = event.target.getAttribute("data-id");
+        editLead(leadId);
+      });
+    });
+  } catch (error) {
+    console.error("There was a problem with the API request:", error);
+  }
+}
 
-      // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-      document.addEventListener(
-        "DOMContentLoaded",
-        fetchDataAndPopulateTable(1)
-      );
+// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  fetchDataAndPopulateTable(1);
+});
 
       // Function to edit a lead by ID
       async function editLead(leadId) {
@@ -1000,7 +995,7 @@ document
             leadData.lead.value;
 
           // Set the form's data-id attribute to the lead ID
-          leadformEl.setAttribute("data-id", leadId);
+          leadfromEl.setAttribute("data-id", leadId);
 
           // Display the overlay for editing
           const overlay = document.getElementById("overlay");
@@ -1093,7 +1088,7 @@ document
       }
 
       // Add event listener to the lead form for updating leads
-      leadformEl.addEventListener("submit", async function (event) {
+      leadfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
         const leadId = event.target.getAttribute("data-id");
         if (leadId) {
