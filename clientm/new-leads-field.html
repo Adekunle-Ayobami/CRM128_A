@@ -73,10 +73,10 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"
-              ><li class="selected">Client Data</li></a
+            <a href="../clientm/add-new-clients.html"><li>Client Data</li></a>
+            <a href="../clientm/client-lead-dashboard.html"
+              ><li class="selected">Leads</li></a
             >
-            <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
           </ul>
         </div>
         <div class="side-tab">
@@ -226,8 +226,8 @@
         <div class="deal-title-parent">
           <div class="deal-title">Deal Title</div>
           <div class="button-parent">
-            <div class="button">
-              <div class="deal-title">Schedule Appointment</div>
+            <div>
+              <button class="deal-title button">Schedule Appointment</button>
             </div>
             <div class="won">
               <div class="won1">Won</div>
@@ -237,129 +237,148 @@
               <div class="won1">Lost</div>
               <img class="tick-icon" alt="" src="public/cancel.svg" />
             </div>
-            <img class="more-icon1" alt="" src="public/more.svg" />
           </div>
         </div>
         <hr style="width: 87%" />
         <!-- First Input -->
-        <div
-          class="input"
-          style="display: flex; gap: 28px; margin-bottom: 40px"
-        >
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">Value</span>
-            <input class="expand" type="text" name="amount id=""
-            placeholder="300,000">
-          </div>
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">Currency</span>
-            <select style="width: 180%" class="expand" name="" id="">
-              <option value="">Dollar</option>
-              <option value="">Pounds</option>
-              <option value="">Naira</option>
-            </select>
-          </div>
-          <div style="display: flex; flex-direction: column; margin-left: 60px">
-            <span class="naming">Status</span>
-            <select class="expand" name="" id="">
-              <option value="">Qualified</option>
-              <option value="">Contact Made</option>
-              <option value="">Demo Scheduled</option>
-              <option value="">Proposal Made</option>
-              <option value="">Negotiations Started</option>
-            </select>
-          </div>
-        </div>
-        <!-- Second Input -->
-        <span class="cp">Contact Person</span>
-        <div class="input" style="display: flex; gap: 28px">
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">First Name*</span>
-            <input class="expand" type="text" name="amount id=""
-            placeholder="John">
-          </div>
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">Last Name*</span>
-            <input class="expand" type="text" name="amount id=""
-            placeholder="Doe">
-          </div>
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">Phone</span>
-            <input class="expand" type="text" name="amount id=""
-            placeholder="09034579021">
-          </div>
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">Email</span>
-            <input class="expand" type="text" name="amount id=""
-            placeholder="sample@mail.com">
-          </div>
-        </div>
-        <!-- Third Input -->
-        <div
-          class="cp"
-          style="
-            display: flex;
-            justify-content: space-between;
-            width: 85%;
-            margin: 50px 0 0 55px;
-          "
-        >
-          <span>Details</span>
-          <button
-            style="
-              background-color: white;
-              color: #0047b3;
-              border: 2px solid #0047b3;
-              padding: 6px 31px;
-              border-radius: 4px;
-            "
+        <form action="">
+          <div
+            class="input"
+            style="display: flex; gap: 28px; margin-bottom: 40px"
           >
-            Add
-          </button>
-        </div>
-        <hr style="width: 87%; margin-left: 53px; margin-top: 30px" />
-        <!-- Fourth Input -->
-        <div class="input" style="display: flex; gap: 28px">
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">Name of Organization*</span>
-            <input class="expand" type="text" name="amount id=""
-            placeholder="John">
+            <div style="display: flex; flex-direction: column">
+              <label class="naming">Value</label>
+              <input class="expand" type="text" name="amount id=""
+              placeholder="300,000">
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <label class="naming">Currency</label>
+              <select style="width: 180%" class="expand" name="" id="">
+                <option value="">Dollar</option>
+                <option value="">Pounds</option>
+                <option value="">Naira</option>
+              </select>
+            </div>
+            <div
+              style="display: flex; flex-direction: column; margin-left: 60px"
+            >
+              <label class="naming">Status</label>
+              <select class="expand" name="" id="">
+                <option value="">Qualified</option>
+                <option value="">Contact Made</option>
+                <option value="">Demo Scheduled</option>
+                <option value="">Proposal Made</option>
+                <option value="">Negotiations Started</option>
+              </select>
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <label class="naming">Start Date</label>
+              <input class="expand" type="text" name="amount id=""
+              placeholder="300,000">
+            </div>
+            <div class="naming1" style="display: flex; flex-direction: column">
+              <label class="naming">Due Date</label>
+              <input class="expand" type="text" name="amount id=""
+              placeholder="300,000">
+            </div>
           </div>
-          <div style="display: flex; flex-direction: column; margin-left: 2px">
-            <span class="naming">Institution Type</span>
-            <select class="expand" name="" id="">
-              <option value="">Qualified</option>
-              <option value="">Contact Made</option>
-              <option value="">Demo Scheduled</option>
-              <option value="">Proposal Made</option>
-              <option value="">Negotiations Started</option>
-            </select>
+          <!-- Second Input -->
+          <div class="second">
+            <span class="cp">Contact Person</span>
+            <div class="input" style="display: flex; gap: 5px">
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">First Name*</label>
+                <input class="expand" type="text" name="amount id=""
+                placeholder="John">
+              </div>
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Last Name*</label>
+                <input class="expand" type="text" name="amount id=""
+                placeholder="Doe">
+              </div>
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Phone</label>
+                <input class="expand" type="text" name="amount id=""
+                placeholder="09034579021">
+              </div>
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Email</label>
+                <input class="expand" type="text" name="amount id=""
+                placeholder="sample@mail.com">
+              </div>
+            </div>
           </div>
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">Contact</span>
-            <input class="expand" type="text" name="amount id=""
-            placeholder="09034579021">
+          <!-- Third Input -->
+          <div class="third">
+            <div
+              class="cp"
+              style="
+                display: flex;
+                justify-content: space-between;
+                width: 85%;
+                margin: 50px 0 0 55px;
+              "
+            >
+              <label>Details</label>
+              <input
+                style="
+                  background-color: white;
+                  color: #0047b3;
+                  border: 2px solid #0047b3;
+                  padding: 6px 31px;
+                  border-radius: 4px;
+                "
+                type="submit"
+                value="Add"
+              />
+            </div>
+            <hr style="width: 87%; margin-left: 53px; margin-top: 30px" />
+            <!-- Fourth Input -->
+            <div class="input" style="display: flex; gap: 12px">
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Name of Organization*</label>
+                <input class="expand" type="text" name="amount id=""
+                placeholder="John">
+              </div>
+              <div
+                style="display: flex; flex-direction: column; margin-left: 2px"
+              >
+                <label class="naming">Institution Type</label>
+                <select class="expand" name="" id="">
+                  <option value="">Qualified</option>
+                  <option value="">Contact Made</option>
+                  <option value="">Demo Scheduled</option>
+                  <option value="">Proposal Made</option>
+                  <option value="">Negotiations Started</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Contact</label>
+                <input class="expand" type="text" name="amount id=""
+                placeholder="09034579021">
+              </div>
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Email</label>
+                <input class="expand" type="text" name="amount id=""
+                placeholder="sample@mail.com">
+              </div>
+            </div>
+            <!-- Last Input -->
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                margin-left: 55px;
+                margin-top: 20px;
+              "
+            >
+              <label class="naming">Address</label>
+              <input class="expand" type="text" name="amount id=""
+              placeholder="11, Olufemi Ojo Street">
+            </div>
           </div>
-          <div style="display: flex; flex-direction: column">
-            <span class="naming">Email</span>
-            <input class="expand" type="text" name="amount id=""
-            placeholder="sample@mail.com">
-          </div>
-        </div>
-        <!-- Last Input -->
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            width: 70%;
-            margin-left: 55px;
-            margin-top: 20px;
-          "
-        >
-          <span class="naming">Address</span>
-          <input class="expand" type="text" name="amount id="" placeholder="11,
-          Olufemi Ojo Street">
-        </div>
+        </form>
       </div>
     </section>
     <footer>
@@ -377,7 +396,7 @@
       const hrItems = document.getElementById("hr-items");
       const hrChevronIcon = document.getElementById("hr-chevron-icon");
 
-      hrItems.classList.add("hidden");
+      // hrItems.classList.add("hidden");
       hrToggle.addEventListener("click", function () {
         hrItems.classList.toggle("hidden");
         hrChevronIcon.classList.toggle("rotate");

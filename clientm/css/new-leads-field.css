@@ -140,12 +140,11 @@ li {
 .frame-group {
   display: flex;
   height: 20px;
-  margin-top: 20px;
   margin-left: 20px;
   width: 20%;
   position: absolute;
-  top: 15px;
-  left: 320px;
+  top: 1em;
+  left: 18em;
 }
 .btn {
   position: absolute;
@@ -183,10 +182,13 @@ li {
   justify-content: space-around;
   background-color: #d9d9d9;
 }
+.logout {
+  padding-bottom: 230px;
+}
 .back {
   position: absolute;
-  top: 80px;
-  left: 345px;
+  top: 4em;
+  left: 19em;
   border-radius: 7px;
   background-color: #f5f6f7;
   border: 1px solid #dfe2e6;
@@ -197,21 +199,25 @@ li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
 /* Field */
 .field {
   background-color: white;
   width: 70%;
-  height: 78%;
+  height: 83%;
   position: absolute;
-  top: 18%;
-  left: 340px;
+  top: 8em;
+  left: 19em;
   border-radius: 7px;
 }
-.deal-title {
+.second {
   position: relative;
-  line-height: 120%;
-  font-weight: 600;
+  top: 5em;
+}
+.third {
+  position: relative;
+  top: 5em;
 }
 .button {
   border-radius: 4px;
@@ -224,6 +230,10 @@ li {
   justify-content: center;
   font-size: 16px;
   color: #0047b3;
+  position: relative;
+  line-height: 120%;
+  font-weight: 600;
+  cursor: pointer;
 }
 .won1 {
   position: relative;
@@ -301,9 +311,10 @@ li {
 .input {
   margin-top: 20px;
   margin-left: 55px;
+  position: relative;
 }
 .expand {
-  padding: 10px;
+  padding: 15px 10px 15px 10px;
   background-color: #f6f6f6;
   color: #7a8699;
   border: 1px solid lightblue;
@@ -311,7 +322,13 @@ li {
 }
 .naming {
   font-weight: 600;
+  margin-bottom: 10px;
+}
+.naming1 {
+  font-weight: 600;
   margin-bottom: 15px;
+  position: absolute;
+  top: 5em;
 }
 input[type="text"]::placeholder {
   color: #7a8699;
