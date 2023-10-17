@@ -183,7 +183,7 @@ li {
   background-color: #d9d9d9;
 }
 .logout {
-  padding-bottom: 250px;
+  padding-bottom: 270px;
 }
 .back {
   position: absolute;
@@ -312,14 +312,37 @@ li {
   margin-top: 20px;
   margin-left: 55px;
   position: relative;
+  display: flex;
+  gap: 28px;
+  width: 0%;
+  margin-bottom: 40px;
 }
 .input1 {
   margin-top: 20px;
   margin-left: 55px;
   position: relative;
   top: 5em;
+  cursor: pointer;
 }
 .expand {
+  padding: 15px 10px 15px 10px;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  outline: 1px solid lightblue;
+}
+.expand1 {
+  padding: 15px 10px 15px 10px;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  outline: 1px solid lightblue;
+  width: 200%;
+  cursor: pointer;
+}
+.expand2 {
   padding: 15px 10px 15px 10px;
   background-color: #f6f6f6;
   color: #7a8699;
@@ -344,7 +367,32 @@ input[type="text"]::placeholder {
 .expand option {
   color: #7a8699;
 }
+select option {
+  font-size: 18px;
+  background-color: white;
+}
 
+@media (min-width: 1368px) {
+  .frame-group {
+    left: 23.8em;
+  }
+  .back {
+    left: 25em;
+  }
+  .field {
+    left: 25em;
+  }
+  .input {
+    gap: 10px;
+  }
+  .expand {
+    width: 14vw;
+  }
+  .expand1 {
+    width: 15vw;
+    margin-right: -4.5em;
+  }
+}
 @media (max-width: 1366px) {
   .menu {
     width: 259px;
