@@ -236,6 +236,7 @@ li {
 }
 .tarea textarea {
   padding: 10px;
+  border-radius: 12px;
 }
 .note {
   position: absolute;
@@ -243,6 +244,22 @@ li {
   font-weight: 600;
 }
 
+@media (min-width: 1368px) {
+  .frame-group {
+    left: 22em;
+  }
+  .back,
+  .first-box,
+  .tarea {
+    left: 23em;
+  }
+  .tarea textarea {
+    width: 66vw;
+  }
+  .logout {
+    padding-bottom: 230px;
+  }
+}
 @media (max-width: 1366px) {
   .group-parent {
     position: absolute;
