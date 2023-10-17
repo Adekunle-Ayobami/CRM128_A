@@ -839,17 +839,19 @@ async function fetchDataAndPopulateTable(pageNumber) {
           <td>${client.company_type}</td>
           <td>${client.email}</td>
           <td>${client.website_url}</td>
-          <td style="display: flex; justify-content: space-around;">
-            
-            <img style="cursor: pointer" class="edit-button" data-id="${client._id}" class="edit.svg" alt="" src="public/edit.svg" />
+          <td style="display: flex; gap: 5px;">
+
             <a href="../clientm/clients-company-profile.html?id=${client._id}">  <i class="fa fa-eye" data-id="${client._id}" id="password-eye" aria-hidden="true"></i>
 
-          </a>
+</a>
+            
+   
+            <i data-id="${client._id}" class="fa-solid fa-pen-to-square fa-fade edit-button"></i>
                
             <img
               class="search-icon delete-button"
               alt=""
-              style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+              style="position: relative; left: 10px; top: -1px; cursor: pointer;"
               src="./public/Delete.svg"
               id="moreIcon"
               data-id="${client._id}"

@@ -907,24 +907,26 @@ document
         <td>${lead.start_date}</td>
         <td>${lead.due_date}</td>
         <td>${lead.value}</td>
-        <td style="display: flex; justify-content: space-around;">
-            
-            <img style="cursor: pointer" class="edit-button" data-id="${lead._id}" class="edit.svg" alt="" src="public/edit.svg" />
-            <a href="../clientm/clients-company-profile.html?id=${lead._id}">  <i class="fa fa-eye" data-id="${lead._id}" id="password-eye" aria-hidden="true"></i>
+        <td style="display: flex; gap: 5px;">
 
-          </a>
-               
-            <img
-              class="search-icon delete-button"
-              alt=""
-              style="position: relative; left: 10px; top: 5px; cursor: pointer;"
-              src="./public/Delete.svg"
-              id="moreIcon"
-              data-id="${lead._id}"
-            />
+<a href="../clientm/new-leads-field.html?id=${lead._id}">  <i class="fa fa-eye" data-id="${lead._id}" id="password-eye" aria-hidden="true"></i>
 
-         
-          </td>
+</a>
+
+
+<i data-id="${lead._id}" class="fa-solid fa-pen-to-square fa-fade edit-button"></i>
+   
+<img
+  class="search-icon delete-button"
+  alt=""
+  style="position: relative; left: 10px; top: -1px; cursor: pointer;"
+  src="./public/Delete.svg"
+  id="moreIcon"
+  data-id="${lead._id}"
+/>
+
+
+</td>
       `;
 console.log(lead);
       tableBody.appendChild(row);

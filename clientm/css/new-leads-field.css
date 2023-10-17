@@ -348,6 +348,25 @@ input[type="text"]::placeholder {
   .selected {
     width: 76%;
   }
+  .frame-group {
+    left: 23.8em;
+  }
+  .back {
+    left: 25em;
+  }
+  .field {
+    left: 25em;
+  }
+  .input {
+    gap: 10px;
+  }
+  .expand {
+    width: 14vw;
+  }
+  .expand1 {
+    width: 15vw;
+    margin-right: -4.5em;
+  }
 }
 @media (max-width: 730px) {
   /* .group-parent {
