@@ -884,6 +884,10 @@ document
           }
 
           const data = await response.json();
+
+              // Reverse the order of data.clients to show the newest data at the top
+    data.leads.reverse();
+
           const tableBody = document.getElementById("table-body");
           while (tableBody.firstChild) {
             tableBody.removeChild(tableBody.firstChild);
