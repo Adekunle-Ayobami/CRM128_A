@@ -221,14 +221,13 @@
       </div>
       <table class="table">
         <tr>
-          <th>Status</th>
-          <th>Description</th>
-          <th>Organization</th>
-          <th>Contact Person</th>
-          <th>Start Date</th>
-          <th>Due Date</th>
+          <th>Name Of Deal</th>
           <th>Value</th>
-
+          <th>Company</th>
+          <th>Contact </th>
+          <th>start Date</th>
+          <th>Due Date</th>
+          <th>Status </th>
           <th>Options</th>
           <!-- Within your <table> -->
         </tr>
@@ -788,44 +787,56 @@ document
 
       const leadfromEl = document.querySelector("#lead-form");
       // const leadformEl = document.querySelector("#lead-form");
-      const contactInputEl = document.querySelector("#contact_person");
-      const organizationInputEl = document.querySelector("#organization");
-      const titleInputEl = document.querySelector("#title");
+      const firstNameInputEl = document.querySelector("#first_name");
+      const lastNameInputEl = document.querySelector("#last_name");
+      const qualificationInputEl = document.querySelector("#qualification");
+      const nameDealInputEl = document.querySelector("#name_deal");
       const currencyInputEl = document.querySelector("#currency");
       const statusInputEl = document.querySelector("#status");
       const phoneInputEl = document.querySelector("#phone");
       const emailInputEl = document.querySelector("#email");
       const startInputEl = document.querySelector("#start_date");
       const dueInputEl = document.querySelector("#due_date");
-      const descriptionInputEl = document.querySelector("#description");
+      const companyNameInputEl = document.querySelector("#company_name");
       const valueInputEl = document.querySelector("#value");
+      const addressInputEl = document.querySelector("#address");
+       const websiteInputEl = document.querySelector("#website");
+        const companyCategoryInputEl = document.querySelector("#company_category");
 
       leadfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-        const contactValue = contactInputEl.value;
-        const organizationValue = organizationInputEl.value;
-        const titleValue = titleInputEl.value;
+        const firstValue = firstNameInputEl.value;
+        const lastValue = lastNameInputEl.value;
+        const qualificationValue = qualificationInputEl.value;
+        const dealValue = nameDealInputEl.value;
+        const companyValue = companyNameInputEl.value;
+        const categoryValue = companyCategoryInputEl.value;
+        const addressValue = addressInputEl.value;
         const currencyValue = currencyInputEl.value;
         const statusValue = statusInputEl.value;
         const phoneValue = phoneInputEl.value;
         const emailValue = emailInputEl.value;
         const startDateValue = startInputEl.value;
         const dueDateValue = dueInputEl.value;
-        const descriptionValue = descriptionInputEl.value;
+        const websiteValue = websiteInputEl.value;
         const valueValue = valueInputEl.value;
 
         const payload = {
-          contact_person: contactValue,
-          organization: organizationValue,
-          title: titleValue,
+          first_name: firstValue,
+          last_name: lastValue,
+          qualification: qualificationValue,
+          address: addressValue,
           currency: currencyValue,
           status: statusValue,
           phone: phoneValue,
           email: emailValue,
           start_date: startDateValue,
           due_date: dueDateValue,
-          description: descriptionValue,
+          website: websiteValue,
+          company_name: companyValue,
+          company_category: categoryValue,
+          name_deal: dealValue,
           value: valueValue,
         };
 
@@ -900,13 +911,13 @@ document
     leadsToDisplay.forEach((lead) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${lead.status}</td>
-        <td>${lead.description}</td>
-        <td>${lead.organization}</td>
-        <td>${lead.contact_person}</td>
+        <td>${lead.name_deal}</td>
+        <td>${lead.value}</td>
+        <td>${lead.company_name}</td>
+        <td>${lead.first_name}</td>
         <td>${lead.start_date}</td>
         <td>${lead.due_date}</td>
-        <td>${lead.value}</td>
+        <td>${lead.status}</td>
         <td style="display: flex; gap: 5px;">
 
 <a href="../clientm/new-leads-field.html?id=${lead._id}">  <i class="fa fa-eye" data-id="${lead._id}" id="password-eye" aria-hidden="true"></i>
@@ -979,11 +990,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const leadData = await response.json();
 
           // Populate the form fields with lead data for editing
-          document.getElementById("contact_person").value =
-            leadData.lead.contact_person;
-          document.getElementById("organization").value =
-            leadData.lead.organization;
-          document.getElementById("title").value = leadData.lead.title;
+          document.getElementById("first_name").value =
+            leadData.lead.first_name;
+          document.getElementById("last_name").value =
+            leadData.lead.last_name;
+          document.getElementById("qualification").value = leadData.lead.qualification;
+          document.getElementById("company_name").value = leadData.lead.company_name;
+          document.getElementById("address").value = leadData.lead.address;
+          document.getElementById("website").value = leadData.lead.website;
+          document.getElementById("company_category").value = leadData.lead.company_category;
           document.getElementById("currency").value = leadData.lead.currency;
           document.getElementById("status").value = leadData.lead.status;
           document.getElementById("phone").value = leadData.lead.phone;
@@ -991,8 +1006,8 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("start_date").value =
             leadData.lead.start_date;
           document.getElementById("due_date").value = leadData.lead.due_date;
-          document.getElementById("description").value =
-            leadData.lead.description;
+          document.getElementById("name_deal").value =
+            leadData.lead.name_deal;
             document.getElementById("value").value =
             leadData.lead.value;
 
@@ -1026,32 +1041,39 @@ document.addEventListener("DOMContentLoaded", () => {
       // Function to update a lead by ID
       async function updateLead(leadId) {
         try {
-          const contactValue = document.getElementById("contact_person").value;
-          const organizationValue =
-            document.getElementById("organization").value;
-          const titleValue = document.getElementById("title").value;
-          const currencyValue = document.getElementById("currency").value;
-          const statusValue = document.getElementById("status").value;
-          const phoneValue = document.getElementById("phone").value;
-          const emailValue = document.getElementById("email").value;
-          const startDateValue = document.getElementById("start_date").value;
-          const dueDateValue = document.getElementById("due_date").value;
-          const descriptionValue = document.getElementById("description").value;
-          const valueValue = document.getElementById("value").value;
+          const firstValue = document.getElementById("first_name").value;
+        const lastValue = document.getElementById("last_name").value;
+        const qualificationValue = document.getElementById("qualification").value;
+        const dealValue = document.getElementById("name_deal").value;
+        const companyValue = document.getElementById("company_name").value;
+        const categoryValue =  document.getElementById("company_category").value;
+        const addressValue = document.getElementById("address").value;
+        const currencyValue = document.getElementById("currency").value;
+        const statusValue = document.getElementById("status").value;
+        const phoneValue =  document.getElementById("phone").value;
+        const emailValue = document.getElementById("email").value;
+        const startDateValue = document.getElementById("start_date").value;
+        const dueDateValue = document.getElementById("due_date").value;
+        const websiteValue = document.getElementById("website").value;
+        const valueValue = document.getElementById("value").value;
 
-          const payload = {
-            contact_person: contactValue,
-            organization: organizationValue,
-            title: titleValue,
-            currency: currencyValue,
-            status: statusValue,
-            phone: phoneValue,
-            email: emailValue,
-            start_date: startDateValue,
-            due_date: dueDateValue,
-            description: descriptionValue,
-            value: valueValue,
-          };
+        const payload = {
+          first_name: firstValue,
+          last_name: lastValue,
+          qualification: qualificationValue,
+          address: addressValue,
+          currency: currencyValue,
+          status: statusValue,
+          phone: phoneValue,
+          email: emailValue,
+          start_date: startDateValue,
+          due_date: dueDateValue,
+          website: websiteValue,
+          company_name: companyValue,
+          company_category: categoryValue,
+          name_deal: dealValue,
+          value: valueValue,
+        };
 
           const httpRes = await fetch(
             `${backendURL}/lead/updatelead/${leadId}`,
