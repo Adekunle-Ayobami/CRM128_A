@@ -224,7 +224,7 @@
       </a>
       <div class="field">
         <div class="deal-title-parent">
-          <div class="deal-title">Deal Title</div>
+          <div id="name_deal" class="deal-title">Deal Title</div>
           <div class="button-parent">
             <div>
               <button class="deal-title button">Schedule Appointment</button>
@@ -248,21 +248,21 @@
                   <input class="expand" type="text" name="value" id="value" placeholder="300,000" disabled>
               </div>
               <div style="display: flex; flex-direction: column">
-                  <label class="naming">Currency</label>
-                  <select class="expand1" name="currency" id="currency" disabled>
-                      <option  id="currency" value="Dollar">Dollar</option>
-                      <option  id="currency" value="Pounds">Pounds</option>
-                      <option  id="currency" value="Naira">Naira</option>
-                  </select>
-              </div>
+                <label id="currency" class="naming">Currency</label>
+                <select class="expand1" name="currency" id="currency" disabled>
+                    <option id="currency" value="Dollar">Dollar</option>
+                    <option id="currency" value="Pounds">Pounds</option>
+                    <option id="currency" value="Naira">naira</option>
+                </select>
+            </div>
               <div style="display: flex; flex-direction: column; margin-left: 60px">
-                  <label class="naming">Status</label>
+                  <label id="status" class="naming">Status</label>
                   <select class="expand" name="status" id="status" disabled>
-                      <option id="status" value="Qualified">Qualified</option>
-                      <option id="status" value="Contact Made">Contact Made</option>
-                      <option id="status" value="Demo Scheduled">Demo Scheduled</option>
+                      <option id="status" value="Qualified">active</option>
+                      <option id="status" value="Contact Made">in active</option>
+                      <!-- <option id="status" value="Demo Scheduled">Demo Scheduled</option>
                       <option id="status" value="Proposal Made">Proposal Made</option>
-                      <option id="status" value="Negotiations Started">Negotiations Started</option>
+                      <option id="status" value="Negotiations Started">Negotiations Started</option> -->
                   </select>
               </div>
               <div style="display: flex; flex-direction: column">
@@ -273,6 +273,7 @@
                   <label class="naming">Due Date</label>
                   <input class="expand" type="text" name="due_date" id="due_date" placeholder="2023-01-15" disabled>
               </div>
+
           </div>
           <!-- Second Input -->
           <div class="second">
@@ -280,11 +281,11 @@
               <div class="input" style="display: flex; gap: 5px">
                   <div style="display: flex; flex-direction: column">
                       <label class="naming">First Name*</label>
-                      <input class="expand" type="text" name="first_name" id="contact_person" placeholder="John" disabled>
+                      <input class="expand" type="text" name="first_name" id="first_name" placeholder="John" disabled>
                   </div>
                   <div style="display: flex; flex-direction: column">
                       <label class="naming">Last Name*</label>
-                      <input class="expand" type="text" name="last_name" id="contact_person" placeholder="Doe" disabled>
+                      <input class="expand" type="text" name="last_name" id="last_name" placeholder="Doe" disabled>
                   </div>
                   <div style="display: flex; flex-direction: column">
                       <label class="naming">Phone</label>
@@ -305,32 +306,32 @@
               <!-- Fourth Input -->
               <div class="input" style="display: flex; gap: 12px">
                   <div style="display: flex; flex-direction: column">
-                      <label class="naming">Name of Organization*</label>
-                      <input class="expand" type="text" name="organization" id="organization" placeholder="Company Name" disabled>
+                      <label class="naming">Name of Company*</label>
+                      <input class="expand" type="text" name="company_name" id="company_name" placeholder="Company Name" disabled>
                   </div>
                   <div style="display: flex; flex-direction: column; margin-left: 2px">
-                      <label class="naming">Institution Type</label>
-                      <select class="expand" name="institution_type" id="" disabled>
-                          <option value="Qualified">Qualified</option>
-                          <option value="Contact Made">Contact Made</option>
-                          <option value="Demo Scheduled">Demo Scheduled</option>
-                          <option value="Proposal Made">Proposal Made</option>
-                          <option value="Negotiations Started">Negotiations Started</option>
+                      <label id="company_category" class="naming">company_category </label>
+                      <select class="expand" name="company_category" id="company_category" disabled>
+                          <option id="company_category" value="Qualified">Agriculture</option>
+                          <option id="company_category" value="Contact Made">Education</option>
+                          <option id="company_category" value="Demo Scheduled">Hospitality</option>
+                          <option id="company_category" value="Proposal Made">IT</option>
+                          <option id="company_category" value="Negotiations Started">Business & Finance</option>
                       </select>
                   </div>
                   <div style="display: flex; flex-direction: column">
-                      <label class="naming">Contact</label>
-                      <input class="expand" type="text" name="contact" id="phone" placeholder="Contact" disabled>
+                      <label class="naming">Website</label>
+                      <input class="expand" type="text" name="contact" id="website" placeholder="Contact" disabled>
                   </div>
-                  <div style="display: flex; flex-direction: column">
+                  <!-- <div style="display: flex; flex-direction: column">
                       <label class="naming">Email</label>
                       <input class="expand" type="text" name="email" id="email" placeholder="Email" disabled>
-                  </div>
+                  </div> -->
               </div>
               <!-- Last Input -->
               <div style="display: flex; flex-direction: column; width: 70%; margin-left: 55px; margin-top: 20px">
                   <label class="naming">Address</label>
-                  <input class="expand2" type="text" name="address" id="description" placeholder="Address" disabled>
+                  <input class="expand2" type="text" name="address" id="address" placeholder="Address" disabled>
               </div>
           </div>
       </form>
@@ -479,11 +480,16 @@ async function populateProfilePage() {
     const leadData = await fetchLeadData(leadId);
 
     if (leadData && leadData.lead) {
-      document.getElementById("contact_person").value =
-            leadData.lead.contact_person;
-          document.getElementById("organization").value =
-            leadData.lead.organization;
-          // document.getElementById("title").value = leadData.lead.title;
+      document.getElementById("first_name").value = leadData.lead.first_name;
+          document.getElementById("last_name").value = leadData.lead.last_name;
+          // document.getElementById("qualification").value =
+          //   leadData.lead.qualification;
+          document.getElementById("company_name").value =
+            leadData.lead.company_name;
+          document.getElementById("address").value = leadData.lead.address;
+          document.getElementById("website").value = leadData.lead.website;
+          document.getElementById("company_category").value =
+            leadData.lead.company_category;
           document.getElementById("currency").value = leadData.lead.currency;
           document.getElementById("status").value = leadData.lead.status;
           document.getElementById("phone").value = leadData.lead.phone;
@@ -491,11 +497,11 @@ async function populateProfilePage() {
           document.getElementById("start_date").value =
             leadData.lead.start_date;
           document.getElementById("due_date").value = leadData.lead.due_date;
-          document.getElementById("description").value =
-            leadData.lead.description;
-            document.getElementById("value").value =
-            leadData.lead.value;
-        const contactName = leadData.lead.contact_person;
+          document.getElementById("name_deal").value = leadData.lead.name_deal;
+          document.getElementById("value").value = leadData.lead.value;
+
+          console.log(leadData.lead.currency)
+        const contactName = leadData.lead.first_name;
       
     } else {
         // Handle the case where data couldn't be fetched or is missing
