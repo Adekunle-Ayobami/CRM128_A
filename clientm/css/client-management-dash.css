@@ -515,7 +515,7 @@ li {
 }
 .highlighted-day {
   background-color: #f0f0f0;
-  position: relative;
+  position: relative;
 }
 /* .rectangle-group {
   top: 20.06em;
@@ -1070,7 +1070,7 @@ li {
     padding: 10px 35px 36px 10px;
   }
   .header-list {
-   width:91%;
+    width: 91%;
   }
 }
 

@@ -216,12 +216,12 @@
       <div class="overview-client-management-inner">
         <div class="header-list-parent">
           <div class="header-list">
-            <div class="list-of-task">List of Task</div>
-            <div class="chip">
+            <div class="list-of-task">List of Clients</div>
+            <!-- <div class="chip">
               <img class="plus-icon" alt="" src="./public/plus.svg" />
 
               <div class="add-task">Add Task</div>
-            </div>
+            </div> -->
           </div>
           <div class="group-parent">
             <div class="frame-wrapper">
@@ -614,7 +614,6 @@
 
           const activeClient = document.querySelector("#active-client");
           activeClient.innerHTML = activeClientCount;
-          
 
           // Fetch active lead count
           const leadResponse = await fetch(
@@ -637,46 +636,42 @@
 
           const leadData = await leadResponse.json();
           const activeLeadCount = leadData.count;
-        
 
           const activeLead = document.querySelector("#active-lead");
           activeLead.innerHTML = activeLeadCount;
 
+          // Fetch total leadwon value
+          const totalLeadValueResponse = await fetch(
+            `${backendURL}/lead/getTotalValue`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-       // Fetch total leadwon value
-    const totalLeadValueResponse = await fetch(
-      `${backendURL}/lead/getTotalValue`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Bearer ${authToken}`,
-        },
+          if (!totalLeadValueResponse.ok) {
+            throw new Error(
+              `Total Lead Value network response was not ok (${totalLeadValueResponse.status})`
+            );
+          }
+
+          const totalLeadValueData = await totalLeadValueResponse.json();
+          const totalLeadValue = totalLeadValueData.totalValue[0].total;
+
+          const totalLeadValueElement =
+            document.querySelector("#totalLead-won");
+          totalLeadValueElement.innerHTML = totalLeadValue;
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+        }
       }
-    );
 
-    if (!totalLeadValueResponse.ok) {
-      throw new Error(
-        `Total Lead Value network response was not ok (${totalLeadValueResponse.status})`
-      );
-    }
-
-    const totalLeadValueData = await totalLeadValueResponse.json();
-    const totalLeadValue = totalLeadValueData.totalValue[0].total;
- 
-
-    const totalLeadValueElement = document.querySelector("#totalLead-won");
-    totalLeadValueElement.innerHTML = totalLeadValue;
-  } catch (error) {
-    console.error("There was a problem with the fetch operation:", error);
-  }
-}
-
-// Call the combined function to fetch and display both counts and the total lead value
-fetchDataAndDisplay();
-
-      
+      // Call the combined function to fetch and display both counts and the total lead value
+      fetchDataAndDisplay();
     </script>
   </body>
 </html>
