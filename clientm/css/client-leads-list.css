@@ -355,8 +355,8 @@ td {
 }
 .pagination {
   position: absolute;
-  top: 94%;
-  left: 650px;
+  top: 93%;
+  left: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -634,7 +634,7 @@ td {
 
 @media (min-width: 1368px) {
   .logout {
-    padding-bottom: 330px;
+    padding-bottom: 230px;
   }
   .table {
     width: 74.6%;

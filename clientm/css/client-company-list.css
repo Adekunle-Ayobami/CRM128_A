@@ -132,7 +132,9 @@ li {
   left: 89%;
   top: 19px;
 }
-
+.logout {
+  padding-bottom: 60px;
+}
 .client-bar {
   background-color: #7ac769;
   padding-right: 22px;
@@ -182,6 +184,7 @@ li {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 10;
 }
 .fa {
   position: relative;
@@ -356,8 +359,8 @@ td {
 }
 .pagination {
   position: absolute;
-  top: 89%;
-  left: 650px;
+  top: 85%;
+  left: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -648,7 +651,7 @@ td {
 
 @media (min-width: 1368px) {
   .logout {
-    padding-bottom: 350px;
+    padding-bottom: 250px;
   }
   .table {
     left: 25em;
@@ -669,6 +672,12 @@ td {
     position: relative;
     left: 7em;
   }
+  .btn {
+    left: 105.4em;
+  }
+  /* .pagination {
+    left: 70em;
+  } */
 }
 
 @media (max-width: 1366px) {
