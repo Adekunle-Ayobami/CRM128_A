@@ -435,10 +435,10 @@ td {
 .add-lead {
   position: fixed;
   top: 0;
-  right: -0.5em;
+  right: -0.7em;
   background-color: #f6f6f6;
   width: 36.8%;
-  height: 94.4%;
+  height: 96.4%;
   overflow-y: auto;
   overflow-x: hidden;
   text-align: left;
@@ -624,11 +624,10 @@ td {
 } */
 .bigbutton {
   margin-left: 150px;
-  padding: 20px 70px 10px 70px;
+  padding: 20px 70px 20px 70px;
   background-color: #7ac769;
-  color: white;
   border: none;
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -642,6 +641,43 @@ td {
   }
   .pagination {
     left: 70em;
+  }
+  .form {
+    gap: 10px;
+  }
+  .form input {
+    width: 14vw;
+  }
+  .form1 select {
+    width: 15.8vw;
+  }
+  .form2{
+    gap: 14px;
+  }
+  .form2 input {
+    width: 14.7vw;
+  }
+  .form3 select {
+    width: 32vw;
+  }
+  .form4{
+    gap: 10px;
+  }
+  .form4 input {
+    width: 14.7vw;
+  }
+  .form6 input {
+    width: 15vw;
+  }
+  .form6 select {
+    width: 15vw;
+  }
+  .form7 input {
+    width: 14.6vw;
+  }
+  .bigbutton {
+    position: relative;
+    left: 7em;
   }
 }
 
