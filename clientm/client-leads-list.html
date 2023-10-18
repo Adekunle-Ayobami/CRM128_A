@@ -465,7 +465,7 @@
             <div>
               <label>Name of Deal</label> <br />
               <input
-                id="contact_person"
+                id="name_deal"
                 type="text"
                 placeholder="Enter Deal Name"
               />
@@ -473,7 +473,7 @@
             <div>
               <label>Value</label> <br />
               <input
-                id="contact_person"
+                id="value"
                 type="text"
                 placeholder="Enter Value"
               />
@@ -483,41 +483,42 @@
           <div class="form1">
             <div>
               <label>Currency</label> <br />
-              <select name="" id="organization">
+              <select name="currency" id="currency">
                 <option value="" selected style="display: none">Select</option>
-                <option value="">Dollar</option>
-                <option value="">Pounds</option>
-                <option value="">Naira</option>
+                <option value="Dollar">Dollar</option>
+                <option value="Pounds">Pounds</option>
+                <option value="Naira">Naira</option>
               </select>
             </div>
             <div>
               <label>Status</label> <br />
-              <select name="" id="organization">
+              <select name="status" id="status">
                 <option value="" selected style="display: none">Select</option>
-                <option value="">Active</option>
-                <option value="">Inactive</option>
+                <option value="Active">active</option>
+                <option value="Inactive">in active</option>
               </select>
             </div>
           </div>
           <div class="form2">
             <div>
-              <label>Start Date</label>
-              <input id="title" type="date" placeholder="Enter title" />
+              <label>Start Date</label> 
+              <input id="start_date" type="date" placeholder="Enter title" />
             </div>
             <div style="margin-left: -50px">
-              <label>Due date</label>
-              <input id="title" type="date" placeholder="Enter title" />
+              <label>Due date</label> 
+              <input id="due_date" type="date" placeholder="Enter title" />
             </div>
           </div>
           <div class="form3">
             <div>
               <label>Qualification</label> <br />
-              <select name="" id="title">
-                <option value="">Qualified</option>
-                <option value="">Contact Made</option>
-                <option value="">Demo Scheduled</option>
-                <option value="">Proposal Made</option>
-                <option value="">Negotiations Started</option>
+              <select name="qualification" id="qualification">
+                <option value="Qualified" selected style="display: none;">Select</option>
+                <option value="Qualified">Qualified</option>
+                <option value="Contact Made">Contact Made</option>
+                <option value="Demo Scheduled">Demo Scheduled</option>
+                <option value="Proposal Made">Proposal Made</option>
+                <option value="Negotiations Started">Negotiations Started</option>
               </select>
             </div>
           </div>
@@ -525,11 +526,11 @@
           <div class="form4">
             <div>
               <label>First Name</label> <br />
-              <input id="currency" type="text" placeholder="Emmanuel" />
+              <input id="first_name" type="text" placeholder="Emmanuel" />
             </div>
             <div>
               <label>Last Name</label> <br />
-              <input id="value" type="text" placeholder="Daniels" />
+              <input id="last_name" type="text" placeholder="Daniels" />
             </div>
             <!-- <div>
               <label>Status</label> <br />
@@ -547,6 +548,14 @@
           </div>
           <div class="form5">
             <div>
+              <label>Phone</label> <br />
+              <input
+                id="phone"
+                type="text"
+                placeholder="090445675"
+              />
+            </div>
+            <div>
               <label>Email</label> <br />
               <input
                 id="email"
@@ -559,17 +568,17 @@
           <div class="form6">
             <div>
               <label>Company Name</label>
-              <input id="start_date" type="text" placeholder="DD-MM-YY" />
+              <input id="company_name" type="text" placeholder="DD-MM-YY" />
             </div>
             <div style="margin-left: -40px">
               <label>Company Category</label>
-              <select name="" id="due_date">
-                <option value="" selected style="display: none">Select</option>
-                <option value="">Agriculture</option>
-                <option value="">Education</option>
-                <option value="">Hospitality</option>
-                <option value="">IT</option>
-                <option value="">Business & Finance</option>
+              <select name="company_category" id="company_category">
+                <option value="company_category" selected style="display: none">Select</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Education">Education</option>
+                <option value="Hospitality">Hospitality</option>
+                <option value="IT">IT</option>
+                <option value="Business & Finance">Business & Finance</option>
               </select>
             </div>
           </div>
@@ -577,14 +586,14 @@
             <div>
               <label>Address</label> <br />
               <input
-                id="phone"
+                id="address"
                 type="text"
                 placeholder="Enter your Company Address"
               />
             </div>
             <div>
               <label>Website</label> <br />
-              <input id="email" type="text" />
+              <input id="website" type="text" />
             </div>
           </div>
 
@@ -845,12 +854,16 @@
         const firstValue = firstNameInputEl.value;
         const lastValue = lastNameInputEl.value;
         const qualificationValue = qualificationInputEl.value;
+        console.log("Qualification:", qualificationValue);
         const dealValue = nameDealInputEl.value;
         const companyValue = companyNameInputEl.value;
         const categoryValue = companyCategoryInputEl.value;
+        console.log("Company Category Value:", categoryValue);
         const addressValue = addressInputEl.value;
         const currencyValue = currencyInputEl.value;
+        console.log("Currency Value:", currencyValue);
         const statusValue = statusInputEl.value;
+        console.log("Status Value:", statusValue);
         const phoneValue = phoneInputEl.value;
         const emailValue = emailInputEl.value;
         const startDateValue = startInputEl.value;
@@ -877,42 +890,35 @@
         };
 
         console.log(payload);
+      
+
 
         try {
-          const httpRes = await fetch(backendURL + "/lead/addlead", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-              Authorization: `Bearer ${authToken}`,
-            },
-            body: JSON.stringify(payload),
-          });
+    const httpRes = await fetch(backendURL + "/lead/addlead", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${authToken}`,
+      },
+      body: JSON.stringify(payload),
+    });
 
-          window.location.href = "/clientm/client-leads-list.html";
+    if (!httpRes.ok) {
+      // console.error("Request failed with status:", httpRes.status);
+      const errorResponse = await httpRes.json();
+      // console.error("Error response:", errorResponse);
 
-          if (!httpRes.ok) {
-            const jsonRes = await httpRes.json();
-            // window.location.href = "./clientm/client-leads-list.html";
-            if (jsonRes.success === true) {
-              localStorage.setItem("token", jsonRes.token);
-              // window.location.href = "./clientm/client-leads-list.html";
-              localStorage.setItem(
-                "admin",
-                JSON.stringify(jsonRes.existingAdmin)
-              );
-              // window.location.href = "./clientm/client-leads-list.html";
-            } else {
-              alert("Error creating lead: " + jsonRes.message);
-            }
-          } else {
-            alert("Success: " + httpRes.statusText);
-          }
-        } catch (error) {
-          console.error("An error occurred:", Success);
-          alert("An error occurred while creating the lead.");
-        }
-      });
+      // Handle the error here (e.g., display an error message to the user).
+    } else {
+      alert("Success: " + httpRes.statusText);
+      window.location.href = "/clientm/client-leads-list.html";
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+    alert("An error occurred while creating the lead.");
+  }
+});
 
       // Function to fetch data from your API and populate the table
       async function fetchDataAndPopulateTable(pageNumber) {
