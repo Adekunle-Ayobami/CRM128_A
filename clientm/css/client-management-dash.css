@@ -219,14 +219,24 @@ li {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .table1 {
-  width: 100%;
+  width: 40vw;
   padding: 20px;
   text-align: left;
   border-collapse: collapse;
+  overflow-y: scroll;
 }
 th {
   background-color: #7ac769;
   padding: 10px;
+}
+#table-body td {
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+.ellipsis {
+  text-overflow: ellipsis;
+  width: 10px;
 }
 .list-clients {
   margin-bottom: 10px;
