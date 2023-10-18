@@ -227,6 +227,11 @@ li {
 th {
   background-color: #7ac769;
   padding: 10px;
+  font-size: 16px;
+}
+#table-body td {
+  font-size: 18px;
+  padding: 10px 30px 10px 0;
 }
 .list-clients {
   margin-bottom: 10px;
@@ -930,6 +935,13 @@ th {
     left: 23em;
     height: 38vh;
     width: 43vw;
+  }
+  .table1 th {
+    font-size: 23px;
+  }
+  #table-body td {
+    font-size: 25px;
+    padding: 10px 30px 10px 0;
   }
 }
 
