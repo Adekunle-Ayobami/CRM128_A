@@ -22,7 +22,7 @@
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-/>
+    />
   </head>
   <body>
     <header>
@@ -234,17 +234,14 @@
           <th>Website</th>
           <th>Options</th>
         </tr>
-        <tbody id="table-body">
-          
-
-        </tbody>
+        <tbody id="table-body"></tbody>
         <!-- <tr id="getAllClient"> -->
-          <!-- <td></td>
+        <!-- <td></td>
           <td></td>
           <td></td>
           <td></td>
           <td></td> -->
-          <!-- <td>
+        <!-- <td>
             <img
               class="search-icon"
               alt=""
@@ -252,7 +249,7 @@
               id="moreIcon"
             />
           </td> -->
-        </tr>
+        <!-- </tr> -->
         <!-- <tr>
           <td>Daniel & Sons Ltd.</td>
           <td>+2346478999810</td>
@@ -367,99 +364,103 @@
           </div>
         </div>
       </div>
- <!-- Overlay Pages -->
- <form action="" data-id="${client._id}" id="client-form">
-  <div class="add-lead" id="overlay">
-    <div class="lead">
-      <div style="width: 100%; font-weight: 600">Add New Company</div>
-      <img style="cursor: pointer;" src="public/close.svg" id="closeBtn" alt="" />
-    </div>
-    <div class="form form1">
-      <span style="margin-bottom: 5px">Company Name</span>
-      <input
-        type="text"
-        id="company_name"
-        placeholder="Enter company name"
-      />
-    </div>
-    <div class="form form1">
-      <span style="margin-bottom: 5px">Company Type</span>
-      <input
-        type="text"
-        id="company_type"
-        placeholder="Enter company type"
-      />
-    </div>
-    <div class="form2">
-      <div>
-        <span>Website</span> <br />
-        <div class="input-container" style="margin-top: 5px">
-          <img class="frame-icon" alt="" src="public/frame.svg" />
-          <input
-            id="website_url"
-            class="input-field1"
-            type="text"
-            name="search"
-          />
+      <!-- Overlay Pages -->
+      <form action="" data-id="${client._id}" id="client-form">
+        <div class="add-lead" id="overlay">
+          <div class="lead">
+            <div style="width: 100%; font-weight: 600">Company Info</div>
+            <img
+              style="cursor: pointer"
+              src="public/close.svg"
+              id="closeBtn"
+              alt=""
+            />
+          </div>
+          <div class="form form1">
+            <span style="margin-bottom: 5px">Company Name</span>
+            <input
+              type="text"
+              id="company_name"
+              placeholder="Enter company name"
+            />
+          </div>
+          <div class="form form1">
+            <span style="margin-bottom: 5px">Company Type</span>
+            <input
+              type="text"
+              id="company_type"
+              placeholder="Enter company type"
+            />
+          </div>
+          <div class="form2">
+            <div>
+              <span>Website</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <img class="frame-icon" alt="" src="public/frame.svg" />
+                <input
+                  id="website_url"
+                  class="input-field1"
+                  type="text"
+                  name="search"
+                />
+              </div>
+            </div>
+            <div>
+              <span>Email</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <img class="frame-icon" alt="" src="public/anotherframe.svg" />
+                <input
+                  id="email"
+                  class="input-field1"
+                  type="text"
+                  name="search"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form7">
+            <div>
+              <span>Phone Number</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <img class="call-icon" alt="" src="public/call.svg" />
+                <input
+                  id="contact"
+                  class="input-field1"
+                  type="text"
+                  name="search"
+                />
+              </div>
+            </div>
+            <div>
+              <span>status</span> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <img class="call-icon" alt="" src="public/call.svg" />
+                <input
+                  placeholder="active/inactive"
+                  id="status"
+                  class="input-field1"
+                  type="text"
+                  name="search"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-text">
+            <span>Description</span>
+            <textarea
+              style="margin-top: 5px"
+              name=""
+              id="description"
+              cols="10"
+              rows="5"
+              placeholder="Enter Description"
+            ></textarea>
+          </div>
+          <div>
+            <button type="submit" class="bigbutton">Save</button>
+          </div>
         </div>
-      </div>
-      <div>
-        <span>Email</span> <br />
-        <div class="input-container" style="margin-top: 5px">
-          <img class="frame-icon" alt="" src="public/anotherframe.svg" />
-          <input
-            id="email"
-            class="input-field1"
-            type="text"
-            name="search"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="form7">
-      <div>
-        <span>Phone Number</span> <br />
-        <div class="input-container" style="margin-top: 5px">
-          <img class="call-icon" alt="" src="public/call.svg" />
-          <input
-            id="contact"
-            class="input-field1"
-            type="text"
-            name="search"
-          />
-        </div>
-      </div>
-      <div>
-        <span>status</span> <br />
-        <div class="input-container" style="margin-top: 5px">
-          <img class="call-icon" alt="" src="public/call.svg" />
-          <input
-            placeholder="active/inactive"
-            id="status"
-            class="input-field1"
-            type="text"
-            name="search"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="form-text">
-      <span>Description</span>
-      <textarea
-        style="margin-top: 5px"
-        name=""
-        id="description"
-        cols="10"
-        rows="5"
-        placeholder="Enter Description"
-      ></textarea>
-    </div>
-    <div>
-      <button type="submit" class="bigbutton">Submit</button>
-    </div>
-  </div>
-</form>
-
+      </form>
     </section>
     <footer>
       <div class="copyright-2023-crm128-parent">
@@ -557,8 +558,6 @@
       </div>
     </div>
 
-
-    
     <script src="../main.js"></script>
     <script>
       const hrToggle = document.getElementById("hr-toggle");
@@ -626,14 +625,14 @@
         .addEventListener("click", function () {
           document.getElementById("overlay").style.display = "block";
         });
-        document
-  .getElementById("closeBtn")
-  .addEventListener("click", function () {
-    document.getElementById("overlay").style.display = "none";
-    setTimeout(function () {
-      window.location.reload("/clientm/client-company-list.html");
-    }, 100); // Adjust the timeout duration as needed
-  });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+          setTimeout(function () {
+            window.location.reload("/clientm/client-company-list.html");
+          }, 100); // Adjust the timeout duration as needed
+        });
 
       document
         .getElementById("overlayBtn2")
@@ -802,38 +801,46 @@
       const authToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU"; // Replace with your authentication token
 
+      // Function to fetch data from your API and populate the table
+      async function fetchDataAndPopulateTable(pageNumber) {
+        try {
+          const response = await fetch(`${backendURL}/client/getallclients`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          });
 
-// Function to fetch data from your API and populate the table
-async function fetchDataAndPopulateTable(pageNumber) {
-  try {
-    const response = await fetch(`${backendURL}/client/getallclients`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
 
-    if (!response.ok) {
-      throw new Error(`API response was not ok (${response.status})`);
-    }
+          const data = await response.json();
 
-    const data = await response.json();
+          // Reverse the order of data.clients to show the newest data at the top
+          data.clients.reverse();
 
-    // Reverse the order of data.clients to show the newest data at the top
-    data.clients.reverse();
-
-    const tableBody = document.getElementById('table-body');
-    while (tableBody.firstChild) {
-      tableBody.removeChild(tableBody.firstChild);
-    }
-    const cardsToDisplay = 7;
-    console.log(data.clients.slice(((pageNumber * cardsToDisplay) - cardsToDisplay), pageNumber * cardsToDisplay));
-    data.clients.slice(((pageNumber * cardsToDisplay) - cardsToDisplay), pageNumber * cardsToDisplay)
-      .forEach((client) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
+          const tableBody = document.getElementById("table-body");
+          while (tableBody.firstChild) {
+            tableBody.removeChild(tableBody.firstChild);
+          }
+          const cardsToDisplay = 7;
+          console.log(
+            data.clients.slice(
+              pageNumber * cardsToDisplay - cardsToDisplay,
+              pageNumber * cardsToDisplay
+            )
+          );
+          data.clients
+            .slice(
+              pageNumber * cardsToDisplay - cardsToDisplay,
+              pageNumber * cardsToDisplay
+            )
+            .forEach((client) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
           <td>${client.company_name}</td>
           <td>${client.contact}</td>
           <td>${client.company_type}</td>
@@ -841,9 +848,7 @@ async function fetchDataAndPopulateTable(pageNumber) {
           <td>${client.website_url}</td>
           <td style="display: flex; gap: 5px;">
 
-            <a href="../clientm/clients-company-profile.html?id=${client._id}">  <i class="fa fa-eye" data-id="${client._id}" id="password-eye" aria-hidden="true"></i>
-
-</a>
+            <a href="../clientm/clients-company-profile.html?id=${client._id}">  <i class="fa fa-eye" data-id="${client._id}" id="password-eye" aria-hidden="true"></i></a>
             
    
             <i data-id="${client._id}" class="fa-solid fa-pen-to-square fa-fade edit-button"></i>
@@ -860,46 +865,46 @@ async function fetchDataAndPopulateTable(pageNumber) {
          
           </td>
         `;
-        tableBody.appendChild(row);
-            
-        // Add event listener to the delete button within this row
-        const deleteButton = row.querySelector(".delete-button");
-        deleteButton.addEventListener("click", (event) => {
-          const clientId = event.target.getAttribute("data-id");
-          deleteClient(clientId); // Call the deleteClient function with the lead ID
-        });
+              tableBody.appendChild(row);
+
+              // Add event listener to the delete button within this row
+              const deleteButton = row.querySelector(".delete-button");
+              deleteButton.addEventListener("click", (event) => {
+                const clientId = event.target.getAttribute("data-id");
+                deleteClient(clientId); // Call the deleteClient function with the lead ID
+              });
+            });
+
+          // Add event listeners to edit buttons
+          const editButtons = document.querySelectorAll(".edit-button");
+          editButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+              const clientId = event.target.getAttribute("data-id");
+              editClient(clientId);
+            });
+          });
+        } catch (error) {
+          console.error("There was a problem with the API request:", error);
+        }
+      }
+
+      // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchDataAndPopulateTable(1);
       });
 
-    // Add event listeners to edit buttons
-    const editButtons = document.querySelectorAll(".edit-button");
-    editButtons.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        const clientId = event.target.getAttribute("data-id");
-        editClient(clientId);
-      });
-    });
-  } catch (error) {
-    console.error("There was a problem with the API request:", error);
-  }
-}
+      // Plain javascript ot conne ct with the backend.
 
-// Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  fetchDataAndPopulateTable(1);
-});
+      const clientfromEl = document.querySelector("#client-form");
+      const companyInput = document.querySelector("#company_name");
+      const companyTypeInput = document.querySelector("#company_type");
+      const websiteInput = document.querySelector("#website_url");
+      const emailInput = document.querySelector("#email");
+      const contactInput = document.querySelector("#contact");
+      const statusInput = document.querySelector("#status");
+      const descriptionInput = document.querySelector("#description");
 
-       // Plain javascript ot conne ct with the backend.
-
-       const clientfromEl = document.querySelector("#client-form");
-       const companyInput = document.querySelector("#company_name");
-       const companyTypeInput = document.querySelector("#company_type");
-       const websiteInput = document.querySelector("#website_url");
-       const emailInput = document.querySelector("#email");
-       const contactInput = document.querySelector("#contact");
-       const statusInput = document.querySelector("#status");
-       const descriptionInput = document.querySelector("#description");
- 
-       clientfromEl.addEventListener("submit", async function (event) {
+      clientfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
         console.log("submitting");
         const companyValue = companyInput.value;
@@ -920,31 +925,31 @@ document.addEventListener("DOMContentLoaded", () => {
           description: descriptionValue,
         };
         console.log(payload);
- 
-         const httpRes = await fetch(backendURl + "/client/addclient", {
-           method: "POST",
-           headers: {
-             "Content-Type": "application/json",
-             Accept: "application/json",
-             Authorization: `Bearer ${authToken}`,
-           },
-           body: JSON.stringify(payload),
-         });
-         window.location.href = "/clientm/client-company-list.html";
-         const jsonRes = await httpRes.json();
- 
-         if (jsonRes.success === true) {
-           console.log(jsonRes);
-           localStorage.setItem("token", jsonRes.token);
-           localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
- 
-           console.log(jsonRes.token);
-         } else {
-           alert(" " + jsonRes.message);
-         }
-       });
 
-       // Function to edit a lead by ID
+        const httpRes = await fetch(backendURl + "/client/addclient", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${authToken}`,
+          },
+          body: JSON.stringify(payload),
+        });
+        window.location.href = "/clientm/client-company-list.html";
+        const jsonRes = await httpRes.json();
+
+        if (jsonRes.success === true) {
+          console.log(jsonRes);
+          localStorage.setItem("token", jsonRes.token);
+          localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+
+          console.log(jsonRes.token);
+        } else {
+          alert(" " + jsonRes.message);
+        }
+      });
+
+      // Function to edit a lead by ID
       async function editClient(clientId) {
         try {
           const response = await fetch(
@@ -970,7 +975,8 @@ document.addEventListener("DOMContentLoaded", () => {
             clientData.client.company_name;
           document.getElementById("company_type").value =
             clientData.client.company_type;
-          document.getElementById("website_url").value = clientData.client.website_url;
+          document.getElementById("website_url").value =
+            clientData.client.website_url;
           document.getElementById("email").value = clientData.client.email;
           document.getElementById("contact").value = clientData.client.contact;
           document.getElementById("status").value = clientData.client.status;
@@ -1008,13 +1014,14 @@ document.addEventListener("DOMContentLoaded", () => {
       async function updateClient(clientId) {
         try {
           const companyValue = document.getElementById("company_name").value;
-          const companyTypeValue = document.getElementById("company_type").value;
+          const companyTypeValue =
+            document.getElementById("company_type").value;
           const websiteValue = document.getElementById("website_url").value;
           const emailValue = document.getElementById("email").value;
           const contactValue = document.getElementById("contact").value;
           const statusValue = document.getElementById("status").value;
           const descriptionValue = document.getElementById("description").value;
-      
+
           const payload = {
             company_name: companyValue,
             company_type: companyTypeValue,
@@ -1024,7 +1031,7 @@ document.addEventListener("DOMContentLoaded", () => {
             status: statusValue,
             description: descriptionValue,
           };
-      
+
           const httpRes = await fetch(
             `${backendURL}/client/updateclient/${clientId}`,
             {
@@ -1037,7 +1044,7 @@ document.addEventListener("DOMContentLoaded", () => {
               body: JSON.stringify(payload),
             }
           );
-      
+
           if (!httpRes.ok) {
             const jsonRes = await httpRes.json();
             if (jsonRes.success === true) {
@@ -1050,11 +1057,11 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             alert("updated: " + httpRes.statusText);
           }
-       window.location.href = "/clientm/client-company-list.html";
+          window.location.href = "/clientm/client-company-list.html";
           // Hide the overlay
           const overlay = document.getElementById("overlay");
           overlay.style.display = "none";
-      
+
           // Refresh the table
           fetchDataAndPopulateTable(1);
         } catch (error) {
@@ -1062,7 +1069,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alert("An error occurred while updating the client.");
         }
       }
-      
+
       // Add event listener to the client form for updating clients
       clientfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -1073,102 +1080,104 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log("Create new client logic here");
         }
       });
-async function deleteClient(clientId) {
-  try {
-    const httpRes = await fetch(`${backendURL}/client/deleteclient/${clientId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
+      async function deleteClient(clientId) {
+        try {
+          const httpRes = await fetch(
+            `${backendURL}/client/deleteclient/${clientId}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-    if (httpRes.ok) {
-      // Lead deleted successfully
-      alert("Client deleted successfully");
-      window.location.href = "/clientm/client-company-list.html";
-      // Remove the deleted row from the table
-      const deletedRow = document.querySelector(`tr[data-id="${clientId}"]`);
-      if (deletedRow) {
-        deletedRow.remove();
+          if (httpRes.ok) {
+            // Lead deleted successfully
+            alert("Client deleted successfully");
+            window.location.href = "/clientm/client-company-list.html";
+            // Remove the deleted row from the table
+            const deletedRow = document.querySelector(
+              `tr[data-id="${clientId}"]`
+            );
+            if (deletedRow) {
+              deletedRow.remove();
+            }
+          } else {
+            // Handle errors
+            const jsonRes = await httpRes.json();
+            if (jsonRes.success === false && jsonRes.message) {
+              alert("Error deleting lead: " + jsonRes.message);
+            } else {
+              alert(
+                "Error deleting lead. Please check your network connection."
+              );
+            }
+          }
+        } catch (error) {
+          console.error("An error occurred while deleting the lead:", error);
+          alert("An error occurred while deleting the lead.");
+        }
       }
-    } else {
-      // Handle errors
-      const jsonRes = await httpRes.json();
-      if (jsonRes.success === false && jsonRes.message) {
-        alert("Error deleting lead: " + jsonRes.message);
-      } else {
-        alert("Error deleting lead. Please check your network connection.");
-      }
-    }
-  } catch (error) {
-    console.error("An error occurred while deleting the lead:", error);
-    alert("An error occurred while deleting the lead.");
-  }
-}
 
-// Get all elements with class "num"
-const numElements = document.querySelectorAll(".num");
+      // Get all elements with class "num"
+      const numElements = document.querySelectorAll(".num");
 
-// Add a click event listener to each "num" element
-numElements.forEach((numElement) => {
-numElement.addEventListener("click", () => {                                          
-    // Reset all elements to "page-disabled" class
-    numElements.forEach((element) => {
-      element.parentElement.parentElement.classList.remove("page-active");
-      element.parentElement.classList.remove("page-active1");
-      element.parentElement.parentElement.classList.add("page-disabled");
-       element.parentElement.classList.add("page-default1")
-    });
-console.log(numElement.parentElement.parentElement.classList)
-    // Set the clicked element to "page-active" class
-    numElement.parentElement.parentElement.classList.remove("page-disabled");
-    numElement.parentElement.classList.remove("page-default1")
-    numElement.parentElement.parentElement.classList.add("page-active");
-    numElement.parentElement.classList.add("page-active1");
-    // Log the number
-    const clickedNumber = numElement.textContent;
-    fetchDataAndPopulateTable(parseInt(clickedNumber));
+      // Add a click event listener to each "num" element
+      numElements.forEach((numElement) => {
+        numElement.addEventListener("click", () => {
+          // Reset all elements to "page-disabled" class
+          numElements.forEach((element) => {
+            element.parentElement.parentElement.classList.remove("page-active");
+            element.parentElement.classList.remove("page-active1");
+            element.parentElement.parentElement.classList.add("page-disabled");
+            element.parentElement.classList.add("page-default1");
+          });
+          console.log(numElement.parentElement.parentElement.classList);
+          // Set the clicked element to "page-active" class
+          numElement.parentElement.parentElement.classList.remove(
+            "page-disabled"
+          );
+          numElement.parentElement.classList.remove("page-default1");
+          numElement.parentElement.parentElement.classList.add("page-active");
+          numElement.parentElement.classList.add("page-active1");
+          // Log the number
+          const clickedNumber = numElement.textContent;
+          fetchDataAndPopulateTable(parseInt(clickedNumber));
 
-    console.log(`Clicked number: ${clickedNumber}`);
-  });
-});
-
-       
- 
-       
+          console.log(`Clicked number: ${clickedNumber}`);
+        });
+      });
 
       //       document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
 
-// async function fetchDataAndPopulateTable() {
-//     const apiUrl = 'https://jsonplaceholder.typicode.com/users'; // Example API URL
+      // async function fetchDataAndPopulateTable() {
+      //     const apiUrl = 'https://jsonplaceholder.typicode.com/users'; // Example API URL
 
-//     try {
-//         const response = await fetch(apiUrl);
+      //     try {
+      //         const response = await fetch(apiUrl);
 
-//         if (!response.ok) {
-//             throw new Error('Network response was not ok');
-//         }
+      //         if (!response.ok) {
+      //             throw new Error('Network response was not ok');
+      //         }
 
-//         const data = await response.json();
-//         const tableBody = document.getElementById('table-body');
+      //         const data = await response.json();
+      //         const tableBody = document.getElementById('table-body');
 
-//         data.forEach((person) => {
-//             const row = tableBody.insertRow();
-//             const cell1 = row.insertCell(0);
-//             const cell2 = row.insertCell(1);
+      //         data.forEach((person) => {
+      //             const row = tableBody.insertRow();
+      //             const cell1 = row.insertCell(0);
+      //             const cell2 = row.insertCell(1);
 
-//             cell1.textContent = person.name;
-//             cell2.textContent = person.email;
-//         });
-//     } catch (error) {
-//         console.error('Error fetching and populating data:', error);
-//     }
-// }
+      //             cell1.textContent = person.name;
+      //             cell2.textContent = person.email;
+      //         });
+      //     } catch (error) {
+      //         console.error('Error fetching and populating data:', error);
+      //     }
+      // }
     </script>
   </body>
 </html>
-
-
-

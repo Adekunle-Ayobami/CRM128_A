@@ -213,95 +213,18 @@
         </div>
       </div>
       <!--  -->
-      <div class="overview-client-management-inner">
-        <div class="header-list-parent">
-          <div class="header-list">
-            <div class="list-of-task">List of Clients</div>
-            <!-- <div class="chip">
-              <img class="plus-icon" alt="" src="./public/plus.svg" />
-
-              <div class="add-task">Add Task</div>
-            </div> -->
-          </div>
-          <div class="group-parent">
-            <div class="frame-wrapper">
-              <div class="task-parent">
-                <div>Task</div>
-                <div>Project</div>
-                <div>Unit</div>
-                <div>Assigned to</div>
-                <div>Due Date</div>
-              </div>
-            </div>
-            <div class="frame-container">
-              <div
-                class="installation-of-a-mechanical-d-parent"
-                style="margin-top: 30px"
-              >
-                <div class="installation-of-a">
-                  Installation of a mechanical device
-                </div>
-                <div class="atlantic-hall-school">Atlantic Hall School</div>
-                <div class="mechanical">Mechanical</div>
-                <div class="black-marvin">Black, Marvin</div>
-                <div class="jun-2023">30 Jun 2023</div>
-              </div>
-            </div>
-            <div class="frame-div">
-              <div class="installation-of-a-mechanical-d-parent">
-                <div class="installation-of-a">
-                  Construction of a mechanical device
-                </div>
-                <div class="atlantic-hall-school">Emzor Pham</div>
-                <div class="mechanical">Electrical</div>
-                <div class="black-marvin">Henry, Arthur</div>
-                <div class="jun-2023">30 Jun 2023</div>
-              </div>
-            </div>
-            <div class="frame-div">
-              <div class="installation-of-a-mechanical-d-parent">
-                <div class="installation-of-a">Roofing</div>
-                <div class="atlantic-hall-school">Atlantic Hall School</div>
-                <div class="mechanical">Mechanical</div>
-                <div class="black-marvin">Miles, Esther</div>
-                <div class="jun-2023">30 Jun 2023</div>
-              </div>
-            </div>
-            <div class="frame-div">
-              <div class="installation-of-a-mechanical-d-parent">
-                <div class="installation-of-a">
-                  Installation of a mechanical device
-                </div>
-                <div class="atlantic-hall-school">Atlantic Hall School</div>
-                <div class="mechanical">Mechanical</div>
-                <div class="black-marvin">Cooper, Kristin</div>
-                <div class="jun-2023">30 Jun 2023</div>
-              </div>
-            </div>
-            <div class="frame-div">
-              <div class="installation-of-a-mechanical-d-parent">
-                <div class="installation-of-a">
-                  Installation of a mechanical device
-                </div>
-                <div class="atlantic-hall-school">Atlantic Hall School</div>
-                <div class="mechanical">Mechanical</div>
-                <div class="black-marvin">Cooper, Kristin</div>
-                <div class="jun-2023">30 Jun 2023</div>
-              </div>
-            </div>
-            <div class="frame-div">
-              <div class="installation-of-a-mechanical-d-parent">
-                <div class="installation-of-a">
-                  Installation of a mechanical device
-                </div>
-                <div class="atlantic-hall-school">Atlantic Hall School</div>
-                <div class="mechanical">Mechanical</div>
-                <div class="black-marvin">Cooper, Kristin</div>
-                <div class="jun-2023">30 Jun 2023</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="overview-box">
+        <div class="list-clients">List of Clients</div>
+        <table class="table1">
+          <tr>
+            <th>Company Name</th>
+            <th>Contact</th>
+            <th>Company Type</th>
+            <th>Email</th>
+            <th>Website</th>
+          </tr>
+          <tbody id="table-body"></tbody>
+        </table>
       </div>
 
       <!-- Calender -->
@@ -672,6 +595,154 @@
 
       // Call the combined function to fetch and display both counts and the total lead value
       fetchDataAndDisplay();
+
+      // Function to fetch data from your API and populate the table
+      async function fetchDataAndPopulateTable(pageNumber) {
+        try {
+          const response = await fetch(`${backendURL}/client/getallclients`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const data = await response.json();
+
+          // Reverse the order of data.clients to show the newest data at the top
+          data.clients.reverse();
+
+          const tableBody = document.getElementById("table-body");
+          while (tableBody.firstChild) {
+            tableBody.removeChild(tableBody.firstChild);
+          }
+          const cardsToDisplay = 7;
+          console.log(
+            data.clients.slice(
+              pageNumber * cardsToDisplay - cardsToDisplay,
+              pageNumber * cardsToDisplay
+            )
+          );
+          data.clients
+            .slice(
+              pageNumber * cardsToDisplay - cardsToDisplay,
+              pageNumber * cardsToDisplay
+            )
+            .forEach((client) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
+          <td>${client.company_name}</td>
+          <td>${client.contact}</td>
+          <td>${client.company_type}</td>
+          <td>${client.email}</td>
+          <td>${client.website_url}</td>
+          <td style="display: flex; gap: 5px;">
+
+            <a href="../clientm/clients-company-profile.html?id=${client._id}">  <i class="fa fa-eye" data-id="${client._id}" id="password-eye" aria-hidden="true"></i></a>
+            
+   
+            <i data-id="${client._id}" class="fa-solid fa-pen-to-square fa-fade edit-button"></i>
+               
+            <img
+              class="search-icon delete-button"
+              alt=""
+              style="position: relative; left: 10px; top: -1px; cursor: pointer;"
+              src="./public/Delete.svg"
+              id="moreIcon"
+              data-id="${client._id}"
+            />
+
+         
+          </td>
+        `;
+              tableBody.appendChild(row);
+
+              // Add event listener to the delete button within this row
+              const deleteButton = row.querySelector(".delete-button");
+              deleteButton.addEventListener("click", (event) => {
+                const clientId = event.target.getAttribute("data-id");
+                deleteClient(clientId); // Call the deleteClient function with the lead ID
+              });
+            });
+
+          // Add event listeners to edit buttons
+          const editButtons = document.querySelectorAll(".edit-button");
+          editButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+              const clientId = event.target.getAttribute("data-id");
+              editClient(clientId);
+            });
+          });
+        } catch (error) {
+          console.error("There was a problem with the API request:", error);
+        }
+      }
+
+      // Call the fetchDataAndPopulateTable function to fetch and populate the table when the page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchDataAndPopulateTable(1);
+      });
+
+      // Plain javascript ot conne ct with the backend.
+
+      const clientfromEl = document.querySelector("#client-form");
+      const companyInput = document.querySelector("#company_name");
+      const companyTypeInput = document.querySelector("#company_type");
+      const websiteInput = document.querySelector("#website_url");
+      const emailInput = document.querySelector("#email");
+      const contactInput = document.querySelector("#contact");
+      const statusInput = document.querySelector("#status");
+      const descriptionInput = document.querySelector("#description");
+
+      clientfromEl.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        console.log("submitting");
+        const companyValue = companyInput.value;
+        const companyTypeValue = companyTypeInput.value;
+        const websiteValue = websiteInput.value;
+        const emailValue = emailInput.value;
+        const contactValue = contactInput.value;
+        const statusValue = statusInput.value;
+        const descriptionValue = descriptionInput.value;
+
+        const payload = {
+          company_name: companyValue,
+          company_type: companyTypeValue,
+          website_url: websiteValue,
+          email: emailValue,
+          contact: contactValue,
+          status: statusValue,
+          description: descriptionValue,
+        };
+        console.log(payload);
+
+        const httpRes = await fetch(backendURl + "/client/addclient", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${authToken}`,
+          },
+          body: JSON.stringify(payload),
+        });
+        window.location.href = "/clientm/client-company-list.html";
+        const jsonRes = await httpRes.json();
+
+        if (jsonRes.success === true) {
+          console.log(jsonRes);
+          localStorage.setItem("token", jsonRes.token);
+          localStorage.setItem("admin", JSON.stringify(jsonRes.existingAdmin));
+
+          console.log(jsonRes.token);
+        } else {
+          alert(" " + jsonRes.message);
+        }
+      });
     </script>
   </body>
 </html>

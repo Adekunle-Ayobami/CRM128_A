@@ -453,7 +453,7 @@
       <form action="#" id="lead-form">
         <div class="add-lead" id="overlay" style="display: none">
           <div class="lead">
-            <div style="width: 100%; font-weight: 600">Add New Lead</div>
+            <div style="width: 100%; font-weight: 600">Lead Info</div>
             <img
               style="cursor: pointer"
               src="public/close.svg"
@@ -464,19 +464,11 @@
           <div class="form">
             <div>
               <label>Name of Deal</label> <br />
-              <input
-                id="name_deal"
-                type="text"
-                placeholder="Enter Deal Name"
-              />
+              <input id="name_deal" type="text" placeholder="Enter Deal Name" />
             </div>
             <div>
               <label>Value</label> <br />
-              <input
-                id="value"
-                type="text"
-                placeholder="Enter Value"
-              />
+              <input id="value" type="text" placeholder="Enter Value" />
             </div>
           </div>
 
@@ -501,11 +493,11 @@
           </div>
           <div class="form2">
             <div>
-              <label>Start Date</label> 
+              <label>Start Date</label>
               <input id="start_date" type="date" placeholder="Enter title" />
             </div>
             <div style="margin-left: -50px">
-              <label>Due date</label> 
+              <label>Due date</label>
               <input id="due_date" type="date" placeholder="Enter title" />
             </div>
           </div>
@@ -513,12 +505,16 @@
             <div>
               <label>Qualification</label> <br />
               <select name="qualification" id="qualification">
-                <option value="Qualified" selected style="display: none;">Select</option>
+                <option value="Qualified" selected style="display: none">
+                  Select
+                </option>
                 <option value="Qualified">Qualified</option>
                 <option value="Contact Made">Contact Made</option>
                 <option value="Demo Scheduled">Demo Scheduled</option>
                 <option value="Proposal Made">Proposal Made</option>
-                <option value="Negotiations Started">Negotiations Started</option>
+                <option value="Negotiations Started">
+                  Negotiations Started
+                </option>
               </select>
             </div>
           </div>
@@ -549,11 +545,7 @@
           <div class="form5">
             <div>
               <label>Phone</label> <br />
-              <input
-                id="phone"
-                type="text"
-                placeholder="090445675"
-              />
+              <input id="phone" type="text" placeholder="090445675" />
             </div>
             <div>
               <label>Email</label> <br />
@@ -573,7 +565,9 @@
             <div style="margin-left: -40px">
               <label>Company Category</label>
               <select name="company_category" id="company_category">
-                <option value="company_category" selected style="display: none">Select</option>
+                <option value="company_category" selected style="display: none">
+                  Select
+                </option>
                 <option value="Agriculture">Agriculture</option>
                 <option value="Education">Education</option>
                 <option value="Hospitality">Hospitality</option>
@@ -890,35 +884,33 @@
         };
 
         console.log(payload);
-      
-
 
         try {
-    const httpRes = await fetch(backendURL + "/lead/addlead", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-      body: JSON.stringify(payload),
-    });
+          const httpRes = await fetch(backendURL + "/lead/addlead", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+            body: JSON.stringify(payload),
+          });
 
-    if (!httpRes.ok) {
-      // console.error("Request failed with status:", httpRes.status);
-      const errorResponse = await httpRes.json();
-      // console.error("Error response:", errorResponse);
+          if (!httpRes.ok) {
+            // console.error("Request failed with status:", httpRes.status);
+            const errorResponse = await httpRes.json();
+            // console.error("Error response:", errorResponse);
 
-      // Handle the error here (e.g., display an error message to the user).
-    } else {
-      alert("Success: " + httpRes.statusText);
-      window.location.href = "/clientm/client-leads-list.html";
-    }
-  } catch (error) {
-    console.error("An error occurred:", error);
-    alert("An error occurred while creating the lead.");
-  }
-});
+            // Handle the error here (e.g., display an error message to the user).
+          } else {
+            alert("Success: " + httpRes.statusText);
+            window.location.href = "/clientm/client-leads-list.html";
+          }
+        } catch (error) {
+          console.error("An error occurred:", error);
+          alert("An error occurred while creating the lead.");
+        }
+      });
 
       // Function to fetch data from your API and populate the table
       async function fetchDataAndPopulateTable(pageNumber) {
