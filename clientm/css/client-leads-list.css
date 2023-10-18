@@ -679,6 +679,16 @@ td {
     position: relative;
     left: 7em;
   }
+  .frame-group {
+    left: 23em;
+  }
+  .btn {
+    left: 105em;
+  }
+  .table {
+    top: 5em;
+    left: 24em;
+  }
 }
 
 @media (max-width: 1366px) {
