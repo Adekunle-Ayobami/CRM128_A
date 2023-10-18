@@ -219,24 +219,14 @@ li {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .table1 {
-  width: 40vw;
+  width: 100%;
   padding: 20px;
   text-align: left;
   border-collapse: collapse;
-  overflow-y: scroll;
 }
 th {
   background-color: #7ac769;
   padding: 10px;
-}
-#table-body td {
-  padding: 10px;
-  text-align: left;
-  font-weight: 600;
-}
-.ellipsis {
-  text-overflow: ellipsis;
-  width: 10px;
 }
 .list-clients {
   margin-bottom: 10px;
@@ -922,7 +912,7 @@ th {
     font-size: 18px;
   }
   .calendar {
-    top: 25em;
+    top: 23em;
     left: 79em;
     width: 530px;
   }
@@ -934,6 +924,12 @@ th {
   }
   .header-list {
     width: 91%;
+  }
+  .overview-box {
+    top: 23em;
+    left: 23em;
+    height: 38vh;
+    width: 43vw;
   }
 }
 
