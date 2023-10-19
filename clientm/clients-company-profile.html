@@ -76,7 +76,7 @@
             <a href="../clientm/client-company-list.html"
               ><li class="selected">Client Data</li></a
             >
-            <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
+            <a href="../clientm/client-leads-list.html"><li>Leads</li></a>
           </ul>
         </div>
         <div class="side-tab">
@@ -227,41 +227,41 @@
           <table class="table">
             <tr>
               <th rowspan="3"><span class="ds" id="companyInitials"></span></th>
-          </tr>
-            <tr>
-                <td><div class="daniel-sons" id="company_name"></div></td>
             </tr>
             <tr>
-                <td>
-                    <div style="display: flex; flex-direction: column">
-                        <span>Company Type</span>
-                        <span style="font-weight: 600" id="companyType"></span>
-                        <br />
-                        <span>Email</span>
-                        <span style="font-weight: 600" id="email"></span>
-                    </div>
-                </td>
-                <td>
-                    <div style="display: flex; flex-direction: column">
-                        <span>Physical Address</span>
-                        <span style="font-weight: 600" id="description"></span>
-                        <br />
-                        <span>Website</span>
-                        <span style="font-weight: 600" id="website"></span>
-                    </div>
-                </td>
-                <td>
-                    <div style="display: flex; flex-direction: column">
-                        <span>Status</span>
-                        <span style="font-weight: 600" id="status"></span>
-                        <br />
-                        <span>Mobile Number</span>
-                        <span style="font-weight: 600" id="contact"></span>
-                    </div>
-                </td>
+              <td><div class="daniel-sons" id="company_name"></div></td>
             </tr>
-        </table>
-      </body>
+            <tr>
+              <td>
+                <div style="display: flex; flex-direction: column">
+                  <span>Company Type</span>
+                  <span style="font-weight: 600" id="companyType"></span>
+                  <br />
+                  <span>Email</span>
+                  <span style="font-weight: 600" id="email"></span>
+                </div>
+              </td>
+              <td>
+                <div style="display: flex; flex-direction: column">
+                  <span>Physical Address</span>
+                  <span style="font-weight: 600" id="description"></span>
+                  <br />
+                  <span>Website</span>
+                  <span style="font-weight: 600" id="website"></span>
+                </div>
+              </td>
+              <td>
+                <div style="display: flex; flex-direction: column">
+                  <span>Status</span>
+                  <span style="font-weight: 600" id="status"></span>
+                  <br />
+                  <span>Mobile Number</span>
+                  <span style="font-weight: 600" id="contact"></span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </body>
       </div>
       <!-- <div>
         <span class="ds">DS</span>
@@ -373,8 +373,8 @@
         hrChevronIcon5.classList.toggle("rotate");
       });
 
-       // check if logged in
-       if (localStorage.getItem("token")) {
+      // check if logged in
+      if (localStorage.getItem("token")) {
         console.log("already logged in");
       } else {
         // window.location.href = "/login.html";
@@ -387,84 +387,95 @@
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
-const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
 
-async function fetchData(url, options) {
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) {
-      throw new Error(`Network response was not ok (${response.status})`);
-    }
-    return response.json();
-  } catch (error) {
-    console.error("There was a problem with the fetch operation:", error);
-    return null;
-  }
-}
+      async function fetchData(url, options) {
+        try {
+          const response = await fetch(url, options);
+          if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.status})`);
+          }
+          return response.json();
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+          return null;
+        }
+      }
 
-async function displayData(elementId, data) {
-  const element = document.querySelector(elementId);
-  if (element) {
-    element.innerHTML = data;
-  }
-}
+      async function displayData(elementId, data) {
+        const element = document.querySelector(elementId);
+        if (element) {
+          element.innerHTML = data;
+        }
+      }
 
-async function fetchClientData(clientId) {
-    try {
-        const response = await fetch(`${backendURL}/client/getsingleclient/${clientId}`, {
-            method: "GET",
-            headers: {
+      async function fetchClientData(clientId) {
+        try {
+          const response = await fetch(
+            `${backendURL}/client/getsingleclient/${clientId}`,
+            {
+              method: "GET",
+              headers: {
                 "Content-Type": "application/json",
                 Accept: "application json",
                 Authorization: `Bearer ${authToken}`,
-            },
-        });
+              },
+            }
+          );
 
-        if (!response.ok) {
+          if (!response.ok) {
             throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const clientData = await response.json();
+          return clientData;
+        } catch (error) {
+          console.error("An error occurred while fetching client data:", error);
+          return null;
+        }
+      }
+
+      // Function to populate the profile page with client data
+      async function populateProfilePage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const clientId = urlParams.get("id"); // Get the client ID from the URL
+
+        if (!clientId) {
+          console.error("Client ID not provided in the URL.");
+          return;
         }
 
-        const clientData = await response.json();
-        return clientData;
-    } catch (error) {
-        console.error("An error occurred while fetching client data:", error);
-        return null;
-    }
-}
+        const clientData = await fetchClientData(clientId);
 
-// Function to populate the profile page with client data
-async function populateProfilePage() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const clientId = urlParams.get("id"); // Get the client ID from the URL
+        if (clientData) {
+          document.getElementById("company_name").textContent =
+            clientData.client.company_name;
+          document.getElementById("companyType").textContent =
+            clientData.client.company_type;
+          document.getElementById("email").textContent =
+            clientData.client.email;
+          document.getElementById("description").textContent =
+            clientData.client.description;
+          document.getElementById("website").textContent =
+            clientData.client.website_url;
+          document.getElementById("status").textContent =
+            clientData.client.status;
+          document.getElementById("contact").textContent =
+            clientData.client.contact;
+          const companyInitials = clientData.client.company_name.slice(0, 2);
+          document.getElementById("companyInitials").textContent =
+            companyInitials;
+        } else {
+          // Handle the case where data couldn't be fetched
+          console.error("Failed to fetch client data.");
+        }
+      }
 
-    if (!clientId) {
-        console.error("Client ID not provided in the URL.");
-        return;
-    }
-
-    const clientData = await fetchClientData(clientId);
-
-    if (clientData) {
-        document.getElementById("company_name").textContent = clientData.client.company_name;
-        document.getElementById("companyType").textContent = clientData.client.company_type;
-        document.getElementById("email").textContent = clientData.client.email;
-        document.getElementById("description").textContent = clientData.client.description;
-        document.getElementById("website").textContent = clientData.client.website_url;
-        document.getElementById("status").textContent = clientData.client.status;
-        document.getElementById("contact").textContent = clientData.client.contact;
-        const companyInitials = clientData.client.company_name.slice(0, 2);
-        document.getElementById("companyInitials").textContent = companyInitials;
-    } else {
-        // Handle the case where data couldn't be fetched
-        console.error("Failed to fetch client data.");
-    }
-}
-
-// Call the function to populate the profile page when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-    populateProfilePage();
-});
-
+      // Call the function to populate the profile page when the page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        populateProfilePage();
+      });
     </script>
   </body>
 </html>
