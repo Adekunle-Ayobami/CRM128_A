@@ -228,16 +228,16 @@
         </div>
         <hr class="hr" />
         <!-- First Input -->
-        <form action="" id="leadForm">
+        <form action="" id="clientForm">
           <div class="input">
             <div class="company">
               <label class="naming">Company Name* :</label>
               <input
                 class="expand3"
                 type="text"
-                name="name_deal"
-                id="name_deal"
-                placeholder="investment"
+                name="company_name"
+                id="company_name"
+                placeholder="Shola Investment"
               />
             </div>
             <div class="company">
@@ -245,9 +245,9 @@
               <input
                 class="expand4"
                 type="text"
-                name="name_deal"
-                id="name_deal"
-                placeholder="investment"
+                name="company_type"
+                id="company_type"
+                placeholder="Private"
               />
             </div>
             <div class="company">
@@ -256,9 +256,9 @@
               <input
                 class="expand41"
                 type="text"
-                name="name_deal"
-                id="name_deal"
-                placeholder="investment"
+                name="website_url"
+                id="website_url"
+                placeholder="website"
               />
             </div>
             <div class="company">
@@ -267,9 +267,9 @@
               <input
                 class="expand42"
                 type="text"
-                name="name_deal"
-                id="name_deal"
-                placeholder="investment"
+                name="email"
+                id="email"
+                placeholder="sampla@gmail.com"
               />
             </div>
             <div class="company">
@@ -278,17 +278,17 @@
               <input
                 class="expand43"
                 type="text"
-                name="name_deal"
-                id="name_deal"
-                placeholder="investment"
+                name="contact"
+                id="contact"
+                placeholder="090876354215"
               />
             </div>
             <div class="company">
               <label class="naming">Status* :</label>
-              <select class="expand44" name="name_deal" id="name_deal">
+              <select class="expand44" name="status" id="status">
                 <option value="" selected style="display: none">Select</option>
-                <option value="">active</option>
-                <option value="">in active</option>
+                <option value="active">active</option>
+                <option value="in active">in active</option>
               </select>
             </div>
 
@@ -296,8 +296,8 @@
               <label class="naming">Description* :</label>
               <textarea
                 class="expand45"
-                name="name_dea"
-                id="name_deal"
+                name="description"
+                id="description"
                 cols="30"
                 rows="10"
               ></textarea>
@@ -430,10 +430,10 @@
         }
       }
 
-      async function fetchLeadData(leadId) {
+      async function fetchClientData(clientId) {
         try {
           const response = await fetch(
-            `${backendURL}/lead/getsinglelead/${leadId}`,
+            `${backendURL}/client/getsingleclient/${clientId}`,
             {
               method: "GET",
               headers: {
@@ -448,48 +448,39 @@
             throw new Error(`API response was not ok (${response.status})`);
           }
 
-          const leadData = await response.json();
-          return leadData;
+          const clientData = await response.json();
+          return clientData;
         } catch (error) {
-          console.error("An error occurred while fetching lead data:", error);
+          console.error("An error occurred while fetching client data:", error);
           return null;
         }
       }
 
       async function populateProfilePage() {
         const urlParams = new URLSearchParams(window.location.search);
-        const leadId = urlParams.get("id");
+        const clientId = urlParams.get("id");
 
-        if (!leadId) {
-          console.error("Lead ID not provided in the URL.");
+        if (!clientId) {
+          console.error("Client ID not provided in the URL.");
           return;
         }
 
-        const leadData = await fetchLeadData(leadId);
+        const clientData = await fetchClientData(clientId);
 
-        if (leadData && leadData.lead) {
-          document.getElementById("first_name").value =
-            leadData.lead.first_name;
-          document.getElementById("last_name").value = leadData.lead.last_name;
-          document.getElementById("qualification").value =
-            leadData.lead.qualification;
+        if (clientData && clientData.client) {
           document.getElementById("company_name").value =
-            leadData.lead.company_name;
-          document.getElementById("address").value = leadData.lead.address;
-          document.getElementById("address").value = leadData.lead.address;
-          document.getElementById("status").value = leadData.lead.status;
-          document.getElementById("company_category").value =
-            leadData.lead.company_category;
-          document.getElementById("currency").value = leadData.lead.currency;
-          document.getElementById("phone").value = leadData.lead.phone;
-          document.getElementById("email").value = leadData.lead.email;
-          document.getElementById("start_date").value =
-            leadData.lead.start_date;
-          document.getElementById("due_date").value = leadData.lead.due_date;
-          document.getElementById("name_deal").value = leadData.lead.name_deal;
-          document.getElementById("value").value = leadData.lead.value;
+            clientData.client.company_name;
+          document.getElementById("company_type").value =
+            clientData.client.company_type;
+          document.getElementById("website_url").value =
+            clientData.client.website_url;
+          document.getElementById("email").value = clientData.client.email;
+          document.getElementById("contact").value = clientData.client.contact;
+          document.getElementById("status").value = clientData.client.status;
+          document.getElementById("description").value =
+            clientData.client.description;
         } else {
-          console.error("Failed to fetch lead data.");
+          console.error("Failed to fetch client data.");
         }
       }
 
@@ -498,35 +489,27 @@
       });
 
       document
-        .getElementById("leadForm")
+        .getElementById("clientForm")
         .addEventListener("submit", async function (event) {
           event.preventDefault();
 
-          const updatedLeadData = {
-            first_name: document.getElementById("first_name").value,
-            last_name: document.getElementById("last_name").value,
-            qualification: document.getElementById("qualification").value,
+          const updatedClientData = {
             company_name: document.getElementById("company_name").value,
-            address: document.getElementById("address").value,
-            website: document.getElementById("website").value,
-            company_category: document.getElementById("company_category").value,
-            currency: document.getElementById("currency").value,
-            phone: document.getElementById("phone").value,
+            company_type: document.getElementById("company_type").value,
+            website_url: document.getElementById("website_url").value,
             email: document.getElementById("email").value,
+            contact: document.getElementById("contact").value,
             status: document.getElementById("status").value,
-            start_date: document.getElementById("start_date").value,
-            due_date: document.getElementById("due_date").value,
-            name_deal: document.getElementById("name_deal").value,
-            value: document.getElementById("value").value,
+            description: document.getElementById("description").value,
           };
 
-          console.log(updatedLeadData);
+          console.log(updatedClientData);
 
           const urlParams = new URLSearchParams(window.location.search);
-          const leadId = urlParams.get("id");
+          const clientId = urlParams.get("id");
           try {
             const response = await fetch(
-              `${backendURL}/lead/updatelead/${leadId}`,
+              `${backendURL}/client/updateclient/${clientId}`,
               {
                 method: "PUT",
                 headers: {
@@ -534,7 +517,7 @@
                   Accept: "application/json",
                   Authorization: `Bearer ${authToken}`,
                 },
-                body: JSON.stringify(updatedLeadData),
+                body: JSON.stringify(updatedClientData),
               }
             );
 
@@ -545,12 +528,12 @@
             if (responseData.error) {
               alert(`Error: ${responseData.error}`);
             } else {
-              alert("Lead data updated successfully");
+              alert("Client data updated successfully");
             }
-            window.location.href = "/clientm/client-leads-list.html";
+            window.location.href = "/clientm/client-company-list.html";
           } catch (error) {
-            console.error("An error occurred while updating lead data:", error);
-            alert("Failed to update lead data");
+            console.error("An error occurred while updating client data:", error);
+            alert("Failed to update client data");
           }
         });
     </script>
