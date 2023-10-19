@@ -465,8 +465,8 @@
         adminEmailEl.innerHTML = admin.email;
         avatarEl.innerHTML = admin.email.substring(0, 2);
   
-        const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
-  const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
+        const backendURL = "http://localhost:8000"; 
+  const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; 
   
   async function fetchData(url, options) {
     try {
@@ -494,7 +494,7 @@
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json", // Fixed "application json" to "application/json"
+          Accept: "application/json", 
           Authorization: `Bearer ${authToken}`,
         },
       });
@@ -511,10 +511,10 @@
     }
   }
   
-  // Function to populate the profile page with lead data
+
   async function populateProfilePage() {
     const urlParams = new URLSearchParams(window.location.search);
-    const leadId = urlParams.get("id"); // Get the lead ID from the URL
+    const leadId = urlParams.get("id"); 
   
     if (!leadId) {
       console.error("Lead ID not provided in the URL.");
@@ -524,7 +524,7 @@
     const leadData = await fetchLeadData(leadId);
   
     if (leadData && leadData.lead) {
-      // Populate the form fields with the lead data
+
       document.getElementById("first_name").value = leadData.lead.first_name;
       document.getElementById("last_name").value = leadData.lead.last_name;
       document.getElementById("qualification").value = leadData.lead.qualification;
@@ -540,23 +540,20 @@
       document.getElementById("name_deal").value = leadData.lead.name_deal;
       document.getElementById("value").value = leadData.lead.value;
     } else {
-      // Handle the case where data couldn't be fetched or is missing
+ 
       console.error("Failed to fetch lead data.");
     }
   }
-  
-  // Call the function to populate the profile page when the page loads
+
   document.addEventListener("DOMContentLoaded", () => {
     populateProfilePage();
   });
   
-  // Add an event listener for the form submission
+
   document.getElementById("leadForm").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent the default form submission
-  
-    // Create an object to hold the updated lead data
+    event.preventDefault();
+
     const updatedLeadData = {
-      // Get the updated data from the form fields
       first_name: document.getElementById("first_name").value,
       last_name: document.getElementById("last_name").value,
       qualification: document.getElementById("qualification").value,
@@ -572,12 +569,9 @@
       name_deal: document.getElementById("name_deal").value,
       value: document.getElementById("value").value,
     };
-  
-    // Get the lead ID from the URL
+
     const urlParams = new URLSearchParams(window.location.search);
     const leadId = urlParams.get("id");
-  
-    // Send a PUT request to update the lead data
     try {
       const response = await fetch(`${backendURL}/lead/updatelead/${leadId}`, {
         method: "PUT",
@@ -592,8 +586,6 @@
       if (!response.ok) {
         throw new Error(`API response was not ok (${response.status})`);
       }
-    
-      // Check if the response contains an error message
       const responseData = await response.json();
       if (responseData.error) {
         alert(`Error: ${responseData.error}`);
@@ -601,7 +593,6 @@
         alert("Lead data updated successfully");
       }
     } catch (error) {
-      // Handle errors
       console.error("An error occurred while updating lead data:", error);
       alert("Failed to update lead data");
     }
