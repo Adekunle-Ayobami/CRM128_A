@@ -532,7 +532,10 @@
             }
             window.location.href = "/clientm/client-company-list.html";
           } catch (error) {
-            console.error("An error occurred while updating client data:", error);
+            console.error(
+              "An error occurred while updating client data:",
+              error
+            );
             alert("Failed to update client data");
           }
         });
