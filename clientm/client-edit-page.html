@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Field Leads</title>
-    <link rel="stylesheet" href="css/new-leads-field2.css" />
+    <title>Client Edit Page</title>
+    <link rel="stylesheet" href="css/client-edit-page.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -73,10 +73,10 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"><li>Client Data</li></a>
-            <a href="../clientm/client-lead-dashboard.html"
-              ><li class="selected">Leads</li></a
+            <a href="../clientm/add-new-clients.html"
+              ><li class="selected">Client Data</li></a
             >
+            <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
           </ul>
         </div>
         <div class="side-tab">
@@ -211,9 +211,9 @@
       <div class="frame-group">
         <div style="margin-right: 10px">Client</div>
         <div style="margin-right: 10px">|</div>
-        <div style="margin-right: 10px">Leads</div>
+        <div style="margin-right: 10px">Client Data</div>
         <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c">Deal Title</div>
+        <div style="color: #003e9c">Edit Client Data</div>
       </div>
       <a onclick="history.back()">
         <div class="back">
@@ -224,221 +224,86 @@
       </a>
       <div class="field">
         <div class="deal-title-parent">
-          <div class="deal-title">Edit Deal Info</div>
-          <div class="button-parent">
-            <div>
-              <button class="deal-title button">Schedule Appointment</button>
-            </div>
-            <div class="won">
-              <div class="won1">Won</div>
-              <img class="tick-icon" alt="" src="public/tick.svg" />
-            </div>
-            <div class="lost">
-              <div class="won1">Lost</div>
-              <img class="tick-icon" alt="" src="public/cancel.svg" />
-            </div>
-          </div>
+          <div class="deal-title">Edit Client Info</div>
         </div>
-        <hr style="width: 87%" />
+        <hr class="hr" />
         <!-- First Input -->
         <form action="" id="leadForm">
           <div class="input">
-            <div style="display: flex; flex-direction: column">
-              <label class="naming">Name of Deal</label>
+            <div class="company">
+              <label class="naming">Company Name* :</label>
               <input
-                class="expand"
+                class="expand3"
                 type="text"
                 name="name_deal"
                 id="name_deal"
                 placeholder="investment"
               />
             </div>
-            <div class="ml4" style="display: flex; flex-direction: column">
-              <label class="naming">Value</label>
+            <div class="company">
+              <label class="naming">Company Type* :</label>
               <input
-                class="expand"
+                class="expand4"
                 type="text"
-                name="value"
-                id="value"
-                placeholder="300,000"
+                name="name_deal"
+                id="name_deal"
+                placeholder="investment"
               />
             </div>
-            <div class="ml3" style="display: flex; flex-direction: column">
-              <label for="currency" class="naming">Currency</label>
-              <select class="expand1" name="currency" id="currency">
-                <option value="Dollar">Dollar</option>
-                <option value="Pounds">Pounds</option>
-                <option value="Naira">Naira</option>
+            <div class="company">
+              <label class="naming">Website* :</label>
+              <img class="frame-icon" alt="" src="public/frame.svg" />
+              <input
+                class="expand41"
+                type="text"
+                name="name_deal"
+                id="name_deal"
+                placeholder="investment"
+              />
+            </div>
+            <div class="company">
+              <label class="naming">Email* :</label>
+              <img class="frame-icon" alt="" src="public/anotherframe.svg" />
+              <input
+                class="expand42"
+                type="text"
+                name="name_deal"
+                id="name_deal"
+                placeholder="investment"
+              />
+            </div>
+            <div class="company">
+              <label class="naming">Phone Number* :</label>
+              <img class="call-icon" alt="" src="public/call.svg" />
+              <input
+                class="expand43"
+                type="text"
+                name="name_deal"
+                id="name_deal"
+                placeholder="investment"
+              />
+            </div>
+            <div class="company">
+              <label class="naming">Status* :</label>
+              <select class="expand44" name="name_deal" id="name_deal">
+                <option value="" selected style="display: none">Select</option>
+                <option value="">active</option>
+                <option value="">in active</option>
               </select>
-            </div>
-            <div class="ml" style="display: flex; flex-direction: column">
-              <label class="naming">Qualification</label>
-              <select
-                style="cursor: pointer"
-                name="qualification"
-                id="qualification"
-              >
-                <option value="Qualified">Qualified</option>
-                <option value="Contact Made">Contact Made</option>
-                <option value="Demo Scheduled">Demo Scheduled</option>
-                <option value="Proposal Made">Proposal Made</option>
-                <option value="Negotiations Started">
-                  Negotiations Started
-                </option>
-              </select>
-            </div>
-            <div class="ml2" style="display: flex; flex-direction: column">
-              <label class="naming">Start Date</label>
-              <input
-                class="expand"
-                type="text"
-                name="start_date"
-                id="start_date"
-                placeholder="2023-01-15"
-              />
-            </div>
-            <div class="naming1" style="display: flex; flex-direction: column">
-              <label class="naming">Due Date</label>
-              <input
-                class="expand"
-                type="text"
-                name="due_date"
-                id="due_date"
-                placeholder="2023-01-15"
-              />
             </div>
 
-            <div class="naming2" style="display: flex; flex-direction: column">
-              <label id="status" class="naming">Status</label>
-              <select class="expand3" name="status" id="status">
-                <option value="Active">Active</option>
-                <option value="In active">In active</option>
-              </select>
+            <div class="company">
+              <label class="naming">Description* :</label>
+              <textarea
+                class="expand45"
+                name="name_dea"
+                id="name_deal"
+                cols="30"
+                rows="10"
+              ></textarea>
             </div>
           </div>
-          <!-- Second Input -->
-          <div class="second">
-            <span class="cp">Contact Person</span>
-            <div class="input3" style="display: flex">
-              <div style="display: flex; flex-direction: column">
-                <label class="naming">First Name*</label>
-                <input
-                  class="expand-group"
-                  type="text"
-                  name="first_name"
-                  id="first_name"
-                  placeholder="John"
-                />
-              </div>
-              <div style="display: flex; flex-direction: column">
-                <label class="naming">Last Name*</label>
-                <input
-                  class="expand-group"
-                  type="text"
-                  name="last_name"
-                  id="last_name"
-                  placeholder="Doe"
-                />
-              </div>
-              <div style="display: flex; flex-direction: column">
-                <label class="naming">Phone</label>
-                <input
-                  class="expand-group"
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  placeholder="09034579021"
-                />
-              </div>
-              <div style="display: flex; flex-direction: column">
-                <label class="naming">Email</label>
-                <input
-                  class="expand-group"
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="sample@mail.com"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- Third Input -->
-          <div class="third">
-            <div
-              class="cp"
-              style="
-                display: flex;
-                justify-content: space-between;
-                width: 85%;
-                margin: 50px 0 0 55px;
-              "
-            >
-              <label>Details</label>
-            </div>
-            <hr style="width: 87%; margin-left: 53px; margin-top: 30px" />
-            <!-- Fourth Input -->
-            <div class="input4" style="display: flex; gap: 12px">
-              <div style="display: flex; flex-direction: column">
-                <label class="naming">Company Name*</label>
-                <input
-                  class="expand-field"
-                  type="text"
-                  name="company_name"
-                  id="company_name"
-                  placeholder="John"
-                />
-              </div>
-              <div
-                style="display: flex; flex-direction: column; margin-left: 2px"
-              >
-                <label id="company_category" class="naming"
-                  >Company Category</label
-                >
-                <select
-                  style="cursor: pointer"
-                  class="expand-field"
-                  name="company_category"
-                  id="company_category"
-                >
-                  <option value="Agriculture">Agriculture</option>
-                  <option value="Education">Education</option>
-                  <option value="Hospitality">Hospitality</option>
-                  <option value="IT">IT</option>
-                  <option value="Business & Finance">Business & Finance</option>
-                </select>
-              </div>
 
-              <div style="display: flex; flex-direction: column">
-                <label class="naming">Website</label>
-                <input
-                  class="expand-field"
-                  type="text"
-                  name="website"
-                  id="website"
-                  placeholder="www.sample.com"
-                />
-              </div>
-            </div>
-            <!-- Last Input -->
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                width: 70%;
-                margin-left: 55px;
-                margin-top: 20px;
-              "
-            >
-              <label class="naming">Address</label>
-              <input
-                class="expand2"
-                type="text"
-                name="address"
-                id="address"
-                placeholder="11, Olufemi Ojo Street"
-              />
-            </div>
-          </div>
           <div class="update-btn">
             <input
               style="

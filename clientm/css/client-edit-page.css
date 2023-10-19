@@ -206,7 +206,7 @@ li {
   background-color: #d9d9d9;
 }
 .logout {
-  padding-bottom: 330px;
+  padding-bottom: 470px;
 }
 .back {
   position: absolute;
@@ -228,7 +228,7 @@ li {
 .field {
   background-color: white;
   width: 70%;
-  height: 86%;
+  height: 144vh;
   position: absolute;
   top: 8em;
   left: 19em;
@@ -336,32 +336,14 @@ li {
   margin-left: 55px;
   position: relative;
   display: flex;
+  flex-direction: column;
   gap: 28px;
-  width: 0%;
-  margin-bottom: 40px;
-}
-.input3 {
-  margin-top: 20px;
-  margin-left: 55px;
-  position: relative;
-  display: flex;
-  gap: 16px;
-  width: 0%;
-  margin-bottom: 40px;
-}
-.input4 {
-  margin-top: 20px;
-  margin-left: 55px;
-  position: relative;
-  display: flex;
-  gap: 16px;
-  width: 0%;
   margin-bottom: 40px;
 }
 .update-btn {
   position: relative;
-  top: 8em;
-  left: 50em;
+  top: 2em;
+  left: 44.3em;
 }
 .input1 {
   height: 7vh;
@@ -371,8 +353,8 @@ li {
   border: 2px solid #0047b3;
   padding: 8px 31px;
   border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease-in-out;
-  animation: colorChange 7s infinite;
+  /* transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+  animation: colorChange 7s infinite; */
 }
 .loader {
   position: absolute;
@@ -390,24 +372,6 @@ li {
   background-color: #0047b3;
   transform: scale(1.1);
 }
-.expand-group {
-  padding: 15px 10px 15px 10px;
-  background-color: #f6f6f6;
-  color: #7a8699;
-  border: 1px solid lightblue;
-  border-radius: 10px;
-  outline: 1px solid lightblue;
-  width: 12.2em;
-}
-.expand-field {
-  padding: 15px 10px 15px 10px;
-  background-color: #f6f6f6;
-  color: #7a8699;
-  border: 1px solid lightblue;
-  border-radius: 10px;
-  outline: 1px solid lightblue;
-  width: 18em;
-}
 .expand {
   padding: 15px 10px 15px 10px;
   background-color: #f6f6f6;
@@ -424,7 +388,7 @@ li {
   border: 1px solid lightblue;
   border-radius: 10px;
   outline: 1px solid lightblue;
-  width: 15vw;
+  width: 13vw;
   cursor: pointer;
 }
 .expand2 {
@@ -434,11 +398,13 @@ li {
   border: 1px solid lightblue;
   border-radius: 10px;
   outline: 1px solid lightblue;
-  width: 56.5vw;
 }
 .naming {
   font-weight: 600;
+  font-size: 18px;
   margin-bottom: 10px;
+  position: relative;
+  top: 0.8em;
 }
 .expand3 {
   padding: 15px 10px 15px 10px;
@@ -447,7 +413,87 @@ li {
   border: 1px solid lightblue;
   border-radius: 10px;
   outline: 1px solid lightblue;
-  width: 19em;
+  width: 66%;
+}
+.expand4 {
+  padding: 15px 10px 15px 10px;
+  background-color: #f6f6f6;
+  margin-left: 9px;
+  color: #7a8699;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  outline: 1px solid lightblue;
+  width: 66%;
+}
+.expand41 {
+  padding: 15px 10px 15px 40px;
+  background-color: #f6f6f6;
+  margin-left: 4.6em;
+  color: #7a8699;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  outline: 1px solid lightblue;
+  width: 63%;
+}
+.expand42 {
+  padding: 15px 10px 15px 40px;
+  background-color: #f6f6f6;
+  margin-left: 6.2em;
+  color: #7a8699;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  outline: 1px solid lightblue;
+  width: 63%;
+}
+.expand43 {
+  padding: 15px 10px 15px 40px;
+  background-color: #f6f6f6;
+  margin-left: 0.6em;
+  color: #7a8699;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  outline: 1px solid lightblue;
+  width: 63%;
+}
+.expand44 {
+  padding: 15px 10px 15px 10px;
+  background-color: #f6f6f6;
+  margin-left: 5.6em;
+  color: #7a8699;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  outline: 1px solid lightblue;
+  width: 69%;
+}
+.expand45 {
+  padding: 15px 10px 15px 40px;
+  background-color: #f6f6f6;
+  margin-left: 2.9em;
+  color: #7a8699;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  outline: 1px solid lightblue;
+  width: 63%;
+}
+.company {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+.company img {
+  position: absolute;
+  left: 10em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px; /* Adjust the icon size */
+  color: #555; /* Adjust the icon color */
+}
+.hr {
+  width: 80%;
+  position: relative;
+  right: 2em;
 }
 .naming1 {
   font-weight: 600;
@@ -464,7 +510,10 @@ li {
   margin-left: 60px;
 }
 .naming2 select {
-  width: 13vw;
+  width: 20vw;
+}
+.naming2 select {
+  width: 9.5vw;
 }
 input[type="text"]::placeholder {
   color: #7a8699;
@@ -480,21 +529,11 @@ select option {
 .ml {
   position: relative;
   top: 4.85em;
-  right: 16em;
+  right: 14.3em;
   margin-left: 1.5em;
 }
-.ml select {
-  width: 13vw;
-  padding: 15px 10px 15px 10px;
-  background-color: #f6f6f6;
-  color: #7a8699;
-  border: 1px solid lightblue;
-  border-radius: 10px;
-  outline: 1px solid lightblue;
-  width: 30em;
-}
 .ml2 {
-  margin-left: -29.2em;
+  margin-left: -18em;
 }
 .ml3 {
   margin-left: -1em;
@@ -512,21 +551,46 @@ select option {
   }
   .field {
     left: 25em;
+    height: 89vh;
   }
   .input {
     gap: 10px;
   }
   .expand {
-    width: 15vw;
+    width: 14vw;
   }
   .expand1 {
     width: 12vw;
   }
+  .expand3 {
+    width: 80%;
+  }
+  .expand4 {
+    width: 80%;
+  }
+  .expand41 {
+    width: 78%
+  }
+  .expand42 {
+    width: 78%
+  }
+  .expand43 {
+    width: 78%;
+  }
+  .expand44 {
+    width: 82%;
+  }
+  .expand45 {
+    width: 78%;
+  }
+  .update-btn {
+    left: 72em;
+  }
   .ml {
-    right: 25em;
+    margin-left: 0.2em;
   }
   .ml2 {
-    position: relative;
+    margin-left: 0.2em;
   }
   .naming2 {
     left: 16.3em;
@@ -534,14 +598,10 @@ select option {
   .input1 {
     left: 85em;
   }
-  .ml4 {
-    margin-left: 10px;
-  }
-  .ml3 {
-    margin-left: 10px;
-  }
-  .update-btn {
-    left: 73em;
+  .hr {
+    position: relative;
+    right: 1em;
+    width: 60vw;
   }
 }
 @media (max-width: 1366px) {
@@ -557,9 +617,9 @@ select option {
 }
 @media (max-width: 730px) {
   /* .group-parent {
-      position: absolute;
-      left: 49%;
-    } */
+        position: absolute;
+        left: 49%;
+      } */
   .bell {
     position: relative;
     left: 30px;
