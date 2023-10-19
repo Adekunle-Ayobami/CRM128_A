@@ -184,7 +184,7 @@ li {
   background-color: #d9d9d9;
 }
 .logout {
-  padding-bottom: 270px;
+  padding-bottom: 330px;
 }
 .back {
   position: absolute;
@@ -206,7 +206,7 @@ li {
 .field {
   background-color: white;
   width: 70%;
-  height: 84%;
+  height: 86%;
   position: absolute;
   top: 8em;
   left: 19em;
@@ -319,10 +319,11 @@ li {
   margin-bottom: 40px;
 }
 .input1 {
-  margin-top: 20px;
-  margin-left: 55px;
   position: relative;
-  top: 5em;
+  height: 7vh;
+  padding-top: 100px;
+  top: 8em;
+  left: 55em;
   cursor: pointer;
 }
 .expand {
@@ -360,6 +361,16 @@ li {
   margin-bottom: 15px;
   position: absolute;
   top: 5em;
+}
+.naming2 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: absolute;
+  top: 5em;
+  left: 10em;
+}
+.naming2 select {
+  width: 9.5vw;
 }
 input[type="text"]::placeholder {
   color: #7a8699;
