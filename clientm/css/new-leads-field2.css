@@ -520,16 +520,26 @@ select option {
     width: 15vw;
   }
   .expand1 {
-    width: 12vw;
+    width: 14vw;
+  }
+  .expand2 {
+    width: 64vw;
+  }
+  .naming2 select {
+    width: 16vw;
   }
   .ml {
-    right: 25em;
+    right: 19em;
+  }
+  .ml select {
+    width: 31vw;
   }
   .ml2 {
     position: relative;
+    left: -10em;
   }
   .naming2 {
-    left: 16.3em;
+    left: 16.9em;
   }
   .input1 {
     left: 85em;
@@ -541,7 +551,13 @@ select option {
     margin-left: 10px;
   }
   .update-btn {
-    left: 73em;
+    left: 75em;
+  }
+  .expand-group {
+    width: 14.5vw;
+  }
+  .expand-field {
+    width: 20.5vw;
   }
 }
 @media (max-width: 1366px) {
