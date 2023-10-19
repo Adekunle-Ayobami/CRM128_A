@@ -467,7 +467,7 @@
 
         const clientData = await fetchClientData(clientId);
 
-        if (clientData && clientData.lead) {
+        if (clientData && clientData.client) {
           document.getElementById("company_name").value =
             clientData.client.company_name;
           document.getElementById("company_type").value =
@@ -528,12 +528,12 @@
             if (responseData.error) {
               alert(`Error: ${responseData.error}`);
             } else {
-              alert("Lead data updated successfully");
+              alert("Client data updated successfully");
             }
             window.location.href = "/clientm/client-company-list.html";
           } catch (error) {
-            console.error("An error occurred while updating lead data:", error);
-            alert("Failed to update lead data");
+            console.error("An error occurred while updating client data:", error);
+            alert("Failed to update client data");
           }
         });
     </script>
