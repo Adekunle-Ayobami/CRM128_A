@@ -26,8 +26,8 @@
 
         <a href="client-management-dash.html">
           <div class="crm128-wrapper">
-            <span style="color: #003e9c;">CRM</span
-            ><span style="color: #57bc4a;">128</span>
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
           </div>
         </a>
         <div class="search-parent">
@@ -72,15 +72,15 @@
             class="more-icon client-icon"
             id="hr-chevron-icon"
             alt=""
-            src="./public/chevron-uop.svg"
+            src="./public/chevron-down1.svg"
           />
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"
-              ><li class="selected">Client Data</li></a
+            <a href="../clientm/client-company-list.html"
+              ><li>Client Data</li></a
             >
-            <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
+            <a href="../clientm/client-leads-list.html"><li>Leads</li></a>
           </ul>
         </div>
         <div class="side-tab">
@@ -132,7 +132,7 @@
           <ul id="hr-items1">
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="#"
-              ><li style="text-overflow: ellipsis;">
+              ><li style="text-overflow: ellipsis">
                 Emzor Pham Industries Ltd.
               </li></a
             >
@@ -186,7 +186,7 @@
         <div class="client-dropdown">
           <ul id="hr-items4">
             <a href="../acm/income.html"><li>Income</li></a>
-            <a href="../acm/expense.html"><li  class="selected">Expenses</li></a>
+            <a href="../acm/expense.html"><li class="selected">Expenses</li></a>
           </ul>
         </div>
         <div class="drop-hr" id="hr-toggle5">
@@ -214,10 +214,10 @@
       </div>
       <!-- Inner Page -->
       <div class="frame-group">
-        <div style="display: flex;">
-          <div style="margin-right: 10px;">Accounting</div>
-          <div style="margin-right: 10px;">|</div>
-          <div style="color: #003e9c;">Income</div>
+        <div style="display: flex">
+          <div style="margin-right: 10px">Accounting</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">Income</div>
         </div>
         <div class="back" onclick="history.back()">
           <img class="search-icon" alt="" src="./public/arrow-back.svg" />
@@ -227,7 +227,7 @@
       <div class="back-group">
         <div class="input-group">
           <select class="select" name="">
-            <option value="" selected style="display: none;">Year</option>
+            <option value="" selected style="display: none">Year</option>
             <option value="">2023</option>
             <option value="">2022</option>
             <option value="">2021</option>
@@ -238,7 +238,7 @@
             <option value="">2016</option>
           </select>
           <select class="select1" name="">
-            <option value="" selected style="display: none;">Month</option>
+            <option value="" selected style="display: none">Month</option>
             <option value="">January</option>
             <option value="">February</option>
             <option value="">March</option>
@@ -253,13 +253,13 @@
             <option value="">December</option>
           </select>
           <div class="sort">
-            <img style="width: 15px;" src="public/sort_minor.png" alt="" /><span
-              style="margin-bottom: 7px;"
+            <img style="width: 15px" src="public/sort_minor.png" alt="" /><span
+              style="margin-bottom: 7px"
               >Sort</span
             >
           </div>
         </div>
-        <div style="display: flex;">
+        <div style="display: flex">
           <div class="input-container">
             <i class="fas fa-search"></i>
             <input
@@ -370,7 +370,12 @@
         </tr> -->
       </table>
       <div class="pagination">
-        <img  id="previousButton" class="page-disabled" alt="" src="./public/page--disabled.svg" />
+        <img
+          id="previousButton"
+          class="page-disabled"
+          alt=""
+          src="./public/page--disabled.svg"
+        />
         <div class="page-active">
           <div class="page-active1">
             <b class="num">1</b>
@@ -396,29 +401,33 @@
             <b class="num">10</b>
           </div>
         </div>
-        <img  id="nextButton" class="page-disabled" alt="" src="./public/page--master.svg" />
-       
+        <img
+          id="nextButton"
+          class="page-disabled"
+          alt=""
+          src="./public/page--master.svg"
+        />
       </div>
 
       <!-- Overlay Pages -->
       <form action="" id="expenses-form">
-        <div class="add-lead" id="overlay" style="display: none;">
+        <div class="add-lead" id="overlay" style="display: none">
           <div class="lead">
-            <div style="width: 100%; font-weight: 600;">Add New Income</div>
+            <div style="width: 100%; font-weight: 600">Add New Income</div>
             <img src="public/close.svg" id="closeBtn" alt="" />
           </div>
           <div class="form form1">
-            <span style="margin-bottom: 5px;">Date</span>
+            <span style="margin-bottom: 5px">Date</span>
             <input id="date" type="date" placeholder="DD-MM-YY" />
           </div>
           <div class="form form1">
-            <span style="margin-bottom: 5px;">Source</span>
+            <span style="margin-bottom: 5px">Source</span>
             <input id="source" type="text" placeholder="Source" />
           </div>
           <div class="form2 form1">
             <div>
               <span>Category</span> <br />
-              <div class="input-container" style="margin-top: 5px;">
+              <div class="input-container" style="margin-top: 5px">
                 <input id="category" type="text" placeholder="category" />
                 <!-- <select name="">
                 <option value="">Direct Sales</option>
@@ -430,7 +439,7 @@
             </div>
             <div>
               <span>Amount</span> <br />
-              <div class="input-container" style="margin-top: 5px;">
+              <div class="input-container" style="margin-top: 5px">
                 <input id="amount" type="text" placeholder="amount" />
                 <!-- <select name="">
                 <option value="">Option 1</option>
@@ -444,7 +453,7 @@
           <div class="form-text">
             <span>Description</span>
             <textarea
-              style="margin-top: 5px;"
+              style="margin-top: 5px"
               name=""
               id="description"
               cols="10"
@@ -463,39 +472,39 @@
     <footer>
       <div class="copyright-2023-crm128-parent">
         <div class="copyright-2023-crm128-container">
-          <span style="color: #003e9c;">© Copyright 2023 CRM</span>
-          <span style="color: #57bc4a;">128</span>
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
         </div>
-        <div style="color: #003e9c;">196 High RoadWood GreenLondon N22 8HH</div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
 
     <!-- Overlay Pages3 -->
     <div class="add-lead2" id="overlay3">
       <div class="lead2">
-        <div style="width: 100%; font-weight: 600; font-size: 20px;">
+        <div style="width: 100%; font-weight: 600; font-size: 20px">
           EXPENSES DETAILS
         </div>
         <img
-          style="cursor: pointer;"
+          style="cursor: pointer"
           src="public/close.svg"
           id="closeBtn3"
           alt=""
         />
       </div>
-      <hr style="width: 92%;" />
+      <hr style="width: 92%" />
       <div class="form form1">
-        <span style="margin-bottom: 5px;">Date</span>
+        <span style="margin-bottom: 5px">Date</span>
         <input type="date" placeholder="DD-MM-YY" />
       </div>
       <div class="form form1">
-        <span style="margin-bottom: 5px;">Paid To</span>
+        <span style="margin-bottom: 5px">Paid To</span>
         <input type="text" placeholder="Source" />
       </div>
       <div class="form2 form1">
         <div>
           <span>Category</span> <br />
-          <div class="input-container" style="margin-top: 5px;">
+          <div class="input-container" style="margin-top: 5px">
             <select name="">
               <option value="">Direct Sales</option>
               <option value="">Referral</option>
@@ -506,7 +515,7 @@
         </div>
         <div>
           <span>Amount</span> <br />
-          <div class="input-container" style="margin-top: 5px;">
+          <div class="input-container" style="margin-top: 5px">
             <select name="">
               <option value="">Option 1</option>
               <option value="">Option 1</option>
@@ -519,7 +528,7 @@
       <div class="form-text">
         <span>Description</span>
         <textarea
-          style="margin-top: 5px;"
+          style="margin-top: 5px"
           name=""
           id=""
           cols="10"
@@ -700,7 +709,7 @@
       const authToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU";
 
-        expensesfromEl.addEventListener("submit", async function (event) {
+      expensesfromEl.addEventListener("submit", async function (event) {
         event.preventDefault();
         console.log("submitting");
         const categoryValue = categoryInput.value;
@@ -782,68 +791,71 @@
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
       let currentPage = 1;
 
-// Function to update the page numbers
-function updatePageNumbers() {
-  const numElements = document.querySelectorAll(".num");
-  numElements.forEach((numElement, index) => {
-    numElement.textContent = currentPage + index;
-  });
-}
-
-// Function to load the previous page
-function loadPreviousPage() {
-  if (currentPage > 1) {
-    currentPage--;
-    updatePageNumbers();
-    fetchDataAndPopulateTable(currentPage);
-  }
-}
-
-// Function to load the next page
-function loadNextPage() {
-  currentPage++;
-    updatePageNumbers();
-    fetchDataAndPopulateTable(currentPage);
-  }
-
-  // Function to fetch and populate data
-  async function fetchDataAndPopulateTable(pageNumber = currentPage) {
-    try {
-      const response = await fetch(`${backendURL}/expenses/getAllExpenses?page=${pageNumber}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Bearer ${authToken}`,
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`API response was not ok (${response.status})`);
+      // Function to update the page numbers
+      function updatePageNumbers() {
+        const numElements = document.querySelectorAll(".num");
+        numElements.forEach((numElement, index) => {
+          numElement.textContent = currentPage + index;
+        });
       }
 
-      const data = await response.json();
-      data.reverse();
-
-      // Get a reference to the table body
-      const tableBody = document.getElementById("table-body");
-
-      // Clear the table only if data is available
-      if (data && Array.isArray(data)) {
-        while (tableBody.firstChild) {
-          tableBody.removeChild(tableBody.firstChild);
+      // Function to load the previous page
+      function loadPreviousPage() {
+        if (currentPage > 1) {
+          currentPage--;
+          updatePageNumbers();
+          fetchDataAndPopulateTable(currentPage);
         }
+      }
 
-        const cardsToDisplay = 7;
-        const expenseToDisplay = data.slice(
-          pageNumber * cardsToDisplay - cardsToDisplay,
-          pageNumber * cardsToDisplay
-        );
+      // Function to load the next page
+      function loadNextPage() {
+        currentPage++;
+        updatePageNumbers();
+        fetchDataAndPopulateTable(currentPage);
+      }
 
-        // Populate the table with the new data
-        expenseToDisplay.forEach((expense) => {
-          const row = document.createElement("tr");
-          row.innerHTML = `
+      // Function to fetch and populate data
+      async function fetchDataAndPopulateTable(pageNumber = currentPage) {
+        try {
+          const response = await fetch(
+            `${backendURL}/expenses/getAllExpenses?page=${pageNumber}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const data = await response.json();
+          data.reverse();
+
+          // Get a reference to the table body
+          const tableBody = document.getElementById("table-body");
+
+          // Clear the table only if data is available
+          if (data && Array.isArray(data)) {
+            while (tableBody.firstChild) {
+              tableBody.removeChild(tableBody.firstChild);
+            }
+
+            const cardsToDisplay = 7;
+            const expenseToDisplay = data.slice(
+              pageNumber * cardsToDisplay - cardsToDisplay,
+              pageNumber * cardsToDisplay
+            );
+
+            // Populate the table with the new data
+            expenseToDisplay.forEach((expense) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
             <td>${expense.date}</td>
             <td>${expense.source}</td>
             <td>${expense.category}</td>
@@ -862,49 +874,49 @@ function loadNextPage() {
             </td>
           `;
 
-          tableBody.appendChild(row);
+              tableBody.appendChild(row);
 
-          // Add event listener to the delete button within this row
-          const deleteButton = row.querySelector(".delete-button");
-          deleteButton.addEventListener("click", (event) => {
-            const expenseId = event.target.getAttribute("data-id");
-            deleteExpense(expenseId); // Call the deleteExpense function with the income ID
-          });
+              // Add event listener to the delete button within this row
+              const deleteButton = row.querySelector(".delete-button");
+              deleteButton.addEventListener("click", (event) => {
+                const expenseId = event.target.getAttribute("data-id");
+                deleteExpense(expenseId); // Call the deleteExpense function with the income ID
+              });
 
-          // Add event listener to the edit button within this row
-          const editButton = row.querySelector(".edit-button");
-          editButton.addEventListener("click", (event) => {
-            const expenseId = event.target.getAttribute("data-id");
-            editExpense(expenseId);
-          });
-        });
-      } else {
-        console.error("No income data found");
+              // Add event listener to the edit button within this row
+              const editButton = row.querySelector(".edit-button");
+              editButton.addEventListener("click", (event) => {
+                const expenseId = event.target.getAttribute("data-id");
+                editExpense(expenseId);
+              });
+            });
+          } else {
+            console.error("No income data found");
+          }
+        } catch (error) {
+          console.error("There was a problem with the API request:", error);
+        }
       }
-    } catch (error) {
-      console.error("There was a problem with the API request:", error);
-    }
-  }
 
-  // Function to close the overlay for expense editing
-  const closeBtn = document.getElementById("closeBtn");
-  closeBtn.addEventListener("click", () => {
-    const overlay = document.getElementById("overlay");
-    overlay.style.display = "none";
-  });
+      // Function to close the overlay for expense editing
+      const closeBtn = document.getElementById("closeBtn");
+      closeBtn.addEventListener("click", () => {
+        const overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+      });
 
-  // Call the fetchDataAndPopulateTable function to fetch and populate the table for the first page when the page loads.
-  document.addEventListener("DOMContentLoaded", () => {
-    updatePageNumbers();
-    fetchDataAndPopulateTable(currentPage);
-  });
+      // Call the fetchDataAndPopulateTable function to fetch and populate the table for the first page when the page loads.
+      document.addEventListener("DOMContentLoaded", () => {
+        updatePageNumbers();
+        fetchDataAndPopulateTable(currentPage);
+      });
 
-  // Add event listeners to the previous and next buttons
-  const previousButton = document.getElementById("previousButton");
-  const nextButton = document.getElementById("nextButton");
+      // Add event listeners to the previous and next buttons
+      const previousButton = document.getElementById("previousButton");
+      const nextButton = document.getElementById("nextButton");
 
-  previousButton.addEventListener("click", loadPreviousPage);
-  nextButton.addEventListener("click", loadNextPage);
+      previousButton.addEventListener("click", loadPreviousPage);
+      nextButton.addEventListener("click", loadNextPage);
       // Function to edit an expense by ID
       async function editExpense(expenseId) {
         try {

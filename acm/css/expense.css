@@ -305,8 +305,8 @@ td {
 }
 .pagination {
   position: absolute;
-  top: 41em;
-  left: 650px;
+  top: 82%;
+  left: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -509,6 +509,17 @@ td {
   top: 0.5em;
 }
 
+@media (min-width: 1368px) {
+  .logout {
+    padding-bottom: 260px;
+  }
+  .frame-group {
+    gap: 1230px;
+  }
+  .back-group {
+    gap: 868px;
+  }
+}
 @media (max-width: 500px) {
   .bell {
     display: none;

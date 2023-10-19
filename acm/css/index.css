@@ -5,7 +5,6 @@ body {
   background-color: #f6f6f6;
   overflow-x: hidden;
   font-family: "Clash Grotesk", sans-serif;
-  width: 1370px;
 }
 a {
   text-decoration: none;
@@ -317,8 +316,8 @@ td {
 }
 .pagination {
   position: absolute;
-  top: 36.5em;
-  left: 650px;
+  top: 82%;
+  left: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -532,6 +531,29 @@ td {
   top: 0.5em;
 }
 
+@media (min-width: 1368px) {
+  .frame-group {
+    gap: 1100px;
+  }
+  .income,
+  .balance,
+  .expences {
+    width: 23.5vw;
+  }
+  .open-eyes,
+  .open-eyes1 {
+    left: 16em;
+  }
+  .eye-toggle1 {
+    margin-left: 10px;
+  }
+  .table {
+    width: 79%;
+  }
+  .logout {
+    padding-bottom: 260px;
+  }
+}
 @media (max-width: 500px) {
   .bell {
     display: none;

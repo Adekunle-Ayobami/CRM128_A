@@ -77,8 +77,10 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"><li>Client Data</li></a>
-            <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
+            <a href="../clientm/client-company-list.html"
+              ><li>Client Data</li></a
+            >
+            <a href="../clientm/client-leads-list.html"><li>Leads</li></a>
           </ul>
         </div>
         <div class="side-tab">
@@ -361,7 +363,12 @@
       </table>
       <!--  -->
       <div class="pagination">
-        <img  id="previousButton" class="page-disabled" alt="" src="./public/page--disabled.svg" />
+        <img
+          id="previousButton"
+          class="page-disabled"
+          alt=""
+          src="./public/page--disabled.svg"
+        />
         <div class="page-active">
           <div class="page-active1">
             <b class="num">1</b>
@@ -387,8 +394,12 @@
             <b class="num">10</b>
           </div>
         </div>
-        <img  id="nextButton" class="page-disabled" alt="" src="./public/page--master.svg" />
-       
+        <img
+          id="nextButton"
+          class="page-disabled"
+          alt=""
+          src="./public/page--master.svg"
+        />
       </div>
       <!-- Overlay Pages -->
       <form action="" id="income-form">
@@ -987,90 +998,88 @@
 
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
 
-    // Function to fetch data from your API and populate the table
-// Initialize a variable to keep track of the current page number
-let currentPage = 1;
+      // Function to fetch data from your API and populate the table
+      // Initialize a variable to keep track of the current page number
+      let currentPage = 1;
 
-// Function to update the page numbers
-function updatePageNumbers() {
-  const numElements = document.querySelectorAll(".num");
-  numElements.forEach((numElement, index) => {
-    numElement.textContent = currentPage + index;
-  });
-}
-
-// Function to load the previous page
-function loadPreviousPage() {
-  if (currentPage > 1) {
-    currentPage--;
-    updatePageNumbers();
-    fetchDataAndPopulateTable(currentPage);
-  }
-}
-
-// Function to load the next page
-function loadNextPage() {
-  currentPage++;
-  updatePageNumbers();
-  fetchDataAndPopulateTable(currentPage);
-}
-
-// Call the fetchDataAndPopulateTable function to fetch and populate the table for the first page
-document.addEventListener("DOMContentLoaded", () => {
-  updatePageNumbers();
-  fetchDataAndPopulateTable(currentPage);
-});
-
-// Add event listeners to the previous and next buttons
-const previousButton = document.getElementById("previousButton");
-const nextButton = document.getElementById("nextButton");
-
-previousButton.addEventListener("click", loadPreviousPage);
-nextButton.addEventListener("click", loadNextPage);
-
-// Function to fetch data from your API and populate the table
-async function fetchDataAndPopulateTable(pageNumber) {
-  try {
-    const response = await fetch(`${backendURL}/income/getAllIncome`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`API response was not ok (${response.status})`);
-    }
-
-    const data = await response.json();
-    data.reverse();
-
-    // Check if data.income is defined before using slice
-    if (data && Array.isArray(data)) {
-      const tableBody = document.getElementById("table-body");
-      while (tableBody.firstChild) {
-        tableBody.removeChild(tableBody.firstChild);
+      // Function to update the page numbers
+      function updatePageNumbers() {
+        const numElements = document.querySelectorAll(".num");
+        numElements.forEach((numElement, index) => {
+          numElement.textContent = currentPage + index;
+        });
       }
-      const cardsToDisplay = 7;
-      const incomeToDisplay = data.slice(
-        pageNumber * cardsToDisplay - cardsToDisplay,
-        pageNumber * cardsToDisplay
-      );
 
-      incomeToDisplay.forEach((income) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
+      // Function to load the previous page
+      function loadPreviousPage() {
+        if (currentPage > 1) {
+          currentPage--;
+          updatePageNumbers();
+          fetchDataAndPopulateTable(currentPage);
+        }
+      }
+
+      // Function to load the next page
+      function loadNextPage() {
+        currentPage++;
+        updatePageNumbers();
+        fetchDataAndPopulateTable(currentPage);
+      }
+
+      // Call the fetchDataAndPopulateTable function to fetch and populate the table for the first page
+      document.addEventListener("DOMContentLoaded", () => {
+        updatePageNumbers();
+        fetchDataAndPopulateTable(currentPage);
+      });
+
+      // Add event listeners to the previous and next buttons
+      const previousButton = document.getElementById("previousButton");
+      const nextButton = document.getElementById("nextButton");
+
+      previousButton.addEventListener("click", loadPreviousPage);
+      nextButton.addEventListener("click", loadNextPage);
+
+      // Function to fetch data from your API and populate the table
+      async function fetchDataAndPopulateTable(pageNumber) {
+        try {
+          const response = await fetch(`${backendURL}/income/getAllIncome`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const data = await response.json();
+          data.reverse();
+
+          // Check if data.income is defined before using slice
+          if (data && Array.isArray(data)) {
+            const tableBody = document.getElementById("table-body");
+            while (tableBody.firstChild) {
+              tableBody.removeChild(tableBody.firstChild);
+            }
+            const cardsToDisplay = 7;
+            const incomeToDisplay = data.slice(
+              pageNumber * cardsToDisplay - cardsToDisplay,
+              pageNumber * cardsToDisplay
+            );
+
+            incomeToDisplay.forEach((income) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
           <td>${income.date}</td>
           <td>${income.source}</td>
           <td>${income.category}</td>
           <td>${income.description}</td>
           <td>${income.amount}</td>
           <td>
-            <img style="cursor: pointer" class="edit-button" data-id="${
-              income._id
-            }" class="edit.svg" alt="" src="public/edit.svg" />
+            <img style="cursor: pointer" class="edit-button" data-id="${income._id}" class="edit.svg" alt="" src="public/edit.svg" />
             <img
               class="search-icon delete-button"
               alt=""
@@ -1082,183 +1091,185 @@ async function fetchDataAndPopulateTable(pageNumber) {
           </td>
         `;
 
-        tableBody.appendChild(row);
+              tableBody.appendChild(row);
 
-        // Add event listener to the delete button within this row
-        const deleteButton = row.querySelector(".delete-button");
-        deleteButton.addEventListener("click", (event) => {
-          const incomeId = event.target.getAttribute("data-id");
-          deleteIncome(incomeId); // Call the deleteIncome function with the income ID
-        });
+              // Add event listener to the delete button within this row
+              const deleteButton = row.querySelector(".delete-button");
+              deleteButton.addEventListener("click", (event) => {
+                const incomeId = event.target.getAttribute("data-id");
+                deleteIncome(incomeId); // Call the deleteIncome function with the income ID
+              });
+            });
+
+            // Add event listeners to edit buttons
+            const editButtons = document.querySelectorAll(".edit-button");
+            editButtons.forEach((button) => {
+              button.addEventListener("click", (event) => {
+                const incomeId = event.target.getAttribute("data-id");
+                editIncome(incomeId);
+              });
+            });
+          } else {
+            console.error("No income data found");
+          }
+        } catch (error) {
+          console.error("There was a problem with the API request:", error);
+        }
+      }
+
+      // Function to close the overlay for income editing
+      const closeBtn = document.getElementById("closeBtn");
+      closeBtn.addEventListener("click", () => {
+        const overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
       });
 
-      // Add event listeners to edit buttons
-      const editButtons = document.querySelectorAll(".edit-button");
-      editButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
-          const incomeId = event.target.getAttribute("data-id");
-          editIncome(incomeId);
-        });
+      // Function to edit an income by ID
+      async function editIncome(incomeId) {
+        try {
+          const response = await fetch(
+            `${backendURL}/income/getSingleIncome/${incomeId}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const incomeData = await response.json();
+
+          // Populate the form fields with income data for editing
+          document.getElementById("date").value = incomeData.income.date;
+          document.getElementById("source").value = incomeData.income.source;
+          document.getElementById("category").value =
+            incomeData.income.category;
+          document.getElementById("description").value =
+            incomeData.income.description;
+          document.getElementById("amount").value = incomeData.income.amount;
+
+          // Set the form's data-id attribute to the income ID
+          incomeFormEl.setAttribute("data-id", incomeId);
+
+          // Display the overlay for editing
+          const overlay = document.getElementById("overlay");
+          overlay.style.display = "block";
+        } catch (error) {
+          console.error("There was a problem fetching income data:", error);
+        }
+      }
+
+      // Function to update an income by ID
+      async function updateIncome(incomeId) {
+        try {
+          const categoryValue = document.getElementById("category").value;
+          const sourceValue = document.getElementById("source").value;
+          const amountValue = document.getElementById("amount").value;
+          const dateValue = document.getElementById("date").value;
+          const descriptionValue = document.getElementById("description").value;
+
+          const payload = {
+            category: categoryValue,
+            description: descriptionValue,
+            source: sourceValue,
+            date: dateValue,
+            amount: amountValue,
+          };
+
+          const httpRes = await fetch(
+            `${backendURL}/income/editIncome/${incomeId}`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application.json",
+                Accept: "application.json",
+                Authorization: `Bearer ${authToken}`,
+              },
+              body: JSON.stringify(payload),
+            }
+          );
+
+          if (!httpRes.ok) {
+            const jsonRes = await httpRes.json();
+            if (jsonRes.success === true) {
+              alert("Income updated successfully");
+            } else {
+              alert("Error updating income: " + jsonRes.message);
+            }
+          } else {
+            alert("Success: " + httpRes.statusText);
+          }
+
+          // Hide the overlay
+          const overlay = document.getElementById("overlay");
+          overlay.style.display = "none";
+
+          // Refresh the table
+          fetchDataAndPopulateTable();
+        } catch (error) {
+          console.error("An error occurred while updating the income:", error);
+          alert("An error occurred while updating the income.");
+        }
+      }
+
+      // Add event listener to the income form for updating incomes
+      incomeFormEl.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const incomeId = incomeFormEl.getAttribute("data-id");
+        if (incomeId) {
+          updateIncome(incomeId);
+        } else {
+          console.log("Create new income logic here");
+        }
       });
-    } else {
-      console.error("No income data found");
-    }
-  } catch (error) {
-    console.error("There was a problem with the API request:", error);
-  }
-}
 
-// Function to close the overlay for income editing
-const closeBtn = document.getElementById("closeBtn");
-closeBtn.addEventListener("click", () => {
-  const overlay = document.getElementById("overlay");
-  overlay.style.display = "none";
-});
+      // Function to delete an income by ID
+      async function deleteIncome(incomeId) {
+        try {
+          const httpRes = await fetch(
+            `${backendURL}/income/deleteIncome/${incomeId}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-// Function to edit an income by ID
-async function editIncome(incomeId) {
-  try {
-    const response = await fetch(
-      `${backendURL}/income/getSingleIncome/${incomeId}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Bearer ${authToken}`,
-        },
+          if (httpRes.ok) {
+            // Income deleted successfully
+            alert("Income deleted successfully");
+            window.location.href = "/acm/index.html";
+            // Remove the deleted row from the table
+            const deletedRow = document.querySelector(
+              `tr[data-id="${incomeId}"]`
+            );
+            if (deletedRow) {
+              deletedRow.remove();
+            }
+          } else {
+            // Handle errors
+            const jsonRes = await httpRes.json();
+            if (jsonRes.success === false && jsonRes.message) {
+              alert("Error deleting income: " + jsonRes.message);
+            } else {
+              alert(
+                "Error deleting income. Please check your network connection."
+              );
+            }
+          }
+        } catch (error) {
+          console.error("An error occurred while deleting the income:", error);
+          alert("An error occurred while deleting the income.");
+        }
       }
-    );
-    if (!response.ok) {
-      throw new Error(`API response was not ok (${response.status})`);
-    }
-
-    const incomeData = await response.json();
-
-    // Populate the form fields with income data for editing
-    document.getElementById("date").value = incomeData.income.date;
-    document.getElementById("source").value = incomeData.income.source;
-    document.getElementById("category").value = incomeData.income.category;
-    document.getElementById("description").value = incomeData.income.description;
-    document.getElementById("amount").value = incomeData.income.amount;
-
-    // Set the form's data-id attribute to the income ID
-    incomeFormEl.setAttribute("data-id", incomeId);
-
-    // Display the overlay for editing
-    const overlay = document.getElementById("overlay");
-    overlay.style.display = "block";
-  } catch (error) {
-    console.error("There was a problem fetching income data:", error);
-  }
-}
-
-// Function to update an income by ID
-async function updateIncome(incomeId) {
-  try {
-    const categoryValue = document.getElementById("category").value;
-    const sourceValue = document.getElementById("source").value;
-    const amountValue = document.getElementById("amount").value;
-    const dateValue = document.getElementById("date").value;
-    const descriptionValue = document.getElementById("description").value;
-
-    const payload = {
-      category: categoryValue,
-      description: descriptionValue,
-      source: sourceValue,
-      date: dateValue,
-      amount: amountValue,
-    };
-
-    const httpRes = await fetch(
-      `${backendURL}/income/editIncome/${incomeId}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application.json",
-          Accept: "application.json",
-          Authorization: `Bearer ${authToken}`,
-        },
-        body: JSON.stringify(payload),
-      }
-    );
-
-    if (!httpRes.ok) {
-      const jsonRes = await httpRes.json();
-      if (jsonRes.success === true) {
-        alert("Income updated successfully");
-      } else {
-        alert("Error updating income: " + jsonRes.message);
-      }
-    } else {
-      alert("Success: " + httpRes.statusText);
-    }
-
-    // Hide the overlay
-    const overlay = document.getElementById("overlay");
-    overlay.style.display = "none";
-
-    // Refresh the table
-    fetchDataAndPopulateTable();
-  } catch (error) {
-    console.error("An error occurred while updating the income:", error);
-    alert("An error occurred while updating the income.");
-  }
-}
-
-// Add event listener to the income form for updating incomes
-incomeFormEl.addEventListener("submit", async function (event) {
-  event.preventDefault();
-  const incomeId = incomeFormEl.getAttribute("data-id");
-  if (incomeId) {
-    updateIncome(incomeId);
-  } else {
-    console.log("Create new income logic here");
-  }
-});
-
-// Function to delete an income by ID
-async function deleteIncome(incomeId) {
-  try {
-    const httpRes = await fetch(
-      `${backendURL}/income/deleteIncome/${incomeId}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Bearer ${authToken}`,
-        },
-      }
-    );
-
-    if (httpRes.ok) {
-      // Income deleted successfully
-      alert("Income deleted successfully");
-      window.location.href = "/acm/index.html";
-      // Remove the deleted row from the table
-      const deletedRow = document.querySelector(
-        `tr[data-id="${incomeId}"]`
-      );
-      if (deletedRow) {
-        deletedRow.remove();
-      }
-    } else {
-      // Handle errors
-      const jsonRes = await httpRes.json();
-      if (jsonRes.success === false && jsonRes.message) {
-        alert("Error deleting income: " + jsonRes.message);
-      } else {
-        alert(
-          "Error deleting income. Please check your network connection."
-        );
-      }
-    }
-  } catch (error) {
-    console.error("An error occurred while deleting the income:", error);
-    alert("An error occurred while deleting the income.");
-  }
-}
     </script>
   </body>
 </html>
