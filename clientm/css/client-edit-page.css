@@ -464,6 +464,7 @@ li {
   border-radius: 10px;
   outline: 1px solid lightblue;
   width: 69%;
+  cursor: pointer;
 }
 .expand45 {
   padding: 15px 10px 15px 40px;
@@ -569,10 +570,10 @@ select option {
     width: 80%;
   }
   .expand41 {
-    width: 78%
+    width: 78%;
   }
   .expand42 {
-    width: 78%
+    width: 78%;
   }
   .expand43 {
     width: 78%;
