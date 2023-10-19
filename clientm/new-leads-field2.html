@@ -280,6 +280,14 @@
               <input class="expand" type="text" name="due_date" id="due_date"
               placeholder="2023-01-15" >
             </div>
+
+             <div style="display: flex; flex-direction: column; margin-left: 60px">
+                  <label id="status" class="naming">Status</label>
+                  <select class="expand" name="status" id="status" >
+                      <option id="status" value="Qualified">Active</option>
+                      <option id="status" value="Contact Made">In active</option>
+                  </select>
+              </div>
           </div>
           <!-- Second Input -->
           <div class="second">
@@ -375,7 +383,6 @@
               border-radius: 4px;
             "
             type="submit"
-            value="Update"
             class="input1"
           />
         </form>
@@ -548,6 +555,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     populateProfilePage();
   });
+
+ 
   
 
   document.getElementById("leadForm").addEventListener("submit", async function (event) {
@@ -569,6 +578,8 @@
       name_deal: document.getElementById("name_deal").value,
       value: document.getElementById("value").value,
     };
+
+      console.log(updatedLeadData);
 
     const urlParams = new URLSearchParams(window.location.search);
     const leadId = urlParams.get("id");
@@ -597,6 +608,8 @@
       alert("Failed to update lead data");
     }
   });
+
+ 
     </script>
   </body>
 </html>
