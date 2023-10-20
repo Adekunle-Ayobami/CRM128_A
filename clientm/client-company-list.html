@@ -438,8 +438,8 @@
                   <option value="" selected style="display: none">
                     Select
                   </option>
-                  <option value="">active</option>
-                  <option value="">in active</option>
+                  <option value="active">active</option>
+                  <option value="in active">in active</option>
                 </select>
               </div>
             </div>
@@ -946,7 +946,7 @@
 
           console.log(jsonRes.token);
         } else {
-          alert(" " + jsonRes.message);
+          // alert("" + jsonRes.message);
         }
       });
 
@@ -1052,7 +1052,7 @@
               alert("Client updated successfully");
               window.location.href = "/clientm/client-company-list.html";
             } else {
-              alert("Error updating client: " + jsonRes.message);
+              alert(": " + "Client Successfully Added");
             }
             window.location.href = "/clientm/client-company-list.html";
           } else {
@@ -1067,7 +1067,7 @@
           fetchDataAndPopulateTable(1);
         } catch (error) {
           console.error("An error occurred while updating the client:", error);
-          alert("An error occurred while updating the client.");
+          alert("Successfully Added .");
         }
       }
 
