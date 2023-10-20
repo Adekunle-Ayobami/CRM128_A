@@ -160,7 +160,7 @@ li {
   position: absolute;
   top: 8em;
   left: 18em;
-  gap: 420px;
+  gap: 430px;
 }
 .input-group {
   display: flex;
@@ -176,6 +176,11 @@ li {
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+}
+.back:hover {
+  background-color: #2b7fff;
+  color: white;
+  border: none;
 }
 /* .input-container {
   position: absolute;
@@ -198,6 +203,7 @@ li {
   padding-bottom: 9px;
   margin-right: 5px;
   height: 18px;
+  border: 1px solid #2b7fff;
 }
 .select {
   /* position: absolute;
@@ -243,10 +249,18 @@ li {
   padding-top: 5px;
   padding-right: 10px;
   padding-bottom: 3.5px;
-  border: 1px solid black;
+  border: 1px solid #2b7fff;
   text-align: center;
   margin-left: 5px;
   height: 19px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+.sort:hover {
+  background-color: #2b7fff;
+  color: white;
+  border: none;
 }
 .copyright-2023-crm128-parent {
   display: flex;
@@ -264,6 +278,11 @@ li {
   border-radius: 4px;
   color: white;
   cursor: pointer;
+}
+.bt2:hover {
+  background-color: white;
+  color: #2b7fff;
+  border: 1px solid #2b7fff;
 }
 .button-group button {
   padding-top: 6px;
@@ -470,7 +489,7 @@ td {
   padding-bottom: 5px;
 }
 .input-container input[type="text"] {
-  padding-left: 33px;
+  padding-left: 30px;
 }
 /* Overlay Page */
 .add-lead2 {

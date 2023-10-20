@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Expenses</title>
+    <link rel="stylesheet" href="css/view-expense.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <a href="client-management-dash.html">
+          <div class="crm128-wrapper">
+            <span style="color: #003e9c">CRM</span
+            ><span style="color: #57bc4a">128</span>
+          </div>
+        </a>
+        <div class="search-parent">
+          <div>
+            <i class="fa-solid fa-magnifying-glass fa-lg icon"></i
+            ><input
+              class="input-field"
+              type="text"
+              name="search"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+        <div class="bell">
+          <img class="vector-icon" alt="" src="./public/Vector3.svg" /><sup
+            ><b class="b">2</b></sup
+          >
+        </div>
+        <div class="ellipse-group">
+          <div class="avatar">JG</div>
+          <div class="josiah-gana-parent">
+            <div class="josiah-gana" id="admin-email">Josiah Gana</div>
+            <div class="admin">Admin</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="menu">
+        <a href="../Overview&Login/index.html">
+          <div class="side-tab">
+            <img class="more-icon" alt="" src="./public/dashboard.svg" />
+            <div class="side-bar">Overview</div>
+          </div>
+        </a>
+        <div class="client-data" id="hr-toggle">
+          <img class="more-icon" alt="" src="./public/clients.svg" />
+          <div class="side-bar">
+            <a href="../clientm/index.html">Clients</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items">
+            <a href="../clientm/client-company-list.html"
+              ><li>Client Data</li></a
+            >
+            <a href="../clientm/client-leads-list.html"><li>Leads</li></a>
+          </ul>
+        </div>
+        <div class="side-tab">
+          <img class="more-icon" alt="" src="./public/appointment1.svg" />
+          <div class="side-bar">
+            <a href="../adm/index.html">Appointment</a>
+          </div>
+        </div>
+        <div class="drop-hr" id="hr-toggle3">
+          <img class="more-icon" alt="" src="./public/human-resources.svg" />
+          <div class="side-bar">
+            <a href="../hrm/index.html">Human Resource</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon3"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items3">
+            <a href="../hrm/dashboard.html"><li>Employee Management</li></a>
+            <a href="../hrm/leaveDashboard.html"><li>Leave Management</li></a>
+            <a href="../hrm/UserAttenDashboard.html"><li>Attendance</li></a>
+            <a href="../hrm/jobPosting.html"><li>Recruitment</li></a>
+            <a href="../hrm/payrolAllowance.html"><li>Payroll</li></a>
+            <a href="../hrm/staffPerfomance.html"><li>Staff Performance</li></a>
+            <a href="../hrm/awardPageDashboard.html"
+              ><li>Awards and Incentives</li></a
+            >
+            <a href="../hrm/onboardingDash.html"><li>Onboarding</li></a>
+            <a href="../hrm/trainingDash.html"><li>Training</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle1">
+          <img class="more-icon" alt="" src="./public/projects-icon.svg" />
+          <div class="side-bar">
+            <a href="../projectm/index.html">Project Management</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon1"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items1">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <a href="#"
+              ><li style="text-overflow: ellipsis">
+                Emzor Pham Industries Ltd.
+              </li></a
+            >
+            <a href="../projectm/atlantic-hall-school-page.html"
+              ><li>Atlantic Hall School</li></a
+            >
+            <a href="#"><li>Apple</li></a>
+            <a href="#"><li>McDonald's</li></a>
+            <a href="#"><li>+ New Project</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle2">
+          <img class="more-icon" alt="" src="./public/inventory-icon.svg" />
+          <div class="side-bar">
+            <a href="../inventorym/index.html">Inventory</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            id="hr-chevron-icon2"
+            alt=""
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items2">
+            <!--<a href="index.html"><li>Overview</li></a>-->
+            <a href="../inventorym/new-stock-page.html"><li>New Stock</li></a>
+            <a href="../inventorym/stock-list-inventory.html"
+              ><li>Stock List</li></a
+            >
+            <a href="../inventorym/reorder-list-page.html"
+              ><li>Reorder List</li></a
+            >
+            <a href="../inventorym/return-items-page.html"
+              ><li>Return Item</li></a
+            >
+          </ul>
+        </div>
+        <div class="drop-hr client-bar" id="hr-toggle4">
+          <img class="more-icon" alt="" src="./public/accounting.svg" />
+          <div class="side-bar">
+            <a href="../acm/index.html">Accounting</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            id="hr-chevron-icon4"
+            src="./public/chevron-uop.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items4">
+            <a href="../acm/income.html"><li>Income</li></a>
+            <a href="../acm/expense.html"><li class="selected">Expenses</li></a>
+          </ul>
+        </div>
+        <div class="drop-hr" id="hr-toggle5">
+          <img class="more-icon" alt="" src="./public/settings.svg" />
+          <div class="side-bar">
+            <a href="../adminm/index.html">Admin</a>
+          </div>
+          <img
+            class="more-icon client-icon"
+            alt=""
+            id="hr-chevron-icon5"
+            src="./public/chevron-down1.svg"
+          />
+        </div>
+        <div class="client-dropdown">
+          <ul id="hr-items5">
+            <a href="../adminm/index.html"><li>General</li></a>
+            <a href="../adminm/admin-current-user.html"><li>Members</li></a>
+          </ul>
+        </div>
+        <div class="logout">
+          <img class="more-icon" alt="" src="./public/logout.svg" />
+          <div class="side-bar">Logout</div>
+        </div>
+      </div>
+      <div class="frame-group">
+        <div style="margin-right: 10px">Accounting</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="color: #003e9c">Expenses Info</div>
+      </div>
+      <a onclick="history.back()">
+        <div class="back">
+          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
+
+          <div class="search">Back</div>
+        </div>
+      </a>
+      <div class="field">
+        <div class="deal-title-parent">
+          <div class="deal-title">Expenses Info</div>
+        </div>
+        <hr class="hr" />
+        <!-- First Input -->
+        <form action="" id="clientForm">
+          <div class="input">
+            <div class="company">
+              <label class="naming">Date :</label>
+              <input
+                class="expand3"
+                type="text"
+                name="company_name"
+                id="company_name"
+                placeholder="Shola Investment"
+                disabled
+              />
+            </div>
+            <div class="company">
+              <label class="naming">Paid To :</label>
+              <input
+                class="expand4"
+                type="text"
+                name="company_type"
+                id="company_type"
+                placeholder="Private"
+                disabled
+              />
+            </div>
+            <div class="company">
+              <label class="naming">Category :</label>
+              <input
+                class="expand41"
+                type="text"
+                name="website_url"
+                id="website_url"
+                placeholder="website"
+                disabled
+              />
+            </div>
+            <div class="company">
+              <label class="naming">Amount :</label>
+              <input
+                class="expand42"
+                type="text"
+                name="email"
+                id="email"
+                placeholder="sampla@gmail.com"
+                disabled
+              />
+            </div>
+
+            <div class="company">
+              <label class="naming">Description* :</label>
+              <textarea
+                class="expand45"
+                name="description"
+                id="description"
+                cols="30"
+                rows="6"
+                disabled
+              ></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="copyright-2023-crm128-parent">
+        <div class="copyright-2023-crm128-container">
+          <span style="color: #003e9c">© Copyright 2023 CRM</span>
+          <span style="color: #57bc4a">128</span>
+        </div>
+        <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
+      </div>
+    </footer>
+
+    <script>
+      const hrToggle = document.getElementById("hr-toggle");
+      const hrItems = document.getElementById("hr-items");
+      const hrChevronIcon = document.getElementById("hr-chevron-icon");
+
+      hrItems.classList.add("hidden");
+      hrToggle.addEventListener("click", function () {
+        hrItems.classList.toggle("hidden");
+        hrChevronIcon.classList.toggle("rotate");
+      });
+
+      const hrToggle1 = document.getElementById("hr-toggle1");
+      const hrItems1 = document.getElementById("hr-items1");
+      const hrChevronIcon1 = document.getElementById("hr-chevron-icon1");
+
+      hrItems1.classList.add("hidden");
+      hrToggle1.addEventListener("click", function () {
+        hrItems1.classList.toggle("hidden");
+        hrChevronIcon1.classList.toggle("rotate");
+      });
+
+      const hrToggle2 = document.getElementById("hr-toggle2");
+      const hrItems2 = document.getElementById("hr-items2");
+      const hrChevronIcon2 = document.getElementById("hr-chevron-icon2");
+
+      hrItems2.classList.add("hidden");
+      hrToggle2.addEventListener("click", function () {
+        hrItems2.classList.toggle("hidden");
+        hrChevronIcon2.classList.toggle("rotate");
+      });
+
+      const hrToggle3 = document.getElementById("hr-toggle3");
+      const hrItems3 = document.getElementById("hr-items3");
+      const hrChevronIcon3 = document.getElementById("hr-chevron-icon3");
+
+      hrItems3.classList.add("hidden");
+      hrToggle3.addEventListener("click", function () {
+        hrItems3.classList.toggle("hidden");
+        hrChevronIcon3.classList.toggle("rotate");
+      });
+
+      const hrToggle4 = document.getElementById("hr-toggle4");
+      const hrItems4 = document.getElementById("hr-items4");
+      const hrChevronIcon4 = document.getElementById("hr-chevron-icon4");
+
+      //   hrItems4.classList.add("hidden");
+      hrToggle4.addEventListener("click", function () {
+        hrItems4.classList.toggle("hidden");
+        hrChevronIcon4.classList.toggle("rotate");
+      });
+
+      const hrToggle5 = document.getElementById("hr-toggle5");
+      const hrItems5 = document.getElementById("hr-items5");
+      const hrChevronIcon5 = document.getElementById("hr-chevron-icon5");
+
+      hrItems5.classList.add("hidden");
+      hrToggle5.addEventListener("click", function () {
+        hrItems5.classList.toggle("hidden");
+        hrChevronIcon5.classList.toggle("rotate");
+      });
+
+      // check if logged in
+      if (localStorage.getItem("token")) {
+        console.log("already logged in");
+      } else {
+        // window.location.href = "/login.html";
+      }
+
+      const adminEmailEl = document.querySelector("#admin-email");
+      const avatarEl = document.querySelector(".avatar");
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      adminEmailEl.innerHTML = admin.email;
+      avatarEl.innerHTML = admin.email.substring(0, 2);
+
+      const backendURL = "http://localhost:8000";
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc ";
+
+      async function fetchData(url, options) {
+        try {
+          const response = await fetch(url, options);
+          if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.status})`);
+          }
+          return response.json();
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+          return null;
+        }
+      }
+
+      async function displayData(elementId, data) {
+        const element = document.querySelector(elementId);
+        if (element) {
+          element.innerHTML = data;
+        }
+      }
+
+      async function fetchClientData(clientId) {
+        try {
+          const response = await fetch(
+            `${backendURL}/client/getsingleclient/${clientId}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const clientData = await response.json();
+          return clientData;
+        } catch (error) {
+          console.error("An error occurred while fetching client data:", error);
+          return null;
+        }
+      }
+
+      async function populateProfilePage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const clientId = urlParams.get("id");
+
+        if (!clientId) {
+          console.error("Client ID not provided in the URL.");
+          return;
+        }
+
+        const clientData = await fetchClientData(clientId);
+
+        if (clientData && clientData.client) {
+          document.getElementById("company_name").value =
+            clientData.client.company_name;
+          document.getElementById("company_type").value =
+            clientData.client.company_type;
+          document.getElementById("website_url").value =
+            clientData.client.website_url;
+          document.getElementById("email").value = clientData.client.email;
+          document.getElementById("contact").value = clientData.client.contact;
+          document.getElementById("status").value = clientData.client.status;
+          document.getElementById("description").value =
+            clientData.client.description;
+        } else {
+          console.error("Failed to fetch client data.");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        populateProfilePage();
+      });
+
+      document
+        .getElementById("clientForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const updatedClientData = {
+            company_name: document.getElementById("company_name").value,
+            company_type: document.getElementById("company_type").value,
+            website_url: document.getElementById("website_url").value,
+            email: document.getElementById("email").value,
+            contact: document.getElementById("contact").value,
+            status: document.getElementById("status").value,
+            description: document.getElementById("description").value,
+          };
+
+          console.log(updatedClientData);
+
+          const urlParams = new URLSearchParams(window.location.search);
+          const clientId = urlParams.get("id");
+          try {
+            const response = await fetch(
+              `${backendURL}/client/updateclient/${clientId}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                  Authorization: `Bearer ${authToken}`,
+                },
+                body: JSON.stringify(updatedClientData),
+              }
+            );
+
+            if (!response.ok) {
+              throw new Error(`API response was not ok (${response.status})`);
+            }
+            const responseData = await response.json();
+            if (responseData.error) {
+              alert(`Error: ${responseData.error}`);
+            } else {
+              alert("Client data updated successfully");
+            }
+            window.location.href = "/clientm/client-company-list.html";
+          } catch (error) {
+            console.error(
+              "An error occurred while updating client data:",
+              error
+            );
+            alert("Failed to update client data");
+          }
+        });
+    </script>
+  </body>
+</html>
