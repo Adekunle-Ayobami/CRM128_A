@@ -225,8 +225,7 @@
           <div class="deal-title">Expenses Info</div>
         </div>
         <hr class="hr" />
-        <!-- First Input -->
-        <form action="" >
+        <form action="">
           <div class="input">
             <div class="company">
               <label class="naming">Date :</label>
@@ -236,7 +235,6 @@
                 name="date"
                 id="date"
                 placeholder="DD-MM-YY"
-                value
                 disabled
               />
             </div>
@@ -248,7 +246,6 @@
                 name="source"
                 id="source"
                 placeholder="Private"
-                value={expense.source}
                 disabled
               />
             </div>
@@ -270,13 +267,10 @@
                 type="text"
                 name="amount"
                 id="amount"
-                value={expense.amount}
                 placeholder="£0.00"
-                
                 disabled
               />
             </div>
-
             <div class="company">
               <label class="naming">Description* :</label>
               <textarea
@@ -284,8 +278,6 @@
                 name="description"
                 id="description"
                 cols="30"
-                value={expense.description}
-
                 rows="6"
                 disabled
               ></textarea>
@@ -382,82 +374,96 @@
       const authToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU";
 
-     
-        async function fetchData(url, options) {
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) {
-      console.error(`API response was not ok (${response.status}): ${await response.text()}`);
-      throw new Error(`Network response was not ok (${response.status})`);
-    }
-    return response.json();
-  } catch (error) {
-    console.error("There was a problem with the fetch operation:", error);
-    return null;
-  }
-}
-
-async function displayData(elementId, data) {
-  const element = document.querySelector(elementId);
-  if (element) {
-    element.value = data;
-  }
-}
-
-async function fetchExpenseData(expenseId) {
-  try {
-    const response = await fetch(
-      `${backendURL}/expenses/getSingleExpense/${expenseId}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Bearer ${authToken}`,
-        },
+      async function fetchData(url, options) {
+        try {
+          const response = await fetch(url, options);
+          if (!response.ok) {
+            console.error(
+              `API response was not ok (${
+                response.status
+              }): ${await response.text()}`
+            );
+            throw new Error(`Network response was not ok (${response.status})`);
+          }
+          return response.json();
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+          return null;
+        }
       }
-    );
 
-    if (!response.ok) {
-      throw new Error(`API response was not ok (${response.status})`);
-    }
+      async function displayData(elementId, data) {
+        const element = document.querySelector(elementId);
+        if (element) {
+          if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+            element.value = data;
+          } else {
+            element.textContent = data;
+          }
+        }
+      }
 
-    const expenseData = await response.json();
-    console.log("Expense Data:", expenseData);
-    return expenseData;
-  } catch (error) {
-    console.error("An error occurred while fetching expense data:", error);
-    return null;
-  }
-}
+      async function fetchExpenseData(expenseId) {
+        try {
+          console.log("Fetching expense data...");
+          const response = await fetch(
+            `${backendURL}/expenses/getSingleExpense/${expenseId}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
 
-async function populateProfilePage() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const expenseId = urlParams.get("id");
+          console.log("Received response:", response);
 
-  if (!expenseId) {
-    console.error("Expense ID not provided in the URL.");
-    return;
-  }
+          if (!response.ok) {
+            console.error(`API response was not ok (${response.status})`);
+            throw new Error(`Network response was not ok (${response.status})`);
+          }
 
-  const expenseData = await fetchExpenseData(expenseId);
+          const expenseData = await response.json();
+          console.log("Expense Data:", expenseData);
+          return expenseData;
+        } catch (error) {
+          console.error(
+            "An error occurred while fetching expense data:",
+            error
+          );
+          return null;
+        }
+      }
 
-  if (expenseData && expenseData.expense) {
-    displayData("#date", expenseData.expense.date);
-    displayData("#source", expenseData.expense.source);
-    displayData("#category", expenseData.expense.category);
-    displayData("#description", expenseData.expense.description);
-    displayData("#amount", expenseData.expense.amount);
-  } else if (expenseData && expenseData.error) {
-    console.error("API Error:", expenseData.error);
-  } else {
-    console.error("Failed to fetch expense data.");
-  }
-}
+      async function populateProfilePage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const expenseId = urlParams.get("id");
 
-document.addEventListener("DOMContentLoaded", () => {
-  populateProfilePage();
-});
+        if (!expenseId) {
+          console.error("Expense ID not provided in the URL.");
+          return;
+        }
+
+        const expenseData = await fetchExpenseData(expenseId);
+
+        if (expenseData) {
+          // Populate the form fields using JavaScript
+          document.getElementById("date").value = expenseData.date;
+          document.getElementById("source").value = expenseData.source;
+          document.getElementById("category").value = expenseData.category;
+          document.getElementById("amount").value = expenseData.amount;
+          document.getElementById("description").value =
+            expenseData.description;
+        } else {
+          console.error("Failed to fetch expense data.");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        populateProfilePage();
+      });
     </script>
   </body>
 </html>
