@@ -862,36 +862,40 @@
             <td>${expense.description}</td>
             <td>${expense.amount}</td>
             <td>
-              <img style="cursor: pointer" class="edit-button" data-id="${expense._id}" class="edit.svg" alt="" src="public/edit.svg" />
-              <img
-                class="search-icon delete-button"
-                alt=""
-                style="position: relative; left: 10px; top: 5px; cursor: pointer;"
-                src="./public/Delete.svg"
-                id="moreIcon"
-                data-id="${expense._id}"
-              />
+              
+              <a href="../clientm/clients-company-profile.html?id=${expense._id}">  <i class="fa fa-eye" data-id="${expense._id}" id="password-eye" aria-hidden="true"></i></a>
+      
             </td>
           `;
+
+          // <img style="cursor: pointer" class="edit-button" data-id="${expense._id}" class="edit.svg" alt="" src="public/edit.svg" />
+          //     <img
+          //       class="search-icon delete-button"
+          //       alt=""
+          //       style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+          //       src="./public/Delete.svg"
+          //       id="moreIcon"
+          //       data-id="${expense._id}"
+          //     />
 
               tableBody.appendChild(row);
 
               // Add event listener to the delete button within this row
-              const deleteButton = row.querySelector(".delete-button");
-              deleteButton.addEventListener("click", (event) => {
-                const expenseId = event.target.getAttribute("data-id");
-                deleteExpense(expenseId); // Call the deleteExpense function with the income ID
-              });
+              // const deleteButton = row.querySelector(".delete-button");
+              // deleteButton.addEventListener("click", (event) => {
+              //   const expenseId = event.target.getAttribute("data-id");
+              //   deleteExpense(expenseId); // Call the deleteExpense function with the income ID
+              // });
 
               // Add event listener to the edit button within this row
-              const editButton = row.querySelector(".edit-button");
-              editButton.addEventListener("click", (event) => {
-                const expenseId = event.target.getAttribute("data-id");
-                editExpense(expenseId);
-              });
+              // const editButton = row.querySelector(".edit-button");
+              // editButton.addEventListener("click", (event) => {
+              //   const expenseId = event.target.getAttribute("data-id");
+              //   editExpense(expenseId);
+              // });
             });
           } else {
-            console.error("No income data found");
+            console.error("No expense data found");
           }
         } catch (error) {
           console.error("There was a problem with the API request:", error);
