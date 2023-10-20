@@ -73,8 +73,10 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"><li>Client Data</li></a>
-            <a href="../clientm/client-lead-dashboard.html"
+            <a href="../clientm/client-company-list.html"
+              ><li>Client Data</li></a
+            >
+            <a href="../clientm/client-leads-list.html"
               ><li class="selected">Leads</li></a
             >
           </ul>
@@ -243,59 +245,109 @@
         <!-- First Input -->
         <form action="">
           <div class="input">
-              <div style="display: flex; flex-direction: column">
-                  <label class="naming">Value</label>
-                  <input class="expand" type="text" name="value" id="value" placeholder="300,000" disabled>
-              </div>
-              <div style="display: flex; flex-direction: column">
-                <label id="currency" class="naming">Currency</label>
-                <select class="expand1" name="currency" id="currency" disabled>
-                    <option id="currency" value="Dollar">Dollar</option>
-                    <option id="currency" value="Pounds">Pounds</option>
-                    <option id="currency" value="Naira">naira</option>
-                </select>
+            <div style="display: flex; flex-direction: column">
+              <label class="naming">Value</label>
+              <input
+                class="expand"
+                type="text"
+                name="value"
+                id="value"
+                placeholder="300,000"
+                disabled
+              />
             </div>
-              <div style="display: flex; flex-direction: column; margin-left: 60px">
-                  <label id="status" class="naming">Status</label>
-                  <select class="expand" name="status" id="status" disabled>
-                      <option id="status" value="Qualified">active</option>
-                      <option id="status" value="Contact Made">in active</option>
-                      <!-- <option id="status" value="Demo Scheduled">Demo Scheduled</option>
+            <div style="display: flex; flex-direction: column">
+              <label id="currency" class="naming">Currency</label>
+              <select class="expand1" name="currency" id="currency" disabled>
+                <option id="currency" value="Dollar">Dollar</option>
+                <option id="currency" value="Pounds">Pounds</option>
+                <option id="currency" value="Naira">naira</option>
+              </select>
+            </div>
+            <div
+              style="display: flex; flex-direction: column; margin-left: 60px"
+            >
+              <label id="status" class="naming">Status</label>
+              <select class="expand" name="status" id="status" disabled>
+                <option id="status" value="Qualified">active</option>
+                <option id="status" value="Contact Made">in active</option>
+                <!-- <option id="status" value="Demo Scheduled">Demo Scheduled</option>
                       <option id="status" value="Proposal Made">Proposal Made</option>
                       <option id="status" value="Negotiations Started">Negotiations Started</option> -->
-                  </select>
-              </div>
-              <div style="display: flex; flex-direction: column">
-                  <label class="naming">Start Date</label>
-                  <input class="expand" type="text" name="start_date" id="start_date" placeholder="2023-01-01" disabled>
-              </div>
-              <div class="naming1" style="display: flex; flex-direction: column">
-                  <label class="naming">Due Date</label>
-                  <input class="expand" type="text" name="due_date" id="due_date" placeholder="2023-01-15" disabled>
-              </div>
-
+              </select>
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <label class="naming">Start Date</label>
+              <input
+                class="expand"
+                type="text"
+                name="start_date"
+                id="start_date"
+                placeholder="2023-01-01"
+                disabled
+              />
+            </div>
+            <div class="naming1" style="display: flex; flex-direction: column">
+              <label class="naming">Due Date</label>
+              <input
+                class="expand"
+                type="text"
+                name="due_date"
+                id="due_date"
+                placeholder="2023-01-15"
+                disabled
+              />
+            </div>
           </div>
           <!-- Second Input -->
           <div class="second">
-              <span class="cp">Contact Person</span>
-              <div class="input" style="display: flex; gap: 5px">
-                  <div style="display: flex; flex-direction: column">
-                      <label class="naming">First Name*</label>
-                      <input class="expand" type="text" name="first_name" id="first_name" placeholder="John" disabled>
-                  </div>
-                  <div style="display: flex; flex-direction: column">
-                      <label class="naming">Last Name*</label>
-                      <input class="expand" type="text" name="last_name" id="last_name" placeholder="Doe" disabled>
-                  </div>
-                  <div style="display: flex; flex-direction: column">
-                      <label class="naming">Phone</label>
-                      <input class="expand" type="text" name="phone" id="phone" placeholder="09034579021" disabled>
-                  </div>
-                  <div style="display: flex; flex-direction: column">
-                      <label class="naming">Email</label>
-                      <input class="expand" type="text" name="email" id="email" placeholder="sample@mail.com" disabled>
-                  </div>
+            <span class="cp">Contact Person</span>
+            <div class="input" style="display: flex; gap: 5px">
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">First Name*</label>
+                <input
+                  class="expand"
+                  type="text"
+                  name="first_name"
+                  id="first_name"
+                  placeholder="John"
+                  disabled
+                />
               </div>
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Last Name*</label>
+                <input
+                  class="expand"
+                  type="text"
+                  name="last_name"
+                  id="last_name"
+                  placeholder="Doe"
+                  disabled
+                />
+              </div>
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Phone</label>
+                <input
+                  class="expand"
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="09034579021"
+                  disabled
+                />
+              </div>
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Email</label>
+                <input
+                  class="expand"
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="sample@mail.com"
+                  disabled
+                />
+              </div>
+            </div>
           </div>
           <!-- Third Input -->
           <div class="third">
@@ -312,11 +364,11 @@
                   <div style="display: flex; flex-direction: column; margin-left: 2px">
                       <label id="company_category" class="naming">company_category </label>
                       <select class="expand" name="company_category" id="company_category" disabled>
-                          <option id="company_category" value="Agriculture">Agriculture</option>
-                          <option id="company_category" value="Education">Education</option>
-                          <option id="company_category" value="Hospitality">Hospitality</option>
-                          <option id="company_category" value="IT">IT</option>
-                          <option id="company_category" value="Business & Finance">Business & Finance</option>
+                          <option id="company_category" value="Qualified">Agriculture</option>
+                          <option id="company_category" value="Contact Made">Education</option>
+                          <option id="company_category" value="Demo Scheduled">Hospitality</option>
+                          <option id="company_category" value="Proposal Made">IT</option>
+                          <option id="company_category" value="Negotiations Started">Business & Finance</option>
                       </select>
                   </div>
                   <div style="display: flex; flex-direction: column">
@@ -327,14 +379,29 @@
                       <label class="naming">Email</label>
                       <input class="expand" type="text" name="email" id="email" placeholder="Email" disabled>
                   </div> -->
-              </div>
-              <!-- Last Input -->
-              <div style="display: flex; flex-direction: column; width: 70%; margin-left: 55px; margin-top: 20px">
-                  <label class="naming">Address</label>
-                  <input class="expand2" type="text" name="address" id="address" placeholder="Address" disabled>
-              </div>
+            </div>
+            <!-- Last Input -->
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                margin-left: 55px;
+                margin-top: 20px;
+              "
+            >
+              <label class="naming">Address</label>
+              <input
+                class="expand2"
+                type="text"
+                name="address"
+                id="address"
+                placeholder="Address"
+                disabled
+              />
+            </div>
           </div>
-      </form>
+        </form>
       </div>
     </section>
     <footer>
@@ -408,8 +475,8 @@
         hrChevronIcon5.classList.toggle("rotate");
       });
 
-            // check if logged in
-            if (localStorage.getItem("token")) {
+      // check if logged in
+      if (localStorage.getItem("token")) {
         console.log("already logged in");
       } else {
         // window.location.href = "/login.html";
@@ -422,65 +489,70 @@
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
-const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
 
-async function fetchData(url, options) {
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) {
-      throw new Error(`Network response was not ok (${response.status})`);
-    }
-    return response.json();
-  } catch (error) {
-    console.error("There was a problem with the fetch operation:", error);
-    return null;
-  }
-}
+      async function fetchData(url, options) {
+        try {
+          const response = await fetch(url, options);
+          if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.status})`);
+          }
+          return response.json();
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+          return null;
+        }
+      }
 
-async function displayData(elementId, data) {
-  const element = document.querySelector(elementId);
-  if (element) {
-    element.innerHTML = data;
-  }
-}
+      async function displayData(elementId, data) {
+        const element = document.querySelector(elementId);
+        if (element) {
+          element.innerHTML = data;
+        }
+      }
 
-async function fetchLeadData(leadId) {
-    try {
-        const response = await fetch(`${backendURL}/lead/getsinglelead/${leadId}`, {
-            method: "GET",
-            headers: {
+      async function fetchLeadData(leadId) {
+        try {
+          const response = await fetch(
+            `${backendURL}/lead/getsinglelead/${leadId}`,
+            {
+              method: "GET",
+              headers: {
                 "Content-Type": "application/json",
                 Accept: "application json",
                 Authorization: `Bearer ${authToken}`,
-            },
-        });
+              },
+            }
+          );
 
-        if (!response.ok) {
+          if (!response.ok) {
             throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const leadData = await response.json();
+          return leadData;
+        } catch (error) {
+          console.error("An error occurred while fetching lead data:", error);
+          return null;
+        }
+      }
+
+      // Function to populate the profile page with lead data
+      async function populateProfilePage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const leadId = urlParams.get("id"); // Get the lead ID from the URL
+
+        if (!leadId) {
+          console.error("Lead ID not provided in the URL.");
+          return;
         }
 
-        const leadData = await response.json();
-        return leadData;
-    } catch (error) {
-        console.error("An error occurred while fetching lead data:", error);
-        return null;
-    }
-}
+        const leadData = await fetchLeadData(leadId);
 
-// Function to populate the profile page with lead data
-async function populateProfilePage() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const leadId = urlParams.get("id"); // Get the lead ID from the URL
-
-    if (!leadId) {
-        console.error("Lead ID not provided in the URL.");
-        return;
-    }
-
-    const leadData = await fetchLeadData(leadId);
-
-    if (leadData && leadData.lead) {
-      document.getElementById("first_name").value = leadData.lead.first_name;
+        if (leadData && leadData.lead) {
+          document.getElementById("first_name").value =
+            leadData.lead.first_name;
           document.getElementById("last_name").value = leadData.lead.last_name;
           // document.getElementById("qualification").value =
           //   leadData.lead.qualification;
@@ -500,21 +572,18 @@ async function populateProfilePage() {
           document.getElementById("name_deal").value = leadData.lead.name_deal;
           document.getElementById("value").value = leadData.lead.value;
 
-          console.log(leadData.lead.currency)
-        const contactName = leadData.lead.first_name;
-      
-    } else {
-        // Handle the case where data couldn't be fetched or is missing
-        console.error("Failed to fetch lead data.");
-    }
-}
+          console.log(leadData.lead.currency);
+          const contactName = leadData.lead.first_name;
+        } else {
+          // Handle the case where data couldn't be fetched or is missing
+          console.error("Failed to fetch lead data.");
+        }
+      }
 
-// Call the function to populate the profile page when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-    populateProfilePage();
-});
-
-
+      // Call the function to populate the profile page when the page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        populateProfilePage();
+      });
     </script>
   </body>
 </html>

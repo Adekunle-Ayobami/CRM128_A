@@ -79,7 +79,6 @@
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="../clientm/client-leads-list.html"><li>Client Data</li></a>
             <a href="../clientm/client-leads-list.html"><li>Leads</li></a>
-            <li>Analytics</li>
           </ul>
         </div>
         <div class="side-tab">
@@ -248,15 +247,14 @@
           <div class="one">
             <span>Avg. value of won deals</span>
             <span
-            id="totalLead-won"
+              id="totalLead-won"
               style="
                 font-size: 37px;
                 margin-top: 10px;
                 font-weight: bolder;
                 margin-bottom: 20px;
               "
-              ></span
-            >
+            ></span>
             <span>Naira</span>
           </div>
         </div>
@@ -586,7 +584,7 @@
           <div style="padding-right: 50px" class="one5">
             <span>Total Income</span>
             <span
-            id="total-income" 
+              id="total-income"
               style="
                 font-size: 37px;
                 margin-top: 10px;
@@ -598,14 +596,16 @@
           </div>
           <div style="padding-right: 50px" class="one5">
             <span>Profit</span>
-            <span id="total-balance" style="font-size: 37px; margin-top: 10px; font-weight: bolder"
+            <span
+              id="total-balance"
+              style="font-size: 37px; margin-top: 10px; font-weight: bolder"
               >102M</span
             >
           </div>
           <div class="one5">
             <span>Total Expense</span>
             <span
-            id="total-expenses"
+              id="total-expenses"
               style="
                 font-size: 37px;
                 margin-top: 10px;
@@ -948,117 +948,131 @@
       avatarEl.innerHTML = admin.email.substring(0, 2);
 
       const backendURL = "http://localhost:8000"; // Replace with your actual backend API URL
-const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc "; // Replace with your authentication token
 
-async function fetchData(url, options) {
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) {
-      throw new Error(`Network response was not ok (${response.status})`);
-    }
-    return response.json();
-  } catch (error) {
-    console.error("There was a problem with the fetch operation:", error);
-    return null;
-  }
-}
+      async function fetchData(url, options) {
+        try {
+          const response = await fetch(url, options);
+          if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.status})`);
+          }
+          return response.json();
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+          return null;
+        }
+      }
 
-async function displayData(elementId, data) {
-  const element = document.querySelector(elementId);
-  if (element) {
-    element.innerHTML = data;
-  }
-}
+      async function displayData(elementId, data) {
+        const element = document.querySelector(elementId);
+        if (element) {
+          element.innerHTML = data;
+        }
+      }
 
-async function fetchDataAndDisplay() {
-  const clientData = await fetchData(
-    `${backendURL}/client/getactiveclientcount`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-    }
-  );
+      async function fetchDataAndDisplay() {
+        const clientData = await fetchData(
+          `${backendURL}/client/getactiveclientcount`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          }
+        );
 
-  if (clientData) {
-    displayData("#active-client", clientData.count);
-  }
+        if (clientData) {
+          displayData("#active-client", clientData.count);
+        }
 
-  const leadData = await fetchData(`${backendURL}/lead/getactiveleadcount`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
+        const leadData = await fetchData(
+          `${backendURL}/lead/getactiveleadcount`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          }
+        );
 
-  if (leadData) {
-    displayData("#active-lead", leadData.count);
-  }
-}
+        if (leadData) {
+          displayData("#active-lead", leadData.count);
+        }
+      }
 
-async function fetchDataAndDisplay2() {
-  const totalIncome = await fetchData(`${backendURL}/income/calculateIncome`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
+      async function fetchDataAndDisplay2() {
+        const totalIncome = await fetchData(
+          `${backendURL}/income/calculateIncome`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          }
+        );
 
-  if (totalIncome) {
-    displayData("#total-income", totalIncome.totalIncome);
-  }
+        if (totalIncome) {
+          displayData("#total-income", totalIncome.totalIncome);
+        }
 
-  const totalBalance = await fetchData(`${backendURL}/balance/calculateBalance`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
+        const totalBalance = await fetchData(
+          `${backendURL}/balance/calculateBalance`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          }
+        );
 
-  if (totalBalance) {
-    displayData("#total-balance", totalBalance.balance);
-  }
+        if (totalBalance) {
+          displayData("#total-balance", totalBalance.balance);
+        }
 
-  const totalLeadValue = await fetchData(`${backendURL}/lead/getTotalValue`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
+        const totalLeadValue = await fetchData(
+          `${backendURL}/lead/getTotalValue`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          }
+        );
 
-  if (totalLeadValue) {
-    displayData("#totalLead-won", totalLeadValue.totalValue[0].total);
-  }
+        if (totalLeadValue) {
+          displayData("#totalLead-won", totalLeadValue.totalValue[0].total);
+        }
 
-  const totalExpenses = await fetchData(`${backendURL}/expenses/calculateExpenses`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  });
+        const totalExpenses = await fetchData(
+          `${backendURL}/expenses/calculateExpenses`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+          }
+        );
 
-  if (totalExpenses) {
-    displayData("#total-expenses", totalExpenses.totalExpenses);
-  }
-}
+        if (totalExpenses) {
+          displayData("#total-expenses", totalExpenses.totalExpenses);
+        }
+      }
 
-fetchDataAndDisplay();
-fetchDataAndDisplay2();
-
-      
+      fetchDataAndDisplay();
+      fetchDataAndDisplay2();
     </script>
   </body>
 </html>
