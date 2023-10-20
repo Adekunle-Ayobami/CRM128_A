@@ -639,6 +639,10 @@ td {
   border-radius: 5px;
   cursor: pointer;
 }
+.bigbutton:hover {
+  background-color: #f6f6f6;
+  border: 2px solid #7ac769;
+}
 
 @media (min-width: 1368px) {
   .logout {
