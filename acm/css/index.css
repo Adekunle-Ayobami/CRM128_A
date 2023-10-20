@@ -328,6 +328,7 @@ td {
 .expense-arrow {
   margin-left: 20px;
 }
+/* Pagination */
 .pagination {
   position: absolute;
   top: 82%;
@@ -344,12 +345,14 @@ td {
   position: relative;
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 .page-active {
   position: relative;
   width: 32px;
   height: 32px;
   color: #0047b3;
+  cursor: pointer;
 }
 .page-active1 {
   position: absolute;
