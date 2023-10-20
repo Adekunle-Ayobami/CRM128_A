@@ -167,6 +167,7 @@ li {
   background-color: #fff;
   border: 2px solid #0047b3;
   border-radius: 4px;
+  height: 5vh;
   cursor: pointer;
 }
 .bt1:hover {
@@ -180,6 +181,7 @@ li {
   border: 2px solid #0047b3;
   border-radius: 4px;
   color: white;
+  height: 5vh;
   cursor: pointer;
 }
 .bt2:hover {
@@ -328,6 +330,7 @@ td {
 .expense-arrow {
   margin-left: 20px;
 }
+/* Pagination */
 .pagination {
   position: absolute;
   top: 82%;
@@ -344,12 +347,14 @@ td {
   position: relative;
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 .page-active {
   position: relative;
   width: 32px;
   height: 32px;
   color: #0047b3;
+  cursor: pointer;
 }
 .page-active1 {
   position: absolute;
