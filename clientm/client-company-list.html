@@ -298,7 +298,7 @@
       </table>
 
       <div class="pagination">
-        <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
+        <img class="page-disabled rp" alt="" src="./public/page--master.svg" />
 
         <div class="page-active">
           <div class="page-active1">
@@ -432,16 +432,15 @@
               </div>
             </div>
             <div>
-              <span>status</span> <br />
-              <div class="input-container" style="margin-top: 5px">
-                <img class="call-icon" alt="" src="public/call.svg" />
-                <input
-                  placeholder="active/inactive"
-                  id="status"
-                  class="input-field1"
-                  type="text"
-                  name="search"
-                />
+              <span>Status</span> <br />
+              <div class="input-container">
+                <select class="input-field1" name="search" id="status">
+                  <option value="" selected style="display: none">
+                    Select
+                  </option>
+                  <option value="">active</option>
+                  <option value="">in active</option>
+                </select>
               </div>
             </div>
           </div>

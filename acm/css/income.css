@@ -173,12 +173,13 @@ li {
   justify-content: flex-start;
   text-align: center;
   display: flex;
+  gap: 10px;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
 }
 .back:hover {
-  background-color: #2b7fff;
+  background-color: #0047b3;
   color: white;
   border: none;
 }
@@ -213,6 +214,9 @@ li {
   padding-top: 3px;
   padding-bottom: 3px;
   height: 30px;
+  border: 1px solid #2b7fff;
+  border-radius: 3px;
+  cursor: pointer;
 }
 .select1 {
   /* position: absolute;
@@ -223,6 +227,9 @@ li {
   padding-bottom: 3px;
   height: 30px;
   outline: none;
+  border: 1px solid #2b7fff;
+  border-radius: 3px;
+  cursor: pointer;
 }
 .select1 option {
   padding-bottom: 30px;
@@ -241,10 +248,9 @@ li {
   font-size: 16px;
 }
 .sort {
+  display: flex;
+  gap: 4px;
   background-color: white;
-  /* position: absolute;
-  top: 75px;
-  right: 6.1%; */
   padding-left: 10px;
   padding-top: 5px;
   padding-right: 10px;
@@ -258,7 +264,7 @@ li {
   transition: background-color 0.3s, transform 0.3s, color 0.3s;
 }
 .sort:hover {
-  background-color: #2b7fff;
+  background-color: #0047b3;
   color: white;
   border: none;
 }
@@ -270,6 +276,7 @@ li {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 10;
 }
 .bt2 {
   width: 130px;
@@ -333,12 +340,17 @@ td {
   position: relative;
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 .page-active {
   position: relative;
   width: 32px;
   height: 32px;
   color: #0047b3;
+  cursor: pointer;
+}
+.rp {
+  transform: rotate(180deg);
 }
 .page-active1 {
   position: absolute;
@@ -474,7 +486,7 @@ td {
   padding: 20px 70px 10px 70px;
   background-color: #7ac769;
   border: none;
-  margin-top: 10px;
+  margin-top: 30px;
   border-radius: 5px;
   padding-bottom: 20px;
 }

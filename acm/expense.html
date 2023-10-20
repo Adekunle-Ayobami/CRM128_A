@@ -217,10 +217,10 @@
         <div style="display: flex">
           <div style="margin-right: 10px">Accounting</div>
           <div style="margin-right: 10px">|</div>
-          <div style="color: #003e9c">Income</div>
+          <div style="color: #003e9c">Expenses</div>
         </div>
         <div class="back" onclick="history.back()">
-          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
+          <i class="fa-solid fa-arrow-left search-icon"></i>
           <div class="search">Back</div>
         </div>
       </div>
@@ -253,10 +253,8 @@
             <option value="">December</option>
           </select>
           <div class="sort">
-            <img style="width: 15px" src="public/sort_minor.png" alt="" /><span
-              style="margin-bottom: 7px"
-              >Sort</span
-            >
+            <i class="fa-solid fa-arrow-up-z-a"></i
+            ><span style="margin-bottom: 7px">Sort</span>
           </div>
         </div>
         <div style="display: flex">
@@ -372,9 +370,9 @@
       <div class="pagination">
         <img
           id="previousButton"
-          class="page-disabled"
+          class="page-disabled rp"
           alt=""
-          src="./public/page--disabled.svg"
+          src="./public/page--master.svg"
         />
         <div class="page-active">
           <div class="page-active1">
@@ -413,21 +411,26 @@
       <form action="" id="expenses-form">
         <div class="add-lead" id="overlay" style="display: none">
           <div class="lead">
-            <div style="width: 100%; font-weight: 600">Add New Income</div>
-            <img src="public/close.svg" id="closeBtn" alt="" />
+            <div style="width: 100%; font-weight: 600">Add New Expense</div>
+            <img
+              style="cursor: pointer"
+              src="public/close.svg"
+              id="closeBtn"
+              alt=""
+            />
           </div>
           <div class="form form1">
             <span style="margin-bottom: 5px">Date</span>
             <input id="date" type="date" placeholder="DD-MM-YY" />
           </div>
           <div class="form form1">
-            <span style="margin-bottom: 5px">Source</span>
+            <span style="margin-bottom: 5px">Paid To</span>
             <input id="source" type="text" placeholder="Source" />
           </div>
           <div class="form2 form1">
             <div>
               <span>Category</span> <br />
-              <div class="input-container" style="margin-top: 5px">
+              <div class="input-container1" style="margin-top: 5px">
                 <input id="category" type="text" placeholder="category" />
                 <!-- <select name="">
                 <option value="">Direct Sales</option>
@@ -439,7 +442,7 @@
             </div>
             <div>
               <span>Amount</span> <br />
-              <div class="input-container" style="margin-top: 5px">
+              <div class="input-container1" style="margin-top: 5px">
                 <input id="amount" type="text" placeholder="amount" />
                 <!-- <select name="">
                 <option value="">Option 1</option>
@@ -868,15 +871,15 @@
             </td>
           `;
 
-          // <img style="cursor: pointer" class="edit-button" data-id="${expense._id}" class="edit.svg" alt="" src="public/edit.svg" />
-          //     <img
-          //       class="search-icon delete-button"
-          //       alt=""
-          //       style="position: relative; left: 10px; top: 5px; cursor: pointer;"
-          //       src="./public/Delete.svg"
-          //       id="moreIcon"
-          //       data-id="${expense._id}"
-          //     />
+              // <img style="cursor: pointer" class="edit-button" data-id="${expense._id}" class="edit.svg" alt="" src="public/edit.svg" />
+              //     <img
+              //       class="search-icon delete-button"
+              //       alt=""
+              //       style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+              //       src="./public/Delete.svg"
+              //       id="moreIcon"
+              //       data-id="${expense._id}"
+              //     />
 
               tableBody.appendChild(row);
 
