@@ -210,12 +210,12 @@ li {
 }
 .back {
   position: absolute;
-  top: 4em;
-  left: 19em;
+  top: 1em;
+  right: 7.6%;
   border-radius: 7px;
   background-color: #f5f6f7;
   border: 1px solid #dfe2e6;
-  padding: 4px 12px;
+  padding: 10px 12px;
   justify-content: flex-start;
   gap: var(--gap-3xs);
   text-align: center;
@@ -224,6 +224,12 @@ li {
   align-items: center;
   cursor: pointer;
 }
+.back:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
+}
+
 /* Field */
 .field {
   background-color: white;
@@ -337,7 +343,7 @@ li {
   position: relative;
   display: flex;
   gap: 28px;
-  width: 0%;
+  width: 100%;
   margin-bottom: 40px;
 }
 .input3 {
@@ -415,7 +421,7 @@ li {
   border: 1px solid lightblue;
   border-radius: 10px;
   outline: 1px solid lightblue;
-  width: 12em;
+  width: 83%;
 }
 .expand1 {
   padding: 15px 10px 15px 10px;
@@ -508,7 +514,7 @@ select option {
     left: 23.8em;
   }
   .back {
-    left: 25em;
+    right: 9%;
   }
   .field {
     left: 25em;

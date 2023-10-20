@@ -210,12 +210,12 @@ li {
 }
 .back {
   position: absolute;
-  top: 4em;
-  left: 19em;
+  top: 1em;
+  right: 7.6%;
   border-radius: 7px;
   background-color: #f5f6f7;
   border: 1px solid #dfe2e6;
-  padding: 4px 12px;
+  padding: 10px 12px;
   justify-content: flex-start;
   gap: var(--gap-3xs);
   text-align: center;
@@ -223,6 +223,11 @@ li {
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+}
+.back:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
 }
 /* Field */
 .field {
@@ -311,6 +316,9 @@ li {
   text-align: center;
   font-size: 11px;
 }
+.search-icon {
+  margin-right: 5px;
+}
 .deal-title-parent {
   position: relative;
   width: 87%;
@@ -343,7 +351,7 @@ li {
 .update-btn {
   position: relative;
   top: 2em;
-  left: 44.3em;
+  left: 75%;
 }
 .input1 {
   height: 7vh;
@@ -369,7 +377,9 @@ li {
 }
 
 .input1:hover {
-  background-color: #0047b3;
+  background-color: white;
+  border: 2px solid #0047b3;
+  color: #0047b3;
   transform: scale(1.1);
 }
 .expand {
@@ -548,7 +558,7 @@ select option {
     left: 23.8em;
   }
   .back {
-    left: 25em;
+    right: 9%;
   }
   .field {
     left: 25em;
@@ -585,7 +595,7 @@ select option {
     width: 78%;
   }
   .update-btn {
-    left: 71.5em;
+    left: 86%;
   }
   .ml {
     margin-left: 0.2em;
@@ -595,9 +605,6 @@ select option {
   }
   .naming2 {
     left: 16.3em;
-  }
-  .input1 {
-    left: 85em;
   }
   .hr {
     position: relative;

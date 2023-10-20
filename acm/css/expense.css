@@ -268,12 +268,13 @@ li {
   height: 19px;
   border-radius: 2px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+  transition: background-color 0.6s, transform 0.5s, color 0.3s;
 }
 .sort:hover {
   background-color: #0047b3;
   color: white;
   border: none;
+  transform: scale(1.11);
 }
 
 .copyright-2023-crm128-parent {
