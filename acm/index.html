@@ -1079,26 +1079,30 @@
           <td>${income.description}</td>
           <td>${income.amount}</td>
           <td>
-            <img style="cursor: pointer" class="edit-button" data-id="${income._id}" class="edit.svg" alt="" src="public/edit.svg" />
-            <img
-              class="search-icon delete-button"
-              alt=""
-              style="position: relative; left: 10px; top: 5px; cursor: pointer;"
-              src="./public/Delete.svg"
-              id="moreIcon"
-              data-id="${income._id}"
-            />
+         
+
+               <a href="../clientm/clients-company-profile.html?id=${income._id}">  <i class="fa fa-eye" data-id="${income._id}" id="password-eye" aria-hidden="true"></i></a>
           </td>
         `;
+
+        // <img style="cursor: pointer" class="edit-button" data-id="${income._id}" class="edit.svg" alt="" src="public/edit.svg" />
+        //     <img
+        //       class="search-icon delete-button"
+        //       alt=""
+        //       style="position: relative; left: 10px; top: 5px; cursor: pointer;"
+        //       src="./public/Delete.svg"
+        //       id="moreIcon"
+        //       data-id="${income._id}"
+        //     />
 
               tableBody.appendChild(row);
 
               // Add event listener to the delete button within this row
-              const deleteButton = row.querySelector(".delete-button");
-              deleteButton.addEventListener("click", (event) => {
-                const incomeId = event.target.getAttribute("data-id");
-                deleteIncome(incomeId); // Call the deleteIncome function with the income ID
-              });
+              // const deleteButton = row.querySelector(".delete-button");
+              // deleteButton.addEventListener("click", (event) => {
+              //   const incomeId = event.target.getAttribute("data-id");
+              //   deleteIncome(incomeId); // Call the deleteIncome function with the income ID
+              // });
             });
 
             // Add event listeners to edit buttons
