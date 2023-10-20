@@ -226,16 +226,17 @@
         </div>
         <hr class="hr" />
         <!-- First Input -->
-        <form action="" id="clientForm">
+        <form action="" >
           <div class="input">
             <div class="company">
               <label class="naming">Date :</label>
               <input
                 class="expand3"
                 type="text"
-                name="company_name"
-                id="company_name"
-                placeholder="Shola Investment"
+                name="date"
+                id="date"
+                placeholder="DD-MM-YY"
+                value
                 disabled
               />
             </div>
@@ -244,9 +245,10 @@
               <input
                 class="expand4"
                 type="text"
-                name="company_type"
-                id="company_type"
+                name="source"
+                id="source"
                 placeholder="Private"
+                value={expense.source}
                 disabled
               />
             </div>
@@ -255,8 +257,8 @@
               <input
                 class="expand41"
                 type="text"
-                name="website_url"
-                id="website_url"
+                name="category"
+                id="category"
                 placeholder="website"
                 disabled
               />
@@ -266,9 +268,11 @@
               <input
                 class="expand42"
                 type="text"
-                name="email"
-                id="email"
-                placeholder="sampla@gmail.com"
+                name="amount"
+                id="amount"
+                value={expense.amount}
+                placeholder="£0.00"
+                
                 disabled
               />
             </div>
@@ -280,6 +284,8 @@
                 name="description"
                 id="description"
                 cols="30"
+                value={expense.description}
+
                 rows="6"
                 disabled
               ></textarea>
@@ -374,137 +380,84 @@
 
       const backendURL = "http://localhost:8000";
       const authToken =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc ";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjBmODY2NTliYzU3NzFlOTI0MjM3ZiIsImVtYWlsIjoiYWRtaW5jcm1AZ21haWwuY29tIiwiaWF0IjoxNjk2Njk3NzM2LCJleHAiOjE2OTY3MDg1MzZ9.oeq-MRi-TZ4E6xIn0VhOKx-NspWRyDYCJogkHJbUtWU";
 
-      async function fetchData(url, options) {
-        try {
-          const response = await fetch(url, options);
-          if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.status})`);
-          }
-          return response.json();
-        } catch (error) {
-          console.error("There was a problem with the fetch operation:", error);
-          return null;
-        }
+     
+        async function fetchData(url, options) {
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      console.error(`API response was not ok (${response.status}): ${await response.text()}`);
+      throw new Error(`Network response was not ok (${response.status})`);
+    }
+    return response.json();
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+    return null;
+  }
+}
+
+async function displayData(elementId, data) {
+  const element = document.querySelector(elementId);
+  if (element) {
+    element.value = data;
+  }
+}
+
+async function fetchExpenseData(expenseId) {
+  try {
+    const response = await fetch(
+      `${backendURL}/expenses/getSingleExpense/${expenseId}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${authToken}`,
+        },
       }
+    );
 
-      async function displayData(elementId, data) {
-        const element = document.querySelector(elementId);
-        if (element) {
-          element.innerHTML = data;
-        }
-      }
+    if (!response.ok) {
+      throw new Error(`API response was not ok (${response.status})`);
+    }
 
-      async function fetchClientData(clientId) {
-        try {
-          const response = await fetch(
-            `${backendURL}/client/getsingleclient/${clientId}`,
-            {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                Authorization: `Bearer ${authToken}`,
-              },
-            }
-          );
+    const expenseData = await response.json();
+    console.log("Expense Data:", expenseData);
+    return expenseData;
+  } catch (error) {
+    console.error("An error occurred while fetching expense data:", error);
+    return null;
+  }
+}
 
-          if (!response.ok) {
-            throw new Error(`API response was not ok (${response.status})`);
-          }
+async function populateProfilePage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const expenseId = urlParams.get("id");
 
-          const clientData = await response.json();
-          return clientData;
-        } catch (error) {
-          console.error("An error occurred while fetching client data:", error);
-          return null;
-        }
-      }
+  if (!expenseId) {
+    console.error("Expense ID not provided in the URL.");
+    return;
+  }
 
-      async function populateProfilePage() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const clientId = urlParams.get("id");
+  const expenseData = await fetchExpenseData(expenseId);
 
-        if (!clientId) {
-          console.error("Client ID not provided in the URL.");
-          return;
-        }
+  if (expenseData && expenseData.expense) {
+    displayData("#date", expenseData.expense.date);
+    displayData("#source", expenseData.expense.source);
+    displayData("#category", expenseData.expense.category);
+    displayData("#description", expenseData.expense.description);
+    displayData("#amount", expenseData.expense.amount);
+  } else if (expenseData && expenseData.error) {
+    console.error("API Error:", expenseData.error);
+  } else {
+    console.error("Failed to fetch expense data.");
+  }
+}
 
-        const clientData = await fetchClientData(clientId);
-
-        if (clientData && clientData.client) {
-          document.getElementById("company_name").value =
-            clientData.client.company_name;
-          document.getElementById("company_type").value =
-            clientData.client.company_type;
-          document.getElementById("website_url").value =
-            clientData.client.website_url;
-          document.getElementById("email").value = clientData.client.email;
-          document.getElementById("contact").value = clientData.client.contact;
-          document.getElementById("status").value = clientData.client.status;
-          document.getElementById("description").value =
-            clientData.client.description;
-        } else {
-          console.error("Failed to fetch client data.");
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        populateProfilePage();
-      });
-
-      document
-        .getElementById("clientForm")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault();
-
-          const updatedClientData = {
-            company_name: document.getElementById("company_name").value,
-            company_type: document.getElementById("company_type").value,
-            website_url: document.getElementById("website_url").value,
-            email: document.getElementById("email").value,
-            contact: document.getElementById("contact").value,
-            status: document.getElementById("status").value,
-            description: document.getElementById("description").value,
-          };
-
-          console.log(updatedClientData);
-
-          const urlParams = new URLSearchParams(window.location.search);
-          const clientId = urlParams.get("id");
-          try {
-            const response = await fetch(
-              `${backendURL}/client/updateclient/${clientId}`,
-              {
-                method: "PUT",
-                headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-                  Authorization: `Bearer ${authToken}`,
-                },
-                body: JSON.stringify(updatedClientData),
-              }
-            );
-
-            if (!response.ok) {
-              throw new Error(`API response was not ok (${response.status})`);
-            }
-            const responseData = await response.json();
-            if (responseData.error) {
-              alert(`Error: ${responseData.error}`);
-            } else {
-              alert("Client data updated successfully");
-            }
-            window.location.href = "/clientm/client-company-list.html";
-          } catch (error) {
-            console.error(
-              "An error occurred while updating client data:",
-              error
-            );
-            alert("Failed to update client data");
-          }
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  populateProfilePage();
+});
     </script>
   </body>
 </html>
