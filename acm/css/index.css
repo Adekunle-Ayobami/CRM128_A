@@ -575,6 +575,9 @@ td {
   .logout {
     padding-bottom: 260px;
   }
+  .bt1, .bt2 {
+    height: 3.5vh;
+  }
 }
 @media (max-width: 500px) {
   .bell {
