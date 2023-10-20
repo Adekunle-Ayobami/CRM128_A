@@ -167,6 +167,12 @@ li {
   background-color: #fff;
   border: 2px solid #0047b3;
   border-radius: 4px;
+  cursor: pointer;
+}
+.bt1:hover {
+  background-color: #0047b3;
+  order: 2px solid #0047b3;
+  color: white;
 }
 .bt2 {
   width: 120px;
@@ -174,6 +180,11 @@ li {
   border: 2px solid #0047b3;
   border-radius: 4px;
   color: white;
+  cursor: pointer;
+}
+.bt2:hover {
+  background-color: white;
+  color: #0047b3;
 }
 .btn {
   position: absolute;
@@ -269,6 +280,7 @@ li {
   position: relative;
   top: -1.2em;
   left: 10.5em;
+  cursor: pointer;
 }
 .open-eyes1 {
   width: 20px;
@@ -276,6 +288,7 @@ li {
   position: relative;
   top: -1.2em;
   left: 10.5em;
+  cursor: pointer;
 }
 .open-eyes2 {
   width: 20px;
@@ -283,6 +296,7 @@ li {
   position: relative;
   top: -1.2em;
   left: 11em;
+  cursor: pointer;
 }
 .naira {
   font-size: 30px;
@@ -355,6 +369,9 @@ td {
 .page-master {
   border-radius: 4px;
   overflow: hidden;
+}
+.rp {
+  transform: rotate(180deg);
 }
 .page-default1 {
   position: absolute;
