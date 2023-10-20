@@ -167,6 +167,7 @@ li {
   background-color: #fff;
   border: 2px solid #0047b3;
   border-radius: 4px;
+  height: 5vh;
   cursor: pointer;
 }
 .bt1:hover {
@@ -180,6 +181,7 @@ li {
   border: 2px solid #0047b3;
   border-radius: 4px;
   color: white;
+  height: 5vh;
   cursor: pointer;
 }
 .bt2:hover {
