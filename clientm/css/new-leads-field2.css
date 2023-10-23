@@ -217,7 +217,7 @@ li {
   border: 1px solid #dfe2e6;
   padding: 10px 12px;
   justify-content: flex-start;
-  gap: var(--gap-3xs);
+  gap: 10px;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -236,7 +236,7 @@ li {
   width: 70%;
   height: 86%;
   position: absolute;
-  top: 8em;
+  top: 4.5em;
   left: 19em;
   border-radius: 7px;
 }
@@ -377,8 +377,8 @@ li {
   border: 2px solid #0047b3;
   padding: 8px 31px;
   border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease-in-out;
-  animation: colorChange 7s infinite;
+  /* transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+  animation: colorChange 7s infinite; */
 }
 .loader {
   position: absolute;
@@ -393,7 +393,9 @@ li {
 }
 
 .input1:hover {
-  background-color: #0047b3;
+  background-color: white;
+  border: 2px solid #0047b3;
+  color: #0047b3;
   transform: scale(1.1);
 }
 .expand-group {

@@ -143,12 +143,13 @@ li {
 }
 .frame-group {
   display: flex;
-  height: 20px;
+  height: 35px;
   margin-left: 20px;
-  width: 40%;
+  width: 69%;
   position: absolute;
   top: 1em;
   left: 17.9em;
+  gap: 510px;
 }
 .section {
   position: relative;
@@ -160,20 +161,22 @@ li {
   background-color: #d9d9d9;
 }
 .back {
-  position: absolute;
-  top: 4em;
-  left: 19em;
   border-radius: 7px;
   background-color: #f5f6f7;
   border: 1px solid #dfe2e6;
   padding: 7px 13px;
   justify-content: flex-start;
-  gap: var(--gap-3xs);
+  gap: 10px;
   text-align: center;
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+}
+.back:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
 }
 
 /* First Box */
@@ -247,8 +250,8 @@ li {
 @media (min-width: 1368px) {
   .frame-group {
     left: 22em;
+    gap: 860px;
   }
-  .back,
   .first-box,
   .tarea {
     left: 23em;

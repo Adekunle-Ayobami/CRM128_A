@@ -211,19 +211,19 @@
         </div>
       </div>
       <div class="frame-group">
-        <div style="margin-right: 10px">Client</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="margin-right: 10px">Leads</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c">Deal Title</div>
-      </div>
-      <a onclick="history.back()">
-        <div class="back">
-          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
-
+        <div style="display: flex">
+          <div style="margin-right: 10px">Client</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="margin-right: 10px">Leads</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">Deal Title</div>
+        </div>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
           <div class="search">Back</div>
         </div>
-      </a>
+      </div>
+
       <div class="field">
         <div class="deal-title-parent">
           <div id="name_deal" class="deal-title">Deal Title</div>
@@ -246,6 +246,17 @@
         <form action="">
           <div class="input">
             <div style="display: flex; flex-direction: column">
+              <label class="naming">Name of Deal</label>
+              <input
+                class="expand"
+                type="text"
+                name="name_deal"
+                id="name_deal"
+                placeholder="investment"
+                disabled
+              />
+            </div>
+            <div class="ml4" style="display: flex; flex-direction: column">
               <label class="naming">Value</label>
               <input
                 class="expand"
@@ -256,34 +267,34 @@
                 disabled
               />
             </div>
-            <div style="display: flex; flex-direction: column">
-              <label id="currency" class="naming">Currency</label>
+            <div class="ml3" style="display: flex; flex-direction: column">
+              <label for="currency" class="naming">Currency</label>
               <select class="expand1" name="currency" id="currency" disabled>
-                <option id="currency" value="Dollar">Dollar</option>
-                <option id="currency" value="Pounds">Pounds</option>
-                <option id="currency" value="Naira">naira</option>
+                <option value="Dollar">Dollar</option>
+                <option value="Pounds">Pounds</option>
+                <option value="Naira">Naira</option>
               </select>
             </div>
-            <div
-              style="display: flex; flex-direction: column; margin-left: 60px"
-            >
-              <label id="status" class="naming">Status</label>
-              <select class="expand" name="status" id="status" disabled>
-                <option id="status" value="Qualified">active</option>
-                <option id="status" value="Contact Made">in active</option>
-                <!-- <option id="status" value="Demo Scheduled">Demo Scheduled</option>
-                      <option id="status" value="Proposal Made">Proposal Made</option>
-                      <option id="status" value="Negotiations Started">Negotiations Started</option> -->
+            <div class="ml" style="display: flex; flex-direction: column">
+              <label class="naming">Qualification</label>
+              <select name="qualification" id="qualification" disabled>
+                <option value="Qualified">Qualified</option>
+                <option value="Contact Made">Contact Made</option>
+                <option value="Demo Scheduled">Demo Scheduled</option>
+                <option value="Proposal Made">Proposal Made</option>
+                <option value="Negotiations Started">
+                  Negotiations Started
+                </option>
               </select>
             </div>
-            <div style="display: flex; flex-direction: column">
+            <div class="ml2" style="display: flex; flex-direction: column">
               <label class="naming">Start Date</label>
               <input
                 class="expand"
                 type="text"
                 name="start_date"
                 id="start_date"
-                placeholder="2023-01-01"
+                placeholder="2023-01-15"
                 disabled
               />
             </div>
@@ -297,6 +308,14 @@
                 placeholder="2023-01-15"
                 disabled
               />
+            </div>
+
+            <div class="naming2" style="display: flex; flex-direction: column">
+              <label id="status" class="naming">Status</label>
+              <select class="expand3" name="status" id="status" disabled>
+                <option value="Active">Active</option>
+                <option value="In active">In active</option>
+              </select>
             </div>
           </div>
           <!-- Second Input -->
@@ -351,34 +370,62 @@
           </div>
           <!-- Third Input -->
           <div class="third">
-              <div class="cp" style="display: flex; justify-content: space-between; width: 85%; margin: 50px 0 0 55px;">
-                  <label>Details</label>
+            <div
+              class="cp"
+              style="
+                display: flex;
+                justify-content: space-between;
+                width: 85%;
+                margin: 50px 0 0 55px;
+              "
+            >
+              <label>Details</label>
+            </div>
+            <hr style="width: 87%; margin-left: 53px; margin-top: 30px" />
+            <!-- Fourth Input -->
+            <div class="input4" style="display: flex; gap: 12px">
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Company Name*</label>
+                <input
+                  class="expand-field"
+                  type="text"
+                  name="company_name"
+                  id="company_name"
+                  placeholder="John"
+                  disabled
+                />
               </div>
-              <hr style="width: 87%; margin-left: 53px; margin-top: 30px" />
-              <!-- Fourth Input -->
-              <div class="input" style="display: flex; gap: 12px">
-                  <div style="display: flex; flex-direction: column">
-                      <label class="naming">Name of Company*</label>
-                      <input class="expand" type="text" name="company_name" id="company_name" placeholder="Company Name" disabled>
-                  </div>
-                  <div style="display: flex; flex-direction: column; margin-left: 2px">
-                      <label id="company_category" class="naming">company_category </label>
-                      <select class="expand" name="company_category" id="company_category" disabled>
-                          <option id="company_category" value="Qualified">Agriculture</option>
-                          <option id="company_category" value="Contact Made">Education</option>
-                          <option id="company_category" value="Demo Scheduled">Hospitality</option>
-                          <option id="company_category" value="Proposal Made">IT</option>
-                          <option id="company_category" value="Negotiations Started">Business & Finance</option>
-                      </select>
-                  </div>
-                  <div style="display: flex; flex-direction: column">
-                      <label class="naming">Website</label>
-                      <input class="expand" type="text" name="contact" id="website" placeholder="Contact" disabled>
-                  </div>
-                  <!-- <div style="display: flex; flex-direction: column">
-                      <label class="naming">Email</label>
-                      <input class="expand" type="text" name="email" id="email" placeholder="Email" disabled>
-                  </div> -->
+              <div
+                style="display: flex; flex-direction: column; margin-left: 2px"
+              >
+                <label id="company_category" class="naming"
+                  >Company Category</label
+                >
+                <select
+                  class="expand-field"
+                  name="company_category"
+                  id="company_category"
+                  disabled
+                >
+                  <option value="Agriculture">Agriculture</option>
+                  <option value="Education">Education</option>
+                  <option value="Hospitality">Hospitality</option>
+                  <option value="IT">IT</option>
+                  <option value="Business & Finance">Business & Finance</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column">
+                <label class="naming">Website</label>
+                <input
+                  class="expand-field"
+                  type="text"
+                  name="website"
+                  id="website"
+                  placeholder="www.sample.com"
+                  disabled
+                />
+              </div>
             </div>
             <!-- Last Input -->
             <div
