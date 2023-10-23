@@ -1035,7 +1035,7 @@ td {
 }
 /* Overlay Page */
 .add-lead {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   background-color: #f6f6f6;
@@ -1061,6 +1061,9 @@ td {
   background-color: #7ac769;
   padding: 20px;
   margin-top: -10px;
+}
+.lead img {
+  cursor: pointer;
 }
 .form {
   display: flex;

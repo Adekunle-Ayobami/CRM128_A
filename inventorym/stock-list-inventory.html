@@ -213,17 +213,18 @@
       </div>
       <!--  -->
       <div class="frame-group">
-        <div style="margin-right: 10px">Inventory</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c">Stock List</div>
+        <div style="display: flex">
+          <div style="margin-right: 10px">Inventory</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">Stock List</div>
+        </div>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
+          <div class="search">Back</div>
+        </div>
       </div>
       <div class="btn">
         <button class="button" id="overlayBtn">Add Record</button>
-      </div>
-      <div class="back">
-        <img class="search-icon" alt="" src="./public/arrow-back.svg" />
-
-        <div class="search">Back</div>
       </div>
       <table class="table">
         <tr>
@@ -242,27 +243,15 @@
           <td>20</td>
           <td>N135,000</td>
           <td>N135,000</td>
-          <td>
-            <div class="edit-parent">
-              <img
-                class="edit-icon"
-                alt=""
-                src="./public/edit.svg"
-                id="editIcon"
-              />
-
-              <a href="stock-list-details.html">
-                <img
-                  class="open-eyes-icon"
-                  alt=""
-                  src="./public/open-eyes.svg"
-                  id="openEyesIcon"
-              /></a>
-
-              <a href="stock-list-details.html"
-                ><img class="search-icon" alt="" src="./public/delete.svg"
-              /></a>
-            </div>
+          <td class="icons">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
           </td>
         </tr>
         <tr>
@@ -272,27 +261,15 @@
           <td>20</td>
           <td>N135,000</td>
           <td>N135,000</td>
-          <td>
-            <div class="edit-parent">
-              <img
-                class="edit-icon"
-                alt=""
-                src="./public/edit.svg"
-                id="editIcon"
-              />
-
-              <a href="stock-list-details.html"
-                ><img
-                  class="open-eyes-icon"
-                  alt=""
-                  src="./public/open-eyes.svg"
-                  id="openEyesIcon"
-              /></a>
-
-              <a href="stock-list-details.html"
-                ><img class="search-icon" alt="" src="./public/delete.svg"
-              /></a>
-            </div>
+          <td class="icons">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
           </td>
         </tr>
         <tr>
@@ -302,26 +279,15 @@
           <td>20</td>
           <td>N135,000</td>
           <td>N135,000</td>
-          <td>
-            <div class="edit-parent">
-              <img
-                class="edit-icon"
-                alt=""
-                src="./public/edit.svg"
-                id="editIcon"
-              />
-              <a href="stock-list-details.html">
-                <img
-                  class="open-eyes-icon"
-                  alt=""
-                  src="./public/open-eyes.svg"
-                  id="openEyesIcon"
-              /></a>
-
-              <a href="stock-list-details.html"
-                ><img class="search-icon" alt="" src="./public/delete.svg"
-              /></a>
-            </div>
+          <td class="icons">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
           </td>
         </tr>
       </table>

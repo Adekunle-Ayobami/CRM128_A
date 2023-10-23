@@ -141,18 +141,18 @@ li {
 }
 .frame-group {
   display: flex;
-  height: 20px;
-  margin-top: 20px;
+  height: 35px;
   margin-left: 20px;
-  width: 20%;
+  width: 75%;
   position: absolute;
-  top: 15px;
-  left: 320px;
+  top: 1em;
+  left: 17em;
+  gap: 760px;
 }
 .btn {
   position: absolute;
-  top: 27px;
-  left: 85%;
+  top: 3.5em;
+  left: 85.8%;
 }
 .section {
   position: relative;
@@ -163,6 +163,11 @@ li {
   background-color: #003e9c;
   border: none;
   border-radius: 5px;
+}
+.button:hover {
+  background-color: white;
+  color: #2b7fff;
+  border: 1px solid #2b7fff;
 }
 .group-parent {
   position: absolute;
@@ -980,26 +985,28 @@ li {
   display: inline-block;
 }
 .back {
-  position: absolute;
-  top: 80px;
-  left: 345px;
   border-radius: 7px;
   background-color: #f5f6f7;
   border: 1px solid #dfe2e6;
   padding: 7px 14px;
   justify-content: flex-start;
-  gap: var(--gap-3xs);
+  gap: 10px;
   text-align: center;
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
-
+.back:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
+}
 .table {
   position: absolute;
-  top: 23%;
-  left: 340px;
-  width: 65%;
+  top: 6em;
+  left: 18em;
+  width: 73%;
   text-align: left;
   border-collapse: collapse;
   border-radius: 20%;
@@ -1015,6 +1022,11 @@ td {
   padding-top: 13px;
   text-align: center;
   font-weight: 600;
+}
+.icons i {
+  position: relative;
+  top: -0.2em;
+  cursor: pointer;
 }
 /* Overlay Page */
 .add-lead {
@@ -1197,7 +1209,7 @@ td {
   .copyright-2023-crm128-parent {
     position: relative;
     top: 37em;
-    width: 100%;;
+    width: 100%;
     gap: 10px;
     z-index: 120;
   }
@@ -1229,7 +1241,7 @@ td {
     text-align: center;
   }
   td {
-      border: 0.8px solid lightblue;
+    border: 0.8px solid lightblue;
   }
   .pagination {
     top: 39em;
