@@ -333,6 +333,9 @@ th {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+.calendar img {
+  cursor: pointer;
+}
 .header {
   display: flex;
   flex-direction: row;
@@ -373,7 +376,10 @@ th {
 }
 .highlighted-day {
   background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-evenly;
   position: relative;
+  left: -1.5em;
 }
 /* .rectangle-group {
   top: 20.06em;

@@ -216,18 +216,20 @@
       </div>
       <!--  -->
       <div class="frame-group">
-        <div style="margin-right: 10px">Inventory</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c">New Stock</div>
+        <div style="display: flex">
+          <div style="margin-right: 10px">Inventory</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">New Stock</div>
+        </div>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
+          <div class="search">Back</div>
+        </div>
       </div>
       <div class="btn">
         <button class="button" id="overlayBtn">Add New Item</button>
       </div>
-      <div class="back">
-        <img class="search-icon" alt="" src="./public/arrow-back.svg" />
 
-        <div class="search">Back</div>
-      </div>
       <table class="table">
         <tr>
           <th>Sku</th>
@@ -245,18 +247,12 @@
           <td>Size L</td>
           <td>10</td>
           <td>$5.99</td>
-          <td>
-            <div class="edit-parent">
-              <img
-                style="margin-right: 10px"
-                class="edit-icon"
-                alt=""
-                src="./public/edit.svg"
-                id="editIcon"
-              />
-
-              <img class="search-icon" alt="" src="./public/delete.svg" />
-            </div>
+          <td class="icons">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
           </td>
         </tr>
         <tr>
@@ -266,18 +262,12 @@
           <td>Size L</td>
           <td>10</td>
           <td>$5.99</td>
-          <td>
-            <div class="edit-parent">
-              <img
-                style="margin-right: 10px"
-                class="edit-icon"
-                alt=""
-                src="./public/edit.svg"
-                id="editIcon"
-              />
-
-              <img class="search-icon" alt="" src="./public/delete.svg" />
-            </div>
+          <td class="icons">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
           </td>
         </tr>
         <tr>
@@ -287,23 +277,17 @@
           <td>Size L</td>
           <td>10</td>
           <td>$5.99</td>
-          <td>
-            <div class="edit-parent">
-              <img
-                style="margin-right: 10px"
-                class="edit-icon"
-                alt=""
-                src="./public/edit.svg"
-                id="editIcon"
-              />
-
-              <img class="search-icon" alt="" src="./public/delete.svg" />
-            </div>
+          <td class="icons">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
           </td>
         </tr>
       </table>
       <div class="pagination">
-        <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
+        <img class="page-disabled rp" alt="" src="./public/page--master.svg" />
 
         <div class="page-active">
           <div class="page-active1">

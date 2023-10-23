@@ -213,15 +213,17 @@
         </div>
       </div>
       <div class="frame-group">
-        <div style="margin-right: 10px">Settings</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c">General</div>
+        <div style="display: flex">
+          <div style="margin-right: 10px">Settings</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">General</div>
+        </div>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
+          <div class="search">Back</div>
+        </div>
       </div>
-      <div class="back" onclick="history.back()">
-        <img class="search-icon" alt="" src="./public/arrow-back.svg" />
 
-        <div class="search">Back</div>
-      </div>
       <!-- Inner Page -->
       <div class="inner-page">
         <div class="first">
@@ -433,6 +435,7 @@
           </div>
 
           <select class="select" name="">
+            <option value="" selected style="display: none">Select</option>
             <option value="">US Dollar</option>
             <option value="">Naira</option>
             <option value="">Pounds</option>
@@ -454,8 +457,9 @@
           </div>
 
           <select class="select" name="">
+            <option value="" selected style="display: none">Select</option>
             <option value="">US Dollar</option>
-            <option value="" selected>Naira</option>
+            <option value="">Naira</option>
             <option value="">Pounds</option>
             <option value="">Shillings</option>
             <option value="">Rand</option>
