@@ -112,7 +112,8 @@ p {
 @media (min-width: 1368px) {
   .container {
     position: relative;
-    top: 10em;
+    top: 6em;
+    gap: 150px;
   }
 }
 
@@ -129,6 +130,6 @@ p {
     top: -1em;
   }
   .copyright-2023-crm128-parent {
-    width:100%;
+    width: 100%;
   }
 }
