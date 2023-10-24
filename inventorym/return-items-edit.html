@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stock List</title>
-    <link rel="stylesheet" href="css/stock-list-inventory.css" />
+    <title>Return Items Edit Page</title>
+    <link rel="stylesheet" href="css/return-items.edit.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -20,10 +20,7 @@
   <body>
     <header>
       <div class="nav-bar">
-        <button class="toggle-button" id="sidebar-toggle">
-          <i class="fa-solid fa-bars bar"></i>
-        </button>
-        <a href="#">
+        <a href="client-management-dash.html">
           <div class="crm128-wrapper">
             <span style="color: #003e9c">CRM</span
             ><span style="color: #57bc4a">128</span>
@@ -46,9 +43,9 @@
           >
         </div>
         <div class="ellipse-group">
-          <div class="jg">JG</div>
+          <div class="avatar">JG</div>
           <div class="josiah-gana-parent">
-            <div class="josiah-gana">Josiah Gana</div>
+            <div class="josiah-gana" id="admin-email">Josiah Gana</div>
             <div class="admin">Admin</div>
           </div>
         </div>
@@ -76,10 +73,10 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"
-              ><li class="selected">Client Data</li></a
+            <a href="../clientm/client-company-list.html"
+              ><li>Client Data</li></a
             >
-            <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
+            <a href="../clientm/client-leads-list.html"><li>Leads</li></a>
           </ul>
         </div>
         <div class="side-tab">
@@ -160,13 +157,13 @@
             <!--<a href="index.html"><li>Overview</li></a>-->
             <a href="../inventorym/new-stock-page.html"><li>New Stock</li></a>
             <a href="../inventorym/stock-list-inventory.html"
-              ><li class="selected">Stock List</li></a
+              ><li>Stock List</li></a
             >
             <a href="../inventorym/reorder-list-page.html"
               ><li>Reorder List</li></a
             >
             <a href="../inventorym/return-items-page.html"
-              ><li>Return Item</li></a
+              ><li class="selected">Return Item</li></a
             >
           </ul>
         </div>
@@ -211,211 +208,141 @@
           <div class="side-bar">Logout</div>
         </div>
       </div>
-      <!--  -->
       <div class="frame-group">
-        <div style="display: flex">
-          <div style="margin-right: 10px">Inventory</div>
-          <div style="margin-right: 10px">|</div>
-          <div style="color: #003e9c">Stock List</div>
-        </div>
-        <div class="back" onclick="history.back()">
+        <div style="margin-right: 10px">Inventory</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="margin-right: 10px">Return Items</div>
+        <div style="margin-right: 10px">|</div>
+        <div style="color: #003e9c">Edit Return Items</div>
+      </div>
+      <a onclick="history.back()">
+        <div class="back">
           <i class="fa-solid fa-arrow-left search-icon"></i>
           <div class="search">Back</div>
         </div>
-      </div>
-      <div class="btn">
-        <button class="button" id="overlayBtn">Add Record</button>
-      </div>
-      <table class="table">
-        <tr>
-          <th>Date</th>
-          <th>Item</th>
-          <th>SKU</th>
-          <th>Qty In Stock</th>
-          <th>Unit Cost</th>
-          <th>Total Value</th>
-          <th>Options</th>
-        </tr>
-        <tr>
-          <td>July 14, 2015</td>
-          <td>Noco Lithium Powersport Battery</td>
-          <td>N/A</td>
-          <td>20</td>
-          <td>N135,000</td>
-          <td>N135,000</td>
-          <td class="icons">
-            <a href="../inventorym/stock-list-edit.html"
-              ><i
-                class="fa-solid fa-pen-to-square fa-lg edit-icon"
-                id="editIcon"
-              ></i
-            ></a>
-            <a href="../inventorym/stock-list-details.html"
-              ><i class="fa-solid fa-eye fa-lg"></i
-            ></a>
-            <img class="search-icon" alt="" src="./public/delete.svg" />
-          </td>
-        </tr>
-        <tr>
-          <td>July 14, 2015</td>
-          <td>Noco Lithium Powersport Battery</td>
-          <td>N/A</td>
-          <td>20</td>
-          <td>N135,000</td>
-          <td>N135,000</td>
-          <td class="icons">
-            <a href="../inventorym/stock-list-edit.html"
-              ><i
-                class="fa-solid fa-pen-to-square fa-lg edit-icon"
-                id="editIcon"
-              ></i
-            ></a>
-            <a href="../inventorym/stock-list-details.html"
-              ><i class="fa-solid fa-eye fa-lg"></i
-            ></a>
-            <img class="search-icon" alt="" src="./public/delete.svg" />
-          </td>
-        </tr>
-        <tr>
-          <td>July 14, 2015</td>
-          <td>Noco Lithium Powersport Battery</td>
-          <td>N/A</td>
-          <td>20</td>
-          <td>N135,000</td>
-          <td>N135,000</td>
-          <td class="icons">
-            <a href="../inventorym/stock-list-edit.html"
-              ><i
-                class="fa-solid fa-pen-to-square fa-lg edit-icon"
-                id="editIcon"
-              ></i
-            ></a>
-            <a href="../inventorym/stock-list-details.html"
-              ><i class="fa-solid fa-eye fa-lg"></i
-            ></a>
-            <img class="search-icon" alt="" src="./public/delete.svg" />
-          </td>
-        </tr>
-      </table>
-      <div class="pagination">
-        <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
-
-        <div class="page-active">
-          <div class="page-active1">
-            <b class="num">1</b>
-          </div>
+      </a>
+      <div class="field">
+        <div class="deal-title-parent">
+          <div class="deal-title">Edit Return Items</div>
         </div>
-        <div class="page-disabled">
-          <div class="page-default1">
-            <b class="num">2</b>
-          </div>
-        </div>
-        <div class="page-disabled">
-          <div class="page-default1">
-            <b class="num">...</b>
-          </div>
-        </div>
-        <div class="page-disabled">
-          <div class="page-default1">
-            <b class="num">9</b>
-          </div>
-        </div>
-        <div class="page-disabled">
-          <div class="page-default1">
-            <b class="num">10</b>
-          </div>
-        </div>
-        <img class="page-master" alt="" src="./public/page--master.svg" />
-      </div>
-
-      <!-- Overlay Page -->
-      <div class="add-lead" id="overlay" style="display: none">
-        <div class="lead">
-          <div style="width: 100%; font-weight: 600">Add New Record</div>
-          <img src="public/close.svg" id="closeBtn" alt="" />
-        </div>
-        <div class="form aform">
-          <span>Item*</span>
-          <select style="margin-top: 5px">
-            <option value="">Mart Blue/Fluro Orange</option>
-            <option value="">Dollar</option>
-            <option value="">Naira</option>
-            <option value="">Pounds</option>
-          </select>
-        </div>
-        <div class="form2 form1">
-          <div>
-            <span>Date</span> <br />
-            <div class="input-container">
+        <hr class="hr" />
+        <!-- First Input -->
+        <form action="" id="clientForm">
+          <div class="input">
+            <div class="company">
+              <label class="naming">Item* :</label>
               <input
-                style="
-                  width: 75%;
-                  margin-right: 55px;
-                  padding-bottom: 14px;
-                  margin-top: 5px;
-                "
-                class="input-field1"
+                class="expand3"
+                type="text"
+                name="company_name"
+                id="company_name"
+                placeholder="Mart Blue/Fluro Orange"
+              />
+            </div>
+            <div class="company">
+              <label class="naming">Purchase Date* :</label>
+              <input
+                class="expand4"
                 type="date"
-                name="date"
+                name="company_type"
+                id="company_type"
                 placeholder="DD-MM-YY"
               />
             </div>
-          </div>
-          <div>
-            <span>Qty in Stock</span> <br />
-            <div class="input-container">
+            <div class="company">
+              <label class="naming">Return Date* :</label>
               <input
-                style="width: 75%; margin-top: 5px"
-                class="input-field1"
+                class="expand44"
+                type="date"
+                name="company_type"
+                id="company_type"
+                placeholder="DD-MM-YY"
+              />
+              <!-- <select class="expand44" name="status" id="status">
+                <option value="" selected style="display: none">Select</option>
+                <option value="active">Helmets</option>
+                <option value="in active">Gloves</option>
+                <option value="in active">Jacket and Vest</option>
+                <option value="in active">Boots</option>
+                <option value="in active">Air and Fuel</option>
+                <option value="in active">Bike Protection</option>
+                <option value="in active">Batteries and Electricals</option>
+                <option value="in active">Filters</option>
+                <option value="in active">Brakes</option>
+                <option value="in active">Tyres</option>
+              </select> -->
+            </div>
+            <div class="company">
+              <label class="naming">Order Number* :</label>
+              <input
+                class="expand42"
                 type="text"
-                name="search"
-                placeholder="10"
+                name="text"
+                id="email"
+                placeholder="4674289"
               />
             </div>
-          </div>
-        </div>
-        <div class="form7 form3">
-          <div>
-            <span style="margin-bottom: 5px">Unit Cost</span> <br />
-            <div class="input-container">
+            <div class="company">
+              <label class="naming">SKU* :</label>
               <input
-                style="width: 75%; background-color: #e2e2e2; margin-top: 5px"
-                class="input-field1"
+                class="expand43"
                 type="text"
-                name="search"
-                placeholder="N2,700"
-                disabled
+                name="contact"
+                id="contact"
+                placeholder="N/A"
               />
             </div>
-          </div>
-          <div>
-            <span style="margin-bottom: 5px">Total Value</span> <br />
-            <div class="input-container">
+            <div class="company">
+              <label class="naming">Price* :</label>
               <input
-                style="width: 75%; background-color: #e2e2e2; margin-top: 5px"
-                class="input-field1"
+                class="expand41"
                 type="text"
-                name="search"
-                placeholder="N2,700,000"
-                disabled
+                name="contact"
+                id="contact"
+                placeholder="N135,000"
               />
             </div>
+            <div class="company">
+              <label class="naming">Reason For Return* :</label>
+              <select class="expand46" name="status" id="status">
+                <option value="" selected style="display: none">Select</option>
+                <option value="active">Excess Order</option>
+                <option value="in active">Poor Quality</option>
+                <option value="in active">Wrong Item</option>
+                <option value="in active">Damaged upon arrival</option>
+                <option value="in active">Size does not fit</option>
+                <option value="in active">
+                  Item does not match description
+                </option>
+                <option value="in active">Batteries and Electricals</option>
+                <option value="in active">Accidental order</option>
+                <option value="in active">Defective item</option>
+              </select>
+            </div>
+
+            <div class="company">
+              <label class="naming">Description* :</label>
+              <textarea
+                class="expand45"
+                name="description"
+                id="description"
+                cols="30"
+                rows="10"
+              >
+Enter Description</textarea
+              >
+            </div>
           </div>
-        </div>
-        <!-- <div class="form-text">
-          <span>Description</span>
-          <textarea
-            style="margin-top: 5px"
-            name=""
-            id=""
-            cols="30"
-            rows="5"
-            placeholder="Enter Description"
-          ></textarea>
-        </div> -->
-        <div>
-          <button class="bigbutton">Save</button>
-        </div>
+
+          <div class="update-btn">
+            <input
+              type="submit"
+              class="input1"
+              value="Update"
+              id="submitButton"
+            />
+          </div>
+        </form>
       </div>
     </section>
     <footer>
@@ -439,17 +366,6 @@
         hrChevronIcon.classList.toggle("rotate");
       });
 
-      //   document
-      //     .getElementById("overlayBtn")
-      //     .addEventListener("click", function () {
-      //       document.getElementById("overlay").style.display = "block";
-      //     });
-      //   document
-      //     .getElementById("closeBtn")
-      //     .addEventListener("click", function () {
-      //       document.getElementById("overlay").style.display = "none";
-      //     });
-
       const hrToggle1 = document.getElementById("hr-toggle1");
       const hrItems1 = document.getElementById("hr-items1");
       const hrChevronIcon1 = document.getElementById("hr-chevron-icon1");
@@ -464,7 +380,7 @@
       const hrItems2 = document.getElementById("hr-items2");
       const hrChevronIcon2 = document.getElementById("hr-chevron-icon2");
 
-      // hrItems2.classList.add("hidden");
+      //   hrItems2.classList.add("hidden");
       hrToggle2.addEventListener("click", function () {
         hrItems2.classList.toggle("hidden");
         hrChevronIcon2.classList.toggle("rotate");
@@ -500,28 +416,152 @@
         hrChevronIcon5.classList.toggle("rotate");
       });
 
-      document
-        .getElementById("overlayBtn")
-        .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "block";
-        });
-      document
-        .getElementById("closeBtn")
-        .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "none";
-        });
-
-      // Function to toggle the menu-active class
-      function toggleMenu() {
-        var menu = document.querySelector(".menu");
-        menu.classList.toggle("menu-active");
+      // check if logged in
+      if (localStorage.getItem("token")) {
+        console.log("already logged in");
+      } else {
+        // window.location.href = "/login.html";
       }
 
-      // Add an event listener for button click
-      var sidebarToggle = document.getElementById("sidebar-toggle");
-      sidebarToggle.addEventListener("click", function () {
-        toggleMenu();
+      const adminEmailEl = document.querySelector("#admin-email");
+      const avatarEl = document.querySelector(".avatar");
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      adminEmailEl.innerHTML = admin.email;
+      avatarEl.innerHTML = admin.email.substring(0, 2);
+
+      const backendURL = "http://localhost:8000";
+      const authToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5NTEzMzI3MSwiZXhwIjoxNjk1MTQ0MDcxfQ.P0ysS39852E7hZrzu4Q3mvtyqv40OSQHhzUODgB70jc ";
+
+      async function fetchData(url, options) {
+        try {
+          const response = await fetch(url, options);
+          if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.status})`);
+          }
+          return response.json();
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
+          return null;
+        }
+      }
+
+      async function displayData(elementId, data) {
+        const element = document.querySelector(elementId);
+        if (element) {
+          element.innerHTML = data;
+        }
+      }
+
+      async function fetchClientData(clientId) {
+        try {
+          const response = await fetch(
+            `${backendURL}/client/getsingleclient/${clientId}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${authToken}`,
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`API response was not ok (${response.status})`);
+          }
+
+          const clientData = await response.json();
+          return clientData;
+        } catch (error) {
+          console.error("An error occurred while fetching client data:", error);
+          return null;
+        }
+      }
+
+      async function populateProfilePage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const clientId = urlParams.get("id");
+
+        if (!clientId) {
+          console.error("Client ID not provided in the URL.");
+          return;
+        }
+
+        const clientData = await fetchClientData(clientId);
+
+        if (clientData && clientData.client) {
+          document.getElementById("company_name").value =
+            clientData.client.company_name;
+          document.getElementById("company_type").value =
+            clientData.client.company_type;
+          document.getElementById("website_url").value =
+            clientData.client.website_url;
+          document.getElementById("email").value = clientData.client.email;
+          document.getElementById("contact").value = clientData.client.contact;
+          document.getElementById("status").value = clientData.client.status;
+          document.getElementById("description").value =
+            clientData.client.description;
+        } else {
+          console.error("Failed to fetch client data.");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        populateProfilePage();
       });
+
+      document
+        .getElementById("clientForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const updatedClientData = {
+            company_name: document.getElementById("company_name").value,
+            company_type: document.getElementById("company_type").value,
+            website_url: document.getElementById("website_url").value,
+            email: document.getElementById("email").value,
+            contact: document.getElementById("contact").value,
+            status: document.getElementById("status").value,
+            description: document.getElementById("description").value,
+          };
+
+          console.log(updatedClientData);
+
+          const urlParams = new URLSearchParams(window.location.search);
+          const clientId = urlParams.get("id");
+          try {
+            const response = await fetch(
+              `${backendURL}/client/updateclient/${clientId}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                  Authorization: `Bearer ${authToken}`,
+                },
+                body: JSON.stringify(updatedClientData),
+              }
+            );
+
+            if (!response.ok) {
+              throw new Error(`API response was not ok (${response.status})`);
+            }
+            const responseData = await response.json();
+            if (responseData.error) {
+              alert(`Error: ${responseData.error}`);
+            } else {
+              alert("Client data updated successfully");
+            }
+            window.location.href = "/clientm/client-company-list.html";
+          } catch (error) {
+            console.error(
+              "An error occurred while updating client data:",
+              error
+            );
+            alert("Failed to update client data");
+          }
+        });
     </script>
   </body>
 </html>
