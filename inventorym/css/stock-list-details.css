@@ -92,7 +92,7 @@ a {
 }
 ul {
   list-style-type: none;
-  font-size: 20px;
+  font-size: 16px;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -125,7 +125,7 @@ li {
 .side-bar,
 .logout {
   margin-top: 6px;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-weight: 700;
 }
 .client-icon {
@@ -140,17 +140,17 @@ li {
 }
 .frame-group {
   display: flex;
-  height: 20px;
-  margin-top: 20px;
+  height: 35px;
   margin-left: 20px;
-  width: 50%;
+  width: 75%;
   position: absolute;
-  top: 15px;
+  top: 1em;
   left: 320px;
+  gap: 360px;
 }
 .btn {
   position: absolute;
-  top: 27px;
+  top: 4em;
   left: 85%;
 }
 .section {
@@ -162,6 +162,12 @@ li {
   background-color: #003e9c;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: white;
+  color: #2b7fff;
+  border: 1px solid #2b7fff;
 }
 .group-parent {
   position: absolute;
@@ -187,27 +193,50 @@ li {
 }
 
 .back {
-  position: absolute;
-  top: 80px;
-  left: 345px;
   border-radius: 7px;
   background-color: #f5f6f7;
   border: 1px solid #dfe2e6;
   padding: 10px 17px;
   justify-content: flex-start;
-  gap: var(--gap-3xs);
+  gap: 10px;
   text-align: center;
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
+}
+.back:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
 }
 .field {
   background-color: white;
   position: absolute;
-  top: 19%;
+  top: 7em;
   left: 340px;
   height: 70%;
   width: 70%;
+  border-radius: 6px;
+}
+.field-head {
+  display: flex;
+  justify-content: space-between;
+  width: 89%;
+  margin: 55px 0 20px 55px;
+}
+.field-btn {
+  background-color: #003e9c;
+  color: white;
+  padding: 9px 21px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.field-btn:hover {
+  background-color: white;
+  color: #2b7fff;
+  border: 1px solid #2b7fff;
 }
 .input1 {
   display: flex;
@@ -216,7 +245,7 @@ li {
 }
 .expand {
   background-color: #f6f6f6;
-  padding: 10px 0 10px 0;
+  padding: 15px 10px 15px 10px;
   border-radius: 3px;
 }
 input::placeholder {

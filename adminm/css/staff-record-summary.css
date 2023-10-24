@@ -139,13 +139,13 @@ li {
 }
 .frame-group {
   display: flex;
-  height: 20px;
-  margin-top: 20px;
+  height: 35px;
   margin-left: 20px;
-  width: 40%;
+  width: 80%;
   position: absolute;
-  top: 15px;
+  top: 1em;
   left: 320px;
+  gap: 510px;
 }
 .btn {
   position: absolute;
@@ -182,25 +182,31 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .back {
-  position: absolute;
-  top: 75px;
-  left: 345px;
   border-radius: 7px;
   background-color: #f5f6f7;
   border: 1px solid #dfe2e6;
   padding: 3px 14px;
   justify-content: flex-start;
-  gap: var(--gap-3xs);
+  gap: 10px;
   text-align: center;
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
+}
+.back:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
 }
 .button-group {
   position: absolute;
-  top: 124px;
+  top: 6.4em;
   left: 345px;
 }
 .btn1 {
@@ -242,53 +248,71 @@ li {
   padding: 10px 20px 10px 20px;
   border-top: 2px solid #091e42;
 }
-.input-container {
+.filters {
   position: absolute;
-  top: 75px;
-  right: 17.1%;
+  top: 3em;
+  left: 21.5em;
+  display: flex;
 }
-
+.input-container {
+  position: relative;
+}
 .input-container i {
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px; /* Adjust the icon size */
-  color: #555; /* Adjust the icon color */
+  font-size: 16px;
+  color: #555;
 }
 
 .input-field1 {
   padding-left: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #2b7fff;
 }
 .select {
-  position: absolute;
-  top: 75px;
-  right: 11.3%;
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-right: 10px;
+  border: 1px solid #2b7fff;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
 }
 .select option {
   padding-bottom: 30px;
 }
 .sort {
+  display: flex;
+  gap: 4px;
   background-color: white;
-  position: absolute;
-  top: 75px;
-  right: 6.1%;
   padding-left: 10px;
   padding-top: 5px;
   padding-right: 10px;
   padding-bottom: 3.5px;
-  border: 1px solid black;
+  border: 1px solid #2b7fff;
   text-align: center;
+  margin-left: 5px;
+  height: 19px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.6s, transform 0.5s, color 0.3s;
+}
+.sort:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
+  transform: scale(1.11);
 }
 .table {
-  width: 60%;
+  width: 69.3%;
   position: absolute;
-  top: 163px;
+  top: 8.8em;
   left: 345px;
   border-collapse: collapse;
   text-align: left;
@@ -315,6 +339,15 @@ button a {
   cursor: pointer;
   font-size: 24px;
   display: none;
+}
+
+@media (min-width: 1368px) {
+  .frame-group {
+    gap: 1050px;
+  }
+  .table {
+    width: 78%;
+  }
 }
 @media (max-width: 1366px) {
   .menu {

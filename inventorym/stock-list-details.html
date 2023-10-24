@@ -210,198 +210,183 @@
       </div>
       <!--  -->
       <div class="frame-group">
-        <div style="margin-right: 10px">Inventory</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="margin-right: 10px">Stock List</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c; text-overflow: ellipsis">
-          Stock Name(Nico Lithium Powersport Battery)
+        <div style="display: flex">
+          <div style="margin-right: 10px">Inventory</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="margin-right: 10px">Stock List</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c; text-overflow: ellipsis">
+            Stock Name(Nico Lithium Powersport Battery)
+          </div>
+        </div>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
+          <div class="search">Back</div>
         </div>
       </div>
       <div class="btn">
         <button class="button">Add To Reorder List</button>
       </div>
-      <a href="stock-list-inventory.html"
-        ><div class="back">
-          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
 
-          <div class="search">Back</div>
-        </div></a
-      >
       <!-- Field -->
       <div class="field">
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            width: 85%;
-            margin: 55px 0 20px 55px;
-          "
-        >
-          <span style="font-size: 30px; font-weight: 700"
-            >Nico Lithium Powersport Battery</span
-          >
-          <button
+        <form action="">
+          <div class="field-head">
+            <span style="font-size: 30px; font-weight: 700"
+              >Nico Lithium Powersport Battery</span
+            >
+            <button class="field-btn">Update</button>
+          </div>
+          <hr />
+          <!-- First Input -->
+          <div style="margin-top: 30px; width: 90%" class="input1">
+            <div>
+              <label class="naming">Date</label>
+              <input
+                style="border: 1px solid lightblue; outline: none; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="14-07-2015"
+              />
+            </div>
+            <div>
+              <label class="naming">Category</label>
+              <select
+                style="
+                  border: 1px solid lightblue;
+                  color: #9a9a9a;
+                  margin-top: 10px;
+                "
+                class="expand"
+                name=""
+                id=""
+              >
+                <option value="">Batteries and Electricals</option>
+                <option value="">Batteries and Electricals</option>
+                <option value="">Batteries and Electricals</option>
+              </select>
+            </div>
+            <div>
+              <label class="naming">Quantity in Stock</label>
+              <input
+                style="border: 1px solid lightblue; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="20"
+              />
+            </div>
+            <div>
+              <label class="naming">Unit Cost</label>
+              <input
+                style="border: 1px solid lightblue; outline: none; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="135,000.00"
+              />
+            </div>
+          </div>
+          <!-- Second Input -->
+          <div style="margin-top: 30px; width: 90%" class="input1">
+            <div>
+              <label class="naming">Reorder Quantity</label>
+              <input
+                style="border: 1px solid lightblue; outline: none; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="5"
+              />
+            </div>
+            <div style="margin-left: -40px">
+              <label class="naming">SKU</label>
+              <input
+                style="border: 1px solid lightblue; outline: none; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="N2,700,000"
+              />
+            </div>
+            <div style="margin-left: 20px">
+              <label class="naming">Order</label>
+              <input
+                style="border: 1px solid lightblue; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="Yes"
+              />
+            </div>
+            <div style="margin-left: 20px">
+              <label class="naming">Total Value</label>
+              <input
+                style="border: none; outline: none; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="N2,700,000"
+              />
+            </div>
+          </div>
+          <!-- Another Heading -->
+          <div
             style="
-              background-color: #003e9c;
-              color: white;
-              padding: 9px 21px;
-              border: none;
-              border-radius: 5px;
+              display: flex;
+              justify-content: space-between;
+              width: 85%;
+              margin: 80px 0 20px 55px;
             "
           >
-            Update
-          </button>
-        </div>
-        <hr />
-        <!-- First Input -->
-        <div style="margin-top: 30px; width: 90%" class="input1">
-          <div>
-            <span class="naming">Date</span>
-            <input
-              style="border: none; outline: none; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="14-07-2015"
-            />
+            <label style="font-size: 30px; font-weight: 700">Reorder Info</label>
           </div>
-          <div>
-            <span class="naming">Category</span>
-            <select
-              style="
-                border: 1px solid lightblue;
-                color: #9a9a9a;
-                margin-top: 10px;
-              "
-              class="expand"
-              name=""
-              id=""
-            >
-              <option value="">Batteries and Electricals</option>
-              <option value="">Batteries and Electricals</option>
-              <option value="">Batteries and Electricals</option>
-            </select>
+          <hr />
+          <!-- Last Input -->
+          <div style="margin-top: 30px" class="input1">
+            <div>
+              <label class="naming">Suggested Reorder Qty</label>
+              <input
+                style="border: 1px solid lightblue; outline: none; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="10"
+              />
+            </div>
+            <div>
+              <label class="naming">Order Qty</label>
+              <input
+                style="border: 1px solid lightblue; outline: none; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="20"
+              />
+            </div>
+            <div>
+              <label class="naming">Current Unity Cost</label>
+              <input
+                style="border: 1px solid lightblue; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="N210,000.00"
+              />
+            </div>
+            <div style="margin-left: -40px">
+              <label class="naming">Total Reorder Cost</label>
+              <input
+                style="border: 1px solid lightblue; outline: none; margin-top: 10px"
+                class="expand"
+                type="text"
+                name="name"
+                placeholder="N1,135,000.00"
+              />
+            </div>
           </div>
-          <div>
-            <span class="naming">Quantity in Stock</span>
-            <input
-              style="border: 1px solid lightblue; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="20"
-            />
-          </div>
-          <div>
-            <span class="naming">Unit Cost</span>
-            <input
-              style="border: none; outline: none; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="135,000.00"
-            />
-          </div>
-        </div>
-        <!-- Second Input -->
-        <div style="margin-top: 30px; width: 90%" class="input1">
-          <div>
-            <span class="naming">Reorder Quantity</span>
-            <input
-              style="border: none; outline: none; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="5"
-            />
-          </div>
-          <div style="margin-left: -40px">
-            <span class="naming">SKU</span>
-            <input
-              style="border: none; outline: none; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="N2,700,000"
-            />
-          </div>
-          <div style="margin-left: 20px">
-            <span class="naming">Order</span>
-            <input
-              style="border: 1px solid lightblue; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="Yes"
-            />
-          </div>
-          <div style="margin-left: 20px">
-            <span class="naming">Total Value</span>
-            <input
-              style="border: none; outline: none; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="N2,700,000"
-            />
-          </div>
-        </div>
-        <!-- Another Heading -->
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            width: 85%;
-            margin: 80px 0 20px 55px;
-          "
-        >
-          <span style="font-size: 30px; font-weight: 700">Reorder Info</span>
-        </div>
-        <hr />
-        <!-- Last Input -->
-        <div style="margin-top: 30px" class="input1">
-          <div>
-            <span class="naming">Suggested Reorder Qty</span>
-            <input
-              style="border: none; outline: none; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="10"
-            />
-          </div>
-          <div>
-            <span class="naming">Order Qty</span>
-            <input
-              style="border: none; outline: none; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="20"
-            />
-          </div>
-          <div>
-            <span class="naming">Current Unity Cost</span>
-            <input
-              style="border: 1px solid lightblue; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="N210,000.00"
-            />
-          </div>
-          <div style="margin-left: -40px">
-            <span class="naming">Total Reorder Cost</span>
-            <input
-              style="border: none; outline: none; margin-top: 10px"
-              class="expand"
-              type="text"
-              name="name"
-              placeholder="N1,135,000.00"
-            />
-          </div>
-        </div>
+        </form>
       </div>
     </section>
     <footer>

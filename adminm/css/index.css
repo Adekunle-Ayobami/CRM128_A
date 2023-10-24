@@ -1,13 +1,9 @@
-html {
-  width: 100%;
-}
 body {
   margin: 0;
   padding: 0;
   line-height: 1rem;
   background-color: #f6f6f6;
   font-family: "Clash Grotesk", sans-serif;
-  width: 1348px;
 }
 a {
   text-decoration: none;
@@ -185,6 +181,9 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .back {
   border-radius: 7px;
@@ -351,6 +350,17 @@ input:checked + .slider:before {
   display: none;
 }
 
+@media (min-width: 1368px) {
+  .frame-group {
+    gap: 1250px;
+  }
+  .inner-page {
+    width: 77%;
+  }
+  .night {
+    left: 76em;
+  }
+}
 @media (max-width: 1366px) {
   .group-parent {
     position: absolute;

@@ -76,9 +76,7 @@
         </div>
         <div class="client-dropdown">
           <ul id="hr-items">
-            <a href="../clientm/add-new-clients.html"
-              ><li class="selected">Client Data</li></a
-            >
+            <a href="../clientm/add-new-clients.html"><li>Client Data</li></a>
             <a href="../clientm/client-lead-dashboard.html"><li>Leads</li></a>
           </ul>
         </div>
@@ -214,16 +212,17 @@
         </div>
       </div>
       <div class="frame-group">
-        <div style="margin-right: 10px">Settings</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="margin-right: 10px">User Account</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c">Current User</div>
-      </div>
-      <div class="back" onclick="history.back()">
-        <img class="search-icon" alt="" src="./public/arrow-back.svg" />
-
-        <div class="search">Back</div>
+        <div style="display: flex">
+          <div style="margin-right: 10px">Settings</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="margin-right: 10px">User Account</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">Current User</div>
+        </div>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
+          <div class="search">Back</div>
+        </div>
       </div>
 
       <!-- Button group -->
@@ -241,39 +240,39 @@
         <button class="btn4">Update</button>
         <div class="form">
           <div>
-            <span style="font-size: 15px; font-weight: 600"
+            <label style="font-size: 15px; font-weight: 600"
               >First name <br
-            /></span>
+            /></label>
             <input class="text" type="text" placeholder="John" />
           </div>
           <div>
-            <span style="font-size: 15px; font-weight: 600"
+            <label style="font-size: 15px; font-weight: 600"
               >Last name <br
-            /></span>
+            /></label>
             <input class="text" type="text" placeholder="Doe" />
           </div>
 
           <div>
-            <span style="font-size: 15px; font-weight: 600"
+            <label style="font-size: 15px; font-weight: 600"
               >Staff ID <br
-            /></span>
+            /></label>
             <input class="text" type="text" placeholder="1234" />
           </div>
         </div>
         <div class="form" style="margin-top: 40px">
           <div>
-            <span style="font-size: 15px; font-weight: 600">Email <br /></span>
+            <label style="font-size: 15px; font-weight: 600">Email <br /></label>
             <input class="text" type="email" placeholder="samplel@mail.com" />
           </div>
           <div>
-            <span style="font-size: 15px; font-weight: 600">Role <br /></span>
+            <label style="font-size: 15px; font-weight: 600">Role <br /></label>
             <input class="text" type="text" placeholder="Project Manager" />
           </div>
 
           <div>
-            <span style="font-size: 15px; font-weight: 600"
+            <label style="font-size: 15px; font-weight: 600"
               >Phone Number <br
-            /></span>
+            /></label>
             <input class="text" type="text" placeholder="0807 334 8754" />
           </div>
         </div>

@@ -214,18 +214,20 @@
         </div>
       </div>
       <div class="frame-group">
-        <div style="margin-right: 10px">Settings</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="margin-right: 10px">User Account</div>
-        <div style="margin-right: 10px">|</div>
-        <div style="color: #003e9c">Staff Record Summary</div>
-      </div>
-      <div>
+        <div style="display: flex">
+          <div style="margin-right: 10px">Settings</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="margin-right: 10px">User Account</div>
+          <div style="margin-right: 10px">|</div>
+          <div style="color: #003e9c">Staff Record Summary</div>
+        </div>
         <div class="back" onclick="history.back()">
-          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
-
+          <i class="fa-solid fa-arrow-left search-icon"></i>
           <div class="search">Back</div>
         </div>
+      </div>
+      <!--  -->
+      <div class="filters">
         <div class="input-container">
           <i class="fas fa-search"></i>
           <input
@@ -241,10 +243,8 @@
           <option value="">User</option>
         </select>
         <div class="sort">
-          <img style="width: 15px" src="public/sort_minor.png" alt="" /><span
-            style="margin-bottom: 7px"
-            >Sort</span
-          >
+          <i class="fa-solid fa-arrow-up-z-a"></i
+          ><span style="margin-bottom: 7px">Sort</span>
         </div>
       </div>
 
