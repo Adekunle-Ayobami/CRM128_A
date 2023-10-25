@@ -5,6 +5,9 @@ body {
   background-color: #f6f6f6;
   font-family: "Clash Grotesk", sans-serif;
 }
+body.overlay-active {
+  overflow: hidden;
+}
 a {
   text-decoration: none;
   color: #091e42;
@@ -82,7 +85,7 @@ a {
   background-color: white;
   justify-content: flex-start;
   width: 300px;
-  height: 1520px;
+  height: 100%;
   padding-bottom: 20px;
   border-right: 1px solid grey;
 }
@@ -130,7 +133,9 @@ li {
   left: 89%;
   top: 19px;
 }
-
+.logout {
+  padding-bottom: 1090px;
+}
 .client-bar {
   background-color: #7ac769;
   padding-right: 22px;
@@ -206,7 +211,7 @@ li {
 /* Inner Page */
 .inner-page {
   width: 65%;
-  height: 1400px;
+  height: 1560px;
   border-radius: 10px;
   background-color: white;
   position: absolute;
@@ -350,6 +355,140 @@ input:checked + .slider:before {
   display: none;
 }
 
+/* Overlay Page */
+.add-lead {
+  position: fixed;
+  top: 4em;
+  right: 13em;
+  background-color: #fff;
+  width: 40%;
+  height: 52%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  text-align: left;
+  font-size: 28px;
+  color: #091e42;
+  font-family: "Clash Grotesk";
+  padding-top: 30px;
+  padding-bottom: 20px;
+  z-index: 1;
+  border-radius: 8px;
+  display: none;
+  box-shadow: 0 0 100vw 100vh rgba(0, 0, 0, 0.5);
+}
+.lead {
+  display: flex;
+  width: 93%;
+  position: relative;
+  top: em;
+  padding: 1px 20.6px 0px 20.6px;
+  gap: 270px;
+}
+.lead img {
+  cursor: pointer;
+}
+.hr {
+  width: 32vw;
+  position: relative;
+  right: 12px;
+}
+.add-new {
+  font-size: 19px;
+  font-weight: 600;
+  padding-left: 22px;
+}
+.add-lead label {
+  font-size: 18px;
+  font-weight: 600;
+}
+.label-div {
+  display: flex;
+  gap: 7px;
+  flex-direction: column;
+  padding-left: 1.5em;
+  margin-bottom: 24px;
+}
+.label-input {
+  width: 30.5vw;
+  padding: 9px;
+  border-radius: 6px;
+  border: 1px solid lightblue;
+  outline: none;
+}
+.label-button {
+  position: relative;
+  left: 9.8em;
+  margin-top: 25px;
+}
+.open-eyes {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0.3em;
+  left: 14.5em;
+  cursor: pointer;
+}
+.bigbutton {
+  background-color: #fff;
+  border: 1px solid #7a8699;
+  font-size: 16px;
+  border-radius: 4px;
+  color: #091e42;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.bigbutton:hover {
+  background-color: red;
+  color: white;
+  border: none;
+}
+.bigbutton2 {
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  /* border: 1px solid #7a8699; */
+  border: none;
+  font-size: 16px;
+  padding: 8px 10px;
+  color: #8c9196;
+  cursor: pointer;
+}
+.hidden-logo {
+  display: flex;
+  gap: 30px;
+  padding-left: 10px;
+}
+.hidden-section {
+  display: none;
+}
+.edit-button {
+  height: 20px;
+  position: relative;
+  top: 3.5em;
+  padding: 7px 10px 20px 10px;
+  background-color: white;
+  border: 1px solid lightblue;
+  cursor: pointer;
+}
+.team-form {
+  display: flex;
+  gap: 10px;
+  padding-left: 46px;
+}
+.team-input {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.team-input input {
+  width: 27vw;
+  padding: 10px;
+  border: 1px solid #0047b3;
+  color: #7a8699;
+  outline: none;
+  border-radius: 7px;
+  background-color: #f6f6f6;
+}
+
 @media (min-width: 1368px) {
   .frame-group {
     gap: 1250px;
@@ -359,6 +498,35 @@ input:checked + .slider:before {
   }
   .night {
     left: 76em;
+  }
+  .team-input input {
+    width: 32.5vw;
+  }
+  .add-lead {
+    top: 8em;
+    right: 20em;
+    width: 37vw;
+  }
+  .lead {
+    gap: 450px;
+  }
+  .open-eyes {
+    top: 15px;
+    left: 20.5em;
+  }
+  .label-div {
+    margin-bottom: 60px;
+  }
+  .label-button {
+    top: -1.3em;
+    left: 16em;
+  }
+  .label-input {
+    padding: 20px 10px 20px 10px;
+  }
+  .hr {
+    left: 1px;
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 1366px) {

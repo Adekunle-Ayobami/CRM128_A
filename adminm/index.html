@@ -244,10 +244,28 @@
               Team branding
             </div>
             <div style="color: #6b788e">
-              Manage your team name, URL and logo
+              Manage your team name, URL, and logo
             </div>
           </div>
-          <button class="second-btn">Expand</button>
+          <button class="second-btn" id="expand-button">Expand</button>
+        </div>
+        <div class="hidden-section">
+          <div class="hidden-logo">
+            <img src="public/Apple.svg" alt="" />
+            <button class="edit-button">Edit picture</button>
+          </div>
+          <div>
+            <form class="team-form" action="">
+              <div class="team-input">
+                <label for="">Team Name</label>
+                <input type="text" name="team" placeholder="company.com" />
+              </div>
+              <div class="team-input">
+                <label for="">Team Domain</label>
+                <input type="text" name="team" placeholder="company.com" />
+              </div>
+            </form>
+          </div>
         </div>
         <div class="third">
           <div>
@@ -255,9 +273,7 @@
             <span style="color: #6b788e">Change your system theme</span>
           </div>
           <div>
-            <span
-              class="night"
-              style="position: absolute; right: 100px; top: 13.4%"
+            <span class="night" style="position: absolute; right: 100px"
               >Night Mode</span
             >
 
@@ -403,7 +419,7 @@
             </div>
             <div style="color: #6b788e">Last Changed 19 March, 2023</div>
           </div>
-          <button class="second-btn">Change</button>
+          <button class="second-btn" id="overlayBtn">Change</button>
         </div>
         <hr style="width: 90%; border-top: lightblue; margin-top: 40px" />
         <div class="second">
@@ -480,7 +496,112 @@
       </div>
     </footer>
 
+    <!-- Overlay Pages -->
+    <div class="add-lead" id="overlay">
+      <div class="lead">
+        <div class="add-new">Password Change</div>
+        <img class="closing" src="public/close.svg" id="closeBtn" alt="" />
+      </div>
+      <hr class="hr" />
+      <form class="form">
+        <div class="form-div">
+          <div class="label-div">
+            <label for="old-password">Old Password</label>
+            <div style="position: relative">
+              <input
+                id="old-password"
+                class="label-input"
+                type="password"
+                placeholder="Enter Old Password"
+              />
+              <img
+                class="open-eyes eye-toggle"
+                src="public/Open eyes.png"
+                alt=""
+                data-toggle="old-password"
+              />
+            </div>
+          </div>
+          <div class="label-div">
+            <label for="new-password">New Password</label>
+            <div style="position: relative">
+              <input
+                id="new-password"
+                class="label-input"
+                type="password"
+                placeholder="Enter New Password"
+              />
+              <img
+                class="open-eyes eye-toggle"
+                src="public/Open eyes.png"
+                alt=""
+                data-toggle="new-password"
+              />
+            </div>
+          </div>
+          <div class="label-div">
+            <label for="confirm-password">Confirm Password</label>
+            <div style="position: relative">
+              <input
+                id="confirm-password"
+                class="label-input"
+                type="password"
+                placeholder="Confirm Password"
+              />
+              <img
+                class="open-eyes eye-toggle"
+                src="public/Open eyes.png"
+                alt=""
+                data-toggle="confirm-password"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="label-button">
+          <input class="bigbutton" type="submit" name="submit" value="Cancel" />
+          <input
+            class="bigbutton2"
+            type="submit"
+            name="submit"
+            value="Save Changes"
+          />
+        </div>
+      </form>
+    </div>
+
     <script>
+      const eyeToggles = document.querySelectorAll(".eye-toggle");
+
+      eyeToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const inputId = toggle.getAttribute("data-toggle");
+          const inputField = document.getElementById(inputId);
+
+          if (inputField.type === "password") {
+            inputField.type = "text";
+            toggle.src = "public/Eye closed.png";
+          } else {
+            inputField.type = "password";
+            toggle.src = "public/Open eyes.png";
+          }
+        });
+      });
+
+      // Overlay Page1
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+          document.body.classList.add("overlay-active"); // Prevent background scroll
+        });
+
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+          document.body.classList.remove("overlay-active"); // Allow background scroll
+        });
+
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
       const hrChevronIcon = document.getElementById("hr-chevron-icon");
@@ -551,6 +672,20 @@
       var sidebarToggle = document.getElementById("sidebar-toggle");
       sidebarToggle.addEventListener("click", function () {
         toggleMenu();
+      });
+
+      // Expand Button
+      const expandButton = document.getElementById("expand-button");
+      const hiddenLogo = document.querySelector(".hidden-section");
+
+      expandButton.addEventListener("click", () => {
+        if (hiddenLogo.style.display === "none") {
+          hiddenLogo.style.display = "block";
+          expandButton.textContent = "Close";
+        } else {
+          hiddenLogo.style.display = "none";
+          expandButton.textContent = "Expand";
+        }
       });
     </script>
   </body>
