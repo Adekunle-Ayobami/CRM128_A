@@ -433,24 +433,62 @@ li {
 .jun-2023 {
   width: 7.38em;
 }
-.rectangle-div,
-.rectangle-parent {
+.rectangle-div {
   position: absolute;
   top: 1.75em;
   left: 18.44em;
   width: 70.06em;
   height: 12.87em;
 }
-.group-child,
-.group-inner,
-.group-item,
+/* Rectangle Parent */
+.rectangle-parent {
+  position: absolute;
+  top: 1.75em;
+  left: 18.44em;
+  display: flex;
+  gap: 50px;
+}
+.stock {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 7px;
+}
+.active-clients {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.active-leads {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.average-value-of {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.div {
+  font-size: 39px;
+  font-weight: 600;
+}
+.div1 {
+  font-size: 39px;
+  font-weight: 600;
+}
+.div2 {
+  font-size: 39px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+/*  */
 .overview-client-management-inner {
   position: absolute;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-.group-child,
+/* .group-child,
 .group-inner,
 .group-item {
   top: 0;
@@ -516,7 +554,7 @@ li {
 }
 .div2 {
   left: 11.5em;
-}
+} */
 
 .frame-parent,
 .rectangle-group {
@@ -988,7 +1026,13 @@ li {
 
 @media (min-width: 1368px) {
   .rectangle-parent {
-    left: 20em;
+    left: 23em;
+  }
+  .logout {
+    padding-bottom: 200px;
+  }
+  .group-child {
+    width: 20vw;
   }
 }
 /* 1366px and below */
