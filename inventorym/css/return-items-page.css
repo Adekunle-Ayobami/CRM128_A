@@ -186,6 +186,9 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .overview-client-management-inner {
   top: 20.06em;
@@ -1157,6 +1160,21 @@ td {
   cursor: pointer;
   font-size: 24px;
   display: none;
+}
+
+@media (min-width: 1368px) {
+  .frame-group {
+    left: 22em;
+    gap: 1150px;
+    width: 80vw;
+  }
+  .table {
+    left: 23em;
+    width: 75vw;
+  }
+  .menu {
+    height: 90vh;
+  }
 }
 
 @media (max-width: 1366px) {

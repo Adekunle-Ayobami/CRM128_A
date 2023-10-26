@@ -192,6 +192,9 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .overview-client-management-inner {
   top: 20.06em;
@@ -1163,9 +1166,9 @@ td {
   .table {
     left: 22em;
   }
-  .logout {
-    padding-bottom: 140px;
-  }
+ .menu {
+  height: 90vh;
+ }
 }
 @media (max-width: 1366px) {
   body {
