@@ -216,27 +216,15 @@
           <div style="margin-right: 10px">|</div>
           <div style="color: #003e9c; width: 150px">Employee List</div>
         </div>
-        <div class="button-group">
-          <button class="bt2" id="overlayBtn">Add Employee</button>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
+          <div class="search">Back</div>
         </div>
       </div>
 
       <!--  -->
       <div class="back-group">
-        <div class="back" onclick="history.back()">
-          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
-          <div class="search">Back</div>
-        </div>
         <div class="input-group">
-          <div class="input-container">
-            <i class="fas fa-search"></i>
-            <input
-              class="input-field1"
-              type="text"
-              name="search"
-              placeholder="Filter"
-            />
-          </div>
           <select class="select" name="">
             <option value="">Date Joined</option>
             <option value="">Weekly</option>
@@ -263,10 +251,22 @@
             <option value="">User</option>
           </select>
           <div class="sort">
-            <img style="width: 15px" src="public/sort-minor.svg" alt="" /><span
-              style="margin-bottom: 7px"
-              >Sort</span
-            >
+            <i class="fa-solid fa-arrow-up-z-a"></i
+            ><span style="margin-bottom: 7px">Sort</span>
+          </div>
+        </div>
+        <div style="display: flex">
+          <div class="input-container">
+            <i class="fas fa-search"></i>
+            <input
+              class="input-field1"
+              type="text"
+              name="search"
+              placeholder="Filter"
+            />
+          </div>
+          <div class="button-group">
+            <button class="bt2" id="overlayBtn">Add Employee</button>
           </div>
         </div>
       </div>
@@ -296,26 +296,16 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img id="more" src="public/more.svg" alt="" /></td>
-          <!-- Button Overlay -->
-          <div class="button-overlay" id="button-overlay">
-            <button class="btn1" type="submit">
-              <img
-                id="overlayBtn2"
-                class="ic"
-                src="public/Edit.svg"
-                alt=""
-              /><span id="overlayBtn2">Edit</span>
-            </button>
-            <button class="btn2" type="submit">
-              <img class="ic" src="public/Open eyes.svg" alt="" /><a href=""
-                >View</a
-              >
-            </button>
-            <button class="btn3" type="submit">
-              <img class="ic" src="public/Delete.svg" alt="" />Delete
-            </button>
-          </div>
+          <td class="icons">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="overlayBtn2"
+            ></i>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
         <tr>
           <td style="display: flex">
@@ -330,7 +320,16 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img src="public/more.svg" alt="" /></td>
+          <td class="icons">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="overlayBtn2"
+            ></i>
+            <a href="#"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
         <tr>
           <td style="display: flex">
@@ -345,7 +344,18 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img src="public/more.svg" alt="" /></td>
+          <td class="icons">
+            <a href="#"
+              ><i
+                class="fa-solid fa-pen-to-square fa-lg edit-icon"
+                id="editIcon"
+              ></i
+            ></a>
+            <a href="#"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
         <tr>
           <td style="display: flex">
@@ -360,7 +370,18 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img src="public/more.svg" alt="" /></td>
+          <td class="icons">
+            <a href="../inventorym/stock-list-edit.html"
+              ><i
+                class="fa-solid fa-pen-to-square fa-lg edit-icon"
+                id="editIcon"
+              ></i
+            ></a>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
         <tr>
           <td style="display: flex">
@@ -375,7 +396,18 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img src="public/more.svg" alt="" /></td>
+          <td class="icons">
+            <a href="../inventorym/stock-list-edit.html"
+              ><i
+                class="fa-solid fa-pen-to-square fa-lg edit-icon"
+                id="editIcon"
+              ></i
+            ></a>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
         <tr>
           <td style="display: flex">
@@ -390,7 +422,18 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img src="public/more.svg" alt="" /></td>
+          <td class="icons">
+            <a href="../inventorym/stock-list-edit.html"
+              ><i
+                class="fa-solid fa-pen-to-square fa-lg edit-icon"
+                id="editIcon"
+              ></i
+            ></a>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
         <tr>
           <td style="display: flex">
@@ -405,7 +448,18 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img src="public/more.svg" alt="" /></td>
+          <td class="icons">
+            <a href="../inventorym/stock-list-edit.html"
+              ><i
+                class="fa-solid fa-pen-to-square fa-lg edit-icon"
+                id="editIcon"
+              ></i
+            ></a>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
         <tr>
           <td style="display: flex">
@@ -420,7 +474,18 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img src="public/more.svg" alt="" /></td>
+          <td class="icons">
+            <a href="../inventorym/stock-list-edit.html"
+              ><i
+                class="fa-solid fa-pen-to-square fa-lg edit-icon"
+                id="editIcon"
+              ></i
+            ></a>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
         <tr>
           <td style="display: flex">
@@ -435,7 +500,18 @@
           <td>433</td>
           <td>27 Jan 2022</td>
           <td>Probation</td>
-          <td><img src="public/more.svg" alt="" /></td>
+          <td class="icons">
+            <a href="../inventorym/stock-list-edit.html"
+              ><i
+                class="fa-solid fa-pen-to-square fa-lg edit-icon"
+                id="editIcon"
+              ></i
+            ></a>
+            <a href="../inventorym/stock-list-details.html"
+              ><i class="fa-solid fa-eye fa-lg"></i
+            ></a>
+            <img class="search-icon" alt="" src="./public/delete.svg" />
+          </td>
         </tr>
       </table>
 
@@ -704,11 +780,13 @@
         .getElementById("overlayBtn")
         .addEventListener("click", function () {
           document.getElementById("overlay").style.display = "block";
+          document.body.classList.add("overlay-active");
         });
       document
         .getElementById("closeBtn")
         .addEventListener("click", function () {
           document.getElementById("overlay").style.display = "none";
+          document.body.classList.remove("overlay-active");
         });
 
       // Overlay Page2
@@ -716,11 +794,13 @@
         .getElementById("overlayBtn2")
         .addEventListener("click", function () {
           document.getElementById("overlay2").style.display = "block";
+          document.body.classList.add("overlay-active");
         });
       document
         .getElementById("closeBtn2")
         .addEventListener("click", function () {
           document.getElementById("overlay2").style.display = "none";
+          document.body.classList.remove("overlay-active");
         });
 
       // Button Overlay

@@ -81,8 +81,8 @@ a {
   flex-direction: column;
   background-color: white;
   justify-content: flex-start;
-  width: 240px;
-  height: 100%;
+  width: 300px;
+  height: 150vh;
   padding-bottom: 20px;
   border-right: 1px solid grey;
 }
@@ -134,7 +134,7 @@ li {
 .client-bar {
   background-color: #7ac769;
   padding-right: 22px;
-  width: 85.8%;
+  width: 88.8%;
 }
 .frame-group {
   display: flex;
@@ -159,6 +159,9 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 /* Inner page Upper */
 .inner-page {
@@ -166,7 +169,7 @@ li {
   gap: 20px;
   position: absolute;
   top: 3em;
-  left: 18em;
+  left: 21em;
 }
 .group260 {
   position: relative;
@@ -179,12 +182,14 @@ li {
   height: 232px;
   border-radius: 7px;
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .leave1 {
   background-color: white;
   padding: 15px 30px 20px 20px;
   height: 245px;
   border-radius: 7px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .leave2 {
   display: flex;
@@ -361,90 +366,123 @@ span.first {
   width: 20px;
   height: 15px;
 }
-/* Inner Page Lower */
+/* upcoming-events */
 .upcoming-events {
   position: absolute;
   top: 22em;
-  left: 18em;
+  left: 21em;
   padding: 12px;
-  width: 500px;
-  height: 250px;
+  width: 39vw;
   background-color: white;
   border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-.events {
-  display: flex;
-  gap: 324px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #7ac769;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.upcoming {
+  font-size: 20px;
   font-weight: 600;
-  padding: 5px;
+  margin-bottom: 12px;
 }
-.events1 {
-  display: flex;
-  gap: 279px;
-  margin-bottom: 10px;
+.table2 {
+  text-align: left;
+  border-collapse: collapse;
+  width: 36.6vw;
 }
-.events2 {
-  display: flex;
-  gap: 206px;
-  margin-bottom: 10px;
+.table2 th {
+  background-color: #7ac769;
+  padding: 11px;
 }
-.events3 {
-  display: flex;
-  gap: 202px;
-  margin-bottom: 10px;
+.table2 td {
+  padding: 15px 15px 11px 15px;
+  font-weight: 600;
 }
-.events4 {
-  display: flex;
-  gap: 149px;
-  margin-bottom: 10px;
-}
-.calender {
+/* Calender */
+.calendar {
+  width: 29.7vw;
   position: absolute;
   top: 22em;
-  left: 52em;
+  left: 57em;
   background-color: white;
-  width: 400px;
-  height: 230px;
-  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-.month {
-  text-align: center;
-  padding-bottom: 5px;
-  margin-top: -5px;
+.calendar img {
+  cursor: pointer;
 }
-.women {
-  position: absolute;
-  top: 17.5em;
-  left: 28em;
-  font-size: 7px;
-  background-color: #7ac769;
-  border-radius: 9px;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.header button {
+  height: 20px;
+  position: relative;
+  top: 2em;
+  border: none;
+  background: none;
 }
 .table {
-  width: 100%;
+  width: 28vw;
+  padding: 30px;
   border-collapse: collapse;
+  background-color: #fff;
+  position: relative;
+  left: 0.8em;
 }
-th {
+
+.table tbody {
+  position: relative;
+  left: 1.7em;
+}
+.table thead {
   background-color: #7ac769;
+  width: 1px;
+}
+.table th {
   padding: 10px;
+  width: 10px;
 }
-td {
-  padding: 6px;
-  text-align: center;
-  border: 1px solid lightblue;
-  border-left: none;
+.table td {
+  padding: 20px 0 14px 0;
+  position: relative;
+  right: 0.5em;
 }
-td:last-child {
-  border-right: none;
-}
-tr:last-child td {
-  border-bottom: none;
+.highlighted-day {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  left: -1.7em;
 }
 
 @media (min-width: 1368px) {
+  .leave {
+    width: 20vw;
+  }
+  .group260 {
+    left: -8em;
+  }
+  .leave-head {
+    font-size: 25px;
+  }
+  .atten {
+    position: relative;
+    left: 8.5em;
+  }
+  .boxes {
+    position: relative;
+    bottom: 16.5em;
+    right: 28em;
+  }
+  .calendar {
+    left: 80.2em;
+  }
+  .upcoming-events {
+    width: 47vw;
+  }
+  .table2 {
+    width: 47vw;
+  }
+  .menu {
+    height: 105vh;
+  }
 }

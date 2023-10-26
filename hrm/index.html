@@ -354,117 +354,63 @@
         </div>
       </div>
       <div class="upcoming-events">
-        <div>Upcoming Events</div>
-        <div class="events">
-          <span>Events</span>
-          <span>Date</span>
-        </div>
-        <div class="events1">
-          <span>Team Bonding</span>
-          <span>30 June 2023</span>
-        </div>
-        <div class="events2">
-          <span>Monthly General Meeting</span>
-          <span>30 June 2023</span>
-        </div>
-        <div class="events3">
-          <span>Communications Training</span>
-          <span>30 June 2023</span>
-        </div>
-        <div class="events4">
-          <span>Noco Lithium Powersport Battery</span>
-          <span>30 June 2023</span>
-        </div>
-        <div class="events4">
-          <span>Noco Lithium Powersport Battery</span>
-          <span>30 June 2023</span>
-        </div>
-        <div class="events4">
-          <span>Noco Lithium Powersport Battery</span>
-          <span>30 June 2023</span>
-        </div>
+        <div class="upcoming">Upcoming Events</div>
+        <table class="table2">
+          <tr>
+            <th>Events</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <td>Team Bonding</td>
+            <td>30 June 2023</td>
+          </tr>
+          <tr>
+            <td>Monthly General Meeting</td>
+            <td>30 June 2023</td>
+          </tr>
+          <tr>
+            <td>Communications Training</td>
+            <td>30 June 2023</td>
+          </tr>
+          <tr>
+            <td>Noco Lithium Powersport Battery</td>
+            <td>30 June 2023</td>
+          </tr>
+          <tr>
+            <td>Noco Lithium Powersport Battery</td>
+            <td>30 June 2023</td>
+          </tr>
+          <tr>
+            <td>Noco Lithium Powersport Battery</td>
+            <td>30 June 2023</td>
+          </tr>
+        </table>
       </div>
 
-      <!--  -->
-      <div class="calender">
-        <div class="month">
-          <img src="public/chevron-left.svg" alt="" />
-          <span>march 2023</span>
-          <img src="public/chevron-right.svg" alt="" />
+      <!-- Calender -->
+      <div class="calendar">
+        <div class="header">
+          <button id="prevMonth">
+            <img src="public/chevron-left.svg" alt="" />
+          </button>
+          <h2 id="monthYear"></h2>
+          <button id="nextMonth">
+            <img src="public/chevron-right.svg" alt="" />
+          </button>
         </div>
-        <table class="table">
-          <tr>
-            <th>Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thur</th>
-            <th>Fri</th>
-            <th>Sat</th>
-          </tr>
-          <tr>
-            <td class="color">29</td>
-            <td class="color">30</td>
-            <td>31</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>6</td>
-            <td style="background-color: lightgray">7</td>
-            <td>8 <span class="women">Women's Day</span></td>
-            <td>9</td>
-            <td>10</td>
-            <td>11</td>
-          </tr>
-          <tr>
-            <td>29</td>
-            <td>30</td>
-            <td>31</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-            <td>16</td>
-            <td>17</td>
-            <td>18</td>
-          </tr>
-          <tr>
-            <td>19</td>
-            <td>20</td>
-            <td>21</td>
-            <td>22</td>
-            <td>23</td>
-            <td>24</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
-            <td>30</td>
-            <td class="color">1</td>
-            <td class="color">2</td>
-          </tr>
-          <tr>
-            <td class="color">3</td>
-            <td class="color">4</td>
-            <td class="color">5</td>
-            <td class="color">5</td>
-            <td class="color">7</td>
-            <td class="color">8</td>
-            <td class="color">9</td>
-          </tr>
+        <table id="calendarTable" class="table">
+          <thead>
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
         </table>
       </div>
     </section>
@@ -537,6 +483,68 @@
       hrToggle5.addEventListener("click", function () {
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
+      });
+
+      // Calender
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarBody = document.getElementById("calendarBody");
+        const monthYearElement = document.getElementById("monthYear");
+        const prevMonthButton = document.getElementById("prevMonth");
+        const nextMonthButton = document.getElementById("nextMonth");
+
+        let currentDate = new Date(); // Define currentDate outside the renderCalendar function
+
+        function renderCalendar() {
+          const currentDay = currentDate.getDate();
+          const currentMonth = currentDate.getMonth();
+          const currentYear = currentDate.getFullYear();
+
+          const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+          const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+
+          const monthYearString = currentDate.toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+          });
+          monthYearElement.innerText = monthYearString;
+
+          let calendarHtml = "<tr>";
+
+          for (let i = 0; i < firstDayIndex; i++) {
+            calendarHtml += "<td></td>";
+          }
+
+          for (let day = 1; day <= lastDay; day++) {
+            let cell = `<td>${day}</td>`;
+            if (
+              currentDay === day &&
+              currentMonth === currentDate.getMonth() &&
+              currentYear === currentDate.getFullYear()
+            ) {
+              cell = `<td class="highlighted-day">${day}</td>`;
+            }
+            calendarHtml += cell;
+
+            if ((day + firstDayIndex) % 7 === 0) {
+              calendarHtml += "</tr><tr>";
+            }
+          }
+
+          calendarHtml += "</tr>";
+          calendarBody.innerHTML = calendarHtml;
+        }
+
+        renderCalendar();
+
+        prevMonthButton.addEventListener("click", function () {
+          currentDate.setMonth(currentDate.getMonth() - 1);
+          renderCalendar();
+        });
+
+        nextMonthButton.addEventListener("click", function () {
+          currentDate.setMonth(currentDate.getMonth() + 1);
+          renderCalendar();
+        });
       });
     </script>
   </body>

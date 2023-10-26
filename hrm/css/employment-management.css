@@ -5,6 +5,9 @@ body {
   background-color: #f6f6f6;
   font-family: "Clash Grotesk", sans-serif;
 }
+body.overlay-active {
+  overflow: hidden;
+}
 a {
   text-decoration: none;
   color: #091e42;
@@ -81,8 +84,8 @@ a {
   flex-direction: column;
   background-color: white;
   justify-content: flex-start;
-  width: 250px;
-  height: 100%;
+  width: 280px;
+  height: 150vh;
   padding-bottom: 20px;
   border-right: 1px solid grey;
 }
@@ -105,7 +108,7 @@ li {
 .selected {
   background-color: #e6f0ff;
   border-right: 2px solid #003e9c;
-  width: 189px;
+  width: 16vw;
   color: #003e9c;
 }
 .side-tab,
@@ -134,18 +137,17 @@ li {
 .client-bar {
   background-color: #7ac769;
   padding-right: 22px;
-  width: 86.5%;
+  width: 87.7%;
 }
 .frame-group {
   display: flex;
-  height: 20px;
-  margin-top: 20px;
+  height: 35px;
   margin-left: 20px;
   width: 20%;
   position: absolute;
   top: 15px;
-  left: 320px;
-  gap: 530px;
+  left: 18em;
+  gap: 570px;
 }
 .btn {
   position: absolute;
@@ -160,6 +162,11 @@ li {
   color: white;
   cursor: pointer;
 }
+.bt2:hover {
+  background-color: white;
+  color: #2b7fff;
+  border: 1px solid #2b7fff;
+}
 .button-group button {
   padding-top: 6px;
   padding-bottom: 7px;
@@ -172,14 +179,17 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 /*  */
 .back-group {
   display: flex;
   position: absolute;
-  top: 6em;
-  left: 320px;
-  gap: 340px;
+  top: 4em;
+  left: 19em;
+  gap: 260px;
 }
 .input-group {
   display: flex;
@@ -194,7 +204,13 @@ li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 10px;
   cursor: pointer;
+}
+.back:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
 }
 /* .input-container {
     position: absolute;
@@ -205,7 +221,7 @@ li {
 .input-container i {
   position: relative;
   left: 1.7em;
-  top: 0.5em;
+  top: 0.6em;
   transform: translateY(-50%);
   font-size: 16px; /* Adjust the icon size */
   color: #555; /* Adjust the icon color */
@@ -216,7 +232,8 @@ li {
   padding-top: 5px;
   padding-bottom: 9px;
   margin-right: 5px;
-  border: 1px solid lightblue;
+  border-radius: 6px;
+  border: 1px solid #2b7fff;
 }
 .select {
   /* position: absolute;
@@ -226,6 +243,10 @@ li {
   padding-top: 5px;
   padding-bottom: 5px;
   border: 1px solid lightblue;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border: 1px solid #2b7fff;
+  cursor: pointer;
 }
 .select1 {
   /* position: absolute;
@@ -234,7 +255,8 @@ li {
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  border: 1px solid lightblue;
+  border: 1px solid #2b7fff;
+  cursor: pointer;
 }
 .select2 {
   /* position: absolute;
@@ -243,30 +265,41 @@ li {
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  border: 1px solid lightblue;
+  border: 1px solid #2b7fff;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
 }
 .select option {
   padding-bottom: 30px;
 }
 .sort {
+  display: flex;
+  gap: 4px;
   background-color: white;
-  /* position: absolute;
-    top: 75px;
-    right: 6.1%; */
   padding-left: 10px;
   padding-top: 5px;
   padding-right: 10px;
   padding-bottom: 3.5px;
-  border: 1px solid black;
+  border: 1px solid #2b7fff;
   text-align: center;
   margin-left: 5px;
-  border: 1px solid lightblue;
+  height: 19px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.6s, transform 0.5s, color 0.3s;
+}
+.sort:hover {
+  background-color: #0047b3;
+  color: white;
+  border: none;
+  transform: scale(1.11);
 }
 .table {
   position: absolute;
-  top: 10em;
-  left: 20em;
-  width: 74%;
+  top: 8em;
+  left: 19em;
+  width: 72%;
   border-collapse: collapse;
 }
 th {
@@ -276,12 +309,19 @@ th {
 }
 td {
   background-color: white;
-  padding: 2px;
+  padding: 2px 4px 2px 2px;
+  font-weight: 600;
 }
+.icons i {
+  position: relative;
+  top: -0.24em;
+  cursor: pointer;
+}
+/* Pagination */
 .pagination {
   position: absolute;
   top: 53em;
-  left: 650px;
+  left: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -375,6 +415,9 @@ td {
   background-color: #7ac769;
   padding: 20.6px;
   margin-top: -10px;
+}
+.lead img {
+  cursor: pointer;
 }
 .add-new {
   width: 100%;
@@ -518,4 +561,16 @@ td {
 }
 .ic {
   width: 20px;
+}
+
+@media (min-width: 1368px) {
+  .frame-group {
+    gap: 1100px;
+  }
+  .back-group {
+    gap: 780px;
+  }
+  .table {
+    width: 78vw;
+  }
 }
