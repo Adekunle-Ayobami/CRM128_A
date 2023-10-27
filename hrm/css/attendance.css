@@ -108,7 +108,6 @@ li {
 .selected {
   background-color: #e6f0ff;
   border-right: 2px solid #003e9c;
-  width: 16.8vw;
   color: #003e9c;
 }
 .side-tab,
@@ -162,6 +161,9 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 /*  */
 .back-group {
@@ -488,4 +490,16 @@ td {
 }
 .radio {
   display: flex;
+}
+
+@media (min-width: 1368px) {
+  .frame-group {
+    gap: 980px;
+  }
+  .back-group {
+    gap: 1035px;
+  }
+  .table {
+    width: 78vw;
+  }
 }

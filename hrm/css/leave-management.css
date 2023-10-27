@@ -105,7 +105,6 @@ li {
 .selected {
   background-color: #e6f0ff;
   border-right: 2px solid #003e9c;
-  width: 17.4vw;
   color: #003e9c;
 }
 .side-tab,
@@ -176,8 +175,8 @@ li {
 }
 .group-parent {
   position: absolute;
-  top: 10em;
-  left: 38em;
+  top: 15%;
+  left: 48%;
 }
 .text-parent {
   text-align: center;
@@ -190,4 +189,9 @@ li {
 .text {
   font-size: 28px;
   font-weight: 600;
+}
+@media (min-width: 1368px) {
+  .menu {
+   height: 100vh;
+  }
 }
