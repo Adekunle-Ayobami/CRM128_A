@@ -271,11 +271,12 @@
           <td>Percentage</td>
           <td>21%</td>
           <td>--</td>
-          <td>
-            <img src="public/edit.svg" alt="" /><img
-              src="public/Delete.svg"
-              alt=""
-            />
+          <td class="icon">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <img src="public/Delete.svg" alt="" />
           </td>
         </tr>
         <tr>
@@ -283,11 +284,12 @@
           <td>Percentage</td>
           <td>5%</td>
           <td>--</td>
-          <td>
-            <img src="public/edit.svg" alt="" /><img
-              src="public/Delete.svg"
-              alt=""
-            />
+          <td class="icon">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <img src="public/Delete.svg" alt="" />
           </td>
         </tr>
         <tr>
@@ -295,17 +297,18 @@
           <td>Fixed</td>
           <td>--</td>
           <td>8,000</td>
-          <td>
-            <img src="public/edit.svg" alt="" /><img
-              src="public/Delete.svg"
-              alt=""
-            />
+          <td class="icon">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="editIcon"
+            ></i>
+            <img src="public/Delete.svg" alt="" />
           </td>
         </tr>
       </table>
       <!-- pagination -->
       <div class="pagination">
-        <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
+        <img class="page-disabled rp" alt="" src="./public/page--master.svg" />
 
         <div class="page-active">
           <div class="page-active1">
@@ -349,9 +352,8 @@
     <div class="add-lead" id="overlay">
       <div class="lead">
         <div class="add-new">Add New Allowance</div>
-        <img class="closing" src="public/close.svg" id="closeBtn2" alt="" />
+        <img class="closing" src="public/close.svg" id="closeBtn" alt="" />
       </div>
-      <hr class="hr" />
       <form class="form">
         <div class="form-div">
           <div class="label-div">
@@ -447,6 +449,17 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+        });
     </script>
   </body>
 </html>

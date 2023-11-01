@@ -83,7 +83,6 @@ a {
   background-color: white;
   justify-content: flex-start;
   width: 300px;
-  height: 100%;
   padding-bottom: 20px;
   border-right: 1px solid grey;
 }
@@ -130,7 +129,9 @@ li {
   left: 89%;
   top: 19px;
 }
-
+.logout {
+  padding-bottom: 60px;
+}
 .client-bar {
   background-color: #7ac769;
   padding-right: 22px;
@@ -152,6 +153,11 @@ li {
   color: white;
   border-radius: 4px;
   cursor: pointer;
+}
+.frame-group button:hover {
+  background-color: white;
+  color: #2b7fff;
+  border: 1px solid #2b7fff;
 }
 .btn {
   position: absolute;
@@ -177,6 +183,9 @@ li {
   padding: 10px;
   justify-content: space-around;
   background-color: #d9d9d9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .group-parent {
   position: absolute;
@@ -193,4 +202,14 @@ li {
 .text {
   font-size: 28px;
   font-weight: 600;
+}
+
+@media (min-width: 1368px) {
+  .frame-group {
+    gap: 52em;
+  }
+  .group-parent {
+    top: 15em;
+    left: 55em;
+  }
 }

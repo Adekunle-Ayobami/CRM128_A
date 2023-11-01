@@ -82,7 +82,7 @@ a {
   flex-direction: column;
   background-color: white;
   justify-content: flex-start;
-  width: 240px;
+  width: 300px;
   height: 100%;
   padding-bottom: 20px;
   border-right: 1px solid grey;
@@ -135,27 +135,29 @@ li {
 .client-bar {
   background-color: #7ac769;
   padding-right: 22px;
-  width: 85.8%;
 }
 .frame-group {
   display: flex;
   height: 20px;
-  margin-top: 20px;
   margin-left: 20px;
   width: 80%;
   position: absolute;
   top: 15px;
-  left: 16em;
-  gap: 570px;
+  left: 20em;
+  gap: 510px;
 }
 .frame-group button {
   background-color: #0047b3;
   border: 2px solid #0047b3;
   padding: 8px 13px 24px;
-  font-size: 16px;
-  color: #e6f0ff;
+  color: white;
   border-radius: 4px;
   cursor: pointer;
+}
+.frame-group button:hover {
+  background-color: white;
+  color: #2b7fff;
+  border: 1px solid #2b7fff;
 }
 .btn {
   position: absolute;
@@ -201,8 +203,8 @@ li {
 .table {
   position: absolute;
   top: 9em;
-  left: 17em;
-  width: 75.8%;
+  left: 21em;
+  width: 71%;
   border-collapse: collapse;
 }
 th {
@@ -213,13 +215,23 @@ th {
 td {
   background-color: white;
   padding: 10px;
+  padding-left: 20px;
   font-weight: 600;
+}
+.icon i {
+  position: relative;
+  top: -0.2em;
+}
+.icon i,
+.icon img {
+  position: relative;
+  left: 0.5em;
 }
 /*  */
 .button-group {
   position: absolute;
   top: 7em;
-  left: 17em;
+  left: 21em;
 }
 .btn1 {
   margin-right: -3px;
@@ -296,11 +308,12 @@ td {
   padding: 10px 20px 10px 20px;
   border-top: 2px solid #091e42;
 }
+
 /* pagination */
 .pagination {
   position: absolute;
-  top: 35.5em;
-  left: 650px;
+  top: 80%;
+  left: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -313,6 +326,9 @@ td {
   position: relative;
   width: 32px;
   height: 32px;
+}
+.rp {
+  transform: rotate(180deg);
 }
 .page-active {
   position: relative;
@@ -365,4 +381,42 @@ td {
   left: 4px;
   line-height: 20px;
   display: inline-block;
+}
+
+/* Overlay Page */
+.add-lead {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f6f6f6;
+  width: 36.8%;
+  height: 94.4%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+  font-size: 28px;
+  color: #091e42;
+  font-family: "Clash Grotesk";
+  padding-top: 10px;
+  padding-bottom: 20px;
+  z-index: 1;
+}
+.add-lead label {
+  font-size: 20px;
+  font-weight: 500;
+}
+.lead {
+  display: flex;
+  width: 93%;
+  background-color: #7ac769;
+  padding: 20px;
+  margin-top: -10px;
+  gap: 190px;
+}
+.lead img {
+  cursor: pointer;
+}
+.form {
+  display: flex;
+  flex-direction: column;
 }
