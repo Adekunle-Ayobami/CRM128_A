@@ -215,25 +215,15 @@
           <div style="margin-right: 10px">|</div>
           <div style="color: #003e9c; width: 200px">Staff Performance List</div>
         </div>
-        <button type="submit">Add Performance</button>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
+          <div class="search">Back</div>
+        </div>
       </div>
 
       <!--  -->
       <div class="back-group">
-        <div class="back" onclick="history.back()">
-          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
-          <div class="search">Back</div>
-        </div>
-        <div class="input-group">
-          <div class="input-container">
-            <i class="fas fa-search"></i>
-            <input
-              class="input-field1"
-              type="text"
-              name="search"
-              placeholder="Filter"
-            />
-          </div>
+        <div style="display: flex">
           <select class="select" name="">
             <option value="">Date</option>
             <option value="">Weekly</option>
@@ -246,11 +236,25 @@
             <option value="">User</option>
           </select>
           <div class="sort">
-            <img style="width: 15px" src="public/sort-minor.svg" alt="" /><span
-              style="margin-bottom: 7px"
-              >Sort</span
-            >
+            <i class="fa-solid fa-arrow-up-z-a"></i
+            ><span style="margin-bottom: 7px">Sort</span>
           </div>
+        </div>
+        <div class="input-group">
+          <div class="input-container">
+            <i class="fas fa-search"></i>
+            <input
+              class="input-field1"
+              type="text"
+              name="search"
+              placeholder="Filter"
+            />
+          </div>
+          <a href="/hrm/staff-perfomance1.html">
+            <div>
+              <button class="my-btn" type="submit">Add Performance</button>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -264,13 +268,13 @@
           <th>Options</th>
         </tr>
         <tr>
-          <td colspan="5">No Data Available</td>
+          <td colspan="5">No Data Available !</td>
         </tr>
       </table>
 
       <!--  -->
       <div class="pagination">
-        <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
+        <img class="page-disabled rp" alt="" src="./public/page--master.svg" />
 
         <div class="page-active">
           <div class="page-active1">

@@ -217,25 +217,15 @@
           <div style="margin-right: 10px">|</div>
           <div style="color: #003e9c; width: 200px">Awards</div>
         </div>
-        <button type="submit">Add New Award</button>
+        <div class="back" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left search-icon"></i>
+          <div class="search">Back</div>
+        </div>
       </div>
 
       <!--  -->
       <div class="back-group">
-        <div class="back" onclick="history.back()">
-          <img class="search-icon" alt="" src="./public/arrow-back.svg" />
-          <div class="search">Back</div>
-        </div>
         <div class="input-group">
-          <div class="input-container">
-            <i class="fas fa-search"></i>
-            <input
-              class="input-field1"
-              type="text"
-              name="search"
-              placeholder="Filter"
-            />
-          </div>
           <select class="select" name="">
             <option value="">Date</option>
             <option value="">Weekly</option>
@@ -248,10 +238,24 @@
             <option value="">User</option>
           </select>
           <div class="sort">
-            <img style="width: 15px" src="public/sort-minor.svg" alt="" /><span
-              style="margin-bottom: 7px"
-              >Sort</span
-            >
+            <i class="fa-solid fa-arrow-up-z-a"></i
+            ><span style="margin-bottom: 7px">Sort</span>
+          </div>
+        </div>
+        <div style="display: flex">
+          <div class="input-container">
+            <i class="fas fa-search"></i>
+            <input
+              class="input-field1"
+              type="text"
+              name="search"
+              placeholder="Filter"
+            />
+          </div>
+          <div>
+            <button class="my-btn" type="submit" id="overlayBtn">
+              Add New Award
+            </button>
           </div>
         </div>
       </div>
@@ -274,7 +278,7 @@
 
       <!--  -->
       <div class="pagination">
-        <img class="page-disabled" alt="" src="./public/page--disabled.svg" />
+        <img class="page-disabled rp" alt="" src="./public/page--master.svg" />
 
         <div class="page-active">
           <div class="page-active1">
@@ -303,6 +307,91 @@
         </div>
         <img class="page-master" alt="" src="./public/page--master.svg" />
       </div>
+
+      <!-- Overlay Pages -->
+      <form action="">
+        <div class="add-lead" id="overlay">
+          <div class="lead">
+            <div style="width: 100%; font-weight: 600">Create New Award</div>
+            <img
+              style="cursor: pointer"
+              src="public/close.svg"
+              id="closeBtn"
+              alt=""
+            />
+          </div>
+          <div class="form form1">
+            <label style="margin-bottom: 5px">Award Name</label>
+            <input
+              type="text"
+              id="company_name"
+              placeholder="Enter award name"
+            />
+          </div>
+          <div class="form form1">
+            <label style="margin-bottom: 5px">Award Description</label>
+            <input
+              type="text"
+              id="company_type"
+              placeholder="Enter award description"
+            />
+          </div>
+          <div class="form2">
+            <div>
+              <label>Gift Item</label> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input
+                  id="website_url"
+                  class="input-field1"
+                  type="text"
+                  name="search"
+                  placeholder="gifts"
+                />
+              </div>
+            </div>
+            <div>
+              <label>Date</label> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input
+                  id="email"
+                  class="input-field12"
+                  type="date"
+                  name="search"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form7">
+            <div>
+              <label>Employee Name</label> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input
+                  id="contact"
+                  class="input-field12"
+                  type="text"
+                  name="search"
+                  placeholder="search"
+                />
+              </div>
+            </div>
+            <div>
+              <label>Awarded By</label> <br />
+              <input
+                id="contact"
+                class="input-field20"
+                type="text"
+                name="search"
+                placeholder="search"
+              />
+            </div>
+          </div>
+          <a href="./award-page1.html">
+            <div>
+              <div class="bigbutton">Save</div>
+            </div>
+          </a>
+        </div>
+      </form>
     </section>
     <footer>
       <div class="copyright-2023-crm128-parent">
@@ -349,7 +438,7 @@
       const hrItems3 = document.getElementById("hr-items3");
       const hrChevronIcon3 = document.getElementById("hr-chevron-icon3");
 
-      hrItems3.classList.add("hidden");
+      // hrItems3.classList.add("hidden");
       hrToggle3.addEventListener("click", function () {
         hrItems3.classList.toggle("hidden");
         hrChevronIcon3.classList.toggle("rotate");
@@ -374,6 +463,19 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+          document.body.classList.add("overlay-active"); // Prevent background scroll
+        });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+          document.body.classList.remove("overlay-active"); // Allow background scroll
+        });
     </script>
   </body>
 </html>
