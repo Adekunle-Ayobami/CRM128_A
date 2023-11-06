@@ -218,7 +218,7 @@
           <div style="margin-right: 10px">|</div>
           <div style="color: #003e9c; width: 150px">Onboarding</div>
         </div>
-        <button type="submit">Add New Onboarding</button>
+        <button type="submit" id="overlayBtn">Add New Onboarding</button>
       </div>
       <!--  -->
       <div class="group-parent">
@@ -231,6 +231,119 @@
           </p>
         </div>
       </div>
+
+      <!-- Overlay Pages -->
+      <form action="">
+        <div class="add-lead" id="overlay">
+          <div class="lead">
+            <div style="width: 100%; font-weight: 600">Create New Award</div>
+            <img
+              style="cursor: pointer"
+              src="public/close.svg"
+              id="closeBtn"
+              alt=""
+            />
+          </div>
+          <div class="form form1">
+            <label style="margin-bottom: 5px">Onboarding Name</label>
+            <input
+              type="text"
+              id="company_name"
+              placeholder="Enter onboarding name"
+            />
+          </div>
+          <div class="form form1">
+            <label style="margin-bottom: 5px">Description</label>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Enter Description..."
+            ></textarea>
+            <!-- <input
+              type="text"
+              id="company_type"
+              placeholder="Enter award description"
+            /> -->
+          </div>
+          <div class="form2">
+            <div>
+              <label>Facilator</label> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input
+                  id="website_url"
+                  class="input-field1"
+                  type="text"
+                  name="search"
+                  placeholder="Facilator name"
+                />
+              </div>
+            </div>
+            <div>
+              <label>Duration</label> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input
+                  id="email"
+                  class="input-field12"
+                  type="date"
+                  name="search"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form7">
+            <div>
+              <label>Date</label> <br />
+              <div class="input-container" style="margin-top: 5px">
+                <input
+                  id="contact"
+                  class="input-field12"
+                  type="date"
+                  name="search"
+                  placeholder="search"
+                />
+              </div>
+            </div>
+            <div>
+              <label>Time</label> <br />
+              <input
+                id="contact"
+                class="input-field20"
+                type="time"
+                name="search"
+                placeholder="search"
+              />
+            </div>
+          </div>
+          <div class="form form1">
+            <label style="margin-bottom: 5px">Add Participant</label>
+            <div class="participant">
+              <div class="p1">
+                <img src="./public/User.svg" alt="" />
+                <span>josiahg@hanstechnology.biz</span>
+              </div>
+              <div class="p2">
+                <img src="./public/User.svg" alt="" />
+                <span>daniele@gen128bs.com</span>
+              </div>
+              <div class="p3">
+                <span>+</span>
+              </div>
+            </div>
+            <!-- <input
+              type="text"
+              id="company_name"
+              placeholder="Enter onboarding name"
+            /> -->
+          </div>
+          <a href="./award-page1.html">
+            <div>
+              <div class="bigbutton">Save</div>
+            </div>
+          </a>
+        </div>
+      </form>
     </section>
     <footer>
       <div class="copyright-2023-crm128-parent">
@@ -302,6 +415,20 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+      // Overlay page
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+          document.body.classList.add("overlay-active"); // Prevent background scroll
+        });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+          document.body.classList.remove("overlay-active"); // Allow background scroll
+        });
     </script>
   </body>
 </html>

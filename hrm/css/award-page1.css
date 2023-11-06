@@ -384,7 +384,7 @@ td {
   right: -0.5em;
   background-color: #f6f6f6;
   width: 36.8%;
-  height: 90vh;
+  height: 96vh;
   overflow-y: auto;
   overflow-x: hidden;
   text-align: left;
@@ -394,6 +394,8 @@ td {
   padding-top: 10px;
   padding-bottom: 20px;
   z-index: 1;
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px;
   display: none;
   box-shadow: 0 0 100vw 300vh rgba(0, 0, 0, 0.5);
 }
@@ -414,10 +416,13 @@ td {
   padding-top: 10px;
   padding-bottom: 20px;
   z-index: 1;
-  /* display: none; */
+  display: none;
   box-shadow: 0 0 100vw 300vh rgba(0, 0, 0, 0.5);
 }
 .add-lead label {
+  font-size: 20px;
+}
+.add-lead2 label {
   font-size: 20px;
 }
 .lead {
@@ -496,8 +501,8 @@ td {
   flex-direction: row;
 }
 .bigbutton {
-  margin-left: 150px;
-  padding: 20px 70px 10px 70px;
+  margin-left: 10em;
+  padding: 20px 35px 10px 30px;
   background-color: #7ac769;
   border: none;
   font-size: 20px;
@@ -508,9 +513,10 @@ td {
   width: 3vw;
   cursor: pointer;
 }
+
 .bigbutton2 {
-  margin-left: 150px;
-  padding: 20px 70px 10px 70px;
+  margin-left: 9em;
+  padding: 20px 45px 10px 20px;
   background-color: #091e42;
   border: none;
   font-size: 20px;
@@ -518,7 +524,7 @@ td {
   margin-top: 50px;
   border-radius: 5px;
   padding-bottom: 20px;
-  width: 4vw;
+  width: 3vw;
   cursor: pointer;
 }
 .bigbutton:hover {
