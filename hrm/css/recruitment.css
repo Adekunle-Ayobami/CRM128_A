@@ -204,6 +204,37 @@ li {
   font-weight: 600;
 }
 
+/* Overlay Page */
+.add-lead {
+  position: fixed;
+  top: 0;
+  right: -0.5em;
+  background-color: #f6f6f6;
+  width: 36.8%;
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+  font-size: 28px;
+  color: #091e42;
+  font-family: "Clash Grotesk";
+  padding-top: 10px;
+  padding-bottom: 20px;
+  z-index: 1;
+  display: none;
+  box-shadow: 0 0 100vw 300vh rgba(0, 0, 0, 0.5);
+}
+.add-lead label {
+  font-size: 20px;
+}
+.lead {
+  display: flex;
+  width: 93%;
+  background-color: #7ac769;
+  padding: 20px;
+  margin-top: -10px;
+}
+
 @media (min-width: 1368px) {
   .frame-group {
     gap: 52em;

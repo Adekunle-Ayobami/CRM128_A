@@ -220,7 +220,7 @@
           <div style="margin-right: 10px">|</div>
           <div style="color: #003e9c; width: 150px">Job Post</div>
         </div>
-        <button type="submit">Add New Job Post</button>
+        <button type="submit" id="overlayBtn">Add New Job Post</button>
       </div>
       <!--  -->
       <div class="group-parent">
@@ -243,6 +243,86 @@
         <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
+
+    <!-- Overlay Pages -->
+    <form action="">
+      <div class="add-lead" id="overlay">
+        <div class="lead">
+          <div style="width: 100%; font-weight: 600">Create New Job Post</div>
+          <img
+            style="cursor: pointer"
+            src="public/close.svg"
+            id="closeBtn"
+            alt=""
+          />
+        </div>
+        <h5>1 of 2: General Information about the role</h5>
+        <hr />
+        <span>*Indicates required</span>
+        <div>
+          <label for="">Job Title*</label>
+          <input type="text" placeholder="Human Resource Manager" />
+        </div>
+        <div>
+          <label for="">Description</label>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <p>B</p>
+          <p>U</p>
+          <p>U</p>
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+        </div>
+        <div>
+          <div>
+            <label for="">Application End Date</label>
+            <input type="date" name="" id="" />
+          </div>
+          <div>
+            <label for="">Status</label>
+            <select name="" id="">
+              <option value="" selected style="display: none">Select</option>
+              <option value="">Active</option>
+              <option value="">Expired</option>
+              <option value="">Suspended</option>
+            </select>
+          </div>
+        </div>
+        <h5>2 of 2: Screening Questions</h5>
+        <hr />
+        <div>
+          <div>
+            <p>1. Why do you want to work here?</p>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <p>2. What's your biggest strength?</p>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <p>1. What skills can you bring to this role?</p>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <p><span>+</span>Add Question</p>
+          </div>
+        </div>
+
+        <div>
+          <div>Preview</div>
+          <div>
+            <button>Back</button>
+            <button>Post Job</button>
+          </div>
+        </div>
+      </div>
+    </form>
 
     <script>
       const hrToggle = document.getElementById("hr-toggle");
@@ -304,6 +384,19 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+          document.body.classList.add("overlay-active"); // Prevent background scroll
+        });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+          document.body.classList.remove("overlay-active"); // Allow background scroll
+        });
     </script>
   </body>
 </html>
