@@ -394,7 +394,7 @@ td {
   background-color: #f6f6f6;
   width: 36.8%;
   height: 95%;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   overflow-x: hidden;
   text-align: left;
   font-size: 28px;
