@@ -274,7 +274,7 @@
           <td class="icon">
             <i
               class="fa-solid fa-pen-to-square fa-lg edit-icon"
-              id="editIcon"
+              id="overlayBtn2"
             ></i>
             <img src="public/Delete.svg" alt="" />
           </td>
@@ -348,7 +348,7 @@
       </div>
     </footer>
 
-    <!-- Overlay Pages2 -->
+    <!-- Overlay Pages1 -->
     <div class="add-lead" id="overlay">
       <div class="lead">
         <div class="add-new">Add New Allowance</div>
@@ -356,36 +356,64 @@
       </div>
       <form class="form">
         <div class="form-div">
-          <div class="label-div">
-            <label for="">First Name*</label>
-            <input type="text" placeholder="Josiah" />
+          <div class="allowance-name">
+            <label for="name">Allowance Name*</label>
+            <input type="text" name="" id="" placeholder="Transportation" />
           </div>
-          <div class="label-div">
-            <label for="">Role</label>
-            <input type="text" placeholder="Design" />
-          </div>
-          <div class="label-div">
-            <label for="">Staff ID*</label>
-            <input type="text" placeholder="3234C" />
-          </div>
-          <div class="label-div">
-            <label for="">Department</label>
-            <input type="text" placeholder="eg. Accounting" />
-          </div>
-          <div class="label-div">
-            <label for="">Phone</label>
-            <input type="text" placeholder="0703 889 8888" />
-          </div>
-          <div class="label-div">
-            <label for="">Gender</label>
-            <div class="radio">
-              <input type="radio" name="radio" /> <span>Male</span>
-              <input type="radio" name="radio" />
-              <span>Female</span>
+          <div style="display: flex; gap: 5px; margin-bottom: 1em">
+            <div class="allowance-type">
+              <label for="">Allowance Type</label>
+              <select name="" id="">
+                <option value="">Percentage</option>
+                <option value="">Fixed</option>
+              </select>
+            </div>
+            <div class="percentage">
+              <label for="">Percentageof Net</label>
+              <input type="text" placeholder="5%" />
             </div>
           </div>
+          <div class="limit">
+            <label for="">Limit Per Month*</label>
+            <input type="text" name="" id="" placeholder="nil" />
+          </div>
         </div>
-        <input class="bigbutton" type="submit" value="UPDATE" />
+        <input class="bigbutton" type="submit" value="Save" />
+      </form>
+    </div>
+
+    <!-- Overlay Pages2 -->
+    <div class="add-lead2" id="overlay2">
+      <div class="lead2">
+        <div class="add-new2">Edit Allowance</div>
+        <img class="closing" src="public/close.svg" id="closeBtn2" alt="" />
+      </div>
+      <hr />
+      <form class="form">
+        <div class="form-div">
+          <div class="allowance-name">
+            <label for="name">Allowance Name*</label>
+            <input type="text" name="" id="" placeholder="Transportation" />
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 1em">
+            <div class="allowance-type">
+              <label for="">Allowance Type</label>
+              <select name="" id="">
+                <option value="">Percentage</option>
+                <option value="">Fixed</option>
+              </select>
+            </div>
+            <div class="percentage">
+              <label for="">Percentageof Net</label>
+              <input type="text" placeholder="5%" />
+            </div>
+          </div>
+          <div class="limit">
+            <label for="">Limit Per Month*</label>
+            <input type="text" name="" id="" placeholder="nil" />
+          </div>
+        </div>
+        <input class="bigbutton1" type="submit" value="UPDATE" />
       </form>
     </div>
 
@@ -459,6 +487,17 @@
         .getElementById("closeBtn")
         .addEventListener("click", function () {
           document.getElementById("overlay").style.display = "none";
+        });
+
+      document
+        .getElementById("overlayBtn2")
+        .addEventListener("click", function () {
+          document.getElementById("overlay2").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn2")
+        .addEventListener("click", function () {
+          document.getElementById("overlay2").style.display = "none";
         });
     </script>
   </body>

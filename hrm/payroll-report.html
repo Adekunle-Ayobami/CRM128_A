@@ -334,7 +334,7 @@
           <td>1,000</td>
           <td>351,250</td>
           <td>Unpaid</td>
-          <td><span class="pay">Make Payment</span></td>
+          <td><span class="pay" id="overlayBtn">Make Payment</span></td>
         </tr>
         <tr>
           <td><input type="checkbox" /></td>
@@ -470,6 +470,60 @@
       </div>
     </footer>
 
+    <!-- Overlay Pages1 -->
+    <div class="add-lead" id="overlay">
+      <div class="lead">
+        <div class="add-new">Pay For February</div>
+        <img class="closing" src="public/close.svg" id="closeBtn" alt="" />
+      </div>
+      <form class="form">
+        <div class="form-div">
+          <div style="display: flex; gap: 5px; margin-bottom: 0.5em">
+            <div class="employee-name">
+              <label for="">Employee Name</label>
+              <input type="text" placeholder="Kathryn Murphy" />
+            </div>
+            <div class="net-salary">
+              <label for="">Net Salary</label>
+              <input type="text" placeholder="$854,995.08" />
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 0.5em">
+            <div class="total-allowance">
+              <label for="">Total Allowance</label>
+              <input type="text" placeholder="$943.65" />
+            </div>
+            <div class="total-deduction">
+              <label for="">Total Deduction</label>
+              <input type="text" placeholder="$767.50" />
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 0.5em">
+            <div class="gross-salary">
+              <label for="">Gross Salary</label>
+              <input type="text" placeholder="$874,995.08" />
+            </div>
+            <div class="payment-method">
+              <label for="">Payment Method</label>
+              <select name="" id="">
+                <option value="">Planned</option>
+                <option value="">In Progress</option>
+                <option value="">In Review</option>
+                <option value="">Overdue</option>
+                <option value="">Done</option>
+                <option value="">Extra Option</option>
+              </select>
+            </div>
+          </div>
+          <div class="comment">
+            <label for="">Comments</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <input class="bigbutton" type="submit" value="PAY" />
+      </form>
+    </div>
+
     <script>
       const hrToggle = document.getElementById("hr-toggle");
       const hrItems = document.getElementById("hr-items");
@@ -530,6 +584,17 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+        });
     </script>
   </body>
 </html>

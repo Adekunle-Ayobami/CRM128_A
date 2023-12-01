@@ -256,69 +256,86 @@
             alt=""
           />
         </div>
-        <h5>1 of 2: General Information about the role</h5>
-        <hr />
-        <span>*Indicates required</span>
-        <div>
-          <label for="">Job Title*</label>
-          <input type="text" placeholder="Human Resource Manager" />
-        </div>
-        <div>
-          <label for="">Description</label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <p>B</p>
-          <p>U</p>
-          <p>U</p>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-        </div>
-        <div>
-          <div>
-            <label for="">Application End Date</label>
-            <input type="date" name="" id="" />
+        <div class="lead-inner">
+          <h5 style="font-size: 19px">
+            1 of 2: General Information about the role
+          </h5>
+          <hr />
+          <span style="font-size: 19px; color: #7a8699"
+            >*Indicates required</span
+          >
+          <div class="title">
+            <label for="">Job Title*</label>
+            <input type="text" placeholder="Human Resource Manager" />
           </div>
-          <div>
-            <label for="">Status</label>
-            <select name="" id="">
-              <option value="" selected style="display: none">Select</option>
-              <option value="">Active</option>
-              <option value="">Expired</option>
-              <option value="">Suspended</option>
-            </select>
+          <div class="description">
+            <label for="">Description</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
           </div>
-        </div>
-        <h5>2 of 2: Screening Questions</h5>
-        <hr />
-        <div>
-          <div>
-            <p>1. Why do you want to work here?</p>
-            <img src="" alt="" />
+          <div class="symbols">
+            <img src="public/pic5.svg" alt="" />
+            <p style="font-weight: 600">B</p>
+            <p style="text-decoration: underline">U</p>
+            <p><del>U</del></p>
+            <img src="public/pic2.svg" alt="" />
+            <img src="public/pic11.svg" alt="" />
+            <img src="public/pic4.svg" alt="" />
+            <img src="public/pic6.svg" alt="" />
+            <img src="public/pic7.svg" alt="" />
+            <img src="public/pic3.svg" alt="" />
           </div>
-          <div>
-            <p>2. What's your biggest strength?</p>
-            <img src="" alt="" />
+          <div class="due">
+            <div class="d-date">
+              <label for="">Application End Date</label>
+              <input type="date" name="" id="" />
+            </div>
+            <div class="status">
+              <label for="">Status</label>
+              <select name="" id="">
+                <option value="" selected style="display: none">Select</option>
+                <option value="">Active</option>
+                <option value="">Expired</option>
+                <option value="">Suspended</option>
+              </select>
+            </div>
           </div>
+          <h5 style="font-size: 19px">2 of 2: Screening Questions</h5>
+          <hr />
           <div>
-            <p>1. What skills can you bring to this role?</p>
-            <img src="" alt="" />
+            <div class="questions">
+              <p>1. Why do you want to work here?</p>
+              <img src="public/Delete.svg" alt="" />
+            </div>
+            <div class="questions2">
+              <p>2. What's your biggest strength?</p>
+              <img src="public/Delete.svg" alt="" />
+            </div>
+            <div class="questions3">
+              <p>1. What skills can you bring to this role?</p>
+              <img src="public/Delete.svg" alt="" />
+            </div>
+            <!-- <div
+              style="
+                background-color: #e6f0ff;
+                width: 8vw;
+                border-radius: 8px;
+                cursor: pointer;
+              "
+            >
+              <p style="font-size: 13px; color: #0047b3">
+                <span style="font-size: 20px">+</span>Add Question
+              </p>
+            </div> -->
           </div>
-          <div>
-            <p><span>+</span>Add Question</p>
-          </div>
-        </div>
 
-        <div>
-          <div>Preview</div>
-          <div>
-            <button>Back</button>
-            <button>Post Job</button>
+          <div class="btn-group">
+            <div class="preview">Preview</div>
+            <div style="display: flex; gap: 10px">
+              <div class="bt1">Back</div>
+              <a href="./job-post-applicant.html"
+                ><div class="bt3">Post Job</div></a
+              >
+            </div>
           </div>
         </div>
       </div>

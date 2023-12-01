@@ -309,6 +309,7 @@ td {
   border: 2px solid #0047b3;
   border-radius: 4px;
   color: white;
+  cursor: pointer;
 }
 /*  */
 .button-group {

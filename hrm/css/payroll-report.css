@@ -306,15 +306,16 @@ td {
 .pay {
   border-radius: 8px;
   background-color: #e6f0ff;
-  font-size: 19px;
+  font-size: 16px;
   color: #091e42;
   padding: 4px 8px;
+  cursor: pointer;
 }
 .pay1 {
   border-radius: 8px;
   background-color: #ebedf0;
   padding: 4px 8px;
-  font-size: 19px;
+  font-size: 16px;
   color: #b0b0b0;
 }
 .button-group1 {
@@ -489,4 +490,147 @@ td {
   left: 4px;
   line-height: 20px;
   display: inline-block;
+}
+
+/* Overlay Page */
+.add-lead {
+  position: fixed;
+  top: 1em;
+  right: 14em;
+  background-color: #fff;
+  width: 36.8%;
+  height: 83%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+  font-size: 28px;
+  color: #091e42;
+  font-family: "Clash Grotesk";
+  padding-top: 10px;
+  padding-bottom: 20px;
+  z-index: 1;
+  display: none;
+  border-radius: 8px;
+  box-shadow: 0 0 100vw 300vh rgba(0, 0, 0, 0.5);
+}
+.closing {
+  cursor: pointer;
+}
+.add-lead label {
+  font-size: 20px;
+  font-weight: 500;
+}
+.lead {
+  display: flex;
+  width: 40vw;
+  padding: 20px;
+  margin-top: -10px;
+  gap: 250px;
+  font-size: 21px;
+  font-weight: 600;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.employee-name {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.employee-name input {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #0047b3;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  outline: none;
+}
+.net-salary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.net-salary input {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #0047b3;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  outline: none;
+}
+.total-allowance {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.total-allowance input {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #0047b3;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  outline: none;
+}
+.total-deduction {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.total-deduction input {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #0047b3;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  outline: none;
+}
+.gross-salary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.gross-salary input {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #0047b3;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  outline: none;
+}
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.payment-method select {
+  padding: 10px;
+  border-radius: 7px;
+  width: 14vw;
+  border: 1px solid #0047b3;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  outline: none;
+}
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 0.5em;
+}
+.comment textarea {
+  border-radius: 6px;
+  border: 1px solid #0047b3;
+  background-color: #f6f6f6;
+  color: #7a8699;
+  outline: none;
+}
+.bigbutton {
+  padding: 8px;
+  width: 10vw;
+  border-radius: 8px;
+  background-color: #091e42;
+  color: white;
 }

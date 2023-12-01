@@ -220,7 +220,7 @@
           <div style="margin-right: 10px">|</div>
           <div style="color: #003e9c; width: 100px">Deduction List</div>
         </div>
-        <button type="submit">Add Deduction</button>
+        <button type="submit" id="overlayBtn">Add Deduction</button>
       </div>
 
       <!-- Button group -->
@@ -268,11 +268,12 @@
           <td>Fixed</td>
           <td>0%</td>
           <td>1,000</td>
-          <td>
-            <img src="public/edit.svg" alt="" /><img
-              src="public/Delete.svg"
-              alt=""
-            />
+          <td class="icon">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="overlayBtn2"
+            ></i>
+            <img src="public/Delete.svg" alt="" />
           </td>
         </tr>
         <tr>
@@ -280,11 +281,12 @@
           <td>Percentage</td>
           <td>10.3%</td>
           <td>--</td>
-          <td>
-            <img src="public/edit.svg" alt="" /><img
-              src="public/Delete.svg"
-              alt=""
-            />
+          <td class="icon">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="overlayBtn2"
+            ></i>
+            <img src="public/Delete.svg" alt="" />
           </td>
         </tr>
       </table>
@@ -329,6 +331,75 @@
         <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
+
+    <!-- Overlay Pages1 -->
+    <div class="add-lead" id="overlay">
+      <div class="lead">
+        <div class="add-new">Add New Deduction</div>
+        <img class="closing" src="public/close.svg" id="closeBtn" alt="" />
+      </div>
+      <form class="form">
+        <div class="form-div">
+          <div class="allowance-name">
+            <label for="name">Deduction Name*</label>
+            <input type="text" name="" id="" placeholder="Transportation" />
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 1em">
+            <div class="allowance-type">
+              <label for="">Deduction Type</label>
+              <select name="" id="">
+                <option value="">Percentage</option>
+                <option value="">Fixed</option>
+              </select>
+            </div>
+            <div class="percentage">
+              <label for="">Percentage of Net</label>
+              <input type="text" placeholder="5%" />
+            </div>
+          </div>
+          <div class="limit">
+            <label for="">Limit Per Month*</label>
+            <input type="text" name="" id="" placeholder="1,000" />
+          </div>
+        </div>
+        <input class="bigbutton" type="submit" value="Save" />
+      </form>
+    </div>
+
+    <!-- Overlay Pages2 -->
+    <div class="add-lead2" id="overlay2">
+      <div class="lead2">
+        <div class="add-new2">Edit Deduction</div>
+        <img class="closing" src="public/close.svg" id="closeBtn2" alt="" />
+      </div>
+      <hr />
+      <form class="form">
+        <div class="form-div">
+          <div class="allowance-name">
+            <label for="name">Deduction Name*</label>
+            <input type="text" name="" id="" placeholder="Transportation" />
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 1em">
+            <div class="allowance-type">
+              <label for="">Deduction Type</label>
+              <select name="" id="">
+                <option value="">Percentage</option>
+                <option value="">Fixed</option>
+              </select>
+            </div>
+            <div class="percentage">
+              <label for="">Percentage of Net</label>
+              <input type="text" placeholder="5%" />
+            </div>
+          </div>
+          <div class="limit">
+            <label for="">Limit Per Month*</label>
+            <input type="text" name="" id="" placeholder="nil" />
+          </div>
+        </div>
+        <input class="bigbutton1" type="submit" value="UPDATE" />
+      </form>
+    </div>
 
     <script>
       const hrToggle = document.getElementById("hr-toggle");
@@ -390,6 +461,28 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+        });
+
+      document
+        .getElementById("overlayBtn2")
+        .addEventListener("click", function () {
+          document.getElementById("overlay2").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn2")
+        .addEventListener("click", function () {
+          document.getElementById("overlay2").style.display = "none";
+        });
     </script>
   </body>
 </html>

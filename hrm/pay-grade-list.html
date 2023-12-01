@@ -220,7 +220,7 @@
           <div style="margin-right: 10px">|</div>
           <div style="color: #003e9c; width: 100px">Pay Grade</div>
         </div>
-        <button type="submit">Add Pay Grade</button>
+        <button type="submit" id="overlayBtn">Add Pay Grade</button>
       </div>
 
       <!-- Button group -->
@@ -273,11 +273,12 @@
           <td>10.3%</td>
           <td>331,890</td>
           <td>3,500</td>
-          <td>
-            <img src="public/edit.svg" alt="" /><img
-              src="public/Delete.svg"
-              alt=""
-            />
+          <td class="icon">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="overlayBtn2"
+            ></i>
+            <img src="public/Delete.svg" alt="" />
           </td>
         </tr>
         <tr>
@@ -286,11 +287,12 @@
           <td>7.5%</td>
           <td>194,250</td>
           <td>1,200</td>
-          <td>
-            <img src="public/edit.svg" alt="" /><img
-              src="public/Delete.svg"
-              alt=""
-            />
+          <td class="icon">
+            <i
+              class="fa-solid fa-pen-to-square fa-lg edit-icon"
+              id="overlayBtn2"
+            ></i>
+            <img src="public/Delete.svg" alt="" />
           </td>
         </tr>
       </table>
@@ -335,6 +337,119 @@
         <div style="color: #003e9c">196 High RoadWood GreenLondon N22 8HH</div>
       </div>
     </footer>
+
+    <!-- Overlay Pages1 -->
+    <div class="add-lead" id="overlay">
+      <div class="lead">
+        <div class="add-new">Add Pay Grade</div>
+        <img class="closing" src="public/close.svg" id="closeBtn" alt="" />
+      </div>
+      <form class="form">
+        <div class="form-div">
+          <div class="allowance-name">
+            <label for="name">Pay Grade Name*</label>
+            <input type="text" name="" id="" placeholder="Transportation" />
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 1em">
+            <div class="percentage">
+              <label for="">Gross Salary*</label>
+              <input type="text" placeholder="5%" />
+            </div>
+            <div class="allowance-type">
+              <label for="">Deduction in Percentage*</label>
+              <select name="" id="">
+                <option value="">Percentage</option>
+                <option value="">Fixed</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 1em">
+            <div class="percentage">
+              <label for="">Net Salary*</label>
+              <input type="text" placeholder="350,000" />
+            </div>
+            <div class="allowance-type">
+              <label for="">Overtime Rate (Per Hour)</label>
+              <input type="text" name="" id="" placeholder="3,500" />
+            </div>
+          </div>
+          <div class="checkbox">
+            <div class="checkbox1">
+              <label for="">Allowance*</label>
+              <div><input type="checkbox" /> Select All</div>
+              <div><input type="checkbox" /> Housing</div>
+              <div><input type="checkbox" /> Transportation</div>
+              <div><input type="checkbox" /> Wardrobe</div>
+            </div>
+            <div class="checkbox1">
+              <label for="">Deduction*</label>
+              <div><input type="checkbox" /> Lateness</div>
+              <div><input type="checkbox" /> Tax</div>
+              <div><input type="checkbox" /> Deduction 1</div>
+              <div><input type="checkbox" /> Deduction 2</div>
+            </div>
+          </div>
+        </div>
+        <input class="bigbutton" type="submit" value="Save" />
+      </form>
+    </div>
+
+    <!-- Overlay Pages2 -->
+    <div class="add-lead2" id="overlay2">
+      <div class="lead2">
+        <div class="add-new2">Edit Pay Grade</div>
+        <img class="closing" src="public/close.svg" id="closeBtn2" alt="" />
+      </div>
+      <hr />
+      <form class="form">
+        <div class="form-div">
+          <div class="allowance-name">
+            <label for="name">Pay Grade Name*</label>
+            <input type="text" name="" id="" placeholder="Transportation" />
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 1em">
+            <div class="percentage">
+              <label for="">Gross Salary*</label>
+              <input type="text" placeholder="5%" />
+            </div>
+            <div class="allowance-type">
+              <label for="">Deduction in Percentage*</label>
+              <select name="" id="">
+                <option value="">Percentage</option>
+                <option value="">Fixed</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; margin-bottom: 1em">
+            <div class="percentage">
+              <label for="">Net Salary*</label>
+              <input type="text" placeholder="350,000" />
+            </div>
+            <div class="allowance-type">
+              <label for="">Overtime Rate (Per Hour)</label>
+              <input type="text" name="" id="" placeholder="3,500" />
+            </div>
+          </div>
+          <div class="checkbox">
+            <div class="checkbox1">
+              <label for="">Allowance*</label>
+              <div><input type="checkbox" /> Select All</div>
+              <div><input type="checkbox" /> Housing</div>
+              <div><input type="checkbox" /> Transportation</div>
+              <div><input type="checkbox" /> Wardrobe</div>
+            </div>
+            <div class="checkbox1">
+              <label for="">Deduction*</label>
+              <div><input type="checkbox" /> Lateness</div>
+              <div><input type="checkbox" /> Tax</div>
+              <div><input type="checkbox" /> Deduction 1</div>
+              <div><input type="checkbox" /> Deduction 2</div>
+            </div>
+          </div>
+        </div>
+        <input class="bigbutton1" type="submit" value="UPDATE" />
+      </form>
+    </div>
 
     <script>
       const hrToggle = document.getElementById("hr-toggle");
@@ -396,6 +511,28 @@
         hrItems5.classList.toggle("hidden");
         hrChevronIcon5.classList.toggle("rotate");
       });
+
+      document
+        .getElementById("overlayBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+        });
+
+      document
+        .getElementById("overlayBtn2")
+        .addEventListener("click", function () {
+          document.getElementById("overlay2").style.display = "block";
+        });
+      document
+        .getElementById("closeBtn2")
+        .addEventListener("click", function () {
+          document.getElementById("overlay2").style.display = "none";
+        });
     </script>
   </body>
 </html>
